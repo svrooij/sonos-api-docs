@@ -1,0 +1,118 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Author": {
+            "properties": {
+                "link": {
+                    "type": "string"
+                },
+                "mail": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "KnownProject": {
+            "properties": {
+                "author": {
+                    "$ref": "#/definitions/Author"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SonosServiceDocumentation": {
+            "properties": {
+                "actions": {
+                    "additionalProperties": {
+                        "$ref": "#/definitions/SonosServiceDocumentationAction"
+                    },
+                    "type": "object"
+                },
+                "customTypes": {
+                    "additionalProperties": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "type": "object"
+                    },
+                    "type": "object"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "files": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "SonosServiceDocumentationAction": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "params": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "remarks": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "Template": {
+            "properties": {
+                "author": {
+                    "$ref": "#/definitions/Author"
+                },
+                "folder": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "properties": {
+        "projects": {
+            "items": {
+                "$ref": "#/definitions/KnownProject"
+            },
+            "type": "array"
+        },
+        "services": {
+            "additionalProperties": {
+                "$ref": "#/definitions/SonosServiceDocumentation"
+            },
+            "type": "object"
+        },
+        "templates": {
+            "items": {
+                "$ref": "#/definitions/Template"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+

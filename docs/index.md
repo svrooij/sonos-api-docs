@@ -1,3 +1,13 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+title: Home
+nav_order: 1
+permalink: /
+---
+
 # sonos-api-docs
 
 Sonos api documentation for the local UPNP api and a generator to generate clients based on service discovery

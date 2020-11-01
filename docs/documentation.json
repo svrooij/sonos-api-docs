@@ -1,9 +1,9 @@
 {
+  "$schema": "https://svrooij.io/sonos-api-docs/documentation.schema.json",
   "services": {
     "AlarmClockService": {
       "description": "Control the sonos alarms",
       "files": { "ts":"alarm-clock.service.ts"},
-      "actions": {
         "CreateAlarm": {
           "description": "Create a single alarm, all properties are required",
           "params": {
@@ -364,7 +364,6 @@
   "projects": [
     { "name": "sonos2mqtt", "link": "https://svrooij.io/sonos2mqtt/", "author": { "name": "svrooij", "link": "https://svrooij.io/" } },
     { "name": "sonos cli", "link": "https://github.com/svrooij/sonos-cli", "author": { "name": "svrooij", "link": "https://svrooij.io/" } }
-
   ],
   "templates": [
     { "key": "ts", "folder": "ts", "author": { "name": "svrooij", "link": "https://svrooij.io/" } }

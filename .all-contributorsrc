@@ -1,0 +1,38 @@
+{
+  "projectName": "sonos-api-docs",
+  "projectOwner": "svrooij",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md",
+    "docs/index.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "svrooij",
+      "name": "Stephan van Rooij",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1292510?v=4",
+      "profile": "https://svrooij.nl",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "hklages",
+      "name": "H. Klages",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17273119?v=4",
+      "profile": "https://github.com/hklages",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
+}
