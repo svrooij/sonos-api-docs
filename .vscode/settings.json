@@ -1,0 +1,10 @@
+{
+  "json.schemas": [
+  {
+    "fileMatch": [
+      "/docs/documentation.json"
+    ],
+    "url": "file:///C:\\Users\\StephanvanRooij\\source\\repos\\sonos-api-docs\\docs\\documentation.schema.json"
+  }
+  ]
+}

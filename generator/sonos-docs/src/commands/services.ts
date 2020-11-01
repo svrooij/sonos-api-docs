@@ -62,7 +62,7 @@ export default class Services extends Command {
 
     const services = await Promise.all<SonosService>(serviceDescriptions
       .filter((serviceDescription: any) => serviceDescription.controlURL !== serviceToSkip)
-      .map((service: any) => this.loadService(ip, service, `${desc.modelNumber}-${desc.swGen}`)))
+      .map((service: any) => this.loadService(ip, service)))
 
     return {
       model: desc.modelNumber,
@@ -75,7 +75,7 @@ export default class Services extends Command {
     };
   }
 
-  private async loadService(ip: string, service: any, model: string): Promise<SonosService> {
+  private async loadService(ip: string, service: any): Promise<SonosService> {
     const name = service.serviceId.substring(service.serviceId.lastIndexOf(':') + 1)
     const resp = await this.fetchAndParse(this.createUrl(ip, service.SCPDURL));
     const desc = resp.scpd;
@@ -89,7 +89,6 @@ export default class Services extends Command {
       serviceType: service.serviceType,
       controlURL: service.controlURL,
       eventSubURL: service.eventSubURL,
-      availableAt: [model],
       stateVariables: ArrayHelper.ForceArray(desc.serviceStateTable.stateVariable).map((v: any): SonosStateVariable  => {
         return {
           name: v.name,
@@ -99,16 +98,19 @@ export default class Services extends Command {
         }
       }),
       actions: ArrayHelper.ForceArray(desc.actionList.action).map((action: any): SonosServiceAction => {
+        const sonosArgs = ArrayHelper.ForceArray(action.argumentList?.argument ?? []).map((a: any): SonosServiceActionArgument => {
+          return {
+            name: a.name,
+            direction: a.direction,
+            relatedStateVariableName: a.relatedStateVariable,
+          }
+        });
+        const inputs = sonosArgs.filter(a => a.direction === 'in');
+        const outputs = sonosArgs.filter(a => a.direction === 'out');
         return {
           name: action.name,
-          availableAt: [model],
-          arguments: ArrayHelper.ForceArray(action.argumentList?.argument ?? []).map((a: any): SonosServiceActionArgument => {
-            return {
-              name: a.name,
-              direction: a.direction,
-              relatedStateVariableName: a.relatedStateVariable
-            }
-          })
+          inputs: inputs.length > 0 ? inputs : undefined,
+          outputs: outputs.length > 0 ? outputs : undefined,
         }
       })
     }

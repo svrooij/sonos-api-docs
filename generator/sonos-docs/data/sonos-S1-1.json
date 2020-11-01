@@ -3,7 +3,7 @@
   "modelDescription": "Sonos Play:1",
   "softwareGeneration": 1,
   "softwareVersion": "57.3-81090",
-  "discoveryDate": "2020-10-30T18:07:36.804Z",
+  "discoveryDate": "2020-11-01T09:29:56.023Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -13,9 +13,6 @@
       "serviceType": "urn:schemas-upnp-org:service:AlarmClock:1",
       "controlURL": "/AlarmClock/Control",
       "eventSubURL": "/AlarmClock/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_ISO8601Time",
@@ -143,10 +140,7 @@
       "actions": [
         {
           "name": "SetFormat",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredTimeFormat",
               "direction": "in",
@@ -161,10 +155,7 @@
         },
         {
           "name": "GetFormat",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentTimeFormat",
               "direction": "out",
@@ -179,10 +170,7 @@
         },
         {
           "name": "SetTimeZone",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Index",
               "direction": "in",
@@ -197,10 +185,7 @@
         },
         {
           "name": "GetTimeZone",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "Index",
               "direction": "out",
@@ -215,10 +200,7 @@
         },
         {
           "name": "GetTimeZoneAndRule",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "Index",
               "direction": "out",
@@ -238,15 +220,14 @@
         },
         {
           "name": "GetTimeZoneRule",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Index",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_TimeZoneIndex"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "TimeZone",
               "direction": "out",
@@ -256,10 +237,7 @@
         },
         {
           "name": "SetTimeServer",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredTimeServer",
               "direction": "in",
@@ -269,10 +247,7 @@
         },
         {
           "name": "GetTimeServer",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentTimeServer",
               "direction": "out",
@@ -282,10 +257,7 @@
         },
         {
           "name": "SetTimeNow",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredTime",
               "direction": "in",
@@ -300,15 +272,14 @@
         },
         {
           "name": "GetHouseholdTimeAtStamp",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "TimeStamp",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_TimeStamp"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "HouseholdUTCTime",
               "direction": "out",
@@ -318,10 +289,7 @@
         },
         {
           "name": "GetTimeNow",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentUTCTime",
               "direction": "out",
@@ -346,10 +314,7 @@
         },
         {
           "name": "CreateAlarm",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "StartLocalTime",
               "direction": "in",
@@ -399,7 +364,9 @@
               "name": "IncludeLinkedZones",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_AlarmIncludeLinkedZones"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "AssignedID",
               "direction": "out",
@@ -409,10 +376,7 @@
         },
         {
           "name": "UpdateAlarm",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ID",
               "direction": "in",
@@ -472,10 +436,7 @@
         },
         {
           "name": "DestroyAlarm",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ID",
               "direction": "in",
@@ -485,10 +446,7 @@
         },
         {
           "name": "ListAlarms",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentAlarmList",
               "direction": "out",
@@ -503,10 +461,7 @@
         },
         {
           "name": "SetDailyIndexRefreshTime",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredDailyIndexRefreshTime",
               "direction": "in",
@@ -516,10 +471,7 @@
         },
         {
           "name": "GetDailyIndexRefreshTime",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentDailyIndexRefreshTime",
               "direction": "out",
@@ -537,9 +489,6 @@
       "serviceType": "urn:schemas-upnp-org:service:AVTransport:1",
       "controlURL": "/MediaRenderer/AVTransport/Control",
       "eventSubURL": "/MediaRenderer/AVTransport/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "TransportState",
@@ -975,10 +924,7 @@
       "actions": [
         {
           "name": "SetAVTransportURI",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -998,10 +944,7 @@
         },
         {
           "name": "SetNextAVTransportURI",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1021,10 +964,7 @@
         },
         {
           "name": "AddURIToQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1049,7 +989,9 @@
               "name": "EnqueueAsNext",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "FirstTrackNumberEnqueued",
               "direction": "out",
@@ -1069,10 +1011,7 @@
         },
         {
           "name": "AddMultipleURIsToQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1117,7 +1056,9 @@
               "name": "EnqueueAsNext",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "FirstTrackNumberEnqueued",
               "direction": "out",
@@ -1142,10 +1083,7 @@
         },
         {
           "name": "ReorderTracksInQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1175,10 +1113,7 @@
         },
         {
           "name": "RemoveTrackFromQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1198,10 +1133,7 @@
         },
         {
           "name": "RemoveTrackRangeFromQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1221,7 +1153,9 @@
               "name": "NumberOfTracks",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewUpdateID",
               "direction": "out",
@@ -1231,10 +1165,7 @@
         },
         {
           "name": "RemoveAllTracksFromQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1244,10 +1175,7 @@
         },
         {
           "name": "SaveQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1262,7 +1190,9 @@
               "name": "ObjectID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "AssignedObjectID",
               "direction": "out",
@@ -1272,10 +1202,7 @@
         },
         {
           "name": "BackupQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1285,10 +1212,7 @@
         },
         {
           "name": "CreateSavedQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1308,7 +1232,9 @@
               "name": "EnqueuedURIMetaData",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NumTracksAdded",
               "direction": "out",
@@ -1333,10 +1259,7 @@
         },
         {
           "name": "AddURIToSavedQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1366,7 +1289,9 @@
               "name": "AddAtIndex",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NumTracksAdded",
               "direction": "out",
@@ -1386,10 +1311,7 @@
         },
         {
           "name": "ReorderTracksInSavedQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1414,7 +1336,9 @@
               "name": "NewPositionList",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_TrackList"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "QueueLengthChange",
               "direction": "out",
@@ -1434,15 +1358,14 @@
         },
         {
           "name": "GetMediaInfo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NrTracks",
               "direction": "out",
@@ -1492,15 +1415,14 @@
         },
         {
           "name": "GetTransportInfo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentTransportState",
               "direction": "out",
@@ -1520,15 +1442,14 @@
         },
         {
           "name": "GetPositionInfo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "Track",
               "direction": "out",
@@ -1573,15 +1494,14 @@
         },
         {
           "name": "GetDeviceCapabilities",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "PlayMedia",
               "direction": "out",
@@ -1601,15 +1521,14 @@
         },
         {
           "name": "GetTransportSettings",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "PlayMode",
               "direction": "out",
@@ -1624,15 +1543,14 @@
         },
         {
           "name": "GetCrossfadeMode",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CrossfadeMode",
               "direction": "out",
@@ -1642,10 +1560,7 @@
         },
         {
           "name": "Stop",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1655,10 +1570,7 @@
         },
         {
           "name": "Play",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1673,10 +1585,7 @@
         },
         {
           "name": "Pause",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1686,10 +1595,7 @@
         },
         {
           "name": "Seek",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1709,10 +1615,7 @@
         },
         {
           "name": "Next",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1722,10 +1625,7 @@
         },
         {
           "name": "Previous",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1735,10 +1635,7 @@
         },
         {
           "name": "SetPlayMode",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1753,10 +1650,7 @@
         },
         {
           "name": "SetCrossfadeMode",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1771,10 +1665,7 @@
         },
         {
           "name": "NotifyDeletedURI",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1789,15 +1680,14 @@
         },
         {
           "name": "GetCurrentTransportActions",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "Actions",
               "direction": "out",
@@ -1807,15 +1697,14 @@
         },
         {
           "name": "BecomeCoordinatorOfStandaloneGroup",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "DelegatedGroupCoordinatorID",
               "direction": "out",
@@ -1830,10 +1719,7 @@
         },
         {
           "name": "DelegateGroupCoordinationTo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1853,10 +1739,7 @@
         },
         {
           "name": "BecomeGroupCoordinator",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1921,10 +1804,7 @@
         },
         {
           "name": "BecomeGroupCoordinatorAndSource",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -1994,10 +1874,7 @@
         },
         {
           "name": "ChangeCoordinator",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2027,10 +1904,7 @@
         },
         {
           "name": "ChangeTransportSettings",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2050,10 +1924,7 @@
         },
         {
           "name": "ConfigureSleepTimer",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2068,15 +1939,14 @@
         },
         {
           "name": "GetRemainingSleepTimerDuration",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "RemainingSleepTimerDuration",
               "direction": "out",
@@ -2091,10 +1961,7 @@
         },
         {
           "name": "RunAlarm",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2144,10 +2011,7 @@
         },
         {
           "name": "StartAutoplay",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2182,15 +2046,14 @@
         },
         {
           "name": "GetRunningAlarmProperties",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "AlarmID",
               "direction": "out",
@@ -2210,10 +2073,7 @@
         },
         {
           "name": "SnoozeAlarm",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2228,10 +2088,7 @@
         },
         {
           "name": "EndDirectControlSession",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -2249,9 +2106,6 @@
       "serviceType": "urn:schemas-upnp-org:service:ConnectionManager:1",
       "controlURL": "/MediaRenderer/ConnectionManager/Control",
       "eventSubURL": "/MediaRenderer/ConnectionManager/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "SourceProtocolInfo",
@@ -2318,10 +2172,7 @@
       "actions": [
         {
           "name": "GetProtocolInfo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "Source",
               "direction": "out",
@@ -2336,10 +2187,7 @@
         },
         {
           "name": "GetCurrentConnectionIDs",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "ConnectionIDs",
               "direction": "out",
@@ -2349,15 +2197,14 @@
         },
         {
           "name": "GetCurrentConnectionInfo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ConnectionID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_ConnectionID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "RcsID",
               "direction": "out",
@@ -2405,9 +2252,6 @@
       "serviceType": "urn:schemas-upnp-org:service:ContentDirectory:1",
       "controlURL": "/MediaServer/ContentDirectory/Control",
       "eventSubURL": "/MediaServer/ContentDirectory/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_ObjectID",
@@ -2562,10 +2406,7 @@
       "actions": [
         {
           "name": "GetSearchCapabilities",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "SearchCaps",
               "direction": "out",
@@ -2575,10 +2416,7 @@
         },
         {
           "name": "GetSortCapabilities",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "SortCaps",
               "direction": "out",
@@ -2588,10 +2426,7 @@
         },
         {
           "name": "GetSystemUpdateID",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "Id",
               "direction": "out",
@@ -2601,10 +2436,7 @@
         },
         {
           "name": "GetAlbumArtistDisplayOption",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "AlbumArtistDisplayOption",
               "direction": "out",
@@ -2614,10 +2446,7 @@
         },
         {
           "name": "GetLastIndexChange",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "LastIndexChange",
               "direction": "out",
@@ -2627,10 +2456,7 @@
         },
         {
           "name": "Browse",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ObjectID",
               "direction": "in",
@@ -2660,7 +2486,9 @@
               "name": "SortCriteria",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_SortCriteria"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "Result",
               "direction": "out",
@@ -2685,10 +2513,7 @@
         },
         {
           "name": "FindPrefix",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ObjectID",
               "direction": "in",
@@ -2698,7 +2523,9 @@
               "name": "Prefix",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Prefix"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "StartingIndex",
               "direction": "out",
@@ -2713,15 +2540,14 @@
         },
         {
           "name": "GetAllPrefixLocations",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ObjectID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "TotalPrefixes",
               "direction": "out",
@@ -2741,10 +2567,7 @@
         },
         {
           "name": "CreateObject",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ContainerID",
               "direction": "in",
@@ -2754,7 +2577,9 @@
               "name": "Elements",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Result"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "ObjectID",
               "direction": "out",
@@ -2769,10 +2594,7 @@
         },
         {
           "name": "UpdateObject",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ObjectID",
               "direction": "in",
@@ -2792,10 +2614,7 @@
         },
         {
           "name": "DestroyObject",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ObjectID",
               "direction": "in",
@@ -2805,10 +2624,7 @@
         },
         {
           "name": "RefreshShareIndex",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AlbumArtistDisplayOption",
               "direction": "in",
@@ -2818,10 +2634,7 @@
         },
         {
           "name": "RequestResort",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "SortOrder",
               "direction": "in",
@@ -2831,10 +2644,7 @@
         },
         {
           "name": "GetShareIndexInProgress",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "IsIndexing",
               "direction": "out",
@@ -2844,10 +2654,7 @@
         },
         {
           "name": "GetBrowseable",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "IsBrowseable",
               "direction": "out",
@@ -2857,10 +2664,7 @@
         },
         {
           "name": "SetBrowseable",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Browseable",
               "direction": "in",
@@ -2878,9 +2682,6 @@
       "serviceType": "urn:schemas-upnp-org:service:DeviceProperties:1",
       "controlURL": "/DeviceProperties/Control",
       "eventSubURL": "/DeviceProperties/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "HouseholdID",
@@ -3164,10 +2965,7 @@
       "actions": [
         {
           "name": "SetLEDState",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredLEDState",
               "direction": "in",
@@ -3177,10 +2975,7 @@
         },
         {
           "name": "GetLEDState",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentLEDState",
               "direction": "out",
@@ -3190,10 +2985,7 @@
         },
         {
           "name": "AddBondedZones",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ChannelMapSet",
               "direction": "in",
@@ -3203,10 +2995,7 @@
         },
         {
           "name": "RemoveBondedZones",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ChannelMapSet",
               "direction": "in",
@@ -3221,10 +3010,7 @@
         },
         {
           "name": "CreateStereoPair",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ChannelMapSet",
               "direction": "in",
@@ -3234,10 +3020,7 @@
         },
         {
           "name": "SeparateStereoPair",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ChannelMapSet",
               "direction": "in",
@@ -3247,10 +3030,7 @@
         },
         {
           "name": "SetZoneAttributes",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredZoneName",
               "direction": "in",
@@ -3270,10 +3050,7 @@
         },
         {
           "name": "GetZoneAttributes",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentZoneName",
               "direction": "out",
@@ -3293,10 +3070,7 @@
         },
         {
           "name": "GetHouseholdID",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentHouseholdID",
               "direction": "out",
@@ -3306,10 +3080,7 @@
         },
         {
           "name": "GetZoneInfo",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "SerialNumber",
               "direction": "out",
@@ -3364,10 +3135,7 @@
         },
         {
           "name": "SetAutoplayLinkedZones",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "IncludeLinkedZones",
               "direction": "in",
@@ -3382,28 +3150,24 @@
         },
         {
           "name": "GetAutoplayLinkedZones",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
-            {
-              "name": "IncludeLinkedZones",
-              "direction": "out",
-              "relatedStateVariableName": "AutoplayIncludeLinkedZones"
-            },
+          "inputs": [
             {
               "name": "Source",
               "direction": "in",
               "relatedStateVariableName": "AutoplaySource"
             }
+          ],
+          "outputs": [
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayIncludeLinkedZones"
+            }
           ]
         },
         {
           "name": "SetAutoplayRoomUUID",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "RoomUUID",
               "direction": "in",
@@ -3418,28 +3182,24 @@
         },
         {
           "name": "GetAutoplayRoomUUID",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
-            {
-              "name": "RoomUUID",
-              "direction": "out",
-              "relatedStateVariableName": "AutoplayRoomUUID"
-            },
+          "inputs": [
             {
               "name": "Source",
               "direction": "in",
               "relatedStateVariableName": "AutoplaySource"
             }
+          ],
+          "outputs": [
+            {
+              "name": "RoomUUID",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayRoomUUID"
+            }
           ]
         },
         {
           "name": "SetAutoplayVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Volume",
               "direction": "in",
@@ -3454,28 +3214,24 @@
         },
         {
           "name": "GetAutoplayVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
-            {
-              "name": "CurrentVolume",
-              "direction": "out",
-              "relatedStateVariableName": "AutoplayVolume"
-            },
+          "inputs": [
             {
               "name": "Source",
               "direction": "in",
               "relatedStateVariableName": "AutoplaySource"
             }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentVolume",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayVolume"
+            }
           ]
         },
         {
           "name": "SetUseAutoplayVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "UseVolume",
               "direction": "in",
@@ -3490,28 +3246,24 @@
         },
         {
           "name": "GetUseAutoplayVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
-            {
-              "name": "UseVolume",
-              "direction": "out",
-              "relatedStateVariableName": "AutoplayUseVolume"
-            },
+          "inputs": [
             {
               "name": "Source",
               "direction": "in",
               "relatedStateVariableName": "AutoplaySource"
             }
+          ],
+          "outputs": [
+            {
+              "name": "UseVolume",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayUseVolume"
+            }
           ]
         },
         {
           "name": "AddHTSatellite",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "HTSatChanMapSet",
               "direction": "in",
@@ -3521,10 +3273,7 @@
         },
         {
           "name": "RemoveHTSatellite",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "SatRoomUUID",
               "direction": "in",
@@ -3534,10 +3283,7 @@
         },
         {
           "name": "EnterConfigMode",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Mode",
               "direction": "in",
@@ -3547,7 +3293,9 @@
               "name": "Options",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_ConfigModeOptions"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "State",
               "direction": "out",
@@ -3557,10 +3305,7 @@
         },
         {
           "name": "ExitConfigMode",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Options",
               "direction": "in",
@@ -3570,10 +3315,7 @@
         },
         {
           "name": "GetButtonState",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "State",
               "direction": "out",
@@ -3583,10 +3325,7 @@
         },
         {
           "name": "SetButtonLockState",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredButtonLockState",
               "direction": "in",
@@ -3596,10 +3335,7 @@
         },
         {
           "name": "GetButtonLockState",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentButtonLockState",
               "direction": "out",
@@ -3617,9 +3353,6 @@
       "serviceType": "urn:schemas-upnp-org:service:GroupManagement:1",
       "controlURL": "/GroupManagement/Control",
       "eventSubURL": "/GroupManagement/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_MemberID",
@@ -3680,10 +3413,7 @@
       "actions": [
         {
           "name": "AddMember",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "MemberID",
               "direction": "in",
@@ -3693,7 +3423,9 @@
               "name": "BootSeq",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_BootSeq"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentTransportSettings",
               "direction": "out",
@@ -3723,10 +3455,7 @@
         },
         {
           "name": "RemoveMember",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "MemberID",
               "direction": "in",
@@ -3736,10 +3465,7 @@
         },
         {
           "name": "ReportTrackBufferingResult",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "MemberID",
               "direction": "in",
@@ -3754,10 +3480,7 @@
         },
         {
           "name": "SetSourceAreaIds",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DesiredSourceAreaIds",
               "direction": "in",
@@ -3775,9 +3498,6 @@
       "serviceType": "urn:schemas-upnp-org:service:GroupRenderingControl:1",
       "controlURL": "/MediaRenderer/GroupRenderingControl/Control",
       "eventSubURL": "/MediaRenderer/GroupRenderingControl/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "GroupMute",
@@ -3808,15 +3528,14 @@
       "actions": [
         {
           "name": "GetGroupMute",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentMute",
               "direction": "out",
@@ -3826,10 +3545,7 @@
         },
         {
           "name": "SetGroupMute",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -3844,15 +3560,14 @@
         },
         {
           "name": "GetGroupVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentVolume",
               "direction": "out",
@@ -3862,10 +3577,7 @@
         },
         {
           "name": "SetGroupVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -3880,10 +3592,7 @@
         },
         {
           "name": "SetRelativeGroupVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -3893,7 +3602,9 @@
               "name": "Adjustment",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_VolumeAdjustment"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewVolume",
               "direction": "out",
@@ -3903,10 +3614,7 @@
         },
         {
           "name": "SnapshotGroupVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -3924,9 +3632,6 @@
       "serviceType": "urn:schemas-upnp-org:service:MusicServices:1",
       "controlURL": "/MusicServices/Control",
       "eventSubURL": "/MusicServices/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_ServiceDescriptorList",
@@ -3962,10 +3667,7 @@
       "actions": [
         {
           "name": "GetSessionId",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "ServiceId",
               "direction": "in",
@@ -3975,7 +3677,9 @@
               "name": "Username",
               "direction": "in",
               "relatedStateVariableName": "Username"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "SessionId",
               "direction": "out",
@@ -3985,10 +3689,7 @@
         },
         {
           "name": "ListAvailableServices",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "AvailableServiceDescriptorList",
               "direction": "out",
@@ -4007,11 +3708,7 @@
           ]
         },
         {
-          "name": "UpdateAvailableServices",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": []
+          "name": "UpdateAvailableServices"
         }
       ]
     },
@@ -4023,9 +3720,6 @@
       "serviceType": "urn:schemas-tencent-com:service:QPlay:1",
       "controlURL": "/QPlay/Control",
       "eventSubURL": "/QPlay/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_Seed",
@@ -4051,15 +3745,14 @@
       "actions": [
         {
           "name": "QPlayAuth",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "Seed",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Seed"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "Code",
               "direction": "out",
@@ -4087,9 +3780,6 @@
       "serviceType": "urn:schemas-sonos-com:service:Queue:1",
       "controlURL": "/MediaRenderer/Queue/Control",
       "eventSubURL": "/MediaRenderer/Queue/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "LastChange",
@@ -4205,10 +3895,7 @@
       "actions": [
         {
           "name": "AddURI",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4238,7 +3925,9 @@
               "name": "EnqueueAsNext",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "FirstTrackNumberEnqueued",
               "direction": "out",
@@ -4263,10 +3952,7 @@
         },
         {
           "name": "AddMultipleURIs",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4306,7 +3992,9 @@
               "name": "EnqueuedURIsAndMetaData",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_LIST_URI_AND_METADATA"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "FirstTrackNumberEnqueued",
               "direction": "out",
@@ -4331,15 +4019,14 @@
         },
         {
           "name": "AttachQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueOwnerID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_QueueOwnerID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "QueueID",
               "direction": "out",
@@ -4353,18 +4040,11 @@
           ]
         },
         {
-          "name": "Backup",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": []
+          "name": "Backup"
         },
         {
           "name": "Browse",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4379,7 +4059,9 @@
               "name": "RequestedCount",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Count"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "Result",
               "direction": "out",
@@ -4404,10 +4086,7 @@
         },
         {
           "name": "CreateQueue",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueOwnerID",
               "direction": "in",
@@ -4419,23 +4098,22 @@
               "relatedStateVariableName": "A_ARG_TYPE_QueueOwnerContext"
             },
             {
-              "name": "QueueID",
-              "direction": "out",
-              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
-            },
-            {
               "name": "QueuePolicy",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_QueuePolicy"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "QueueID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
             }
           ]
         },
         {
           "name": "RemoveAllTracks",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4445,7 +4123,9 @@
               "name": "UpdateID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewUpdateID",
               "direction": "out",
@@ -4455,10 +4135,7 @@
         },
         {
           "name": "RemoveTrackRange",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4478,7 +4155,9 @@
               "name": "NumberOfTracks",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewUpdateID",
               "direction": "out",
@@ -4488,10 +4167,7 @@
         },
         {
           "name": "ReorderTracks",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4516,7 +4192,9 @@
               "name": "UpdateID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewUpdateID",
               "direction": "out",
@@ -4526,10 +4204,7 @@
         },
         {
           "name": "ReplaceAllTracks",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4569,7 +4244,9 @@
               "name": "EnqueuedURIsAndMetaData",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_LIST_URI_AND_METADATA"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewQueueLength",
               "direction": "out",
@@ -4584,10 +4261,7 @@
         },
         {
           "name": "SaveAsSonosPlaylist",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "QueueID",
               "direction": "in",
@@ -4602,7 +4276,9 @@
               "name": "ObjectID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "AssignedObjectID",
               "direction": "out",
@@ -4620,9 +4296,6 @@
       "serviceType": "urn:schemas-upnp-org:service:RenderingControl:1",
       "controlURL": "/MediaRenderer/RenderingControl/Control",
       "eventSubURL": "/MediaRenderer/RenderingControl/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "LastChange",
@@ -4859,10 +4532,7 @@
       "actions": [
         {
           "name": "GetMute",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -4872,7 +4542,9 @@
               "name": "Channel",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_MuteChannel"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentMute",
               "direction": "out",
@@ -4882,10 +4554,7 @@
         },
         {
           "name": "SetMute",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -4905,15 +4574,14 @@
         },
         {
           "name": "ResetBasicEQ",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "Bass",
               "direction": "out",
@@ -4943,10 +4611,7 @@
         },
         {
           "name": "ResetExtEQ",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -4961,10 +4626,7 @@
         },
         {
           "name": "GetVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -4974,7 +4636,9 @@
               "name": "Channel",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Channel"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentVolume",
               "direction": "out",
@@ -4984,10 +4648,7 @@
         },
         {
           "name": "SetVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5007,10 +4668,7 @@
         },
         {
           "name": "SetRelativeVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5025,7 +4683,9 @@
               "name": "Adjustment",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_VolumeAdjustment"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewVolume",
               "direction": "out",
@@ -5035,10 +4695,7 @@
         },
         {
           "name": "GetVolumeDB",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5048,7 +4705,9 @@
               "name": "Channel",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Channel"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentVolume",
               "direction": "out",
@@ -5058,10 +4717,7 @@
         },
         {
           "name": "SetVolumeDB",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5081,10 +4737,7 @@
         },
         {
           "name": "GetVolumeDBRange",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5094,7 +4747,9 @@
               "name": "Channel",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Channel"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "MinValue",
               "direction": "out",
@@ -5109,15 +4764,14 @@
         },
         {
           "name": "GetBass",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentBass",
               "direction": "out",
@@ -5127,10 +4781,7 @@
         },
         {
           "name": "SetBass",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5145,15 +4796,14 @@
         },
         {
           "name": "GetTreble",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentTreble",
               "direction": "out",
@@ -5163,10 +4813,7 @@
         },
         {
           "name": "SetTreble",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5181,10 +4828,7 @@
         },
         {
           "name": "GetEQ",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5194,7 +4838,9 @@
               "name": "EQType",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_EQType"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentValue",
               "direction": "out",
@@ -5204,10 +4850,7 @@
         },
         {
           "name": "SetEQ",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5227,10 +4870,7 @@
         },
         {
           "name": "GetLoudness",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5240,7 +4880,9 @@
               "name": "Channel",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Channel"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentLoudness",
               "direction": "out",
@@ -5250,10 +4892,7 @@
         },
         {
           "name": "SetLoudness",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5273,15 +4912,14 @@
         },
         {
           "name": "GetSupportsOutputFixed",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentSupportsFixed",
               "direction": "out",
@@ -5291,15 +4929,14 @@
         },
         {
           "name": "GetOutputFixed",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentFixed",
               "direction": "out",
@@ -5309,10 +4946,7 @@
         },
         {
           "name": "SetOutputFixed",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5327,15 +4961,14 @@
         },
         {
           "name": "GetHeadphoneConnected",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentHeadphoneConnected",
               "direction": "out",
@@ -5345,10 +4978,7 @@
         },
         {
           "name": "RampToVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5378,7 +5008,9 @@
               "name": "ProgramURI",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_ProgramURI"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "RampTime",
               "direction": "out",
@@ -5388,10 +5020,7 @@
         },
         {
           "name": "RestoreVolumePriorToRamp",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5406,10 +5035,7 @@
         },
         {
           "name": "SetChannelMap",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5424,10 +5050,7 @@
         },
         {
           "name": "SetRoomCalibrationX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5452,15 +5075,14 @@
         },
         {
           "name": "GetRoomCalibrationStatus",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "RoomCalibrationEnabled",
               "direction": "out",
@@ -5475,10 +5097,7 @@
         },
         {
           "name": "SetRoomCalibrationStatus",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -5501,9 +5120,6 @@
       "serviceType": "urn:schemas-upnp-org:service:SystemProperties:1",
       "controlURL": "/SystemProperties/Control",
       "eventSubURL": "/SystemProperties/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_VariableName",
@@ -5624,10 +5240,7 @@
       "actions": [
         {
           "name": "SetString",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "VariableName",
               "direction": "in",
@@ -5642,15 +5255,14 @@
         },
         {
           "name": "GetString",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "VariableName",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_VariableName"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "StringValue",
               "direction": "out",
@@ -5660,10 +5272,7 @@
         },
         {
           "name": "Remove",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "VariableName",
               "direction": "in",
@@ -5673,15 +5282,14 @@
         },
         {
           "name": "GetWebCode",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_AccountType"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "WebCode",
               "direction": "out",
@@ -5691,10 +5299,7 @@
         },
         {
           "name": "ProvisionCredentialedTrialAccountX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5709,7 +5314,9 @@
               "name": "AccountPassword",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_AccountPassword"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "IsExpired",
               "direction": "out",
@@ -5724,10 +5331,7 @@
         },
         {
           "name": "AddAccountX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5742,7 +5346,9 @@
               "name": "AccountPassword",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_AccountPassword"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "AccountUDN",
               "direction": "out",
@@ -5752,10 +5358,7 @@
         },
         {
           "name": "AddOAuthAccountX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5795,7 +5398,9 @@
               "name": "AccountTier",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_AccountTier"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "AccountUDN",
               "direction": "out",
@@ -5810,10 +5415,7 @@
         },
         {
           "name": "RemoveAccount",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5828,10 +5430,7 @@
         },
         {
           "name": "EditAccountPasswordX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5851,10 +5450,7 @@
         },
         {
           "name": "SetAccountNicknameX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountUDN",
               "direction": "in",
@@ -5869,10 +5465,7 @@
         },
         {
           "name": "RefreshAccountCredentialsX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5897,10 +5490,7 @@
         },
         {
           "name": "EditAccountMd",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountType",
               "direction": "in",
@@ -5919,25 +5509,14 @@
           ]
         },
         {
-          "name": "DoPostUpdateTasks",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": []
+          "name": "DoPostUpdateTasks"
         },
         {
-          "name": "ResetThirdPartyCredentials",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": []
+          "name": "ResetThirdPartyCredentials"
         },
         {
           "name": "EnableRDM",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "RDMValue",
               "direction": "in",
@@ -5947,10 +5526,7 @@
         },
         {
           "name": "GetRDM",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "RDMValue",
               "direction": "out",
@@ -5960,10 +5536,7 @@
         },
         {
           "name": "ReplaceAccountX",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "AccountUDN",
               "direction": "in",
@@ -5993,7 +5566,9 @@
               "name": "OAuthDeviceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_OAuthDeviceID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "NewAccountUDN",
               "direction": "out",
@@ -6011,9 +5586,6 @@
       "serviceType": "urn:schemas-upnp-org:service:VirtualLineIn:1",
       "controlURL": "/MediaRenderer/VirtualLineIn/Control",
       "eventSubURL": "/MediaRenderer/VirtualLineIn/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "A_ARG_TYPE_InstanceID",
@@ -6069,10 +5641,7 @@
       "actions": [
         {
           "name": "StartTransmission",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6082,7 +5651,9 @@
               "name": "CoordinatorID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_PlayerID"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "CurrentTransportSettings",
               "direction": "out",
@@ -6092,10 +5663,7 @@
         },
         {
           "name": "StopTransmission",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6110,10 +5678,7 @@
         },
         {
           "name": "Play",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6128,10 +5693,7 @@
         },
         {
           "name": "Pause",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6141,10 +5703,7 @@
         },
         {
           "name": "Next",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6154,10 +5713,7 @@
         },
         {
           "name": "Previous",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6167,10 +5723,7 @@
         },
         {
           "name": "Stop",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6180,10 +5733,7 @@
         },
         {
           "name": "SetVolume",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "InstanceID",
               "direction": "in",
@@ -6206,9 +5756,6 @@
       "serviceType": "urn:schemas-upnp-org:service:ZoneGroupTopology:1",
       "controlURL": "/ZoneGroupTopology/Control",
       "eventSubURL": "/ZoneGroupTopology/Event",
-      "availableAt": [
-        "S1-1"
-      ],
       "stateVariables": [
         {
           "name": "AvailableSoftwareUpdate",
@@ -6353,10 +5900,7 @@
       "actions": [
         {
           "name": "CheckForUpdate",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "UpdateType",
               "direction": "in",
@@ -6371,7 +5915,9 @@
               "name": "Version",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Version"
-            },
+            }
+          ],
+          "outputs": [
             {
               "name": "UpdateItem",
               "direction": "out",
@@ -6381,10 +5927,7 @@
         },
         {
           "name": "BeginSoftwareUpdate",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "UpdateURL",
               "direction": "in",
@@ -6404,10 +5947,7 @@
         },
         {
           "name": "ReportUnresponsiveDevice",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "DeviceUUID",
               "direction": "in",
@@ -6421,23 +5961,11 @@
           ]
         },
         {
-          "name": "ReportAlarmStartedRunning",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": []
+          "name": "ReportAlarmStartedRunning"
         },
         {
           "name": "SubmitDiagnostics",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
-            {
-              "name": "DiagnosticID",
-              "direction": "out",
-              "relatedStateVariableName": "DiagnosticID"
-            },
+          "inputs": [
             {
               "name": "IncludeControllers",
               "direction": "in",
@@ -6448,14 +5976,18 @@
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_Origin"
             }
+          ],
+          "outputs": [
+            {
+              "name": "DiagnosticID",
+              "direction": "out",
+              "relatedStateVariableName": "DiagnosticID"
+            }
           ]
         },
         {
           "name": "RegisterMobileDevice",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "inputs": [
             {
               "name": "MobileDeviceName",
               "direction": "in",
@@ -6475,10 +6007,7 @@
         },
         {
           "name": "GetZoneGroupAttributes",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "CurrentZoneGroupName",
               "direction": "out",
@@ -6503,10 +6032,7 @@
         },
         {
           "name": "GetZoneGroupState",
-          "availableAt": [
-            "S1-1"
-          ],
-          "arguments": [
+          "outputs": [
             {
               "name": "ZoneGroupState",
               "direction": "out",

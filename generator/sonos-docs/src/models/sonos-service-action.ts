@@ -2,10 +2,11 @@ import SonosStateVariable from "./sonos-state-variable";
 
 export interface SonosServiceAction {
   name: string;
-  arguments?: SonosServiceActionArgument[];
+  inputs?: SonosServiceActionArgument[];
+  outputs?: SonosServiceActionArgument[];
   description?: string;
   remarks?: string;
-  availableAt: string[];
+  availableAt?: string[];
 }
 
 export interface SonosServiceActionArgument {
