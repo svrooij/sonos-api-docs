@@ -9,8 +9,7 @@ import SonosDevice from '../models/sonos-device';
 import { Template } from '../models/template';
 import { SonosService } from '../models/sonos-service';
 import StringHelper from '../helpers/string-helper';
-
-
+import SonosStateVariable from '../models/sonos-state-variable';
 
 export default class Generate extends Command {
   static description = 'Generate files based on the intermediate file and a template.'
@@ -115,17 +114,20 @@ export default class Generate extends Command {
 
     // Set relatedStateVariables to correct value.
     const intermediate = JSON.parse(fs.readFileSync(intermediateFile).toString()) as SonosDevice;
-    intermediate.services.forEach(s => {
-      s.kebabName = StringHelper.CamelToKebab(s.name.replace('AV', 'Av').replace('HT', 'Ht'));
-      if(typeof(s.stateVariables) !== undefined && typeof(s.actions) !== undefined) {
-        s.actions?.forEach(a => {
+    intermediate.services.forEach(service => {
+      service.kebabName = StringHelper.CamelToKebab(service.name.replace('AV', 'Av').replace('HT', 'Ht'));
+      if(typeof(service.stateVariables) !== undefined && typeof(service.actions) !== undefined) {
+        service.actions?.forEach(a => {
           a.inputs?.forEach(i => {
-            i.relatedStateVariable = s.stateVariables?.find(v => v.name === i.relatedStateVariableName);
+            i.relatedStateVariable = service.stateVariables?.find(v => v.name === i.relatedStateVariableName);
           });
           a.outputs?.forEach(o => {
-            o.relatedStateVariable = s.stateVariables?.find(v => v.name === o.relatedStateVariableName);
+            o.relatedStateVariable = service.stateVariables?.find(v => v.name === o.relatedStateVariableName);
           })
         })
+      }
+      if (typeof(service.stateVariables) !== undefined) {
+        service.eventVariables = service.stateVariables?.filter((v: SonosStateVariable) => !v.name.startsWith('A_ARG_TYPE')).sort((a, b) => a.name.localeCompare(b.name))
       }
     });
     intermediate.services = intermediate.services.sort((a, b) => a.name.localeCompare(b.name));
