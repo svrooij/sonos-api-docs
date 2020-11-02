@@ -64,7 +64,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **UpdateType** | `string` |  |
+| **UpdateType** | `string` |  Allowed values: `All` / `Software` |
 | **CachedOnly** | `boolean` |  |
 | **Version** | `string` |  |
 
@@ -112,7 +112,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **DeviceUUID** | `string` |  |
-| **DesiredAction** | `string` |  |
+| **DesiredAction** | `string` |  Allowed values: `Remove` / `TopologyMonitorProbe` / `VerifyThenRemoveSystemwide` |
 
 ### ReportAlarmStartedRunning
 
@@ -197,7 +197,7 @@ Outputs:
 
 ### GetZoneGroupState
 
-Get all the Sonos groups, (as XML), see GetParsedZoneGroupState
+Get all the Sonos groups, (as XML)
 
 Action body:
 

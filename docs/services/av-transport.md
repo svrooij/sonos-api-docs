@@ -70,6 +70,8 @@ Inputs:
 | **CurrentURI** | `string` | The new TransportURI - its a special SONOS format |
 | **CurrentURIMetaData** | `string` | Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri |
 
+**Remarks** If set to another player RINCON, the player is grouped with that one.
+
 ### SetNextAVTransportURI
 
 Action body:
@@ -260,6 +262,8 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
 
+**Remarks** Send to non-coordinator returns error code 800.
+
 ### SaveQueue
 
 Saves the current SONOS queue as a SONOS playlist and outputs objectID
@@ -288,6 +292,8 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **AssignedObjectID** | `string` |  |
+
+**Remarks** Send to non-coordinator returns error code 800
 
 ### BackupQueue
 
@@ -435,8 +441,8 @@ Outputs:
 | **CurrentURIMetaData** | `string` |  |
 | **NextURI** | `string` |  |
 | **NextURIMetaData** | `string` |  |
-| **PlayMedium** | `string` |  |
-| **RecordMedium** | `string` |  |
+| **PlayMedium** | `string` |  Possible values: `NONE` / `NETWORK` |
+| **RecordMedium** | `string` |  Possible values:  |
 | **WriteStatus** | `string` |  |
 
 ### GetTransportInfo
@@ -462,9 +468,11 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentTransportState** | `string` |  |
+| **CurrentTransportState** | `string` |  Possible values: `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` |
 | **CurrentTransportStatus** | `string` |  |
-| **CurrentSpeed** | `string` |  |
+| **CurrentSpeed** | `string` |  Possible values:  |
+
+**Remarks** Send to non-coordinator always returns PLAYING
 
 ### GetPositionInfo
 
@@ -525,7 +533,7 @@ Outputs:
 
 ### GetTransportSettings
 
-Get transport settings such as NORMAL, REPEAT_ONE, REPEAT_ALL, SHUFFLE, SHUFFLE_NOREPEAT, SHUFFLE_REPEAT_ONE
+Get transport settings
 
 Action body:
 
@@ -546,8 +554,10 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **PlayMode** | `string` |  |
+| **PlayMode** | `string` |  Possible values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | **RecQualityMode** | `string` |  |
+
+**Remarks** Send to non-coordinator returns the settings of it&#x27;s queue
 
 ### GetCrossfadeMode
 
@@ -573,6 +583,8 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **CrossfadeMode** | `boolean` |  |
+
+**Remarks** Send to non-coordinator may return wrong value as only the coordinator value in a group
 
 ### Stop
 
@@ -612,7 +624,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Speed** | `string` | Play speed usually 1, can be a fraction of 1 |
+| **Speed** | `string` | Play speed usually 1, can be a fraction of 1 Allowed values:  |
 
 ### Pause
 
@@ -653,8 +665,10 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Unit** | `string` | What to seek - either TRACK_NR, REL_TIME, TIME_DELTA, |
+| **Unit** | `string` | What to seek - either TRACK_NR, REL_TIME, TIME_DELTA, Allowed values: `TRACK_NR` / `REL_TIME` / `TIME_DELTA` |
 | **Target** | `string` | Position of track in queue (start at 1) or hh:mm:ss for REL_TIME or +/-hh:mm:ss for TIME_DELTA |
+
+**Remarks** Returns error code 701 in case that content does not support Seek or send to non-coordinator
 
 ### Next
 
@@ -713,7 +727,9 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **NewPlayMode** | `string` | PlayMode such as NORMAL, REPEAT_ONE, REPEAT_ALL, SHUFFLE, SHUFFLE_NOREPEAT, SHUFFLE_REPEAT_ONE |
+| **NewPlayMode** | `string` | PlayMode such as NORMAL, REPEAT_ONE, REPEAT_ALL, SHUFFLE, SHUFFLE_NOREPEAT, SHUFFLE_REPEAT_ONE Allowed values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
+
+**Remarks** Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.
 
 ### SetCrossfadeMode
 
@@ -735,6 +751,8 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
 | **CrossfadeMode** | `boolean` | true for on, false for off |
+
+**Remarks** Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode.
 
 ### NotifyDeletedURI
 
@@ -779,6 +797,8 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **Actions** | `string` |  |
+
+**Remarks** Send to non-coordinator always returns Stop, Play
 
 ### BecomeCoordinatorOfStandaloneGroup
 
@@ -828,6 +848,8 @@ Inputs:
 | **InstanceID** | `ui4` |  |
 | **NewCoordinator** | `string` | uuid of the new coordinator - must be in same group |
 | **RejoinGroup** | `boolean` | Should former coordinator rejoin the group? |
+
+**Remarks** Send to non-coordinator has no results - should be avoided.
 
 ### BecomeGroupCoordinator
 
@@ -976,6 +998,8 @@ Inputs:
 | **InstanceID** | `ui4` |  |
 | **NewSleepTimerDuration** | `string` | Time to stop after, as hh:mm:ss |
 
+**Remarks** Send to non-coordinator returns error code 800
+
 ### GetRemainingSleepTimerDuration
 
 Get time left on sleeptimer or empty string
@@ -1001,6 +1025,8 @@ Outputs:
 |:----------|:-----|:------------|
 | **RemainingSleepTimerDuration** | `string` |  |
 | **CurrentSleepTimerGeneration** | `ui4` |  |
+
+**Remarks** Send to non-coordinator returns error code 800
 
 ### RunAlarm
 
@@ -1031,7 +1057,7 @@ Inputs:
 | **Duration** | `string` |  |
 | **ProgramURI** | `string` |  |
 | **ProgramMetaData** | `string` |  |
-| **PlayMode** | `string` |  |
+| **PlayMode** | `string` |  Allowed values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | **Volume** | `ui2` |  |
 | **IncludeLinkedZones** | `boolean` |  |
 

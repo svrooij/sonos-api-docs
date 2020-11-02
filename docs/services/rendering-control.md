@@ -64,7 +64,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` / `SpeakerOnly` |
 
 Outputs:
 
@@ -90,7 +90,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` / `SpeakerOnly` |
 | **DesiredMute** | `boolean` |  |
 
 ### ResetBasicEQ
@@ -158,7 +158,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` | Master |
+| **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -184,7 +184,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredVolume** | `ui2` |  |
 
 ### SetRelativeVolume
@@ -205,7 +205,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **Adjustment** | `i4` |  |
 
 Outputs:
@@ -231,7 +231,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -257,7 +257,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredVolume** | `i2` |  |
 
 ### GetVolumeDBRange
@@ -277,7 +277,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -447,7 +447,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` | Master |
+| **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -475,7 +475,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredLoudness** | `boolean` | true for on |
 
 ### GetSupportsOutputFixed
@@ -587,8 +587,8 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
-| **RampType** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
+| **RampType** | `string` |  Allowed values: `SLEEP_TIMER_RAMP_TYPE` / `ALARM_RAMP_TYPE` / `AUTOPLAY_RAMP_TYPE` |
 | **DesiredVolume** | `ui2` |  |
 | **ResetVolumeAfter** | `boolean` |  |
 | **ProgramURI** | `string` |  |
@@ -616,7 +616,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **Channel** | `string` |  |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 ### SetChannelMap
 

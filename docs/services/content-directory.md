@@ -160,7 +160,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **ObjectID** | `string` | The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS'] with optionally ':search+query' behind it. |
-| **BrowseFlag** | `string` | How to browse |
+| **BrowseFlag** | `string` | How to browse Allowed values: `BrowseMetadata` / `BrowseDirectChildren` |
 | **Filter** | `string` | Which fields should be returned '*' for all. |
 | **StartingIndex** | `ui4` | Paging, where to start |
 | **RequestedCount** | `ui4` | Paging, number of items |

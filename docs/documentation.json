@@ -1,5 +1,7 @@
 {
   "$schema": "https://svrooij.io/sonos-api-docs/schema/documentation.json",
+  "language": "EN",
+  "license": "MIT",
   "services": {
     "AlarmClockService": {
       "description": "Control the sonos alarms",
@@ -54,14 +56,14 @@
         },
         "ConfigureSleepTimer": {
           "description": "Stop playing after set sleep timer",
-          "Remarks":"Send to non-coordinator returns error code 800",
+          "remarks":"Send to non-coordinator returns error code 800",
           "params": {
             "NewSleepTimerDuration": "Time to stop after, as hh:mm:ss"
           }
         },
         "DelegateGroupCoordinationTo": {
           "description": "Delegates the coordinator role to another player in the same group",
-          "Remarks":"Send to non-coordinator has no results - should be avoided.",
+          "remarks":"Send to non-coordinator has no results - should be avoided.",
           "params": {
             "NewCoordinator": "uuid of the new coordinator - must be in same group",
             "RejoinGroup": "Should former coordinator rejoin the group?"
@@ -69,11 +71,11 @@
         },
         "GetCrossfadeMode": {
           "description": "Get crossfade mode, 1 for on, 0 for off",
-          "Remarks":"Send to non-coordinator may return wrong value as only the coordinator value in a group"
+          "remarks":"Send to non-coordinator may return wrong value as only the coordinator value in a group"
         },
         "GetCurrentTransportActions": {
           "description": "Get current transport actions such as Set, Stop, Pause, Play, X_DLNA_SeekTime, Next, X_DLNA_SeekTrackNr",
-          "Remarks":"Send to non-coordinator always returns Stop, Play"
+          "remarks":"Send to non-coordinator always returns Stop, Play"
         },
         "GetMediaInfo": {
           "description": "Get information about the current playing media (queue)"
@@ -83,15 +85,15 @@
         },
         "GetRemainingSleepTimerDuration": {
           "description": "Get time left on sleeptimer or empty string",
-          "Remarks":"Send to non-coordinator returns error code 800"
+          "remarks":"Send to non-coordinator returns error code 800"
         },
         "GetTransportInfo": {
           "description": "Get current transport status, speed and state such as PLAYING, STOPPED, PLAYING, PAUSED_PLAYBACK, TRANSITIONING, NO_MEDIA_PRESENT",
-          "Remarks":"Send to non-coordinator always returns PLAYING"
+          "remarks":"Send to non-coordinator always returns PLAYING"
         },
         "GetTransportSettings": {
-          "description": "Get transport settings such as NORMAL, REPEAT_ONE, REPEAT_ALL, SHUFFLE, SHUFFLE_NOREPEAT, SHUFFLE_REPEAT_ONE",
-          "Remarks":"Send to non-coordinator returns the settings of it's queue"
+          "description": "Get transport settings",
+          "remarks":"Send to non-coordinator returns the settings of it's queue"
         },
         "Next": {
           "description": "Go to next song, not always supported - see GetCurrentTransportActions"
@@ -110,18 +112,18 @@
         },
         "RemoveAllTracksFromQueue": {
           "description": "Flushes the SONOS queue. If queue is already empty it throw error 804",
-          "Remarks":"Send to non-coordinator returns error code 800."
+          "remarks":"Send to non-coordinator returns error code 800."
         },
         "SaveQueue": {
           "description": "Saves the current SONOS queue as a SONOS playlist and outputs objectID",
-          "Remarks":"Send to non-coordinator returns error code 800",
+          "remarks":"Send to non-coordinator returns error code 800",
           "params": {
             "Title": "SONOS playlist title"
           }
         },
         "Seek": {
           "description": "Seek track in queue, time delta or absolute time in song, not always supported - see GetCurrentTransportActions",
-          "Remarks":"Returns error code 701 in case that content does not support Seek or send to non-coordinator",
+          "remarks":"Returns error code 701 in case that content does not support Seek or send to non-coordinator",
           "params": {
             "Unit": "What to seek - either TRACK_NR, REL_TIME, TIME_DELTA,",
             "Target": "Position of track in queue (start at 1) or hh:mm:ss for REL_TIME or +/-hh:mm:ss for TIME_DELTA"
@@ -129,7 +131,7 @@
         },
         "SetAVTransportURI": {
           "description": "Set the transport URI to a song, a stream, the queue, another player-rincon and a lot more",
-          "Remarks":"If set to another player RINCON, the player is grouped with that one.",
+          "remarks":"If set to another player RINCON, the player is grouped with that one.",
           "params": {
             "CurrentURI": "The new TransportURI - its a special SONOS format",
             "CurrentURIMetaData": "Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri"
@@ -137,14 +139,14 @@
         },
         "SetCrossfadeMode": {
           "description": "Set crossfade mode off",
-          "Remarks":"Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode.",
+          "remarks":"Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode.",
           "params": {
             "CrossfadeMode": "true for on, false for off"
           }
         },
         "SetPlayMode": {
           "description": "Set the PlayMode",
-          "Remarks":"Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.",
+          "remarks":"Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.",
           "params": {
             "NewPlayMode": "PlayMode such as NORMAL, REPEAT_ONE, REPEAT_ALL, SHUFFLE, SHUFFLE_NOREPEAT, SHUFFLE_REPEAT_ONE"
           }
@@ -198,36 +200,36 @@
       "actions": {
         "GetGroupMute": {
           "description": "Get 1 for muted, 0 for un-muted",
-          "Remarks":"Send to non-coordinator returns error code 701"
+          "remarks":"Send to non-coordinator returns error code 701"
         },
         "GetGroupVolume": {
           "description": "Get the group volume.",
-          "Remarks":"Send to non-coordinator returns error code 701"
+          "remarks":"Send to non-coordinator returns error code 701"
         },
         "SetGroupMute": {
           "description": "(Un-/)Mute the entire group",
-          "Remarks":"Send to non-coordinator returns error code 701",
+          "remarks":"Send to non-coordinator returns error code 701",
           "params": {
             "DesiredMute": "True for mute, false for un-mute"
           }
         },
         "SetGroupVolume": {
           "description": "Change group volume. Players volume will be changed proportionally based on last snapshot",
-          "Remarks":"Send to non-coordinator returns error code 701",
+          "remarks":"Send to non-coordinator returns error code 701",
           "params": {
             "DesiredVolume": "New volume between 0 and 100"
           }
         },
         "SetRelativeGroupVolume": {
           "description": "Relatively change group volume - returns final group volume. Players volume will be changed proportionally based on last snapshot",
-          "Remarks":"Send to non-coordinator returns error code 701",
+          "remarks":"Send to non-coordinator returns error code 701",
           "params": {
             "Adjustment": "Number between -100 and +100"
           }
         }, 
         "SnapshotGroupVolume": {
           "description": "Creates a new group volume snapshot,  the volume ratio between all players. It is used by SetGroupVolume and SetRelativeGroupVolume",
-          "Remarks":"Send to non-coordinator returns error code 701"
+          "remarks":"Send to non-coordinator returns error code 701"
         }
       }
     },

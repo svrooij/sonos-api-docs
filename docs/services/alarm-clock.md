@@ -266,6 +266,8 @@ Outputs:
 
 ### CreateAlarm
 
+Create a single alarm, all properties are required
+
 Action body:
 
 ```xml
@@ -288,16 +290,16 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **StartLocalTime** | `string` |  |
-| **Duration** | `string` |  |
-| **Recurrence** | `string` |  |
-| **Enabled** | `boolean` |  |
-| **RoomUUID** | `string` |  |
-| **ProgramURI** | `string` |  |
-| **ProgramMetaData** | `string` |  |
-| **PlayMode** | `string` |  |
-| **Volume** | `ui2` |  |
-| **IncludeLinkedZones** | `boolean` |  |
+| **StartLocalTime** | `string` | The start time as hh:mm:ss |
+| **Duration** | `string` | The duration as hh:mm:ss |
+| **Recurrence** | `string` | Repeat this alarm on Allowed values: `ONCE` / `WEEKDAYS` / `WEEKENDS` / `DAILY` |
+| **Enabled** | `boolean` | Alarm enabled after creation |
+| **RoomUUID** | `string` | The UUID of the speaker you want this alarm for |
+| **ProgramURI** | `string` | The sound uri |
+| **ProgramMetaData** | `string` | The sound metadata, can be empty string |
+| **PlayMode** | `string` | Alarm play mode Allowed values: `NORMAL` / `REPEAT_ALL` / `SHUFFLE_NOREPEAT` / `SHUFFLE` |
+| **Volume** | `ui2` | Volume between 0 and 100 |
+| **IncludeLinkedZones** | `boolean` | Should grouped players also play the alarm? |
 
 Outputs:
 
@@ -306,6 +308,8 @@ Outputs:
 | **AssignedID** | `ui4` |  |
 
 ### UpdateAlarm
+
+Update an alarm, all parameters are required. Use PatchAlarm where you can update a single parameter
 
 Action body:
 
@@ -330,19 +334,21 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **ID** | `ui4` |  |
-| **StartLocalTime** | `string` |  |
-| **Duration** | `string` |  |
-| **Recurrence** | `string` |  |
-| **Enabled** | `boolean` |  |
-| **RoomUUID** | `string` |  |
-| **ProgramURI** | `string` |  |
-| **ProgramMetaData** | `string` |  |
-| **PlayMode** | `string` |  |
-| **Volume** | `ui2` |  |
-| **IncludeLinkedZones** | `boolean` |  |
+| **ID** | `ui4` | The ID of the alarm see ListAndParseAlarms |
+| **StartLocalTime** | `string` | The start time as hh:mm:ss |
+| **Duration** | `string` | The duration as hh:mm:ss |
+| **Recurrence** | `string` | Repeat this alarm on Allowed values: `ONCE` / `WEEKDAYS` / `WEEKENDS` / `DAILY` |
+| **Enabled** | `boolean` | Alarm enabled after creation |
+| **RoomUUID** | `string` | The UUID of the speaker you want this alarm for |
+| **ProgramURI** | `string` | The sound uri |
+| **ProgramMetaData** | `string` | The sound metadata, can be empty string |
+| **PlayMode** | `string` | Alarm play mode Allowed values: `NORMAL` / `REPEAT_ALL` / `SHUFFLE_NOREPEAT` / `SHUFFLE` |
+| **Volume** | `ui2` | Volume between 0 and 100 |
+| **IncludeLinkedZones** | `boolean` | Should grouped players also play the alarm? |
 
 ### DestroyAlarm
+
+Delete an alarm
 
 Action body:
 
@@ -357,9 +363,11 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **ID** | `ui4` |  |
+| **ID** | `ui4` | The Alarm ID, see ListAndParseAlarms |
 
 ### ListAlarms
+
+Get the AlarmList as XML, use ListAndParseAlarms for parsed version
 
 Action body:
 

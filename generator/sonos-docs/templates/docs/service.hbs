@@ -75,7 +75,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 {{#each inputs}}
-| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}} |
+| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}}{{#if relatedStateVariable.allowedValues}} Allowed values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
 {{/each}}
 {{else}}
 
@@ -88,7 +88,7 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 {{#each outputs}}
-| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}} |
+| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}}{{#if relatedStateVariable.allowedValues}} Possible values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
 {{/each}}
 {{/if}}
 {{#if remarks}}
