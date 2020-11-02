@@ -11,7 +11,7 @@ import ArrayHelper from '../helpers/array-helper';
 import { SonosServiceAction, SonosServiceActionArgument } from '../models/sonos-service-action';
 
 export default class Services extends Command {
-  static description = 'describe the command here'
+  static description = 'Fetch device discovery document and generate json file'
 
   static flags = {
     help: flags.help({char: 'h'}),
@@ -58,6 +58,7 @@ export default class Services extends Command {
       })
     })
 
+    // This service is duplicated in the device discovery
     const serviceToSkip = '/MediaServer/ConnectionManager/Control'
 
     const services = await Promise.all<SonosService>(serviceDescriptions

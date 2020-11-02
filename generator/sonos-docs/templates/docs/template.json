@@ -1,0 +1,22 @@
+{
+  "$schema": "https://svrooij.io/sonos-api-docs/schema/template.json",
+  "name": "Sonos local UPNP documentation",
+  "slug": "docs",
+  "author": {
+    "name": "svrooij",
+    "link": "https://svrooij.io"
+  },
+  "files": [
+    {
+      "file": "service.hbs",
+      "outputFile": "services/{snService}.md",
+      "usage":"service"
+    },
+    {
+      "file": "services-index.hbs",
+      "outputFile": "services/index.md",
+      "usage": "index"
+    }
+  ],
+  "license": "MIT"
+}

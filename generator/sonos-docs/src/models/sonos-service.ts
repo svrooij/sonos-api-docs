@@ -3,6 +3,7 @@ import SonosStateVariable from "./sonos-state-variable";
 
 export interface SonosService {
   name: string;
+  kebabName?: string;
   serviceName: string;
   discoveryUri: string;
 

@@ -1,5 +1,5 @@
 {
-  "name": "sonos-docs",
+  "name": "@svrooij/sonos-docs",
   "description": "CLI tool to generate documentation for the undocumented sonos api",
   "version": "0.0.0",
   "author": "Stephan van Rooij @svrooij",
@@ -11,7 +11,9 @@
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.0",
+    "cli-ux": "^5.5.0",
     "fast-xml-parser": "^3.17.4",
+    "handlebars": "^4.7.6",
     "node-fetch": "^2.6.1",
     "tslib": "^1.14.1"
   },
@@ -33,7 +35,7 @@
   "files": [
     "/bin",
     "/lib",
-    "/data",
+    "/templates",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -50,13 +52,15 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "/sonos-api-docs",
+  "repository": "https://github.com/svrooij/sonos-api-docs",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "intermediate": ".\\bin\\run combine --docsFile=../../docs/documentation.json --models=S1-1,S5-1,S9-1 --folder=data",
+    "docs": ".\\bin\\run generate docs ../../docs"
   },
   "types": "lib/index.d.ts"
 }

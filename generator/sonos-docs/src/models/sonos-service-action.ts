@@ -12,6 +12,7 @@ export interface SonosServiceAction {
 export interface SonosServiceActionArgument {
   name: string;
   direction: 'in' | 'out';
-  relatedStateVariableName?: string;
+  relatedStateVariableName: string;
   relatedStateVariable?: SonosStateVariable; 
+  description?: string;
 }
