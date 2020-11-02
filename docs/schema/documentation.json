@@ -3,10 +3,11 @@
   "$id": "https://svrooij.io/sonos-api-docs/schema/documentation.json",
   "definitions": {
     "SonosServiceDocumentation": {
-      "title": "Service description",
+      "title": "Service name",
+      "description": "The name of the service should match exactly to the name in the Service Discovery",
       "properties": {
         "actions": {
-          "title": "Describe actions by name",
+          "title": "Actions in this service",
           "additionalProperties": {
             "$ref": "#/definitions/SonosServiceDocumentationAction"
           },
@@ -16,10 +17,12 @@
           "type": "string"
         }
       },
-      "type": "object"
+      "type": "object",
+      "required": ["description"]
     },
     "SonosServiceDocumentationAction": {
-      "title": "Sonos service action description",
+      "title": "Action name",
+      "description": "The name of the action should match exactly with the Service Discovery",
       "properties": {
         "description": {
           "title": "Short description of action",
@@ -40,7 +43,8 @@
           "type": "string"
         }
       },
-      "type": "object"
+      "type": "object",
+      "required": ["description"]
     }
   },
   "properties": {
@@ -61,5 +65,6 @@
       "type": "object"
     }
   },
-  "type": "object"
+  "type": "object",
+  "required": ["license", "services", "language"]
 }
