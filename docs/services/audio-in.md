@@ -180,7 +180,7 @@ Inputs:
 
 ## Events
 
-The AudioInService has properties that might be emitted if you subscribe to events.
+The AudioInService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

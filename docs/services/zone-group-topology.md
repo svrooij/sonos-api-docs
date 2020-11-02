@@ -217,7 +217,7 @@ Outputs:
 
 ## Events
 
-The ZoneGroupTopologyService has properties that might be emitted if you subscribe to events.
+The ZoneGroupTopologyService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

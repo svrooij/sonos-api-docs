@@ -188,7 +188,7 @@ Outputs:
 
 ## Events
 
-The HTControlService has properties that might be emitted if you subscribe to events.
+The HTControlService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

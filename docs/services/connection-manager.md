@@ -113,7 +113,7 @@ Outputs:
 
 ## Events
 
-The ConnectionManagerService has properties that might be emitted if you subscribe to events.
+The ConnectionManagerService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

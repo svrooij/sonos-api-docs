@@ -417,7 +417,7 @@ Outputs:
 
 ## Events
 
-The SystemPropertiesService has properties that might be emitted if you subscribe to events.
+The SystemPropertiesService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

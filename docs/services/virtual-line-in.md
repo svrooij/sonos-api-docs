@@ -197,7 +197,7 @@ Inputs:
 
 ## Events
 
-The VirtualLineInService has properties that might be emitted if you subscribe to events.
+The VirtualLineInService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

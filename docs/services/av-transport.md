@@ -1153,7 +1153,7 @@ Inputs:
 
 ## Events
 
-The AVTransportService has properties that might be emitted if you subscribe to events.
+The AVTransportService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

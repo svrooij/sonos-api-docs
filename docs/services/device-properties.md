@@ -541,7 +541,7 @@ Outputs:
 
 ## Events
 
-The DevicePropertiesService has properties that might be emitted if you subscribe to events.
+The DevicePropertiesService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

@@ -423,7 +423,7 @@ Outputs:
 
 ## Events
 
-The AlarmClockService has properties that might be emitted if you subscribe to events.
+The AlarmClockService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

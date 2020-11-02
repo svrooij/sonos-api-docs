@@ -368,7 +368,7 @@ Outputs:
 
 ## Events
 
-The QueueService has properties that might be emitted if you subscribe to events.
+The QueueService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

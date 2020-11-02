@@ -129,7 +129,7 @@ Inputs:
 
 ## Events
 
-The GroupManagementService has properties that might be emitted if you subscribe to events.
+The GroupManagementService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 

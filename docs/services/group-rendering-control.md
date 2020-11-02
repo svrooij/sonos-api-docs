@@ -199,7 +199,7 @@ Inputs:
 
 ## Events
 
-The GroupRenderingControlService has properties that might be emitted if you subscribe to events.
+The GroupRenderingControlService has variables that might be emitted if you subscribe to events.
 
 ### Subscribe to events
 
