@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://svrooij.io/sonos-api-docs/schema/author.json",
+  "title": "Author of specific item",
+  "properties": {
+    "link": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://svrooij.io/sonos-api-docs/schema/documentation.json",
+  "definitions": {
+    "SonosServiceDocumentation": {
+      "title": "Service description",
+      "properties": {
+        "actions": {
+          "title": "Describe actions by name",
+          "additionalProperties": {
+            "$ref": "#/definitions/SonosServiceDocumentationAction"
+          },
+          "type": "object"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SonosServiceDocumentationAction": {
+      "title": "Sonos service action description",
+      "properties": {
+        "description": {
+          "title": "Short description of action",
+          "type": "string"
+        },
+        "params": {
+          "title": "Action parameters",
+          "additionalProperties": {
+            "title": "Parameter description",
+            "description": "Describe a single input/output argument, by it name as key",
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "remarks": {
+          "title": "Action remarks",
+          "description": "Remarks about this action",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "properties": {
+    "license": {
+      "title": "License of the current documentation, MIT is required to be included into the generator",
+      "type": "string",
+      "default": "MIT"
+    },
+    "language": {
+      "type": "string",
+      "title": "Language of the current documentation"
+    },
+    "services": {
+      "title": "Each service is added with it's name as key",
+      "additionalProperties": {
+        "$ref": "#/definitions/SonosServiceDocumentation"
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
