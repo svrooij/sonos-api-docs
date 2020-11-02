@@ -59,8 +59,10 @@
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
-    "intermediate": ".\\bin\\run combine --docsFile=../../docs/documentation.json --models=S1-1,S5-1,S9-1 --folder=data",
-    "docs": ".\\bin\\run generate docs ../../docs"
+    "intermediate": "./bin/run combine --docsFile=../../docs/documentation.json --models=S1-1,S5-1,S9-1 --folder=data",
+    "intermediate-win": ".\\bin\\run combine --docsFile=../../docs/documentation.json --models=S1-1,S5-1,S9-1 --folder=data",
+    "docs": "./bin/run generate docs ../../docs",
+    "docs-win": ".\\bin\\run generate docs ../../docs"
   },
   "types": "lib/index.d.ts"
 }
