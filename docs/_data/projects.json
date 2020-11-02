@@ -2,20 +2,37 @@
   "$schema": "https://svrooij.io/sonos-api-docs/schema/projects.json",
   "projects": [
     {
-      "name": "sonos2mqtt",
-      "link": "https://svrooij.io/sonos2mqtt/",
+      "name": "@svrooij/sonos",
+      "description": "Use this library to control your sonos devices from every typescript/node app",
+      "link": "http://svrooij.io/node-sonos-ts/",
+      "tags": ["library", "sonos", "typescript", "node"],
       "author": {
         "name": "svrooij",
         "link": "https://svrooij.io/"
       },
+      "usesGenerator": true
     },
     {
-      "name": "sonos cli",
-      "link": "https://github.com/svrooij/sonos-cli",
+      "name": "sonos2mqtt",
+      "description": "Control sonos speakers from your mqtt server",
+      "link": "https://svrooij.io/sonos2mqtt/",
+      "tags": ["app", "mqtt", "home-automation"],
       "author": {
         "name": "svrooij",
         "link": "https://svrooij.io/"
-      }
+      },
+      "usesGenerator": true
+    },
+    {
+      "name": "sonos cli",
+      "description": "Control your sonos speakers from the console.",
+      "link": "https://github.com/svrooij/sonos-cli",
+      "tags": ["app", "cli"],
+      "author": {
+        "name": "svrooij",
+        "link": "https://svrooij.io/"
+      },
+      "usesGenerator": true
     }
   ]
 }
