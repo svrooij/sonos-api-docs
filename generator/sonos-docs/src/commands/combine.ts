@@ -174,7 +174,7 @@ export default class Combine extends Command {
               const actionArguments = action?.params ?? {};
               if(actionArguments){
                 a.inputs?.forEach(i => {
-                  i.description = actionArguments[i.name]
+                  i.description = actionArguments[i.name] ?? (i.name === 'InstanceID' ? 'InstanceID should always be 0' : undefined)
                 });
                 a.outputs?.forEach(o => {
                   o.description = actionArguments[o.name]

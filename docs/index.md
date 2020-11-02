@@ -30,6 +30,23 @@ We cannot get all the information by using service discovery, there is one file 
 
 This file has a [documentation json schema](https://svrooij.io/sonos-api-docs/schema/documentation.json) which means VS Code will guide you when editing this file.
 
+### Update documentation
+
+If you change the [documentation](#manual-documentation-file) file or if you did service discovery for a new device. You can update the documentation files with the following commands:
+
+```shell
+# Go to generation folder
+cd generator/sonos-docs
+
+# Generate intermediate file
+npm run intermediate
+# or ./bin/run combine --docsFile=../../docs/documentation.json --models=S1-1,S5-1,S9-1 --folder=data
+
+# Generate documentation
+npm run docs
+# or ./bin/run generate docs ../../docs
+```
+
 ## Generator
 
 You can find the generator [here](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) and use it to generate your own sonos client in your preferred language.

@@ -125,7 +125,7 @@
           "description": "Seek track in queue, time delta or absolute time in song, not always supported - see GetCurrentTransportActions",
           "remarks":"Returns error code 701 in case that content does not support Seek or send to non-coordinator",
           "params": {
-            "Unit": "What to seek - either TRACK_NR, REL_TIME, TIME_DELTA,",
+            "Unit": "What to seek",
             "Target": "Position of track in queue (start at 1) or hh:mm:ss for REL_TIME or +/-hh:mm:ss for TIME_DELTA"
           }
         },
@@ -148,7 +148,7 @@
           "description": "Set the PlayMode",
           "remarks":"Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.",
           "params": {
-            "NewPlayMode": "PlayMode such as NORMAL, REPEAT_ONE, REPEAT_ALL, SHUFFLE, SHUFFLE_NOREPEAT, SHUFFLE_REPEAT_ONE"
+            "NewPlayMode": "New playmode"
           }
         },
         "SnoozeAlarm": {

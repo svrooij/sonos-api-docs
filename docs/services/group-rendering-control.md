@@ -64,7 +64,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
 
 Outputs:
 
@@ -92,7 +92,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **DesiredMute** | `boolean` | True for mute, false for un-mute |
 
 **Remarks** Send to non-coordinator returns error code 701
@@ -114,7 +114,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
 
 Outputs:
 
@@ -142,7 +142,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **DesiredVolume** | `ui2` | New volume between 0 and 100 |
 
 **Remarks** Send to non-coordinator returns error code 701
@@ -165,7 +165,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **Adjustment** | `i4` | Number between -100 and +100 |
 
 Outputs:
@@ -193,7 +193,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
 
 **Remarks** Send to non-coordinator returns error code 701
 
