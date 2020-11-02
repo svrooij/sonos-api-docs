@@ -8,14 +8,28 @@ nav_order: 10
 
 This page describes a few known projects that use the local sonos api.
 
-{% for project in site.data.projects.projects %}
-## [{{project.name}}]({{project.link}}) 
+## Libraries
+
+{% for project in site.data.projects.libraries %}
+### [{{project.name}}]({{project.link}}) 
 
 {{project.description}}
 
 Tags: {% for tag in project.tags %}`{{tag}}`{% if forloop.last == false %} / {% endif %}{% endfor %}
 
-Created by [{{project.author.name}}]({{project.author.link}}).{% if project.usesGenerator == true %} ✔ This project uses the generator to create a strong-typed client.{% endif %}
+Created by [{{project.author.name}}]({{project.author.link}}).{% if project.usesGenerator == true %} ✔ This library uses the generator to create a strong-typed client.{% endif %}
+{% endfor %}
+
+## Apps
+
+{% for project in site.data.projects.apps %}
+### [{{project.name}}]({{project.link}}) 
+
+{{project.description}}
+
+Tags: {% for tag in project.tags %}`{{tag}}`{% if forloop.last == false %} / {% endif %}{% endfor %}
+
+Created by [{{project.author.name}}]({{project.author.link}}).{% if project.usesGenerator == true %} ✔ This app uses the generator to create a strong-typed client.{% endif %}
 {% endfor %}
 
 ### Auto generated

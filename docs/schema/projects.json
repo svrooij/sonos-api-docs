@@ -8,12 +8,16 @@
           "$ref": "author.json"
         },
         "name": {
+          "title": "Project name",
           "type": "string"
         },
         "description": {
+          "title": "Project description",
           "type": "string"
         },
         "link": {
+          "title": "Link to project page",
+          "description": "Either the project page or the repository",
           "type": "string"
         },
         "tags": {
@@ -34,7 +38,14 @@
   },
   "title": "List of known projects using the local sonos api",
   "properties": {
-    "projects": {
+    "apps": {
+      "items": {
+        "$ref": "#/definitions/Project"
+      },
+      "type": "array",
+      "minItems": 1
+    },
+    "libraries": {
       "items": {
         "$ref": "#/definitions/Project"
       },
@@ -42,8 +53,5 @@
       "minItems": 1
     }
   },
-  "type": "object",
-  "required": [
-    "projects"
-  ]
+  "type": "object"
 }

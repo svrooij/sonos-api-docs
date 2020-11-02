@@ -1,24 +1,13 @@
 {
   "$schema": "https://svrooij.io/sonos-api-docs/schema/projects.json",
-  "projects": [
-    {
-      "name": "@svrooij/sonos",
-      "description": "Use this library to control your sonos devices from every typescript/node app",
-      "link": "http://svrooij.io/node-sonos-ts/",
-      "tags": ["library", "sonos", "typescript", "node"],
-      "author": {
-        "name": "svrooij",
-        "link": "https://svrooij.io/"
-      },
-      "usesGenerator": true
-    },
+  "apps": [
     {
       "name": "sonos2mqtt",
       "description": "Control sonos speakers from your mqtt server",
       "link": "https://svrooij.io/sonos2mqtt/",
-      "tags": ["app", "mqtt", "home-automation"],
+      "tags": ["mqtt", "home-automation"],
       "author": {
-        "name": "svrooij",
+        "name": "Stephan van Rooij",
         "link": "https://svrooij.io/"
       },
       "usesGenerator": true
@@ -27,12 +16,46 @@
       "name": "sonos cli",
       "description": "Control your sonos speakers from the console.",
       "link": "https://github.com/svrooij/sonos-cli",
-      "tags": ["app", "cli"],
+      "tags": ["cli"],
       "author": {
-        "name": "svrooij",
+        "name": "Stephan van Rooij",
         "link": "https://svrooij.io/"
       },
       "usesGenerator": true
+    }
+  ],
+  "libraries": [
+    {
+      "name": "@svrooij/sonos",
+      "description": "A Typescript/Node library to control your sonos speakers from every Typescript/node app.",
+      "link": "http://svrooij.io/node-sonos-ts/",
+      "tags": ["typescript", "node"],
+      "author": {
+        "name": "Stephan van Rooij",
+        "link": "https://svrooij.io/"
+      },
+      "usesGenerator": true
+    },
+    {
+      "name": "sonos",
+      "description": "Node library to control your sonos speakers.",
+      "link": "https://github.com/bencevans/node-sonos",
+      "tags": ["node"],
+      "author": {
+        "name": "Ben Evans",
+        "link": "https://github.com/bencevans/"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "SoCo",
+      "description": "Python library to control your sonos speakers",
+      "link": "https://github.com/SoCo/SoCo",
+      "author": {
+        "name": "unknown",
+        "link": "https://github.com/SoCo/SoCo"
+      },
+      "usesGenerator": false
     }
   ]
 }
