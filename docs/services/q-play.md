@@ -55,7 +55,6 @@ Action body:
 </u:QPlayAuth>
 ```
 
-
 Inputs:
 
 | parameter | type | description |

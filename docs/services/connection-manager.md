@@ -54,7 +54,6 @@ Action body:
 </u:GetProtocolInfo>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -73,7 +72,6 @@ Action body:
 </u:GetCurrentConnectionIDs>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -91,7 +89,6 @@ Action body:
   <ConnectionID>i4</ConnectionID>
 </u:GetCurrentConnectionInfo>
 ```
-
 
 Inputs:
 
@@ -129,9 +126,9 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| CurrentConnectionIDs | ✔ | `string` |  | 
-| SinkProtocolInfo | ✔ | `string` |  | 
-| SourceProtocolInfo | ✔ | `string` |  | 
+| CurrentConnectionIDs | ✔ | `string` |  |
+| SinkProtocolInfo | ✔ | `string` |  |
+| SourceProtocolInfo | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

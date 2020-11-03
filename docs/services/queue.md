@@ -62,7 +62,6 @@ Action body:
 </u:AddURI>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -100,7 +99,6 @@ Action body:
 </u:AddMultipleURIs>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -133,7 +131,6 @@ Action body:
 </u:AttachQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -156,7 +153,6 @@ Action body:
 </u:Backup>
 ```
 
-
 No input arguments
 
 ### Browse
@@ -170,7 +166,6 @@ Action body:
   <RequestedCount>ui4</RequestedCount>
 </u:Browse>
 ```
-
 
 Inputs:
 
@@ -201,7 +196,6 @@ Action body:
 </u:CreateQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -226,7 +220,6 @@ Action body:
   <UpdateID>ui4</UpdateID>
 </u:RemoveAllTracks>
 ```
-
 
 Inputs:
 
@@ -253,7 +246,6 @@ Action body:
   <NumberOfTracks>ui4</NumberOfTracks>
 </u:RemoveTrackRange>
 ```
-
 
 Inputs:
 
@@ -283,7 +275,6 @@ Action body:
   <UpdateID>ui4</UpdateID>
 </u:ReorderTracks>
 ```
-
 
 Inputs:
 
@@ -318,7 +309,6 @@ Action body:
 </u:ReplaceAllTracks>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -350,7 +340,6 @@ Action body:
   <ObjectID>string</ObjectID>
 </u:SaveAsSonosPlaylist>
 ```
-
 
 Inputs:
 
@@ -384,9 +373,9 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| Curated | ❌ | `boolean` |  | 
-| LastChange | ✔ | `string` |  | 
-| UpdateID | ❌ | `ui4` |  | 
+| Curated | ❌ | `boolean` |  |
+| LastChange | ✔ | `string` |  |
+| UpdateID | ❌ | `ui4` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

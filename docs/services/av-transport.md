@@ -61,7 +61,6 @@ Action body:
 </u:SetAVTransportURI>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -84,7 +83,6 @@ Action body:
 </u:SetNextAVTransportURI>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -106,7 +104,6 @@ Action body:
   <EnqueueAsNext>boolean</EnqueueAsNext>
 </u:AddURIToQueue>
 ```
-
 
 Inputs:
 
@@ -143,7 +140,6 @@ Action body:
   <EnqueueAsNext>boolean</EnqueueAsNext>
 </u:AddMultipleURIsToQueue>
 ```
-
 
 Inputs:
 
@@ -182,7 +178,6 @@ Action body:
 </u:ReorderTracksInQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -205,7 +200,6 @@ Action body:
 </u:RemoveTrackFromQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -226,7 +220,6 @@ Action body:
   <NumberOfTracks>ui4</NumberOfTracks>
 </u:RemoveTrackRangeFromQueue>
 ```
-
 
 Inputs:
 
@@ -255,7 +248,6 @@ Action body:
 </u:RemoveAllTracksFromQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -277,7 +269,6 @@ Action body:
   <ObjectID>string</ObjectID>
 </u:SaveQueue>
 ```
-
 
 Inputs:
 
@@ -305,7 +296,6 @@ Action body:
 </u:BackupQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -324,7 +314,6 @@ Action body:
   <EnqueuedURIMetaData>string</EnqueuedURIMetaData>
 </u:CreateSavedQueue>
 ```
-
 
 Inputs:
 
@@ -359,7 +348,6 @@ Action body:
 </u:AddURIToSavedQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -393,7 +381,6 @@ Action body:
 </u:ReorderTracksInSavedQueue>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -423,7 +410,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetMediaInfo>
 ```
-
 
 Inputs:
 
@@ -457,7 +443,6 @@ Action body:
 </u:GetTransportInfo>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -485,7 +470,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetPositionInfo>
 ```
-
 
 Inputs:
 
@@ -516,7 +500,6 @@ Action body:
 </u:GetDeviceCapabilities>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -542,7 +525,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetTransportSettings>
 ```
-
 
 Inputs:
 
@@ -571,7 +553,6 @@ Action body:
 </u:GetCrossfadeMode>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -598,7 +579,6 @@ Action body:
 </u:Stop>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -617,7 +597,6 @@ Action body:
   <Speed>string</Speed>
 </u:Play>
 ```
-
 
 Inputs:
 
@@ -638,7 +617,6 @@ Action body:
 </u:Pause>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -658,7 +636,6 @@ Action body:
   <Target>string</Target>
 </u:Seek>
 ```
-
 
 Inputs:
 
@@ -682,7 +659,6 @@ Action body:
 </u:Next>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -700,7 +676,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:Previous>
 ```
-
 
 Inputs:
 
@@ -720,7 +695,6 @@ Action body:
   <NewPlayMode>string</NewPlayMode>
 </u:SetPlayMode>
 ```
-
 
 Inputs:
 
@@ -744,7 +718,6 @@ Action body:
 </u:SetCrossfadeMode>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -765,7 +738,6 @@ Action body:
 </u:NotifyDeletedURI>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -784,7 +756,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetCurrentTransportActions>
 ```
-
 
 Inputs:
 
@@ -812,7 +783,6 @@ Action body:
 </u:BecomeCoordinatorOfStandaloneGroup>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -839,7 +809,6 @@ Action body:
   <RejoinGroup>boolean</RejoinGroup>
 </u:DelegateGroupCoordinationTo>
 ```
-
 
 Inputs:
 
@@ -871,7 +840,6 @@ Action body:
   <CurrentVLIState>string</CurrentVLIState>
 </u:BecomeGroupCoordinator>
 ```
-
 
 Inputs:
 
@@ -912,7 +880,6 @@ Action body:
 </u:BecomeGroupCoordinatorAndSource>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -945,7 +912,6 @@ Action body:
 </u:ChangeCoordinator>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -968,7 +934,6 @@ Action body:
 </u:ChangeTransportSettings>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -990,7 +955,6 @@ Action body:
 </u:ConfigureSleepTimer>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -1011,7 +975,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetRemainingSleepTimerDuration>
 ```
-
 
 Inputs:
 
@@ -1046,7 +1009,6 @@ Action body:
 </u:RunAlarm>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -1076,7 +1038,6 @@ Action body:
 </u:StartAutoplay>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -1097,7 +1058,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetRunningAlarmProperties>
 ```
-
 
 Inputs:
 
@@ -1126,7 +1086,6 @@ Action body:
 </u:SnoozeAlarm>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -1143,7 +1102,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:EndDirectControlSession>
 ```
-
 
 Inputs:
 
@@ -1169,55 +1127,55 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AbsoluteCounterPosition | ❌ | `i4` |  | 
-| AbsoluteTimePosition | ❌ | `string` |  | 
-| AlarmIDRunning | ❌ | `ui4` |  | 
-| AlarmLoggedStartTime | ❌ | `string` |  | 
-| AlarmRunning | ❌ | `boolean` |  | 
-| AVTransportURI | ❌ | `string` |  | 
-| AVTransportURIMetaData | ❌ | `string` |  | 
-| CurrentCrossfadeMode | ❌ | `boolean` |  | 
-| CurrentMediaDuration | ❌ | `string` |  | 
-| CurrentPlayMode | ❌ | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` | 
-| CurrentRecordQualityMode | ❌ | `string` |  | 
-| CurrentSection | ❌ | `ui4` |  | 
-| CurrentTrack | ❌ | `ui4` |  | 
-| CurrentTrackDuration | ❌ | `string` |  | 
-| CurrentTrackMetaData | ❌ | `string` |  | 
-| CurrentTrackURI | ❌ | `string` |  | 
-| CurrentTransportActions | ❌ | `string` |  | 
-| CurrentValidPlayModes | ❌ | `string` |  | 
-| DirectControlAccountID | ❌ | `string` |  | 
-| DirectControlClientID | ❌ | `string` |  | 
-| DirectControlIsSuspended | ❌ | `boolean` |  | 
-| EnqueuedTransportURI | ❌ | `string` |  | 
-| EnqueuedTransportURIMetaData | ❌ | `string` |  | 
-| LastChange | ✔ | `string` |  | 
-| MuseSessions | ❌ | `string` |  | 
-| NextAVTransportURI | ❌ | `string` |  | 
-| NextAVTransportURIMetaData | ❌ | `string` |  | 
-| NextTrackMetaData | ❌ | `string` |  | 
-| NextTrackURI | ❌ | `string` |  | 
-| NumberOfTracks | ❌ | `ui4` |  | 
-| PlaybackStorageMedium | ❌ | `string` | `NONE` / `NETWORK` | 
-| PossiblePlaybackStorageMedia | ❌ | `string` |  | 
-| PossibleRecordQualityModes | ❌ | `string` |  | 
-| PossibleRecordStorageMedia | ❌ | `string` |  | 
-| QueueUpdateID | ❌ | `ui4` |  | 
-| RecordMediumWriteStatus | ❌ | `string` |  | 
-| RecordStorageMedium | ❌ | `string` |  | 
-| RelativeCounterPosition | ❌ | `i4` |  | 
-| RelativeTimePosition | ❌ | `string` |  | 
-| RestartPending | ❌ | `boolean` |  | 
-| SleepTimerGeneration | ❌ | `ui4` |  | 
-| SnoozeRunning | ❌ | `boolean` |  | 
-| TransportErrorDescription | ❌ | `string` |  | 
-| TransportErrorHttpCode | ❌ | `string` |  | 
-| TransportErrorHttpHeaders | ❌ | `string` |  | 
-| TransportErrorURI | ❌ | `string` |  | 
-| TransportPlaySpeed | ❌ | `string` |  | 
-| TransportState | ❌ | `string` | `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` | 
-| TransportStatus | ❌ | `string` |  | 
+| AbsoluteCounterPosition | ❌ | `i4` |  |
+| AbsoluteTimePosition | ❌ | `string` |  |
+| AlarmIDRunning | ❌ | `ui4` |  |
+| AlarmLoggedStartTime | ❌ | `string` |  |
+| AlarmRunning | ❌ | `boolean` |  |
+| AVTransportURI | ❌ | `string` |  |
+| AVTransportURIMetaData | ❌ | `string` |  |
+| CurrentCrossfadeMode | ❌ | `boolean` |  |
+| CurrentMediaDuration | ❌ | `string` |  |
+| CurrentPlayMode | ❌ | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
+| CurrentRecordQualityMode | ❌ | `string` |  |
+| CurrentSection | ❌ | `ui4` |  |
+| CurrentTrack | ❌ | `ui4` |  |
+| CurrentTrackDuration | ❌ | `string` |  |
+| CurrentTrackMetaData | ❌ | `string` |  |
+| CurrentTrackURI | ❌ | `string` |  |
+| CurrentTransportActions | ❌ | `string` |  |
+| CurrentValidPlayModes | ❌ | `string` |  |
+| DirectControlAccountID | ❌ | `string` |  |
+| DirectControlClientID | ❌ | `string` |  |
+| DirectControlIsSuspended | ❌ | `boolean` |  |
+| EnqueuedTransportURI | ❌ | `string` |  |
+| EnqueuedTransportURIMetaData | ❌ | `string` |  |
+| LastChange | ✔ | `string` |  |
+| MuseSessions | ❌ | `string` |  |
+| NextAVTransportURI | ❌ | `string` |  |
+| NextAVTransportURIMetaData | ❌ | `string` |  |
+| NextTrackMetaData | ❌ | `string` |  |
+| NextTrackURI | ❌ | `string` |  |
+| NumberOfTracks | ❌ | `ui4` |  |
+| PlaybackStorageMedium | ❌ | `string` | `NONE` / `NETWORK` |
+| PossiblePlaybackStorageMedia | ❌ | `string` |  |
+| PossibleRecordQualityModes | ❌ | `string` |  |
+| PossibleRecordStorageMedia | ❌ | `string` |  |
+| QueueUpdateID | ❌ | `ui4` |  |
+| RecordMediumWriteStatus | ❌ | `string` |  |
+| RecordStorageMedium | ❌ | `string` |  |
+| RelativeCounterPosition | ❌ | `i4` |  |
+| RelativeTimePosition | ❌ | `string` |  |
+| RestartPending | ❌ | `boolean` |  |
+| SleepTimerGeneration | ❌ | `ui4` |  |
+| SnoozeRunning | ❌ | `boolean` |  |
+| TransportErrorDescription | ❌ | `string` |  |
+| TransportErrorHttpCode | ❌ | `string` |  |
+| TransportErrorHttpHeaders | ❌ | `string` |  |
+| TransportErrorURI | ❌ | `string` |  |
+| TransportPlaySpeed | ❌ | `string` |  |
+| TransportState | ❌ | `string` | `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` |
+| TransportStatus | ❌ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

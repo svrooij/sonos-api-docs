@@ -58,7 +58,6 @@ Action body:
 </u:GetMute>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -84,7 +83,6 @@ Action body:
 </u:SetMute>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -102,7 +100,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:ResetBasicEQ>
 ```
-
 
 Inputs:
 
@@ -131,7 +128,6 @@ Action body:
 </u:ResetExtEQ>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -151,7 +147,6 @@ Action body:
   <Channel>string</Channel>
 </u:GetVolume>
 ```
-
 
 Inputs:
 
@@ -178,7 +173,6 @@ Action body:
 </u:SetVolume>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -198,7 +192,6 @@ Action body:
   <Adjustment>i4</Adjustment>
 </u:SetRelativeVolume>
 ```
-
 
 Inputs:
 
@@ -225,7 +218,6 @@ Action body:
 </u:GetVolumeDB>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -251,7 +243,6 @@ Action body:
 </u:SetVolumeDB>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -270,7 +261,6 @@ Action body:
   <Channel>string</Channel>
 </u:GetVolumeDBRange>
 ```
-
 
 Inputs:
 
@@ -298,7 +288,6 @@ Action body:
 </u:GetBass>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -324,7 +313,6 @@ Action body:
 </u:SetBass>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -343,7 +331,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetTreble>
 ```
-
 
 Inputs:
 
@@ -370,7 +357,6 @@ Action body:
 </u:SetTreble>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -390,7 +376,6 @@ Action body:
   <EQType>string</EQType>
 </u:GetEQ>
 ```
-
 
 Inputs:
 
@@ -419,7 +404,6 @@ Action body:
 </u:SetEQ>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -440,7 +424,6 @@ Action body:
   <Channel>string</Channel>
 </u:GetLoudness>
 ```
-
 
 Inputs:
 
@@ -469,7 +452,6 @@ Action body:
 </u:SetLoudness>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -487,7 +469,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetSupportsOutputFixed>
 ```
-
 
 Inputs:
 
@@ -510,7 +491,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetOutputFixed>
 ```
-
 
 Inputs:
 
@@ -535,7 +515,6 @@ Action body:
 </u:SetOutputFixed>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -552,7 +531,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetHeadphoneConnected>
 ```
-
 
 Inputs:
 
@@ -580,7 +558,6 @@ Action body:
   <ProgramURI>string</ProgramURI>
 </u:RampToVolume>
 ```
-
 
 Inputs:
 
@@ -610,7 +587,6 @@ Action body:
 </u:RestoreVolumePriorToRamp>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -628,7 +604,6 @@ Action body:
   <ChannelMap>string</ChannelMap>
 </u:SetChannelMap>
 ```
-
 
 Inputs:
 
@@ -650,7 +625,6 @@ Action body:
 </u:SetRoomCalibrationX>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -669,7 +643,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetRoomCalibrationStatus>
 ```
-
 
 Inputs:
 
@@ -694,7 +667,6 @@ Action body:
   <RoomCalibrationEnabled>boolean</RoomCalibrationEnabled>
 </u:SetRoomCalibrationStatus>
 ```
-
 
 Inputs:
 
@@ -721,37 +693,37 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AudioDelay | ❌ | `string` |  | 
-| AudioDelayLeftRear | ❌ | `string` |  | 
-| AudioDelayRightRear | ❌ | `string` |  | 
-| Bass | ❌ | `i2` |  | 
-| DialogLevel | ❌ | `string` |  | 
-| EQValue | ❌ | `i2` |  | 
-| HeadphoneConnected | ❌ | `boolean` |  | 
-| LastChange | ✔ | `string` |  | 
-| Loudness | ❌ | `boolean` |  | 
-| MusicSurroundLevel | ❌ | `string` |  | 
-| Mute | ❌ | `boolean` |  | 
-| NightMode | ❌ | `boolean` |  | 
-| OutputFixed | ❌ | `boolean` |  | 
-| PresetNameList | ❌ | `string` |  | 
-| RoomCalibrationAvailable | ❌ | `boolean` |  | 
-| RoomCalibrationCalibrationMode | ❌ | `string` |  | 
-| RoomCalibrationCoefficients | ❌ | `string` |  | 
-| RoomCalibrationEnabled | ❌ | `boolean` |  | 
-| RoomCalibrationID | ❌ | `string` |  | 
-| SpeakerSize | ❌ | `ui4` |  | 
-| SubCrossover | ❌ | `string` |  | 
-| SubEnabled | ❌ | `boolean` |  | 
-| SubGain | ❌ | `string` |  | 
-| SubPolarity | ❌ | `string` |  | 
-| SupportsOutputFixed | ❌ | `boolean` |  | 
-| SurroundEnabled | ❌ | `boolean` |  | 
-| SurroundLevel | ❌ | `string` |  | 
-| SurroundMode | ❌ | `string` |  | 
-| Treble | ❌ | `i2` |  | 
-| Volume | ❌ | `ui2` |  | 
-| VolumeDB | ❌ | `i2` |  | 
+| AudioDelay | ❌ | `string` |  |
+| AudioDelayLeftRear | ❌ | `string` |  |
+| AudioDelayRightRear | ❌ | `string` |  |
+| Bass | ❌ | `i2` |  |
+| DialogLevel | ❌ | `string` |  |
+| EQValue | ❌ | `i2` |  |
+| HeadphoneConnected | ❌ | `boolean` |  |
+| LastChange | ✔ | `string` |  |
+| Loudness | ❌ | `boolean` |  |
+| MusicSurroundLevel | ❌ | `string` |  |
+| Mute | ❌ | `boolean` |  |
+| NightMode | ❌ | `boolean` |  |
+| OutputFixed | ❌ | `boolean` |  |
+| PresetNameList | ❌ | `string` |  |
+| RoomCalibrationAvailable | ❌ | `boolean` |  |
+| RoomCalibrationCalibrationMode | ❌ | `string` |  |
+| RoomCalibrationCoefficients | ❌ | `string` |  |
+| RoomCalibrationEnabled | ❌ | `boolean` |  |
+| RoomCalibrationID | ❌ | `string` |  |
+| SpeakerSize | ❌ | `ui4` |  |
+| SubCrossover | ❌ | `string` |  |
+| SubEnabled | ❌ | `boolean` |  |
+| SubGain | ❌ | `string` |  |
+| SubPolarity | ❌ | `string` |  |
+| SupportsOutputFixed | ❌ | `boolean` |  |
+| SurroundEnabled | ❌ | `boolean` |  |
+| SurroundLevel | ❌ | `string` |  |
+| SurroundMode | ❌ | `string` |  |
+| Treble | ❌ | `i2` |  |
+| Volume | ❌ | `ui2` |  |
+| VolumeDB | ❌ | `i2` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

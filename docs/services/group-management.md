@@ -56,7 +56,6 @@ Action body:
 </u:AddMember>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -84,7 +83,6 @@ Action body:
 </u:RemoveMember>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -102,7 +100,6 @@ Action body:
 </u:ReportTrackBufferingResult>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -119,7 +116,6 @@ Action body:
   <DesiredSourceAreaIds>string</DesiredSourceAreaIds>
 </u:SetSourceAreaIds>
 ```
-
 
 Inputs:
 
@@ -145,12 +141,12 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| GroupCoordinatorIsLocal | ✔ | `boolean` |  | 
-| LocalGroupUUID | ✔ | `string` |  | 
-| ResetVolumeAfter | ✔ | `boolean` |  | 
-| SourceAreaIds | ❌ | `string` |  | 
-| VirtualLineInGroupID | ✔ | `string` |  | 
-| VolumeAVTransportURI | ✔ | `string` |  | 
+| GroupCoordinatorIsLocal | ✔ | `boolean` |  |
+| LocalGroupUUID | ✔ | `string` |  |
+| ResetVolumeAfter | ✔ | `boolean` |  |
+| SourceAreaIds | ❌ | `string` |  |
+| VirtualLineInGroupID | ✔ | `string` |  |
+| VolumeAVTransportURI | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

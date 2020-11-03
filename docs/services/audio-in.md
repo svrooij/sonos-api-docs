@@ -55,7 +55,6 @@ Action body:
 </u:StartTransmissionToGroup>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -78,7 +77,6 @@ Action body:
 </u:StopTransmissionToGroup>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -96,7 +94,6 @@ Action body:
 </u:SetAudioInputAttributes>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -112,7 +109,6 @@ Action body:
 <u:GetAudioInputAttributes xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
 </u:GetAudioInputAttributes>
 ```
-
 
 No input arguments
 
@@ -134,7 +130,6 @@ Action body:
 </u:SetLineInLevel>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -150,7 +145,6 @@ Action body:
 <u:GetLineInLevel xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
 </u:GetLineInLevel>
 ```
-
 
 No input arguments
 
@@ -170,7 +164,6 @@ Action body:
   <ObjectID>string</ObjectID>
 </u:SelectAudio>
 ```
-
 
 Inputs:
 
@@ -196,12 +189,12 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AudioInputName | ✔ | `string` |  | 
-| Icon | ✔ | `string` |  | 
-| LeftLineInLevel | ✔ | `i4` |  | 
-| LineInConnected | ✔ | `boolean` |  | 
-| Playing | ✔ | `boolean` |  | 
-| RightLineInLevel | ✔ | `i4` |  | 
+| AudioInputName | ✔ | `string` |  |
+| Icon | ✔ | `string` |  |
+| LeftLineInLevel | ✔ | `i4` |  |
+| LineInConnected | ✔ | `boolean` |  |
+| Playing | ✔ | `boolean` |  |
+| RightLineInLevel | ✔ | `i4` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

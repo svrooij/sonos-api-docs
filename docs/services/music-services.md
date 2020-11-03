@@ -58,7 +58,6 @@ Action body:
 </u:GetSessionId>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -83,7 +82,6 @@ Action body:
 </u:ListAvailableServices>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -102,7 +100,6 @@ Action body:
 <u:UpdateAvailableServices xmlns:u="urn:schemas-upnp-org:service:MusicServices:1">
 </u:UpdateAvailableServices>
 ```
-
 
 No input arguments
 
@@ -124,10 +121,10 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| ServiceId | ❌ | `ui4` |  | 
-| ServiceListVersion | ✔ | `string` |  | 
-| SessionId | ❌ | `string` |  | 
-| Username | ❌ | `string` |  | 
+| ServiceId | ❌ | `ui4` |  |
+| ServiceListVersion | ✔ | `string` |  |
+| SessionId | ❌ | `string` |  |
+| Username | ❌ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 
