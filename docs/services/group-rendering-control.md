@@ -59,7 +59,6 @@ Action body:
 </u:GetGroupMute>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -87,7 +86,6 @@ Action body:
 </u:SetGroupMute>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -108,7 +106,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:GetGroupVolume>
 ```
-
 
 Inputs:
 
@@ -137,7 +134,6 @@ Action body:
 </u:SetGroupVolume>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -159,7 +155,6 @@ Action body:
   <Adjustment>i4</Adjustment>
 </u:SetRelativeGroupVolume>
 ```
-
 
 Inputs:
 
@@ -188,7 +183,6 @@ Action body:
 </u:SnapshotGroupVolume>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -215,9 +209,9 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| GroupMute | ✔ | `boolean` |  | 
-| GroupVolume | ✔ | `ui2` |  | 
-| GroupVolumeChangeable | ✔ | `boolean` |  | 
+| GroupMute | ✔ | `boolean` |  |
+| GroupVolume | ✔ | `ui2` |  |
+| GroupVolumeChangeable | ✔ | `boolean` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

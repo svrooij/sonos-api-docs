@@ -59,7 +59,6 @@ Action body:
 </u:CheckForUpdate>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -86,7 +85,6 @@ Action body:
 </u:BeginSoftwareUpdate>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -106,7 +104,6 @@ Action body:
 </u:ReportUnresponsiveDevice>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -123,7 +120,6 @@ Action body:
 </u:ReportAlarmStartedRunning>
 ```
 
-
 No input arguments
 
 ### SubmitDiagnostics
@@ -136,7 +132,6 @@ Action body:
   <Type>string</Type>
 </u:SubmitDiagnostics>
 ```
-
 
 Inputs:
 
@@ -163,7 +158,6 @@ Action body:
 </u:RegisterMobileDevice>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -182,7 +176,6 @@ Action body:
 <u:GetZoneGroupAttributes xmlns:u="urn:schemas-upnp-org:service:ZoneGroupTopology:1">
 </u:GetZoneGroupAttributes>
 ```
-
 
 No input arguments
 
@@ -205,7 +198,6 @@ Action body:
 <u:GetZoneGroupState xmlns:u="urn:schemas-upnp-org:service:ZoneGroupTopology:1">
 </u:GetZoneGroupState>
 ```
-
 
 No input arguments
 
@@ -233,18 +225,18 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AlarmRunSequence | ✔ | `string` |  | 
-| AreasUpdateID | ✔ | `string` |  | 
-| AvailableSoftwareUpdate | ✔ | `string` |  | 
-| DiagnosticID | ❌ | `ui4` |  | 
-| MuseHouseholdId | ✔ | `string` |  | 
-| NetsettingsUpdateID | ✔ | `string` |  | 
-| SourceAreasUpdateID | ✔ | `string` |  | 
-| ThirdPartyMediaServersX | ✔ | `string` |  | 
-| ZoneGroupID | ✔ | `string` |  | 
-| ZoneGroupName | ✔ | `string` |  | 
-| ZoneGroupState | ✔ | `string` |  | 
-| ZonePlayerUUIDsInGroup | ✔ | `string` |  | 
+| AlarmRunSequence | ✔ | `string` |  |
+| AreasUpdateID | ✔ | `string` |  |
+| AvailableSoftwareUpdate | ✔ | `string` |  |
+| DiagnosticID | ❌ | `ui4` |  |
+| MuseHouseholdId | ✔ | `string` |  |
+| NetsettingsUpdateID | ✔ | `string` |  |
+| SourceAreasUpdateID | ✔ | `string` |  |
+| ThirdPartyMediaServersX | ✔ | `string` |  |
+| ZoneGroupID | ✔ | `string` |  |
+| ZoneGroupName | ✔ | `string` |  |
+| ZoneGroupState | ✔ | `string` |  |
+| ZonePlayerUUIDsInGroup | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

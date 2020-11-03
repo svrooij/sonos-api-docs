@@ -57,7 +57,6 @@ Action body:
 </u:SetLEDState>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -72,7 +71,6 @@ Action body:
 <u:GetLEDState xmlns:u="urn:schemas-upnp-org:service:DeviceProperties:1">
 </u:GetLEDState>
 ```
-
 
 No input arguments
 
@@ -92,7 +90,6 @@ Action body:
 </u:AddBondedZones>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -109,7 +106,6 @@ Action body:
   <KeepGrouped>boolean</KeepGrouped>
 </u:RemoveBondedZones>
 ```
-
 
 Inputs:
 
@@ -130,7 +126,6 @@ Action body:
 </u:CreateStereoPair>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -148,7 +143,6 @@ Action body:
   <ChannelMapSet>string</ChannelMapSet>
 </u:SeparateStereoPair>
 ```
-
 
 Inputs:
 
@@ -168,7 +162,6 @@ Action body:
 </u:SetZoneAttributes>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -185,7 +178,6 @@ Action body:
 <u:GetZoneAttributes xmlns:u="urn:schemas-upnp-org:service:DeviceProperties:1">
 </u:GetZoneAttributes>
 ```
-
 
 No input arguments
 
@@ -206,7 +198,6 @@ Action body:
 </u:GetHouseholdID>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -223,7 +214,6 @@ Action body:
 <u:GetZoneInfo xmlns:u="urn:schemas-upnp-org:service:DeviceProperties:1">
 </u:GetZoneInfo>
 ```
-
 
 No input arguments
 
@@ -253,7 +243,6 @@ Action body:
 </u:SetAutoplayLinkedZones>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -270,7 +259,6 @@ Action body:
   <Source>string</Source>
 </u:GetAutoplayLinkedZones>
 ```
-
 
 Inputs:
 
@@ -295,7 +283,6 @@ Action body:
 </u:SetAutoplayRoomUUID>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -312,7 +299,6 @@ Action body:
   <Source>string</Source>
 </u:GetAutoplayRoomUUID>
 ```
-
 
 Inputs:
 
@@ -337,7 +323,6 @@ Action body:
 </u:SetAutoplayVolume>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -354,7 +339,6 @@ Action body:
   <Source>string</Source>
 </u:GetAutoplayVolume>
 ```
-
 
 Inputs:
 
@@ -379,7 +363,6 @@ Action body:
 </u:SetUseAutoplayVolume>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -396,7 +379,6 @@ Action body:
   <Source>string</Source>
 </u:GetUseAutoplayVolume>
 ```
-
 
 Inputs:
 
@@ -420,7 +402,6 @@ Action body:
 </u:AddHTSatellite>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -436,7 +417,6 @@ Action body:
   <SatRoomUUID>string</SatRoomUUID>
 </u:RemoveHTSatellite>
 ```
-
 
 Inputs:
 
@@ -454,7 +434,6 @@ Action body:
   <Options>string</Options>
 </u:EnterConfigMode>
 ```
-
 
 Inputs:
 
@@ -479,7 +458,6 @@ Action body:
 </u:ExitConfigMode>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -494,7 +472,6 @@ Action body:
 <u:GetButtonState xmlns:u="urn:schemas-upnp-org:service:DeviceProperties:1">
 </u:GetButtonState>
 ```
-
 
 No input arguments
 
@@ -514,7 +491,6 @@ Action body:
 </u:SetButtonLockState>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -529,7 +505,6 @@ Action body:
 <u:GetButtonLockState xmlns:u="urn:schemas-upnp-org:service:DeviceProperties:1">
 </u:GetButtonLockState>
 ```
-
 
 No input arguments
 
@@ -557,57 +532,57 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AirPlayEnabled | ✔ | `boolean` |  | 
-| AutoplayIncludeLinkedZones | ❌ | `boolean` |  | 
-| AutoplayRoomUUID | ❌ | `string` |  | 
-| AutoplaySource | ❌ | `string` |  | 
-| AutoplayUseVolume | ❌ | `boolean` |  | 
-| AutoplayVolume | ❌ | `ui2` |  | 
-| AvailableRoomCalibration | ✔ | `string` |  | 
-| BehindWifiExtender | ✔ | `ui4` |  | 
-| ButtonLockState | ❌ | `string` | `On` / `Off` | 
-| ChannelFreq | ✔ | `ui4` |  | 
-| ChannelMapSet | ✔ | `string` |  | 
-| ConfigMode | ✔ | `string` |  | 
-| Configuration | ✔ | `string` |  | 
-| CopyrightInfo | ❌ | `string` |  | 
-| DisplaySoftwareVersion | ❌ | `string` |  | 
-| ExtraInfo | ❌ | `string` |  | 
-| Flags | ❌ | `ui4` |  | 
-| HardwareVersion | ❌ | `string` |  | 
-| HasConfiguredSSID | ✔ | `boolean` |  | 
-| HdmiCecAvailable | ✔ | `boolean` |  | 
-| HouseholdID | ❌ | `string` |  | 
-| HTAudioIn | ❌ | `ui4` |  | 
-| HTBondedZoneCommitState | ✔ | `ui4` |  | 
-| HTFreq | ✔ | `ui4` |  | 
-| HTSatChanMapSet | ✔ | `string` |  | 
-| Icon | ✔ | `string` |  | 
-| Invisible | ✔ | `boolean` |  | 
-| IPAddress | ❌ | `string` |  | 
-| IsIdle | ✔ | `boolean` |  | 
-| IsZoneBridge | ✔ | `boolean` |  | 
-| KeepGrouped | ❌ | `boolean` |  | 
-| LastChangedPlayState | ✔ | `string` |  | 
-| LEDState | ❌ | `string` | `On` / `Off` | 
-| MACAddress | ❌ | `string` |  | 
-| MicEnabled | ✔ | `ui4` |  | 
-| MoreInfo | ✔ | `string` |  | 
-| Orientation | ✔ | `i4` |  | 
-| RoomCalibrationState | ✔ | `i4` |  | 
-| SatRoomUUID | ❌ | `string` |  | 
-| SecureRegState | ✔ | `ui4` |  | 
-| SerialNumber | ❌ | `string` |  | 
-| SettingsReplicationState | ✔ | `string` |  | 
-| SoftwareVersion | ❌ | `string` |  | 
-| SupportsAudioClip | ✔ | `boolean` |  | 
-| SupportsAudioIn | ✔ | `boolean` |  | 
-| TVConfigurationError | ✔ | `boolean` |  | 
-| VoiceConfigState | ✔ | `ui4` |  | 
-| WifiEnabled | ✔ | `boolean` |  | 
-| WirelessLeafOnly | ✔ | `boolean` |  | 
-| WirelessMode | ✔ | `ui4` |  | 
-| ZoneName | ✔ | `string` |  | 
+| AirPlayEnabled | ✔ | `boolean` |  |
+| AutoplayIncludeLinkedZones | ❌ | `boolean` |  |
+| AutoplayRoomUUID | ❌ | `string` |  |
+| AutoplaySource | ❌ | `string` |  |
+| AutoplayUseVolume | ❌ | `boolean` |  |
+| AutoplayVolume | ❌ | `ui2` |  |
+| AvailableRoomCalibration | ✔ | `string` |  |
+| BehindWifiExtender | ✔ | `ui4` |  |
+| ButtonLockState | ❌ | `string` | `On` / `Off` |
+| ChannelFreq | ✔ | `ui4` |  |
+| ChannelMapSet | ✔ | `string` |  |
+| ConfigMode | ✔ | `string` |  |
+| Configuration | ✔ | `string` |  |
+| CopyrightInfo | ❌ | `string` |  |
+| DisplaySoftwareVersion | ❌ | `string` |  |
+| ExtraInfo | ❌ | `string` |  |
+| Flags | ❌ | `ui4` |  |
+| HardwareVersion | ❌ | `string` |  |
+| HasConfiguredSSID | ✔ | `boolean` |  |
+| HdmiCecAvailable | ✔ | `boolean` |  |
+| HouseholdID | ❌ | `string` |  |
+| HTAudioIn | ❌ | `ui4` |  |
+| HTBondedZoneCommitState | ✔ | `ui4` |  |
+| HTFreq | ✔ | `ui4` |  |
+| HTSatChanMapSet | ✔ | `string` |  |
+| Icon | ✔ | `string` |  |
+| Invisible | ✔ | `boolean` |  |
+| IPAddress | ❌ | `string` |  |
+| IsIdle | ✔ | `boolean` |  |
+| IsZoneBridge | ✔ | `boolean` |  |
+| KeepGrouped | ❌ | `boolean` |  |
+| LastChangedPlayState | ✔ | `string` |  |
+| LEDState | ❌ | `string` | `On` / `Off` |
+| MACAddress | ❌ | `string` |  |
+| MicEnabled | ✔ | `ui4` |  |
+| MoreInfo | ✔ | `string` |  |
+| Orientation | ✔ | `i4` |  |
+| RoomCalibrationState | ✔ | `i4` |  |
+| SatRoomUUID | ❌ | `string` |  |
+| SecureRegState | ✔ | `ui4` |  |
+| SerialNumber | ❌ | `string` |  |
+| SettingsReplicationState | ✔ | `string` |  |
+| SoftwareVersion | ❌ | `string` |  |
+| SupportsAudioClip | ✔ | `boolean` |  |
+| SupportsAudioIn | ✔ | `boolean` |  |
+| TVConfigurationError | ✔ | `boolean` |  |
+| VoiceConfigState | ✔ | `ui4` |  |
+| WifiEnabled | ✔ | `boolean` |  |
+| WirelessLeafOnly | ✔ | `boolean` |  |
+| WirelessMode | ✔ | `ui4` |  |
+| ZoneName | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

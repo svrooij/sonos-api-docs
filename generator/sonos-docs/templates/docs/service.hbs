@@ -67,7 +67,6 @@ Action body:
 {{/each}}
 </u:{{name}}>
 ```
-
 {{#if inputs}}
 
 Inputs:
@@ -117,7 +116,7 @@ Timeout: Second-3600
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
 {{#each eventVariables}}
-| {{name}} | {{#if sendEvents}}✔{{else}}❌{{/if}} | `{{dataType}}` | {{#each allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}} | 
+| {{name}} | {{#if sendEvents}}✔{{else}}❌{{/if}} | `{{dataType}}` | {{#each allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}} |
 {{/each}}
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.

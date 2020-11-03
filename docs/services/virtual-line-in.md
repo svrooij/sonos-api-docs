@@ -56,7 +56,6 @@ Action body:
 </u:StartTransmission>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -81,7 +80,6 @@ Action body:
 </u:StopTransmission>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -100,7 +98,6 @@ Action body:
 </u:Play>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -118,7 +115,6 @@ Action body:
 </u:Pause>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -134,7 +130,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:Next>
 ```
-
 
 Inputs:
 
@@ -152,7 +147,6 @@ Action body:
 </u:Previous>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -168,7 +162,6 @@ Action body:
   <InstanceID>ui4</InstanceID>
 </u:Stop>
 ```
-
 
 Inputs:
 
@@ -186,7 +179,6 @@ Action body:
   <DesiredVolume>ui2</DesiredVolume>
 </u:SetVolume>
 ```
-
 
 Inputs:
 
@@ -213,11 +205,11 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AVTransportURIMetaData | ❌ | `string` |  | 
-| CurrentTrackMetaData | ❌ | `string` |  | 
-| CurrentTransportActions | ❌ | `string` |  | 
-| EnqueuedTransportURIMetaData | ❌ | `string` |  | 
-| LastChange | ✔ | `string` |  | 
+| AVTransportURIMetaData | ❌ | `string` |  |
+| CurrentTrackMetaData | ❌ | `string` |  |
+| CurrentTransportActions | ❌ | `string` |  |
+| EnqueuedTransportURIMetaData | ❌ | `string` |  |
+| LastChange | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

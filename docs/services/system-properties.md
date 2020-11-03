@@ -56,7 +56,6 @@ Action body:
 </u:SetString>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -73,7 +72,6 @@ Action body:
   <VariableName>string</VariableName>
 </u:GetString>
 ```
-
 
 Inputs:
 
@@ -97,7 +95,6 @@ Action body:
 </u:Remove>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -113,7 +110,6 @@ Action body:
   <AccountType>ui4</AccountType>
 </u:GetWebCode>
 ```
-
 
 Inputs:
 
@@ -138,7 +134,6 @@ Action body:
   <AccountPassword>string</AccountPassword>
 </u:ProvisionCredentialedTrialAccountX>
 ```
-
 
 Inputs:
 
@@ -166,7 +161,6 @@ Action body:
   <AccountPassword>string</AccountPassword>
 </u:AddAccountX>
 ```
-
 
 Inputs:
 
@@ -199,7 +193,6 @@ Action body:
 </u:AddOAuthAccountX>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -231,7 +224,6 @@ Action body:
 </u:RemoveAccount>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -250,7 +242,6 @@ Action body:
   <NewAccountPassword>string</NewAccountPassword>
 </u:EditAccountPasswordX>
 ```
-
 
 Inputs:
 
@@ -271,7 +262,6 @@ Action body:
 </u:SetAccountNicknameX>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -291,7 +281,6 @@ Action body:
   <AccountKey>string</AccountKey>
 </u:RefreshAccountCredentialsX>
 ```
-
 
 Inputs:
 
@@ -314,7 +303,6 @@ Action body:
 </u:EditAccountMd>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -332,7 +320,6 @@ Action body:
 </u:DoPostUpdateTasks>
 ```
 
-
 No input arguments
 
 ### ResetThirdPartyCredentials
@@ -343,7 +330,6 @@ Action body:
 <u:ResetThirdPartyCredentials xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
 </u:ResetThirdPartyCredentials>
 ```
-
 
 No input arguments
 
@@ -356,7 +342,6 @@ Action body:
   <RDMValue>boolean</RDMValue>
 </u:EnableRDM>
 ```
-
 
 Inputs:
 
@@ -372,7 +357,6 @@ Action body:
 <u:GetRDM xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
 </u:GetRDM>
 ```
-
 
 No input arguments
 
@@ -396,7 +380,6 @@ Action body:
   <OAuthDeviceID>string</OAuthDeviceID>
 </u:ReplaceAccountX>
 ```
-
 
 Inputs:
 
@@ -433,11 +416,11 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| CustomerID | ✔ | `string` |  | 
-| ThirdPartyHash | ✔ | `string` |  | 
-| UpdateID | ✔ | `ui4` |  | 
-| UpdateIDX | ✔ | `ui4` |  | 
-| VoiceUpdateID | ✔ | `ui4` |  | 
+| CustomerID | ✔ | `string` |  |
+| ThirdPartyHash | ✔ | `string` |  |
+| UpdateID | ✔ | `ui4` |  |
+| UpdateIDX | ✔ | `ui4` |  |
+| VoiceUpdateID | ✔ | `ui4` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

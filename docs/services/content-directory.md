@@ -56,7 +56,6 @@ Action body:
 </u:GetSearchCapabilities>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -73,7 +72,6 @@ Action body:
 <u:GetSortCapabilities xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
 </u:GetSortCapabilities>
 ```
-
 
 No input arguments
 
@@ -92,7 +90,6 @@ Action body:
 </u:GetSystemUpdateID>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -110,7 +107,6 @@ Action body:
 </u:GetAlbumArtistDisplayOption>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -127,7 +123,6 @@ Action body:
 <u:GetLastIndexChange xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
 </u:GetLastIndexChange>
 ```
-
 
 No input arguments
 
@@ -153,7 +148,6 @@ Action body:
   <SortCriteria>string</SortCriteria>
 </u:Browse>
 ```
-
 
 Inputs:
 
@@ -186,7 +180,6 @@ Action body:
 </u:FindPrefix>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -210,7 +203,6 @@ Action body:
   <ObjectID>string</ObjectID>
 </u:GetAllPrefixLocations>
 ```
-
 
 Inputs:
 
@@ -236,7 +228,6 @@ Action body:
   <Elements>string</Elements>
 </u:CreateObject>
 ```
-
 
 Inputs:
 
@@ -264,7 +255,6 @@ Action body:
 </u:UpdateObject>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -283,7 +273,6 @@ Action body:
 </u:DestroyObject>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -299,7 +288,6 @@ Action body:
   <AlbumArtistDisplayOption>string</AlbumArtistDisplayOption>
 </u:RefreshShareIndex>
 ```
-
 
 Inputs:
 
@@ -317,7 +305,6 @@ Action body:
 </u:RequestResort>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -332,7 +319,6 @@ Action body:
 <u:GetShareIndexInProgress xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
 </u:GetShareIndexInProgress>
 ```
-
 
 No input arguments
 
@@ -351,7 +337,6 @@ Action body:
 </u:GetBrowseable>
 ```
 
-
 No input arguments
 
 Outputs:
@@ -369,7 +354,6 @@ Action body:
   <Browseable>boolean</Browseable>
 </u:SetBrowseable>
 ```
-
 
 Inputs:
 
@@ -395,21 +379,21 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| Browseable | ✔ | `boolean` |  | 
-| ContainerUpdateIDs | ✔ | `string` |  | 
-| FavoritePresetsUpdateID | ✔ | `string` |  | 
-| FavoritesUpdateID | ✔ | `string` |  | 
-| RadioFavoritesUpdateID | ✔ | `ui4` |  | 
-| RadioLocationUpdateID | ✔ | `ui4` |  | 
-| RecentlyPlayedUpdateID | ✔ | `string` |  | 
-| SavedQueuesUpdateID | ✔ | `string` |  | 
-| SearchCapabilities | ❌ | `string` |  | 
-| ShareIndexInProgress | ✔ | `boolean` |  | 
-| ShareIndexLastError | ✔ | `string` |  | 
-| ShareListUpdateID | ✔ | `string` |  | 
-| SortCapabilities | ❌ | `string` |  | 
-| SystemUpdateID | ✔ | `ui4` |  | 
-| UserRadioUpdateID | ✔ | `string` |  | 
+| Browseable | ✔ | `boolean` |  |
+| ContainerUpdateIDs | ✔ | `string` |  |
+| FavoritePresetsUpdateID | ✔ | `string` |  |
+| FavoritesUpdateID | ✔ | `string` |  |
+| RadioFavoritesUpdateID | ✔ | `ui4` |  |
+| RadioLocationUpdateID | ✔ | `ui4` |  |
+| RecentlyPlayedUpdateID | ✔ | `string` |  |
+| SavedQueuesUpdateID | ✔ | `string` |  |
+| SearchCapabilities | ❌ | `string` |  |
+| ShareIndexInProgress | ✔ | `boolean` |  |
+| ShareIndexLastError | ✔ | `string` |  |
+| ShareListUpdateID | ✔ | `string` |  |
+| SortCapabilities | ❌ | `string` |  |
+| SystemUpdateID | ✔ | `ui4` |  |
+| UserRadioUpdateID | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

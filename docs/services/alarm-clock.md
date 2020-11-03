@@ -58,7 +58,6 @@ Action body:
 </u:SetFormat>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -74,7 +73,6 @@ Action body:
 <u:GetFormat xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:GetFormat>
 ```
-
 
 No input arguments
 
@@ -96,7 +94,6 @@ Action body:
 </u:SetTimeZone>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -112,7 +109,6 @@ Action body:
 <u:GetTimeZone xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:GetTimeZone>
 ```
-
 
 No input arguments
 
@@ -131,7 +127,6 @@ Action body:
 <u:GetTimeZoneAndRule xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:GetTimeZoneAndRule>
 ```
-
 
 No input arguments
 
@@ -152,7 +147,6 @@ Action body:
   <Index>i4</Index>
 </u:GetTimeZoneRule>
 ```
-
 
 Inputs:
 
@@ -176,7 +170,6 @@ Action body:
 </u:SetTimeServer>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -191,7 +184,6 @@ Action body:
 <u:GetTimeServer xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:GetTimeServer>
 ```
-
 
 No input arguments
 
@@ -212,7 +204,6 @@ Action body:
 </u:SetTimeNow>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -229,7 +220,6 @@ Action body:
   <TimeStamp>string</TimeStamp>
 </u:GetHouseholdTimeAtStamp>
 ```
-
 
 Inputs:
 
@@ -251,7 +241,6 @@ Action body:
 <u:GetTimeNow xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:GetTimeNow>
 ```
-
 
 No input arguments
 
@@ -284,7 +273,6 @@ Action body:
   <IncludeLinkedZones>boolean</IncludeLinkedZones>
 </u:CreateAlarm>
 ```
-
 
 Inputs:
 
@@ -329,7 +317,6 @@ Action body:
 </u:UpdateAlarm>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -358,7 +345,6 @@ Action body:
 </u:DestroyAlarm>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -375,7 +361,6 @@ Action body:
 <u:ListAlarms xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:ListAlarms>
 ```
-
 
 No input arguments
 
@@ -396,7 +381,6 @@ Action body:
 </u:SetDailyIndexRefreshTime>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -411,7 +395,6 @@ Action body:
 <u:GetDailyIndexRefreshTime xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
 </u:GetDailyIndexRefreshTime>
 ```
-
 
 No input arguments
 
@@ -439,13 +422,13 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AlarmListVersion | ✔ | `string` |  | 
-| DailyIndexRefreshTime | ✔ | `string` |  | 
-| DateFormat | ✔ | `string` |  | 
-| TimeFormat | ✔ | `string` |  | 
-| TimeGeneration | ✔ | `ui4` |  | 
-| TimeServer | ✔ | `string` |  | 
-| TimeZone | ✔ | `string` |  | 
+| AlarmListVersion | ✔ | `string` |  |
+| DailyIndexRefreshTime | ✔ | `string` |  |
+| DateFormat | ✔ | `string` |  |
+| TimeFormat | ✔ | `string` |  |
+| TimeGeneration | ✔ | `ui4` |  |
+| TimeServer | ✔ | `string` |  |
+| TimeZone | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+  "fenced-code-language": false,
+  "MD013": false,
+  "MD025": false
+}

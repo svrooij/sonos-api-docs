@@ -55,7 +55,6 @@ Action body:
 </u:SetIRRepeaterState>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -70,7 +69,6 @@ Action body:
 <u:GetIRRepeaterState xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
 </u:GetIRRepeaterState>
 ```
-
 
 No input arguments
 
@@ -90,7 +88,6 @@ Action body:
 </u:IdentifyIRRemote>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -107,7 +104,6 @@ Action body:
   <Timeout>ui4</Timeout>
 </u:LearnIRCode>
 ```
-
 
 Inputs:
 
@@ -126,7 +122,6 @@ Action body:
 </u:CommitLearnedIRCodes>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -141,7 +136,6 @@ Action body:
 <u:IsRemoteConfigured xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
 </u:IsRemoteConfigured>
 ```
-
 
 No input arguments
 
@@ -161,7 +155,6 @@ Action body:
 </u:SetLEDFeedbackState>
 ```
 
-
 Inputs:
 
 | parameter | type | description |
@@ -176,7 +169,6 @@ Action body:
 <u:GetLEDFeedbackState xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
 </u:GetLEDFeedbackState>
 ```
-
 
 No input arguments
 
@@ -204,10 +196,10 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| IRRepeaterState | ✔ | `string` | `On` / `Off` / `Disabled` | 
-| LEDFeedbackState | ❌ | `string` | `On` / `Off` | 
-| RemoteConfigured | ❌ | `boolean` |  | 
-| TOSLinkConnected | ✔ | `boolean` |  | 
+| IRRepeaterState | ✔ | `string` | `On` / `Off` / `Disabled` |
+| LEDFeedbackState | ❌ | `string` | `On` / `Off` |
+| RemoteConfigured | ❌ | `boolean` |  |
+| TOSLinkConnected | ✔ | `boolean` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
 
