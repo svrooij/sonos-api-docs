@@ -6,7 +6,7 @@ parent: Sonos UPNP
 # GroupManagementService
 {: .no_toc }
 
-The GroupManagementService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The GroupManagementService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}

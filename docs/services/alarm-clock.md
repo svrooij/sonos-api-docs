@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Control the sonos alarms
 
-The AlarmClockService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The AlarmClockService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -47,23 +47,82 @@ Content-Type: text/xml; charset=utf8
 
 ## Available actions
 
-### SetFormat
+### CreateAlarm
+
+Create a single alarm, all properties are required
 
 Action body:
 
 ```xml
-<u:SetFormat xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <DesiredTimeFormat>string</DesiredTimeFormat>
-  <DesiredDateFormat>string</DesiredDateFormat>
-</u:SetFormat>
+<u:CreateAlarm xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <StartLocalTime>string</StartLocalTime>
+  <Duration>string</Duration>
+  <Recurrence>string</Recurrence>
+  <Enabled>boolean</Enabled>
+  <RoomUUID>string</RoomUUID>
+  <ProgramURI>string</ProgramURI>
+  <ProgramMetaData>string</ProgramMetaData>
+  <PlayMode>string</PlayMode>
+  <Volume>ui2</Volume>
+  <IncludeLinkedZones>boolean</IncludeLinkedZones>
+</u:CreateAlarm>
 ```
 
 Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **DesiredTimeFormat** | `string` |  |
-| **DesiredDateFormat** | `string` |  |
+| **StartLocalTime** | `string` | The start time as hh:mm:ss |
+| **Duration** | `string` | The duration as hh:mm:ss |
+| **Recurrence** | `string` | Repeat this alarm on Allowed values: `ONCE` / `WEEKDAYS` / `WEEKENDS` / `DAILY` |
+| **Enabled** | `boolean` | Alarm enabled after creation |
+| **RoomUUID** | `string` | The UUID of the speaker you want this alarm for |
+| **ProgramURI** | `string` | The sound uri |
+| **ProgramMetaData** | `string` | The sound metadata, can be empty string |
+| **PlayMode** | `string` | Alarm play mode Allowed values: `NORMAL` / `REPEAT_ALL` / `SHUFFLE_NOREPEAT` / `SHUFFLE` |
+| **Volume** | `ui2` | Volume between 0 and 100 |
+| **IncludeLinkedZones** | `boolean` | Should grouped players also play the alarm? |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AssignedID** | `ui4` |  |
+
+### DestroyAlarm
+
+Delete an alarm
+
+Action body:
+
+```xml
+<u:DestroyAlarm xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <ID>ui4</ID>
+</u:DestroyAlarm>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **ID** | `ui4` | The Alarm ID, see ListAndParseAlarms |
+
+### GetDailyIndexRefreshTime
+
+Action body:
+
+```xml
+<u:GetDailyIndexRefreshTime xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+</u:GetDailyIndexRefreshTime>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **CurrentDailyIndexRefreshTime** | `string` |  |
 
 ### GetFormat
 
@@ -83,23 +142,64 @@ Outputs:
 | **CurrentTimeFormat** | `string` |  |
 | **CurrentDateFormat** | `string` |  |
 
-### SetTimeZone
+### GetHouseholdTimeAtStamp
 
 Action body:
 
 ```xml
-<u:SetTimeZone xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <Index>i4</Index>
-  <AutoAdjustDst>boolean</AutoAdjustDst>
-</u:SetTimeZone>
+<u:GetHouseholdTimeAtStamp xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <TimeStamp>string</TimeStamp>
+</u:GetHouseholdTimeAtStamp>
 ```
 
 Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **Index** | `i4` |  |
-| **AutoAdjustDst** | `boolean` |  |
+| **TimeStamp** | `string` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **HouseholdUTCTime** | `string` |  |
+
+### GetTimeNow
+
+Action body:
+
+```xml
+<u:GetTimeNow xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+</u:GetTimeNow>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **CurrentUTCTime** | `string` |  |
+| **CurrentLocalTime** | `string` |  |
+| **CurrentTimeZone** | `string` |  |
+| **CurrentTimeGeneration** | `ui4` |  |
+
+### GetTimeServer
+
+Action body:
+
+```xml
+<u:GetTimeServer xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+</u:GetTimeServer>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **CurrentTimeServer** | `string` |  |
 
 ### GetTimeZone
 
@@ -160,29 +260,15 @@ Outputs:
 |:----------|:-----|:------------|
 | **TimeZone** | `string` |  |
 
-### SetTimeServer
+### ListAlarms
+
+Get the AlarmList as XML, use ListAndParseAlarms for parsed version
 
 Action body:
 
 ```xml
-<u:SetTimeServer xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <DesiredTimeServer>string</DesiredTimeServer>
-</u:SetTimeServer>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **DesiredTimeServer** | `string` |  |
-
-### GetTimeServer
-
-Action body:
-
-```xml
-<u:GetTimeServer xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-</u:GetTimeServer>
+<u:ListAlarms xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+</u:ListAlarms>
 ```
 
 No input arguments
@@ -191,7 +277,42 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentTimeServer** | `string` |  |
+| **CurrentAlarmList** | `string` |  |
+| **CurrentAlarmListVersion** | `string` |  |
+
+### SetDailyIndexRefreshTime
+
+Action body:
+
+```xml
+<u:SetDailyIndexRefreshTime xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <DesiredDailyIndexRefreshTime>string</DesiredDailyIndexRefreshTime>
+</u:SetDailyIndexRefreshTime>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **DesiredDailyIndexRefreshTime** | `string` |  |
+
+### SetFormat
+
+Action body:
+
+```xml
+<u:SetFormat xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <DesiredTimeFormat>string</DesiredTimeFormat>
+  <DesiredDateFormat>string</DesiredDateFormat>
+</u:SetFormat>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **DesiredTimeFormat** | `string` |  |
+| **DesiredDateFormat** | `string` |  |
 
 ### SetTimeNow
 
@@ -211,89 +332,39 @@ Inputs:
 | **DesiredTime** | `string` |  |
 | **TimeZoneForDesiredTime** | `string` |  |
 
-### GetHouseholdTimeAtStamp
+### SetTimeServer
 
 Action body:
 
 ```xml
-<u:GetHouseholdTimeAtStamp xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <TimeStamp>string</TimeStamp>
-</u:GetHouseholdTimeAtStamp>
+<u:SetTimeServer xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <DesiredTimeServer>string</DesiredTimeServer>
+</u:SetTimeServer>
 ```
 
 Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **TimeStamp** | `string` |  |
+| **DesiredTimeServer** | `string` |  |
 
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **HouseholdUTCTime** | `string` |  |
-
-### GetTimeNow
+### SetTimeZone
 
 Action body:
 
 ```xml
-<u:GetTimeNow xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-</u:GetTimeNow>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **CurrentUTCTime** | `string` |  |
-| **CurrentLocalTime** | `string` |  |
-| **CurrentTimeZone** | `string` |  |
-| **CurrentTimeGeneration** | `ui4` |  |
-
-### CreateAlarm
-
-Create a single alarm, all properties are required
-
-Action body:
-
-```xml
-<u:CreateAlarm xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <StartLocalTime>string</StartLocalTime>
-  <Duration>string</Duration>
-  <Recurrence>string</Recurrence>
-  <Enabled>boolean</Enabled>
-  <RoomUUID>string</RoomUUID>
-  <ProgramURI>string</ProgramURI>
-  <ProgramMetaData>string</ProgramMetaData>
-  <PlayMode>string</PlayMode>
-  <Volume>ui2</Volume>
-  <IncludeLinkedZones>boolean</IncludeLinkedZones>
-</u:CreateAlarm>
+<u:SetTimeZone xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
+  <Index>i4</Index>
+  <AutoAdjustDst>boolean</AutoAdjustDst>
+</u:SetTimeZone>
 ```
 
 Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **StartLocalTime** | `string` | The start time as hh:mm:ss |
-| **Duration** | `string` | The duration as hh:mm:ss |
-| **Recurrence** | `string` | Repeat this alarm on Allowed values: `ONCE` / `WEEKDAYS` / `WEEKENDS` / `DAILY` |
-| **Enabled** | `boolean` | Alarm enabled after creation |
-| **RoomUUID** | `string` | The UUID of the speaker you want this alarm for |
-| **ProgramURI** | `string` | The sound uri |
-| **ProgramMetaData** | `string` | The sound metadata, can be empty string |
-| **PlayMode** | `string` | Alarm play mode Allowed values: `NORMAL` / `REPEAT_ALL` / `SHUFFLE_NOREPEAT` / `SHUFFLE` |
-| **Volume** | `ui2` | Volume between 0 and 100 |
-| **IncludeLinkedZones** | `boolean` | Should grouped players also play the alarm? |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AssignedID** | `ui4` |  |
+| **Index** | `i4` |  |
+| **AutoAdjustDst** | `boolean` |  |
 
 ### UpdateAlarm
 
@@ -332,77 +403,6 @@ Inputs:
 | **PlayMode** | `string` | Alarm play mode Allowed values: `NORMAL` / `REPEAT_ALL` / `SHUFFLE_NOREPEAT` / `SHUFFLE` |
 | **Volume** | `ui2` | Volume between 0 and 100 |
 | **IncludeLinkedZones** | `boolean` | Should grouped players also play the alarm? |
-
-### DestroyAlarm
-
-Delete an alarm
-
-Action body:
-
-```xml
-<u:DestroyAlarm xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <ID>ui4</ID>
-</u:DestroyAlarm>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **ID** | `ui4` | The Alarm ID, see ListAndParseAlarms |
-
-### ListAlarms
-
-Get the AlarmList as XML, use ListAndParseAlarms for parsed version
-
-Action body:
-
-```xml
-<u:ListAlarms xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-</u:ListAlarms>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **CurrentAlarmList** | `string` |  |
-| **CurrentAlarmListVersion** | `string` |  |
-
-### SetDailyIndexRefreshTime
-
-Action body:
-
-```xml
-<u:SetDailyIndexRefreshTime xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <DesiredDailyIndexRefreshTime>string</DesiredDailyIndexRefreshTime>
-</u:SetDailyIndexRefreshTime>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **DesiredDailyIndexRefreshTime** | `string` |  |
-
-### GetDailyIndexRefreshTime
-
-Action body:
-
-```xml
-<u:GetDailyIndexRefreshTime xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-</u:GetDailyIndexRefreshTime>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **CurrentDailyIndexRefreshTime** | `string` |  |
 
 ## Events
 

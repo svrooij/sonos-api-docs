@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Modify and browse queues
 
-The QueueService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The QueueService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -47,41 +47,6 @@ Content-Type: text/xml; charset=utf8
 
 ## Available actions
 
-### AddURI
-
-Action body:
-
-```xml
-<u:AddURI xmlns:u="urn:schemas-sonos-com:service:Queue:1">
-  <QueueID>ui4</QueueID>
-  <UpdateID>ui4</UpdateID>
-  <EnqueuedURI>string</EnqueuedURI>
-  <EnqueuedURIMetaData>string</EnqueuedURIMetaData>
-  <DesiredFirstTrackNumberEnqueued>ui4</DesiredFirstTrackNumberEnqueued>
-  <EnqueueAsNext>boolean</EnqueueAsNext>
-</u:AddURI>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **QueueID** | `ui4` |  |
-| **UpdateID** | `ui4` |  |
-| **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
-| **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
-| **EnqueueAsNext** | `boolean` |  |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **FirstTrackNumberEnqueued** | `ui4` |  |
-| **NumTracksAdded** | `ui4` |  |
-| **NewQueueLength** | `ui4` |  |
-| **NewUpdateID** | `ui4` |  |
-
 ### AddMultipleURIs
 
 Action body:
@@ -111,6 +76,41 @@ Inputs:
 | **EnqueueAsNext** | `boolean` |  |
 | **NumberOfURIs** | `ui4` |  |
 | **EnqueuedURIsAndMetaData** | `string` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **FirstTrackNumberEnqueued** | `ui4` |  |
+| **NumTracksAdded** | `ui4` |  |
+| **NewQueueLength** | `ui4` |  |
+| **NewUpdateID** | `ui4` |  |
+
+### AddURI
+
+Action body:
+
+```xml
+<u:AddURI xmlns:u="urn:schemas-sonos-com:service:Queue:1">
+  <QueueID>ui4</QueueID>
+  <UpdateID>ui4</UpdateID>
+  <EnqueuedURI>string</EnqueuedURI>
+  <EnqueuedURIMetaData>string</EnqueuedURIMetaData>
+  <DesiredFirstTrackNumberEnqueued>ui4</DesiredFirstTrackNumberEnqueued>
+  <EnqueueAsNext>boolean</EnqueueAsNext>
+</u:AddURI>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **QueueID** | `ui4` |  |
+| **UpdateID** | `ui4` |  |
+| **EnqueuedURI** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  |
+| **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
+| **EnqueueAsNext** | `boolean` |  |
 
 Outputs:
 

@@ -29,7 +29,7 @@ Every sonos speaker has several soap services. Each service has one or more acti
 | [**QPlay**](q-play.html) |  |
 | [**Queue**](queue.html) | Modify and browse queues |
 | [**RenderingControl**](rendering-control.html) | Volume related controls |
-| [**SystemProperties**](system-properties.html) |  |
+| [**SystemProperties**](system-properties.html) | Manage system-wide settings, mainly account stuff. |
 | [**VirtualLineIn**](virtual-line-in.html) |  |
 | [**ZoneGroupTopology**](zone-group-topology.html) | Zone config stuff, eg getting all the configured sonos zones. |
 

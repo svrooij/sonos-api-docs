@@ -298,6 +298,32 @@
         }
       }
     },
+    "SystemPropertiesService": {
+      "description": "Manage system-wide settings, mainly account stuff.",
+      "actions": {
+        "GetString": {
+          "description": "Get a saved string.",
+          "params": {
+            "VariableName": "The key for this variable"
+          },
+          "remarks": "Strings are saved in the system with SetString, every speaker should send the same data. Will error when not existing"
+        },
+        "Remove": {
+          "description": "Remove a saved string",
+          "params": {
+            "VariableName": "The key for this variable"
+          },
+          "remarks": "Not sure what happens if you call this with a VariableName that doesn't exists."
+        },
+        "SetString": {
+          "description": "Save a string in the system",
+          "params": {
+            "VariableName": "The key for this variable, use something unique"
+          },
+          "remarks": "Strings are saved in the system, retrieve values with GetString."
+        }
+      }
+    },
     "ZoneGroupTopologyService": {
       "description": "Zone config stuff, eg getting all the configured sonos zones.",
       "actions": {

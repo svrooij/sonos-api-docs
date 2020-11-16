@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Browse for local content
 
-The ContentDirectoryService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The ContentDirectoryService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -47,91 +47,6 @@ Content-Type: text/xml; charset=utf8
 
 ## Available actions
 
-### GetSearchCapabilities
-
-Action body:
-
-```xml
-<u:GetSearchCapabilities xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetSearchCapabilities>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **SearchCaps** | `string` |  |
-
-### GetSortCapabilities
-
-Action body:
-
-```xml
-<u:GetSortCapabilities xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetSortCapabilities>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **SortCaps** | `string` |  |
-
-### GetSystemUpdateID
-
-Action body:
-
-```xml
-<u:GetSystemUpdateID xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetSystemUpdateID>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **Id** | `ui4` |  |
-
-### GetAlbumArtistDisplayOption
-
-Action body:
-
-```xml
-<u:GetAlbumArtistDisplayOption xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetAlbumArtistDisplayOption>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AlbumArtistDisplayOption** | `string` |  |
-
-### GetLastIndexChange
-
-Action body:
-
-```xml
-<u:GetLastIndexChange xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetLastIndexChange>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **LastIndexChange** | `string` |  |
-
 ### Browse
 
 Browse for content, see BrowseParsed for a better experience.
@@ -169,55 +84,6 @@ Outputs:
 | **TotalMatches** | `ui4` |  |
 | **UpdateID** | `ui4` |  |
 
-### FindPrefix
-
-Action body:
-
-```xml
-<u:FindPrefix xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-  <ObjectID>string</ObjectID>
-  <Prefix>string</Prefix>
-</u:FindPrefix>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **ObjectID** | `string` |  |
-| **Prefix** | `string` |  |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **StartingIndex** | `ui4` |  |
-| **UpdateID** | `ui4` |  |
-
-### GetAllPrefixLocations
-
-Action body:
-
-```xml
-<u:GetAllPrefixLocations xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-  <ObjectID>string</ObjectID>
-</u:GetAllPrefixLocations>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **ObjectID** | `string` |  |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **TotalPrefixes** | `ui4` |  |
-| **PrefixAndIndexCSV** | `string` |  |
-| **UpdateID** | `ui4` |  |
-
 ### CreateObject
 
 Action body:
@@ -243,26 +109,6 @@ Outputs:
 | **ObjectID** | `string` |  |
 | **Result** | `string` |  |
 
-### UpdateObject
-
-Action body:
-
-```xml
-<u:UpdateObject xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-  <ObjectID>string</ObjectID>
-  <CurrentTagValue>string</CurrentTagValue>
-  <NewTagValue>string</NewTagValue>
-</u:UpdateObject>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **ObjectID** | `string` |  |
-| **CurrentTagValue** | `string` |  |
-| **NewTagValue** | `string` |  |
-
 ### DestroyObject
 
 Action body:
@@ -278,6 +124,174 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **ObjectID** | `string` |  |
+
+### FindPrefix
+
+Action body:
+
+```xml
+<u:FindPrefix xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+  <ObjectID>string</ObjectID>
+  <Prefix>string</Prefix>
+</u:FindPrefix>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **ObjectID** | `string` |  |
+| **Prefix** | `string` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **StartingIndex** | `ui4` |  |
+| **UpdateID** | `ui4` |  |
+
+### GetAlbumArtistDisplayOption
+
+Action body:
+
+```xml
+<u:GetAlbumArtistDisplayOption xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetAlbumArtistDisplayOption>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AlbumArtistDisplayOption** | `string` |  |
+
+### GetAllPrefixLocations
+
+Action body:
+
+```xml
+<u:GetAllPrefixLocations xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+  <ObjectID>string</ObjectID>
+</u:GetAllPrefixLocations>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **ObjectID** | `string` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **TotalPrefixes** | `ui4` |  |
+| **PrefixAndIndexCSV** | `string` |  |
+| **UpdateID** | `ui4` |  |
+
+### GetBrowseable
+
+Action body:
+
+```xml
+<u:GetBrowseable xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetBrowseable>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **IsBrowseable** | `boolean` |  |
+
+### GetLastIndexChange
+
+Action body:
+
+```xml
+<u:GetLastIndexChange xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetLastIndexChange>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **LastIndexChange** | `string` |  |
+
+### GetSearchCapabilities
+
+Action body:
+
+```xml
+<u:GetSearchCapabilities xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetSearchCapabilities>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **SearchCaps** | `string` |  |
+
+### GetShareIndexInProgress
+
+Action body:
+
+```xml
+<u:GetShareIndexInProgress xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetShareIndexInProgress>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **IsIndexing** | `boolean` |  |
+
+### GetSortCapabilities
+
+Action body:
+
+```xml
+<u:GetSortCapabilities xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetSortCapabilities>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **SortCaps** | `string` |  |
+
+### GetSystemUpdateID
+
+Action body:
+
+```xml
+<u:GetSystemUpdateID xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+</u:GetSystemUpdateID>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **Id** | `ui4` |  |
 
 ### RefreshShareIndex
 
@@ -311,40 +325,6 @@ Inputs:
 |:----------|:-----|:------------|
 | **SortOrder** | `string` |  |
 
-### GetShareIndexInProgress
-
-Action body:
-
-```xml
-<u:GetShareIndexInProgress xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetShareIndexInProgress>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **IsIndexing** | `boolean` |  |
-
-### GetBrowseable
-
-Action body:
-
-```xml
-<u:GetBrowseable xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-</u:GetBrowseable>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **IsBrowseable** | `boolean` |  |
-
 ### SetBrowseable
 
 Action body:
@@ -360,6 +340,26 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **Browseable** | `boolean` |  |
+
+### UpdateObject
+
+Action body:
+
+```xml
+<u:UpdateObject xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+  <ObjectID>string</ObjectID>
+  <CurrentTagValue>string</CurrentTagValue>
+  <NewTagValue>string</NewTagValue>
+</u:UpdateObject>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **ObjectID** | `string` |  |
+| **CurrentTagValue** | `string` |  |
+| **NewTagValue** | `string` |  |
 
 ## Events
 

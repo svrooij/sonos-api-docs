@@ -6,7 +6,9 @@ parent: Sonos UPNP
 # SystemPropertiesService
 {: .no_toc }
 
-The SystemPropertiesService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+Manage system-wide settings, mainly account stuff.
+
+The SystemPropertiesService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -44,111 +46,6 @@ Content-Type: text/xml; charset=utf8
 ---
 
 ## Available actions
-
-### SetString
-
-Action body:
-
-```xml
-<u:SetString xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <VariableName>string</VariableName>
-  <StringValue>string</StringValue>
-</u:SetString>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **VariableName** | `string` |  |
-| **StringValue** | `string` |  |
-
-### GetString
-
-Action body:
-
-```xml
-<u:GetString xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <VariableName>string</VariableName>
-</u:GetString>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **VariableName** | `string` |  |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **StringValue** | `string` |  |
-
-### Remove
-
-Action body:
-
-```xml
-<u:Remove xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <VariableName>string</VariableName>
-</u:Remove>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **VariableName** | `string` |  |
-
-### GetWebCode
-
-Action body:
-
-```xml
-<u:GetWebCode xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <AccountType>ui4</AccountType>
-</u:GetWebCode>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AccountType** | `ui4` |  |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **WebCode** | `string` |  |
-
-### ProvisionCredentialedTrialAccountX
-
-Action body:
-
-```xml
-<u:ProvisionCredentialedTrialAccountX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <AccountType>ui4</AccountType>
-  <AccountID>string</AccountID>
-  <AccountPassword>string</AccountPassword>
-</u:ProvisionCredentialedTrialAccountX>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AccountType** | `ui4` |  |
-| **AccountID** | `string` |  |
-| **AccountPassword** | `string` |  |
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **IsExpired** | `boolean` |  |
-| **AccountUDN** | `string` |  |
 
 ### AddAccountX
 
@@ -213,83 +110,16 @@ Outputs:
 | **AccountUDN** | `string` |  |
 | **AccountNickname** | `string` |  |
 
-### RemoveAccount
+### DoPostUpdateTasks
 
 Action body:
 
 ```xml
-<u:RemoveAccount xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <AccountType>ui4</AccountType>
-  <AccountID>string</AccountID>
-</u:RemoveAccount>
+<u:DoPostUpdateTasks xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+</u:DoPostUpdateTasks>
 ```
 
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AccountType** | `ui4` |  |
-| **AccountID** | `string` |  |
-
-### EditAccountPasswordX
-
-Action body:
-
-```xml
-<u:EditAccountPasswordX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <AccountType>ui4</AccountType>
-  <AccountID>string</AccountID>
-  <NewAccountPassword>string</NewAccountPassword>
-</u:EditAccountPasswordX>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AccountType** | `ui4` |  |
-| **AccountID** | `string` |  |
-| **NewAccountPassword** | `string` |  |
-
-### SetAccountNicknameX
-
-Action body:
-
-```xml
-<u:SetAccountNicknameX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <AccountUDN>string</AccountUDN>
-  <AccountNickname>string</AccountNickname>
-</u:SetAccountNicknameX>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AccountUDN** | `string` |  |
-| **AccountNickname** | `string` |  |
-
-### RefreshAccountCredentialsX
-
-Action body:
-
-```xml
-<u:RefreshAccountCredentialsX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-  <AccountType>ui4</AccountType>
-  <AccountUID>ui4</AccountUID>
-  <AccountToken>string</AccountToken>
-  <AccountKey>string</AccountKey>
-</u:RefreshAccountCredentialsX>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **AccountType** | `ui4` |  |
-| **AccountUID** | `ui4` |  |
-| **AccountToken** | `string` |  |
-| **AccountKey** | `string` |  |
+No input arguments
 
 ### EditAccountMd
 
@@ -311,27 +141,25 @@ Inputs:
 | **AccountID** | `string` |  |
 | **NewAccountMd** | `string` |  |
 
-### DoPostUpdateTasks
+### EditAccountPasswordX
 
 Action body:
 
 ```xml
-<u:DoPostUpdateTasks xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-</u:DoPostUpdateTasks>
+<u:EditAccountPasswordX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <AccountType>ui4</AccountType>
+  <AccountID>string</AccountID>
+  <NewAccountPassword>string</NewAccountPassword>
+</u:EditAccountPasswordX>
 ```
 
-No input arguments
+Inputs:
 
-### ResetThirdPartyCredentials
-
-Action body:
-
-```xml
-<u:ResetThirdPartyCredentials xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
-</u:ResetThirdPartyCredentials>
-```
-
-No input arguments
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AccountType** | `ui4` |  |
+| **AccountID** | `string` |  |
+| **NewAccountPassword** | `string` |  |
 
 ### EnableRDM
 
@@ -366,6 +194,141 @@ Outputs:
 |:----------|:-----|:------------|
 | **RDMValue** | `boolean` |  |
 
+### GetString
+
+Get a saved string.
+
+Action body:
+
+```xml
+<u:GetString xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <VariableName>string</VariableName>
+</u:GetString>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **VariableName** | `string` | The key for this variable |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **StringValue** | `string` |  |
+
+**Remarks** Strings are saved in the system with SetString, every speaker should send the same data. Will error when not existing
+
+### GetWebCode
+
+Action body:
+
+```xml
+<u:GetWebCode xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <AccountType>ui4</AccountType>
+</u:GetWebCode>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AccountType** | `ui4` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **WebCode** | `string` |  |
+
+### ProvisionCredentialedTrialAccountX
+
+Action body:
+
+```xml
+<u:ProvisionCredentialedTrialAccountX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <AccountType>ui4</AccountType>
+  <AccountID>string</AccountID>
+  <AccountPassword>string</AccountPassword>
+</u:ProvisionCredentialedTrialAccountX>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AccountType** | `ui4` |  |
+| **AccountID** | `string` |  |
+| **AccountPassword** | `string` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **IsExpired** | `boolean` |  |
+| **AccountUDN** | `string` |  |
+
+### RefreshAccountCredentialsX
+
+Action body:
+
+```xml
+<u:RefreshAccountCredentialsX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <AccountType>ui4</AccountType>
+  <AccountUID>ui4</AccountUID>
+  <AccountToken>string</AccountToken>
+  <AccountKey>string</AccountKey>
+</u:RefreshAccountCredentialsX>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AccountType** | `ui4` |  |
+| **AccountUID** | `ui4` |  |
+| **AccountToken** | `string` |  |
+| **AccountKey** | `string` |  |
+
+### Remove
+
+Remove a saved string
+
+Action body:
+
+```xml
+<u:Remove xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <VariableName>string</VariableName>
+</u:Remove>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **VariableName** | `string` | The key for this variable |
+
+**Remarks** Not sure what happens if you call this with a VariableName that doesn&#x27;t exists.
+
+### RemoveAccount
+
+Action body:
+
+```xml
+<u:RemoveAccount xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <AccountType>ui4</AccountType>
+  <AccountID>string</AccountID>
+</u:RemoveAccount>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AccountType** | `ui4` |  |
+| **AccountID** | `string` |  |
+
 ### ReplaceAccountX
 
 Action body:
@@ -397,6 +360,57 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **NewAccountUDN** | `string` |  |
+
+### ResetThirdPartyCredentials
+
+Action body:
+
+```xml
+<u:ResetThirdPartyCredentials xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+</u:ResetThirdPartyCredentials>
+```
+
+No input arguments
+
+### SetAccountNicknameX
+
+Action body:
+
+```xml
+<u:SetAccountNicknameX xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <AccountUDN>string</AccountUDN>
+  <AccountNickname>string</AccountNickname>
+</u:SetAccountNicknameX>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **AccountUDN** | `string` |  |
+| **AccountNickname** | `string` |  |
+
+### SetString
+
+Save a string in the system
+
+Action body:
+
+```xml
+<u:SetString xmlns:u="urn:schemas-upnp-org:service:SystemProperties:1">
+  <VariableName>string</VariableName>
+  <StringValue>string</StringValue>
+</u:SetString>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **VariableName** | `string` | The key for this variable, use something unique |
+| **StringValue** | `string` |  |
+
+**Remarks** Strings are saved in the system, retrieve values with GetString.
 
 ## Events
 
