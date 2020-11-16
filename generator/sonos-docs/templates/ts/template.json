@@ -72,6 +72,9 @@
       "extended": true,
       "imports": ["ChannelValue"]
     },
+    "SystemPropertiesService": {
+      "extended": true
+    },
     "VirtualLineInService": {
       "imports":["Track"]
     },
