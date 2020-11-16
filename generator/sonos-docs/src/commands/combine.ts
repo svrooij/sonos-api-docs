@@ -7,6 +7,8 @@ import * as fs from 'fs'
 
 import {SonosServicesDocumentation} from '../models/sonos-service-documentation'
 import SonosDevice from '../models/sonos-device'
+import { SonosService } from '../models/sonos-service'
+import { SonosServiceAction } from '../models/sonos-service-action'
 
 export default class Combine extends Command {
   static description = 'Generate intermediate json file by combining the documentation file and the discovered services.'
@@ -181,7 +183,9 @@ export default class Combine extends Command {
           })
         }
       }
+      s.actions = s.actions?.sort((a: SonosServiceAction, b: SonosServiceAction) => a.name.localeCompare(b.name))
     })
+    combinedServices.services = combinedServices.services.sort((a: SonosService, b: SonosService) => a.name.localeCompare(b.name))
     cli.action.stop()
 
     cli.action.start(`Writing file ${flags.out}`)

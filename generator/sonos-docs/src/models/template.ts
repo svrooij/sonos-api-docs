@@ -7,6 +7,8 @@ export interface Template {
   slug: string;
   license: string;
   folder?: string;
+  dataTypes?: { [key: string]: string }
+  serviceData?: { [key: string]: any }
 }
 
 export interface TemplateFile {

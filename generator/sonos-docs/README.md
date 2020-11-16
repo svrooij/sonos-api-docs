@@ -31,7 +31,8 @@ USAGE
 * [`sonos-docs combine`](#sonos-docs-combine)
 * [`sonos-docs generate TEMPLATE OUTPUT`](#sonos-docs-generate-template-output)
 * [`sonos-docs help [COMMAND]`](#sonos-docs-help-command)
-* [`sonos-docs services [IP]`](#sonos-docs-services-ip)
+* [`sonos-docs musicservices IP`](#sonos-docs-musicservices-ip)
+* [`sonos-docs services IP`](#sonos-docs-services-ip)
 
 ## `sonos-docs combine`
 
@@ -97,13 +98,40 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src\commands\help.ts)_
 
-## `sonos-docs services [IP]`
+## `sonos-docs musicservices IP`
+
+describe the command here
+
+```
+USAGE
+  $ sonos-docs musicservices IP
+
+ARGUMENTS
+  IP  The IP of the sonos speaker to load the music services
+
+OPTIONS
+  -x, --extended          show extra columns
+  --columns=columns       only show provided columns (comma-separated)
+  --csv                   output is csv format [alias: --output=csv]
+  --filter=filter         filter property by partial string matching, ex: name=foo
+  --no-header             hide table header from output
+  --no-truncate           do not truncate output to fit screen
+  --output=csv|json|yaml  output in a more machine friendly format
+  --sort=sort             property to sort by (prepend '-' for descending)
+```
+
+_See code: [src\commands\musicservices.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src\commands\musicservices.ts)_
+
+## `sonos-docs services IP`
 
 Fetch device discovery document and generate json file
 
 ```
 USAGE
-  $ sonos-docs services [IP]
+  $ sonos-docs services IP
+
+ARGUMENTS
+  IP  The IP of the sonos to do service discovery for.
 
 OPTIONS
   -d, --dryRun

@@ -11,7 +11,7 @@ parent: Sonos UPNP
 {{/if}}
 
 {{#if availableAt}}
-The {{serviceName}} is available on these models: {{#each availableAt}}`{{this}}` {{/each}}.
+The {{serviceName}} is available on these models: {{#each availableAt}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}.
 {{/if}}
 
 1. TOC

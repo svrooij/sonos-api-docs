@@ -53,6 +53,21 @@
       "description": "Slug has to be unique and match the tempalte folder, to be included into the generator",
       "type": "string"
     },
+    "dataTypes": {
+      "title": "Replace data types, original type as key, new type as value",
+      "additionalProperties": {
+        "type":"string"
+      },
+      "type":"object"
+    },
+    "serviceData": {
+      "title": "Add data to each service, to use in your templates",
+      "additionalProperties": {
+        "title": "Use the exact service name as key",
+        "type":"object"
+      },
+      "type":"object"
+    },
     "license": {
       "title": "License of the template",
       "description": "'MIT' is required to be included into the generator",
