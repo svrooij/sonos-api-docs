@@ -1,11 +1,14 @@
 /**
  * Sonos {{serviceName}}
- * 
+ *
  * Stephan van Rooij
  * https://svrooij.io
  *
  * This file is generated, do not edit manually. https://svrooij.io/sonos-api-docs
  */
+{{#if data.importUrl}}
+import { URL } from 'url';
+{{/if}}
 import BaseService from './base-service';
 {{#if data.importArrayHelper}}
 import ArrayHelper from '../helpers/array-helper';
@@ -13,14 +16,13 @@ import ArrayHelper from '../helpers/array-helper';
 {{#if data.importMetadataHelper}}
 import MetadataHelper from '../helpers/metadata-helper';
 {{/if}}
-{{#if data.importUrl}}
-import { URL } from 'url';
-{{/if}}
 {{#if data.importXmlHelper}}
 import XmlHelper from '../helpers/xml-helper';
 {{/if}}
 {{#if data.imports}}
-import { {{#each data.imports}}{{this}}{{#unless @last}}, {{/unless}}{{/each}} } from '../models';
+import {
+  {{#each data.imports}}{{this}},{{#unless @last}} {{/unless}}{{/each}}
+} from '../models';
 {{/if}}
 
 {{#if description}}
@@ -243,7 +245,7 @@ export interface MusicService {
   Id: number;
   Manifest: { Uri: string; Version: string };
   Name: string;
-  Policy: { Auth: string; PollInterval?: number };
+  Policy: { Auth: 'Anonymous' | 'AppLink' | 'DeviceLink' | 'UserId'; PollInterval?: number };
   Presentation?: { Strings?: { Uri: string; Version: string }; PresentationMap?: { Uri: string; Version: string }};
   SecureUri: string;
   Uri: string;
@@ -348,7 +350,7 @@ export class SystemPropertiesService extends SystemPropertiesServiceBase {
    */
   public async SavedAccounts(): Promise<number[] | undefined> {
     const result = await this.GetStringSafe('sonos-ts-accounts');
-    return result?.split('|').map(s => parseInt(s));
+    return result?.split('|').map((s) => parseInt(s, 10));
   }
 
   /**
@@ -445,13 +447,12 @@ export class ZoneGroupTopologyService extends ZoneGroupTopologyServiceBase {
    */
   async GetParsedZoneGroupState(): Promise<ZoneGroup[]> {
     const groupStateResponse = await this.GetZoneGroupState();
-    if(typeof groupStateResponse.ZoneGroupState === 'string') {
+    if (typeof groupStateResponse.ZoneGroupState === 'string') {
       const decodedGroupState = XmlHelper.DecodeAndParseXml(groupStateResponse.ZoneGroupState, '');
       const groups = ArrayHelper.ForceArray(decodedGroupState.ZoneGroupState.ZoneGroups.ZoneGroup);
       return groups.map((g: any) => ZoneGroupTopologyService.ParseGroup(g));
-    } else {
-      return groupStateResponse.ZoneGroupState; // This should never happen, because it always is a string.
     }
+    return groupStateResponse.ZoneGroupState; // This should never happen, because it always is a string.
   }
 
   private static ParseMember(member: any): ZoneMember {
