@@ -6,7 +6,7 @@ parent: Sonos UPNP
 # AudioInService
 {: .no_toc }
 
-The AudioInService is available on these models: `v1-S5` .
+The AudioInService is available on these models: `v1-S5`.
 
 1. TOC
 {:toc}
@@ -45,6 +45,94 @@ Content-Type: text/xml; charset=utf8
 
 ## Available actions
 
+### GetAudioInputAttributes
+
+Action body:
+
+```xml
+<u:GetAudioInputAttributes xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
+</u:GetAudioInputAttributes>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **CurrentName** | `string` |  |
+| **CurrentIcon** | `string` |  |
+
+### GetLineInLevel
+
+Action body:
+
+```xml
+<u:GetLineInLevel xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
+</u:GetLineInLevel>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **CurrentLeftLineInLevel** | `i4` |  |
+| **CurrentRightLineInLevel** | `i4` |  |
+
+### SelectAudio
+
+Action body:
+
+```xml
+<u:SelectAudio xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
+  <ObjectID>string</ObjectID>
+</u:SelectAudio>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **ObjectID** | `string` |  |
+
+### SetAudioInputAttributes
+
+Action body:
+
+```xml
+<u:SetAudioInputAttributes xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
+  <DesiredName>string</DesiredName>
+  <DesiredIcon>string</DesiredIcon>
+</u:SetAudioInputAttributes>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **DesiredName** | `string` |  |
+| **DesiredIcon** | `string` |  |
+
+### SetLineInLevel
+
+Action body:
+
+```xml
+<u:SetLineInLevel xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
+  <DesiredLeftLineInLevel>i4</DesiredLeftLineInLevel>
+  <DesiredRightLineInLevel>i4</DesiredRightLineInLevel>
+</u:SetLineInLevel>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **DesiredLeftLineInLevel** | `i4` |  |
+| **DesiredRightLineInLevel** | `i4` |  |
+
 ### StartTransmissionToGroup
 
 Action body:
@@ -82,94 +170,6 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **CoordinatorID** | `string` |  |
-
-### SetAudioInputAttributes
-
-Action body:
-
-```xml
-<u:SetAudioInputAttributes xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
-  <DesiredName>string</DesiredName>
-  <DesiredIcon>string</DesiredIcon>
-</u:SetAudioInputAttributes>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **DesiredName** | `string` |  |
-| **DesiredIcon** | `string` |  |
-
-### GetAudioInputAttributes
-
-Action body:
-
-```xml
-<u:GetAudioInputAttributes xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
-</u:GetAudioInputAttributes>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **CurrentName** | `string` |  |
-| **CurrentIcon** | `string` |  |
-
-### SetLineInLevel
-
-Action body:
-
-```xml
-<u:SetLineInLevel xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
-  <DesiredLeftLineInLevel>i4</DesiredLeftLineInLevel>
-  <DesiredRightLineInLevel>i4</DesiredRightLineInLevel>
-</u:SetLineInLevel>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **DesiredLeftLineInLevel** | `i4` |  |
-| **DesiredRightLineInLevel** | `i4` |  |
-
-### GetLineInLevel
-
-Action body:
-
-```xml
-<u:GetLineInLevel xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
-</u:GetLineInLevel>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **CurrentLeftLineInLevel** | `i4` |  |
-| **CurrentRightLineInLevel** | `i4` |  |
-
-### SelectAudio
-
-Action body:
-
-```xml
-<u:SelectAudio xmlns:u="urn:schemas-upnp-org:service:AudioIn:1">
-  <ObjectID>string</ObjectID>
-</u:SelectAudio>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **ObjectID** | `string` |  |
 
 ## Events
 

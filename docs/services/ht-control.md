@@ -6,7 +6,7 @@ parent: Sonos UPNP
 # HTControlService
 {: .no_toc }
 
-The HTControlService is available on these models: `v1-S9` .
+The HTControlService is available on these models: `v1-S9`.
 
 1. TOC
 {:toc}
@@ -45,21 +45,21 @@ Content-Type: text/xml; charset=utf8
 
 ## Available actions
 
-### SetIRRepeaterState
+### CommitLearnedIRCodes
 
 Action body:
 
 ```xml
-<u:SetIRRepeaterState xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
-  <DesiredIRRepeaterState>string</DesiredIRRepeaterState>
-</u:SetIRRepeaterState>
+<u:CommitLearnedIRCodes xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
+  <Name>string</Name>
+</u:CommitLearnedIRCodes>
 ```
 
 Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **DesiredIRRepeaterState** | `string` |  Allowed values: `On` / `Off` / `Disabled` |
+| **Name** | `string` |  |
 
 ### GetIRRepeaterState
 
@@ -78,6 +78,23 @@ Outputs:
 |:----------|:-----|:------------|
 | **CurrentIRRepeaterState** | `string` |  Possible values: `On` / `Off` / `Disabled` |
 
+### GetLEDFeedbackState
+
+Action body:
+
+```xml
+<u:GetLEDFeedbackState xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
+</u:GetLEDFeedbackState>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **LEDFeedbackState** | `string` |  Possible values: `On` / `Off` |
+
 ### IdentifyIRRemote
 
 Action body:
@@ -93,6 +110,23 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **Timeout** | `ui4` |  |
+
+### IsRemoteConfigured
+
+Action body:
+
+```xml
+<u:IsRemoteConfigured xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
+</u:IsRemoteConfigured>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **RemoteConfigured** | `boolean` |  |
 
 ### LearnIRCode
 
@@ -112,38 +146,21 @@ Inputs:
 | **IRCode** | `string` |  |
 | **Timeout** | `ui4` |  |
 
-### CommitLearnedIRCodes
+### SetIRRepeaterState
 
 Action body:
 
 ```xml
-<u:CommitLearnedIRCodes xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
-  <Name>string</Name>
-</u:CommitLearnedIRCodes>
+<u:SetIRRepeaterState xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
+  <DesiredIRRepeaterState>string</DesiredIRRepeaterState>
+</u:SetIRRepeaterState>
 ```
 
 Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **Name** | `string` |  |
-
-### IsRemoteConfigured
-
-Action body:
-
-```xml
-<u:IsRemoteConfigured xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
-</u:IsRemoteConfigured>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **RemoteConfigured** | `boolean` |  |
+| **DesiredIRRepeaterState** | `string` |  Allowed values: `On` / `Off` / `Disabled` |
 
 ### SetLEDFeedbackState
 
@@ -160,23 +177,6 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **LEDFeedbackState** | `string` |  Allowed values: `On` / `Off` |
-
-### GetLEDFeedbackState
-
-Action body:
-
-```xml
-<u:GetLEDFeedbackState xmlns:u="urn:schemas-upnp-org:service:HTControl:1">
-</u:GetLEDFeedbackState>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **LEDFeedbackState** | `string` |  Possible values: `On` / `Off` |
 
 ## Events
 

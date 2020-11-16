@@ -1,7 +1,8 @@
 {
   "$schema": "https://svrooij.io/sonos-api-docs/schema/template.json",
-  "name": "Sonos Typescript documentation",
+  "name": "Sonos Typescript",
   "slug": "ts",
+  "repository": "https://github.com/svrooij/node-sonos-ts/",
   "author": {
     "name": "svrooij",
     "link": "https://svrooij.io"
@@ -71,6 +72,9 @@
     "RenderingControlService": {
       "extended": true,
       "imports": ["ChannelValue"]
+    },
+    "SystemPropertiesService": {
+      "extended": true
     },
     "VirtualLineInService": {
       "imports":["Track"]

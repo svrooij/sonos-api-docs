@@ -73,6 +73,11 @@
       "description": "'MIT' is required to be included into the generator",
       "default": "MIT",
       "type":"string"
+    },
+    "repository": {
+      "title": "Code repositry",
+      "description": "The repository where the resulting code is used",
+      "type":"string"
     }
   },
   "required": [

@@ -6,7 +6,7 @@ parent: Sonos UPNP
 # VirtualLineInService
 {: .no_toc }
 
-The VirtualLineInService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The VirtualLineInService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -45,15 +45,14 @@ Content-Type: text/xml; charset=utf8
 
 ## Available actions
 
-### StartTransmission
+### Next
 
 Action body:
 
 ```xml
-<u:StartTransmission xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
+<u:Next xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
   <InstanceID>ui4</InstanceID>
-  <CoordinatorID>string</CoordinatorID>
-</u:StartTransmission>
+</u:Next>
 ```
 
 Inputs:
@@ -61,23 +60,15 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **CoordinatorID** | `string` |  |
 
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **CurrentTransportSettings** | `string` |  |
-
-### StopTransmission
+### Pause
 
 Action body:
 
 ```xml
-<u:StopTransmission xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
+<u:Pause xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
   <InstanceID>ui4</InstanceID>
-  <CoordinatorID>string</CoordinatorID>
-</u:StopTransmission>
+</u:Pause>
 ```
 
 Inputs:
@@ -85,7 +76,6 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
-| **CoordinatorID** | `string` |  |
 
 ### Play
 
@@ -105,38 +95,6 @@ Inputs:
 | **InstanceID** | `ui4` |  |
 | **Speed** | `string` |  |
 
-### Pause
-
-Action body:
-
-```xml
-<u:Pause xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
-  <InstanceID>ui4</InstanceID>
-</u:Pause>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
-
-### Next
-
-Action body:
-
-```xml
-<u:Next xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
-  <InstanceID>ui4</InstanceID>
-</u:Next>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
-
 ### Previous
 
 Action body:
@@ -145,22 +103,6 @@ Action body:
 <u:Previous xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
   <InstanceID>ui4</InstanceID>
 </u:Previous>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **InstanceID** | `ui4` |  |
-
-### Stop
-
-Action body:
-
-```xml
-<u:Stop xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
-  <InstanceID>ui4</InstanceID>
-</u:Stop>
 ```
 
 Inputs:
@@ -186,6 +128,64 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` |  |
 | **DesiredVolume** | `ui2` |  |
+
+### StartTransmission
+
+Action body:
+
+```xml
+<u:StartTransmission xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
+  <InstanceID>ui4</InstanceID>
+  <CoordinatorID>string</CoordinatorID>
+</u:StartTransmission>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **InstanceID** | `ui4` |  |
+| **CoordinatorID** | `string` |  |
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **CurrentTransportSettings** | `string` |  |
+
+### Stop
+
+Action body:
+
+```xml
+<u:Stop xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
+  <InstanceID>ui4</InstanceID>
+</u:Stop>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **InstanceID** | `ui4` |  |
+
+### StopTransmission
+
+Action body:
+
+```xml
+<u:StopTransmission xmlns:u="urn:schemas-upnp-org:service:VirtualLineIn:1">
+  <InstanceID>ui4</InstanceID>
+  <CoordinatorID>string</CoordinatorID>
+</u:StopTransmission>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **InstanceID** | `ui4` |  |
+| **CoordinatorID** | `string` |  |
 
 ## Events
 

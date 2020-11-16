@@ -6,7 +6,7 @@ parent: Sonos UPNP
 # ConnectionManagerService
 {: .no_toc }
 
-The ConnectionManagerService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The ConnectionManagerService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -44,24 +44,6 @@ Content-Type: text/xml; charset=utf8
 ---
 
 ## Available actions
-
-### GetProtocolInfo
-
-Action body:
-
-```xml
-<u:GetProtocolInfo xmlns:u="urn:schemas-upnp-org:service:ConnectionManager:1">
-</u:GetProtocolInfo>
-```
-
-No input arguments
-
-Outputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **Source** | `string` |  |
-| **Sink** | `string` |  |
 
 ### GetCurrentConnectionIDs
 
@@ -107,6 +89,24 @@ Outputs:
 | **PeerConnectionID** | `i4` |  |
 | **Direction** | `string` |  Possible values: `Input` / `Output` |
 | **Status** | `string` |  Possible values: `OK` / `ContentFormatMismatch` / `InsufficientBandwidth` / `UnreliableChannel` / `Unknown` |
+
+### GetProtocolInfo
+
+Action body:
+
+```xml
+<u:GetProtocolInfo xmlns:u="urn:schemas-upnp-org:service:ConnectionManager:1">
+</u:GetProtocolInfo>
+```
+
+No input arguments
+
+Outputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **Source** | `string` |  |
+| **Sink** | `string` |  |
 
 ## Events
 

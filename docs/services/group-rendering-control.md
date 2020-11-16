@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players.
 
-The GroupRenderingControlService is available on these models: `v1-S1` `v1-S5` `v1-S9` .
+The GroupRenderingControlService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 1. TOC
 {:toc}
@@ -73,28 +73,6 @@ Outputs:
 
 **Remarks** Send to non-coordinator returns error code 701
 
-### SetGroupMute
-
-(Un-/)Mute the entire group
-
-Action body:
-
-```xml
-<u:SetGroupMute xmlns:u="urn:schemas-upnp-org:service:GroupRenderingControl:1">
-  <InstanceID>ui4</InstanceID>
-  <DesiredMute>boolean</DesiredMute>
-</u:SetGroupMute>
-```
-
-Inputs:
-
-| parameter | type | description |
-|:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **DesiredMute** | `boolean` | True for mute, false for un-mute |
-
-**Remarks** Send to non-coordinator returns error code 701
-
 ### GetGroupVolume
 
 Get the group volume.
@@ -118,6 +96,28 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **CurrentVolume** | `ui2` |  |
+
+**Remarks** Send to non-coordinator returns error code 701
+
+### SetGroupMute
+
+(Un-/)Mute the entire group
+
+Action body:
+
+```xml
+<u:SetGroupMute xmlns:u="urn:schemas-upnp-org:service:GroupRenderingControl:1">
+  <InstanceID>ui4</InstanceID>
+  <DesiredMute>boolean</DesiredMute>
+</u:SetGroupMute>
+```
+
+Inputs:
+
+| parameter | type | description |
+|:----------|:-----|:------------|
+| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **DesiredMute** | `boolean` | True for mute, false for un-mute |
 
 **Remarks** Send to non-coordinator returns error code 701
 
