@@ -10,6 +10,7 @@ import {Template} from '../models/template'
 import {SonosService} from '../models/sonos-service'
 import StringHelper from '../helpers/string-helper'
 import SonosStateVariable from '../models/sonos-state-variable'
+import { SonosServiceActionArgument } from '../models/sonos-service-action'
 
 export default class Generate extends Command {
   static description = 'Generate files based on the intermediate file and a template.'
@@ -37,7 +38,7 @@ export default class Generate extends Command {
     this.log('Starting generator with template \'%s\'', args.template)
 
     const outputTemplate = this.getTemplate(args.template)
-    const deviceDescription = this.getDeviceDescription(flags.intermediate)
+    const deviceDescription = this.getDeviceDescription(flags.intermediate, outputTemplate?.dataTypes, outputTemplate?.serviceData)
 
     const outputBase = this.getFullPathAndCreateDirectory(args.output, true)
 
@@ -45,6 +46,43 @@ export default class Generate extends Command {
       // This should never be reached, since it will already throw an error earlier.
       return
     }
+
+    // Register helpers
+    // {{lower var}} for lowercase
+    handlebars.registerHelper('lower', (input: any) => {
+      if (typeof input === 'string') {
+        return input.toLowerCase();
+      }
+      return input;
+    })
+    // {{kebab var}} for kebab case
+    handlebars.registerHelper('kebab', (input: any) => {
+      if (typeof input === 'string') {
+        return StringHelper.camelToKebab(input);
+      }
+      return input;
+    })
+    // unless val
+    handlebars.registerHelper('are_equal', function (input?: string, compareTo?: string) {
+      if(arguments.length != 3) {
+        throw new handlebars.Exception('same requires exactly two argument');
+      }
+      //console.log('Compare items', arguments);
+      return input === compareTo;
+    })
+    handlebars.registerHelper('or', function(condition1: boolean, condition2: boolean) {
+      if(arguments.length != 3) {
+        throw new handlebars.Exception('or requires exactly two argument');
+      }
+      return condition1 || condition2;
+    })
+    handlebars.registerHelper('sonos_if_only_instance_id', function(input?: Array<SonosServiceActionArgument>, defaultParams?: string) {
+      if(input !== undefined && defaultParams !== undefined && input.length === 1 && input[0].name === 'InstanceID') {
+        return defaultParams;
+      }
+      return null;
+    })
+
 
     outputTemplate?.files.forEach(t => {
       if (t.usage === 'index') {
@@ -105,7 +143,14 @@ export default class Generate extends Command {
     return this.error('Template %s not found, use folder name or packaged template name', {exit: 20})
   }
 
-  private getDeviceDescription(location: string): SonosDevice | undefined | never {
+  private postProcess(input: string) : string {
+    // Do some post-processing on the template. HandlebarsJS doesn't support Outputting a 
+    return input
+      .replace(/-{-/g, '{')
+      .replace(/-}-/g, '}');
+  }
+
+  private getDeviceDescription(location: string, dataTypes?: { [key: string]: string }, serviceData?: { [key: string]: any }): SonosDevice | undefined | never {
     const intermediateFile = this.getFullPathAndCreateDirectory(location)
     if (!fs.existsSync(intermediateFile)) {
       return this.error('Intermediate file doesn\'t exist, generate with \'combine\' command first.', {exit: 10})
@@ -115,6 +160,15 @@ export default class Generate extends Command {
     const intermediate = JSON.parse(fs.readFileSync(intermediateFile).toString()) as SonosDevice
     intermediate.services.forEach(service => {
       service.kebabName = StringHelper.camelToKebab(service.name.replace('AV', 'Av').replace('HT', 'Ht'))
+      if (typeof (service.stateVariables) !== undefined) {
+        // Replace datatypes as specified in the template
+        if(dataTypes !== undefined) {
+          service.stateVariables?.forEach(v => {
+            v.dataType = this.getCorrectDataType(v.name, dataTypes) ?? dataTypes[v.dataType] ?? v.dataType;
+          })
+        } 
+        service.eventVariables = service.stateVariables?.filter((v: SonosStateVariable) => !v.name.startsWith('A_ARG_TYPE')).sort((a, b) => a.name.localeCompare(b.name))
+      }
       if (typeof (service.stateVariables) !== undefined && typeof (service.actions) !== undefined) {
         service.actions?.forEach(a => {
           a.inputs?.forEach(i => {
@@ -125,9 +179,10 @@ export default class Generate extends Command {
           })
         })
       }
-      if (typeof (service.stateVariables) !== undefined) {
-        service.eventVariables = service.stateVariables?.filter((v: SonosStateVariable) => !v.name.startsWith('A_ARG_TYPE')).sort((a, b) => a.name.localeCompare(b.name))
+      if(serviceData !== undefined){
+        service.data = serviceData[service.serviceName];
       }
+      
     })
     intermediate.services = intermediate.services.sort((a, b) => a.name.localeCompare(b.name))
     return intermediate
@@ -143,5 +198,12 @@ export default class Generate extends Command {
       return this.error(`Template file ${file} could not be loaded`, {exit: 30})
     }
     return handlebars.compile(fs.readFileSync(filename).toString())
+  }
+
+  private getCorrectDataType(name: string, dataTypes: { [key: string]: string }): string | undefined {
+    const type = Object.entries(dataTypes).find(e => name.endsWith(e[0]))
+    if(type !== undefined) {
+      return type[1];
+    }
   }
 }

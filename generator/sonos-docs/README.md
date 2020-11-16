@@ -31,7 +31,7 @@ USAGE
 * [`sonos-docs combine`](#sonos-docs-combine)
 * [`sonos-docs generate TEMPLATE OUTPUT`](#sonos-docs-generate-template-output)
 * [`sonos-docs help [COMMAND]`](#sonos-docs-help-command)
-* [`sonos-docs services [IP]`](#sonos-docs-services-ip)
+* [`sonos-docs services IP`](#sonos-docs-services-ip)
 
 ## `sonos-docs combine`
 
@@ -97,13 +97,16 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src\commands\help.ts)_
 
-## `sonos-docs services [IP]`
+## `sonos-docs services IP`
 
 Fetch device discovery document and generate json file
 
 ```
 USAGE
-  $ sonos-docs services [IP]
+  $ sonos-docs services IP
+
+ARGUMENTS
+  IP  The IP of the sonos to do service discovery for.
 
 OPTIONS
   -d, --dryRun

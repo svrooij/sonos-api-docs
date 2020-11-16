@@ -20,7 +20,7 @@ export default class Services extends Command {
   }
 
   static args = [
-    {name: 'ip'},
+    { name: 'ip', required: true, description: 'The IP of the sonos to do service discovery for.' },
   ]
 
   async run() {
