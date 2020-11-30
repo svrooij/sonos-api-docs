@@ -65,7 +65,8 @@ These files toghether with the documentation file, are combined to a extensive J
 
 The generator uses [handlebars.js templates](https://handlebarsjs.com/) to generate the documentation/strong typed clients. Check-out the [docs template](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs) as a sample to develop your own templates.
 
-A template is a folder with a [template.json](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs/template.json) file, that describes the template and specifies what templates should be used to either generate an index (all services in a single file), or a seperate file for each service. The template.json also has a [json schema](https://svrooij.io/sonos-api-docs/schema/template.json) so VS Code will guide you when creating your own template.
+A template is a folder with a [template.json](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs/template.json) file, that describes the template and specifies what templates should be used to either generate an index (all services in a single file), or a seperate file for each service.
+The template.json also has a [json schema](https://svrooij.io/sonos-api-docs/schema/template.json) so VS Code will guide you when creating your own template.
 
 ## Contributors ✨
 
