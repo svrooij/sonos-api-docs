@@ -34,7 +34,7 @@ export default class Musicservices extends Command {
     if(flags.docs) {
       console.log('| Id  | Name                      | Auth       | Url |\r\n|:----|:--------------------------|:-----------|:----|');
       musicServices.forEach(m => {
-        console.log(`| ${m.Id.toString().padStart(3, ' ')} | ${m.Name.padEnd(25, ' ')} | ${m.Policy.Auth.padEnd(10, ' ')} | ${m.SecureUri} |`);
+        console.log(`| ${m.Id.toString().padStart(3, ' ')} | ${m.Name.padEnd(25, ' ')} | ${m.Policy.Auth.padEnd(10, ' ')} | \`${m.SecureUri}\` |`);
       })
     }
     

@@ -15,6 +15,13 @@
         },
         "description": {
           "type": "string"
+        },
+        "errors": {
+          "title": "Custom errors for this service",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SonosCustomError"
+          }
         }
       },
       "type": "object",
@@ -45,6 +52,21 @@
       },
       "type": "object",
       "required": ["description"]
+    },
+    "SonosCustomError": {
+      "title": "Custom error",
+      "description": "Sonos defined custom errors per UPNP Service.",
+      "properties": {
+        "code": {
+          "title": "Error code",
+          "type": "number"
+        },
+        "description": {
+          "title": "Error description",
+          "type":"string"
+        }
+      },
+      "required": ["code", "description"]
     }
   },
   "properties": {
@@ -63,6 +85,14 @@
         "$ref": "#/definitions/SonosServiceDocumentation"
       },
       "type": "object"
+    },
+    "errors": {
+      "title": "Default errors",
+      "description": "These errors are used in all services.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SonosCustomError"
+      }
     }
   },
   "type": "object",

@@ -1,5 +1,5 @@
-sonos-docs
-==========
+# sonos-docs
+<!-- markdownlint-disable -->
 
 CLI tool to generate documentation for the undocumented sonos api
 

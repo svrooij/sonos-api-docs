@@ -1,0 +1,6 @@
+---
+
+extends: default
+
+rules:
+  document-start: disable  # don't bother me with this rule

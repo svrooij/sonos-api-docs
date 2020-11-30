@@ -11,7 +11,7 @@ This page describes a few known projects that use the local sonos api.
 ## Libraries
 
 {% for project in site.data.projects.libraries %}
-### [{{project.name}}]({{project.link}}) 
+### [{{project.name}}]({{project.link}})
 
 {{project.description}}
 
@@ -22,8 +22,9 @@ Created by [{{project.author.name}}]({{project.author.link}}).{% if project.uses
 
 ## Apps
 
+<!-- markdownlint-disable MD024 -->
 {% for project in site.data.projects.apps %}
-### [{{project.name}}]({{project.link}}) 
+### [{{project.name}}]({{project.link}})
 
 {{project.description}}
 
