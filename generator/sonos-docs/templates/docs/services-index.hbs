@@ -19,6 +19,18 @@ Every sonos speaker has several soap services. Each service has one or more acti
 {{#each services}}
 | [**{{name}}**]({{kebabName}}.html) | {{description}} |
 {{/each}}
+{{#if errors}}
+
+## UPNP errors
+
+These are the default UPNP errors.
+
+| Error code | Description |
+|:-----------|:------------|
+{{#each errors}}
+| `{{code}}` | {{description}} |
+{{/each}}
+{{/if}}
 
 ---
 

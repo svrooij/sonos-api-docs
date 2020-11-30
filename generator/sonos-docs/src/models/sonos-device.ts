@@ -1,4 +1,5 @@
 import { SonosService } from './sonos-service';
+import SonosServiceError from './sonos-service-error';
 
 export default interface SonosDevice {
   model: string;
@@ -7,4 +8,5 @@ export default interface SonosDevice {
   softwareVersion: string;
   discoveryDate: Date;
   services: SonosService[];
+  errors?: SonosServiceError[];
 }

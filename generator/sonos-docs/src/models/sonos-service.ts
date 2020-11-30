@@ -1,4 +1,5 @@
 import { SonosServiceAction } from './sonos-service-action';
+import SonosServiceError from './sonos-service-error';
 import SonosStateVariable from "./sonos-state-variable";
 
 export interface SonosService {
@@ -19,5 +20,7 @@ export interface SonosService {
   actions?: SonosServiceAction[];
   eventVariables?: SonosStateVariable[];
   data?: { [key: string]: any };
+
+  errors?: SonosServiceError[];
 }
 

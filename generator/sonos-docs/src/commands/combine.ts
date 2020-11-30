@@ -157,11 +157,14 @@ export default class Combine extends Command {
 
     // Devices combined, lets add documentation
     combinedServices.discoveryDate = new Date()
-    combinedServices.model += '|' + otherDevices.map(d => d.model).join('|')
+    combinedServices.model += '|' + otherDevices.map(d => d.model).join('|');
+    combinedServices.modelDescription += '|' + otherDevices.map(d => d.modelDescription).join('|');
+    combinedServices.errors = documentation?.errors?.sort((a,b)=> a.code - b.code);
     combinedServices.services.forEach(s => {
       const docs = documentation?.services[s.serviceName]
       if (typeof (docs) !== undefined) {
         s.description = docs?.description
+        s.errors = docs?.errors?.sort((a,b) => a.code - b.code);
         if (typeof (s.actions) !== undefined && docs?.actions) {
           const actions = docs?.actions ?? {}
           s.actions?.forEach(a => {
