@@ -19,6 +19,11 @@
       "usage":"index"
     },
     {
+      "file": "sonos-upnp-errors.hbs",
+      "outputFile": "src/services/sonos-upnp-errors.ts",
+      "usage":"index"
+    },
+    {
       "file": "service.hbs",
       "outputFile": "src/services/{snService}.service.ts",
       "usage":"service"
