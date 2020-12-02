@@ -12,8 +12,9 @@ permalink: /
 
 Sonos api documentation for the local UPNP api and a [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) to generate clients and documentation based on service discovery
 
-[![Support me on Github][badge_sponsor]][link_sponsor]
+[![Join us on Discord][badge_discord]][link_discord]
 [![github issues][badge_issues]][link_issues]
+[![Support me on Github][badge_sponsor]][link_sponsor]
 
 This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). It's just a set of text files to document a hidden and **unsupported** api.
 
@@ -68,6 +69,12 @@ The generator uses [handlebars.js templates](https://handlebarsjs.com/) to gener
 A template is a folder with a [template.json](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs/template.json) file, that describes the template and specifies what templates should be used to either generate an index (all services in a single file), or a seperate file for each service.
 The template.json also has a [json schema](https://svrooij.io/sonos-api-docs/schema/template.json) so VS Code will guide you when creating your own template.
 
+## Community
+
+[![Join us on Discord][badge_discord]][link_discord]
+
+If you need help building an app that talks to your sonos speakers, or you want to share some of your findings. [Join us on Discord][link_discord].
+
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -94,10 +101,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
 specification. Contributions of any kind welcome!
 
-[badge_sponsor]: https://img.shields.io/badge/Sponsor-on%20Github-red
+[badge_discord]: https://img.shields.io/discord/782374564054564875
 [badge_issues]: https://img.shields.io/github/issues/svrooij/sonos-api-docs
+[badge_sponsor]: https://img.shields.io/badge/Sponsor-on%20Github-red
 
-
+[link_discord]: https://discord.gg/ZUdEuhh5RF
 [link_sponsor]: https://github.com/sponsors/svrooij
 [link_issues]: https://github.com/svrooij/sonos-api-docs/issues
-
