@@ -12,7 +12,7 @@ const Service = require('./Service')
  * @class {{serviceName}}
  * @extends {Service}
  */
-export class {{serviceName}} extends Service {
+class {{serviceName}} extends Service {
   constructor (host, port) {
     super()
     this.name = '{{name}}'
@@ -41,7 +41,11 @@ export class {{serviceName}} extends Service {
    * @returns {Object} response object, with these properties {{#each outputs}}'{{name}}'{{#unless @last}}, {{/unless}}{{/each}}
   {{/if}}
    */
-  async {{name}} (options) { return this._request('{{name}}', options) }
+  {{#if inputs}}
+  async {{name}} (options{{{sonos_if_only_instance_id inputs ' = { InstanceID: 0 }'}}}) { return this._request('{{name}}', options) }
+  {{else}}
+  async {{name}} () { return this._request('{{name}}') }
+  {{/if}}
   {{#unless @last}}
 
   {{/unless}}
