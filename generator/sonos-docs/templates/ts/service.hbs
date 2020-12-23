@@ -103,7 +103,7 @@ export class {{serviceName}}{{#if data.extended}}Base{{/if}} extends BaseService
   protected responseProperties(): {[key: string]: string} {
     return {
     {{#each outputVariables}}
-      {{@key}}: '{{this}}',
+      {{@key}}: '{{{this}}}',
     {{/each}}
     };
   }
@@ -379,7 +379,8 @@ export class SystemPropertiesService extends SystemPropertiesServiceBase {
    */
   public async SavedAccounts(): Promise<number[] | undefined> {
     const result = await this.GetStringSafe('sonos-ts-accounts');
-    return result?.split('|').map((s) => parseInt(s, 10));
+    if (typeof result === 'undefined') return undefined;
+    return result.toString().split('|').map((s) => parseInt(s, 10));
   }
 
   /**
