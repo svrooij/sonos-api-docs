@@ -38,7 +38,7 @@ export default class Generate extends Command {
     this.log('Starting generator with template \'%s\'', args.template)
 
     const outputTemplate = this.getTemplate(args.template)
-    const deviceDescription = this.getDeviceDescription(flags.intermediate, outputTemplate?.dataTypes, outputTemplate?.serviceData)
+    const deviceDescription = this.getDeviceDescription(flags.intermediate, outputTemplate?.dataTypes ?? {}, outputTemplate?.serviceData)
 
     const outputBase = this.getFullPathAndCreateDirectory(args.output, true)
 
@@ -150,7 +150,7 @@ export default class Generate extends Command {
       .replace(/-}-/g, '}');
   }
 
-  private getDeviceDescription(location: string, dataTypes?: { [key: string]: string }, serviceData?: { [key: string]: any }): SonosDevice | undefined | never {
+  private getDeviceDescription(location: string, dataTypes: { [key: string]: string }, serviceData?: { [key: string]: any }): SonosDevice | undefined | never {
     const intermediateFile = this.getFullPathAndCreateDirectory(location)
     if (!fs.existsSync(intermediateFile)) {
       return this.error('Intermediate file doesn\'t exist, generate with \'combine\' command first.', {exit: 10})
@@ -170,14 +170,22 @@ export default class Generate extends Command {
         service.eventVariables = service.stateVariables?.filter((v: SonosStateVariable) => !v.name.startsWith('A_ARG_TYPE')).sort((a, b) => a.name.localeCompare(b.name))
       }
       if (typeof (service.stateVariables) !== undefined && typeof (service.actions) !== undefined) {
+        service.outputVariables = {};
         service.actions?.forEach(a => {
           a.inputs?.forEach(i => {
             i.relatedStateVariable = service.stateVariables?.find(v => v.name === i.relatedStateVariableName)
           })
           a.outputs?.forEach(o => {
             o.relatedStateVariable = service.stateVariables?.find(v => v.name === o.relatedStateVariableName)
+            if(o.relatedStateVariable) {
+              // @ts-ignore
+              service.outputVariables[o.name] = this.getCorrectDataType(o.relatedStateVariable.name, dataTypes) ?? dataTypes[o.relatedStateVariable.dataType] ?? o.relatedStateVariable.dataType;
+            }
           })
         })
+        if(Object.keys(service.outputVariables).length === 0) {
+          delete service.outputVariables;
+        }
       }
       if(serviceData !== undefined){
         service.data = serviceData[service.serviceName];

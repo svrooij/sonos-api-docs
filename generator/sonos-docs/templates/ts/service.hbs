@@ -98,6 +98,16 @@ export class {{serviceName}}{{#if data.extended}}Base{{/if}} extends BaseService
   {{/unless}}
   {{/each}}
   // #endregion
+  {{#if outputVariables}}
+
+  protected responseProperties(): {[key: string]: string} {
+    return {
+    {{#each outputVariables}}
+      {{@key}}: '{{this}}',
+    {{/each}}
+    };
+  }
+  {{/if}}
   {{#if eventVariables}}
 
   // Event properties from service description.

@@ -19,6 +19,7 @@ export interface SonosService {
   stateVariables?: SonosStateVariable[];
   actions?: SonosServiceAction[];
   eventVariables?: SonosStateVariable[];
+  outputVariables?: {[key: string]: string};
   data?: { [key: string]: any };
 
   errors?: SonosServiceError[];
