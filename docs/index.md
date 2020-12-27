@@ -20,7 +20,7 @@ This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). I
 
 ## Documentation
 
-Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api.docs/services/](//svrooij.io/sonos-api.docs/services/)
+Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api-docs/services/](https://svrooij.io/sonos-api-docs/services/)
 
 ### Manual documentation file
 
