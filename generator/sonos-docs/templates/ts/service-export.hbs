@@ -8,4 +8,7 @@
  */
 {{#each services}}
 export * from './{{kebabName}}.service';
+{{#if data.extended}}
+export * from './{{kebabName}}.service.extension';
+{{/if}}
 {{/each}}

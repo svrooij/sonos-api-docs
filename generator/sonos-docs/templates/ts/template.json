@@ -51,25 +51,17 @@
   "serviceData": {
     "AlarmClockService": {
       "extended": true,
-      "imports": ["Alarm", "PatchAlarm", "PlayMode", "Track"],
-      "importArrayHelper": true,
-      "importMetadataHelper": true,
-      "importXmlHelper": true
+      "imports": ["PlayMode", "Track"]
     },
     "AVTransportService": {
       "imports": ["PlayMode", "Track"]
     },
     "ContentDirectoryService": {
       "extended": true,
-      "imports": ["BrowseResponse"],
-      "importArrayHelper": true,
-      "importMetadataHelper": true,
-      "importXmlHelper": true
+      "imports": ["BrowseResponse"]
     },
     "MusicServicesService": {
-      "extended": true,
-      "importArrayHelper": true,
-      "importXmlHelper": true
+      "extended": true
     },
     "QueueService": {
       "imports": ["BrowseResponse", "Track"]
@@ -86,9 +78,7 @@
     },
     "ZoneGroupTopologyService": {
       "extended": true,
-      "importArrayHelper": true,
-      "importUrl": true,
-      "importXmlHelper": true
+      "imports":["ZoneGroup"]
     }
   },
   "license": "MIT"

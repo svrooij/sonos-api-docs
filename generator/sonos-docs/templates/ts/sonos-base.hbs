@@ -84,4 +84,15 @@ export default class SonosDeviceBase {
     {{/each}}
     return result;
   }
+
+  protected GetServiceByName(name: string): {{#each services}}{{name}}Service | {{/each}}undefined {
+    if (typeof name !== 'string' || name === '') return undefined;
+    const lowerName = name.toLowerCase();
+    {{#each services}}
+    if (lowerName === '{{lower name}}service') {
+      return this.{{name}}Service;
+    }
+    {{/each}}
+    return undefined;
+  }
 }
