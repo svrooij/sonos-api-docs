@@ -32,9 +32,10 @@ The QueueService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 ```http
 POST /MediaRenderer/Queue/Control
 Host: 192.168.x.x:1400
-SOAP-Action: "urn:schemas-sonos-com:service:Queue:1#{ActionName}"
-Content-Type: text/xml; charset=utf8
+soapaction: "urn:schemas-sonos-com:service:Queue:1#{ActionName}"
+Content-Type: text/xml; charset="utf-8"
 
+<?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     {ActionBodyHere}

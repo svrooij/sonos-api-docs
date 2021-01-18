@@ -32,9 +32,10 @@ The GroupRenderingControlService is available on these models: `v1-S1` / `v1-S5`
 ```http
 POST /MediaRenderer/GroupRenderingControl/Control
 Host: 192.168.x.x:1400
-SOAP-Action: "urn:schemas-upnp-org:service:GroupRenderingControl:1#{ActionName}"
-Content-Type: text/xml; charset=utf8
+soapaction: "urn:schemas-upnp-org:service:GroupRenderingControl:1#{ActionName}"
+Content-Type: text/xml; charset="utf-8"
 
+<?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     {ActionBodyHere}
