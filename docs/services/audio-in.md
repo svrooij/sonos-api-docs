@@ -13,7 +13,6 @@ The AudioInService is available on these models: `v1-S5`.
 
 ---
 
-
 ## Service data
 {: .no_toc }
 

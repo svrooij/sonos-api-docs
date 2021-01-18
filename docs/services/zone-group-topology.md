@@ -15,7 +15,6 @@ The ZoneGroupTopologyService is available on these models: `v1-S1` / `v1-S5` / `
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -133,6 +132,8 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **ZoneGroupState** | `string` |  |
+
+**Remarks** Some libraries also support GetParsedZoneGroupState that parses the xml for you.
 
 ### RegisterMobileDevice
 

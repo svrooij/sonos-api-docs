@@ -15,7 +15,6 @@ The ContentDirectoryService is available on these models: `v1-S1` / `v1-S5` / `v
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -49,7 +48,7 @@ Content-Type: text/xml; charset=utf8
 
 ### Browse
 
-Browse for content, see BrowseParsed for a better experience.
+Browse for content.
 
 Action body:
 
@@ -83,6 +82,8 @@ Outputs:
 | **NumberReturned** | `ui4` |  |
 | **TotalMatches** | `ui4` |  |
 | **UpdateID** | `ui4` |  |
+
+**Remarks** Some libraries support a BrowseAndParse, so you don&#x27;t have to parse the xml.
 
 ### CreateObject
 

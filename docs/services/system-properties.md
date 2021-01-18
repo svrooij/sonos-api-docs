@@ -15,7 +15,6 @@ The SystemPropertiesService is available on these models: `v1-S1` / `v1-S5` / `v
 
 ---
 
-
 ## Service data
 {: .no_toc }
 

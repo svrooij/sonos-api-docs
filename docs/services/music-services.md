@@ -15,7 +15,6 @@ The MusicServicesService is available on these models: `v1-S1` / `v1-S5` / `v1-S
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -73,7 +72,7 @@ Outputs:
 
 ### ListAvailableServices
 
-Load music service list (xml), see ListAndParseAvailableServices() for parsed version.
+Load music service list as xml
 
 Action body:
 
@@ -91,6 +90,8 @@ Outputs:
 | **AvailableServiceDescriptorList** | `string` |  |
 | **AvailableServiceTypeList** | `string` |  |
 | **AvailableServiceListVersion** | `string` |  |
+
+**Remarks** Some libraries also support ListAndParseAvailableServices
 
 ### UpdateAvailableServices
 

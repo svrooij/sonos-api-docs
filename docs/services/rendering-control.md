@@ -15,7 +15,6 @@ The RenderingControlService is available on these models: `v1-S1` / `v1-S5` / `v
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -73,7 +72,7 @@ Outputs:
 
 ### GetEQ
 
-Get EQ value (see SetEQ) for different EQTypes - not supported by all devices (is TV related)
+Get EQ value (see SetEQ) for different EQTypes
 
 Action body:
 
@@ -96,6 +95,8 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **CurrentValue** | `i2` |  |
+
+**Remarks** Not supported by all speakers, TV related
 
 ### GetHeadphoneConnected
 
@@ -121,7 +122,7 @@ Outputs:
 
 ### GetLoudness
 
-Get loudness 1 for on, 0 for off
+Whether or not Loudness is on
 
 Action body:
 
@@ -238,7 +239,7 @@ Outputs:
 
 ### GetTreble
 
-Get treble between -10 and 10
+Get treble, between -10 and 10
 
 Action body:
 
@@ -262,7 +263,7 @@ Outputs:
 
 ### GetVolume
 
-Get volume between 0 and 100
+Get volume, between 0 and 100
 
 Action body:
 
@@ -469,7 +470,7 @@ Inputs:
 
 ### SetEQ
 
-Set EQ value for different types - not supported by all devices (is TV related)
+Set EQ value for different types
 
 Action body:
 
@@ -488,6 +489,8 @@ Inputs:
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **EQType** | `string` | DialogLevel, NightMode, SubGain |
 | **DesiredValue** | `i2` | DialogLevel and NightMode: 0 for off, 1 for on. SubGain between -10 and 10 |
+
+**Remarks** Not supported by all speakers, TV related
 
 ### SetLoudness
 

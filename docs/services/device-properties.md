@@ -6,7 +6,7 @@ parent: Sonos UPNP
 # DevicePropertiesService
 {: .no_toc }
 
-Modify device properties, like led status and stereo pairs -
+Modify device properties, like led status and stereo pairs
 
 The DevicePropertiesService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
@@ -14,7 +14,6 @@ The DevicePropertiesService is available on these models: `v1-S1` / `v1-S5` / `v
 {:toc}
 
 ---
-
 
 ## Service data
 {: .no_toc }
@@ -81,7 +80,7 @@ Inputs:
 
 ### CreateStereoPair
 
-Create a stereo pair (left, right speakers), right one becomes hidden - only supported by some players
+Create a stereo pair (left, right speakers), right one becomes hidden
 
 Action body:
 
@@ -96,6 +95,8 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **ChannelMapSet** | `string` | example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF |
+
+**Remarks** No all speakers support StereoPairs
 
 ### EnterConfigMode
 
@@ -374,7 +375,7 @@ Inputs:
 
 ### SeparateStereoPair
 
-Separate a stereo pair - only supported by some players
+Separate a stereo pair
 
 Action body:
 
@@ -389,6 +390,8 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **ChannelMapSet** | `string` | example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF |
+
+**Remarks** No all speakers support StereoPairs
 
 ### SetAutoplayLinkedZones
 

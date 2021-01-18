@@ -15,7 +15,6 @@ The AlarmClockService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -105,7 +104,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **ID** | `ui4` | The Alarm ID, see ListAndParseAlarms |
+| **ID** | `ui4` | The Alarm ID from ListAlarms |
 
 ### GetDailyIndexRefreshTime
 
@@ -262,7 +261,7 @@ Outputs:
 
 ### ListAlarms
 
-Get the AlarmList as XML, use ListAndParseAlarms for parsed version
+Get the AlarmList as XML
 
 Action body:
 
@@ -279,6 +278,8 @@ Outputs:
 |:----------|:-----|:------------|
 | **CurrentAlarmList** | `string` |  |
 | **CurrentAlarmListVersion** | `string` |  |
+
+**Remarks** Some libraries also provide a ListAndParseAlarms where the alarm list xml is parsed
 
 ### SetDailyIndexRefreshTime
 
@@ -368,7 +369,7 @@ Inputs:
 
 ### UpdateAlarm
 
-Update an alarm, all parameters are required. Use PatchAlarm where you can update a single parameter
+Update an alarm, all parameters are required.
 
 Action body:
 
@@ -403,6 +404,8 @@ Inputs:
 | **PlayMode** | `string` | Alarm play mode Allowed values: `NORMAL` / `REPEAT_ALL` / `SHUFFLE_NOREPEAT` / `SHUFFLE` |
 | **Volume** | `ui2` | Volume between 0 and 100 |
 | **IncludeLinkedZones** | `boolean` | Should grouped players also play the alarm? |
+
+**Remarks** Some libraries support PatchAlarm where you can update a single parameter
 
 ## Events
 

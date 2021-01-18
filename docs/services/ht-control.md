@@ -13,7 +13,6 @@ The HTControlService is available on these models: `v1-S9`.
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
