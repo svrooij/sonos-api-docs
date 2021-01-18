@@ -21,7 +21,7 @@ const sonos = new SonosDevice('192.168.x.x')
 sonos.{{serviceName}}.OneOfTheMethodsBelow({...})
 ```
 
-All methods that require input expect an object with the specified parameters, even if it only requires one parameter.
+All actions that require input expect an object with the specified parameters, even if it only requires one parameter.
 
 1. TOC
 {:toc}
@@ -36,26 +36,35 @@ All methods that require input expect an object with the specified parameters, e
 {{/if}}
 {{#if inputs}}
 
-Input:
+```js
+const result = await sonos.{{../serviceName}}.{{name}}({ {{#each inputs}}{{name}}:...{{#unless @last}}, {{/unless}}{{/each}} });
+```
 
-| parameter | type | description |
+Input object:
+
+| property | type | description |
 |:----------|:-----|:------------|
 {{#each inputs}}
 | **{{name}}** | `{{{relatedStateVariable.dataType}}}` | {{{description}}}{{#if relatedStateVariable.allowedValues}} Allowed values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
 {{/each}}
 {{else}}
 
-No input parameters
+```js
+const result = await sonos.{{../serviceName}}.{{name}}();
+```
 {{/if}}
 {{#if outputs}}
 
-Output:
+Output object:
 
-| parameter | type | description |
+| property | type | description |
 |:----------|:-----|:------------|
 {{#each outputs}}
 | **{{name}}** | `{{{relatedStateVariable.dataType}}}` | {{{description}}}{{#if relatedStateVariable.allowedValues}} Possible values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
 {{/each}}
+{{else}}
+
+This actions returns a boolean whether or not the requests succeeded.
 {{/if}}
 {{#if remarks}}
 

@@ -11,6 +11,7 @@ This folder contains the template files for [sonos-ts](://svrooij.io/node-sonos-
 | [service-export](./service-export.hbs) | Service export | Exporting all the services to be available for one import |
 | [service](./service.hbs) | Single service | Strong type service template, see [details](#sonos-service) |
 | [sonos-base](./sonos-base.hbs) | Sonos base device | To enable generating a single class **SonosDevice** with a generated base |
+| [sonos-upnp-errors](./sonos-upnp-errors.hbs) | All errors | Default sonos UPNP errors |
 
 ## Sonos Service
 
