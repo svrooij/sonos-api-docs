@@ -15,7 +15,6 @@ The ContentDirectoryService is available on these models: `v1-S1` / `v1-S5` / `v
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -33,9 +32,10 @@ The ContentDirectoryService is available on these models: `v1-S1` / `v1-S5` / `v
 ```http
 POST /MediaServer/ContentDirectory/Control
 Host: 192.168.x.x:1400
-SOAP-Action: "urn:schemas-upnp-org:service:ContentDirectory:1#{ActionName}"
-Content-Type: text/xml; charset=utf8
+soapaction: "urn:schemas-upnp-org:service:ContentDirectory:1#{ActionName}"
+Content-Type: text/xml; charset="utf-8"
 
+<?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     {ActionBodyHere}
@@ -49,7 +49,7 @@ Content-Type: text/xml; charset=utf8
 
 ### Browse
 
-Browse for content, see BrowseParsed for a better experience.
+Browse for content.
 
 Action body:
 
@@ -83,6 +83,8 @@ Outputs:
 | **NumberReturned** | `ui4` |  |
 | **TotalMatches** | `ui4` |  |
 | **UpdateID** | `ui4` |  |
+
+**Remarks** Some libraries support a BrowseAndParse, so you don&#x27;t have to parse the xml.
 
 ### CreateObject
 

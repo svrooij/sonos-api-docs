@@ -13,7 +13,6 @@ The AudioInService is available on these models: `v1-S5`.
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -31,9 +30,10 @@ The AudioInService is available on these models: `v1-S5`.
 ```http
 POST /AudioIn/Control
 Host: 192.168.x.x:1400
-SOAP-Action: "urn:schemas-upnp-org:service:AudioIn:1#{ActionName}"
-Content-Type: text/xml; charset=utf8
+soapaction: "urn:schemas-upnp-org:service:AudioIn:1#{ActionName}"
+Content-Type: text/xml; charset="utf-8"
 
+<?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     {ActionBodyHere}

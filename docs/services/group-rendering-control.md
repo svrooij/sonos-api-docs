@@ -15,7 +15,6 @@ The GroupRenderingControlService is available on these models: `v1-S1` / `v1-S5`
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -33,9 +32,10 @@ The GroupRenderingControlService is available on these models: `v1-S1` / `v1-S5`
 ```http
 POST /MediaRenderer/GroupRenderingControl/Control
 Host: 192.168.x.x:1400
-SOAP-Action: "urn:schemas-upnp-org:service:GroupRenderingControl:1#{ActionName}"
-Content-Type: text/xml; charset=utf8
+soapaction: "urn:schemas-upnp-org:service:GroupRenderingControl:1#{ActionName}"
+Content-Type: text/xml; charset="utf-8"
 
+<?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     {ActionBodyHere}
@@ -49,7 +49,7 @@ Content-Type: text/xml; charset=utf8
 
 ### GetGroupMute
 
-Get 1 for muted, 0 for un-muted
+Whether or not the group is muted.
 
 Action body:
 
@@ -71,7 +71,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **CurrentMute** | `boolean` |  |
 
-**Remarks** Send to non-coordinator returns error code 701
+**Remarks** Sould be send to coordinator only
 
 ### GetGroupVolume
 
@@ -97,7 +97,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **CurrentVolume** | `ui2` |  |
 
-**Remarks** Send to non-coordinator returns error code 701
+**Remarks** Sould be send to coordinator only
 
 ### SetGroupMute
 
@@ -119,7 +119,7 @@ Inputs:
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **DesiredMute** | `boolean` | True for mute, false for un-mute |
 
-**Remarks** Send to non-coordinator returns error code 701
+**Remarks** Sould be send to coordinator only
 
 ### SetGroupVolume
 
@@ -141,7 +141,7 @@ Inputs:
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **DesiredVolume** | `ui2` | New volume between 0 and 100 |
 
-**Remarks** Send to non-coordinator returns error code 701
+**Remarks** Sould be send to coordinator only
 
 ### SetRelativeGroupVolume
 
@@ -169,7 +169,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **NewVolume** | `ui2` |  |
 
-**Remarks** Send to non-coordinator returns error code 701
+**Remarks** Sould be send to coordinator only
 
 ### SnapshotGroupVolume
 
@@ -189,7 +189,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 
-**Remarks** Send to non-coordinator returns error code 701
+**Remarks** Sould be send to coordinator only
 
 ## Events
 
@@ -214,6 +214,14 @@ Timeout: Second-3600
 | GroupVolumeChangeable | ✔ | `boolean` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
+
+## Custom errors
+
+The GroupRenderingControlService has the following known custom errors.
+
+| Error code | Description |
+|:-----------|:------------|
+| `701` | Player isn&#x27;t the coordinator |
 
 ---
 

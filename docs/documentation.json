@@ -24,14 +24,15 @@
         "DestroyAlarm": {
           "description": "Delete an alarm",
           "params": {
-            "ID": "The Alarm ID, see ListAndParseAlarms"
+            "ID": "The Alarm ID from ListAlarms"
           }
         },
         "ListAlarms": {
-          "description": "Get the AlarmList as XML, use ListAndParseAlarms for parsed version"
+          "description": "Get the AlarmList as XML",
+          "remarks": "Some libraries also provide a ListAndParseAlarms where the alarm list xml is parsed"
         },
         "UpdateAlarm": {
-          "description": "Update an alarm, all parameters are required. Use PatchAlarm where you can update a single parameter",
+          "description": "Update an alarm, all parameters are required.",
           "params": {
             "ID": "The ID of the alarm see ListAndParseAlarms",
             "StartLocalTime": "The start time as hh:mm:ss",
@@ -44,7 +45,8 @@
             "PlayMode": "Alarm play mode",
             "Volume": "Volume between 0 and 100",
             "IncludeLinkedZones": "Should grouped players also play the alarm?"
-          }
+          },
+          "remarks": "Some libraries support PatchAlarm where you can update a single parameter"
         }
       },
       "errors": [{ "code": 801, "description": "Duplicate alarm time" }]
@@ -190,7 +192,7 @@
       "description": "Browse for local content",
       "actions": {
         "Browse": {
-          "description": "Browse for content, see BrowseParsed for a better experience.",
+          "description": "Browse for content.",
           "params": {
             "ObjectID": "The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS'] with optionally ':search+query' behind it.",
             "BrowseFlag": "How to browse",
@@ -198,7 +200,8 @@
             "StartingIndex": "Paging, where to start",
             "RequestedCount": "Paging, number of items",
             "SortCriteria": "Sort the results based on metadata fields. '+upnp:artist,+dc:title' for sorting on artist then on title."
-          }
+          },
+          "remarks": "Some libraries support a BrowseAndParse, so you don't have to parse the xml."
         }
       },
       "errors": [
@@ -224,19 +227,21 @@
       ]
     },
     "DevicePropertiesService": {
-      "description": "Modify device properties, like led status and stereo pairs -",
+      "description": "Modify device properties, like led status and stereo pairs",
       "actions": {
         "CreateStereoPair": {
-          "description": "Create a stereo pair (left, right speakers), right one becomes hidden - only supported by some players",
+          "description": "Create a stereo pair (left, right speakers), right one becomes hidden",
           "params": {
             "ChannelMapSet": "example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF"
-          }
+          },
+          "remarks": "No all speakers support StereoPairs"
         },
         "SeparateStereoPair": {
-          "description": "Separate a stereo pair - only supported by some players",
+          "description": "Separate a stereo pair",
           "params": {
             "ChannelMapSet": "example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF"
-          }
+          },
+          "remarks": "No all speakers support StereoPairs"
         }
       }
     },
@@ -244,45 +249,49 @@
       "description": "Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players.",
       "actions": {
         "GetGroupMute": {
-          "description": "Get 1 for muted, 0 for un-muted",
-          "remarks":"Send to non-coordinator returns error code 701"
+          "description": "Whether or not the group is muted.",
+          "remarks": "Sould be send to coordinator only"
         },
         "GetGroupVolume": {
           "description": "Get the group volume.",
-          "remarks":"Send to non-coordinator returns error code 701"
+          "remarks": "Sould be send to coordinator only"
         },
         "SetGroupMute": {
           "description": "(Un-/)Mute the entire group",
-          "remarks":"Send to non-coordinator returns error code 701",
+          "remarks": "Sould be send to coordinator only",
           "params": {
             "DesiredMute": "True for mute, false for un-mute"
           }
         },
         "SetGroupVolume": {
           "description": "Change group volume. Players volume will be changed proportionally based on last snapshot",
-          "remarks":"Send to non-coordinator returns error code 701",
+          "remarks": "Sould be send to coordinator only",
           "params": {
             "DesiredVolume": "New volume between 0 and 100"
           }
         },
         "SetRelativeGroupVolume": {
           "description": "Relatively change group volume - returns final group volume. Players volume will be changed proportionally based on last snapshot",
-          "remarks":"Send to non-coordinator returns error code 701",
+          "remarks": "Sould be send to coordinator only",
           "params": {
             "Adjustment": "Number between -100 and +100"
           }
         }, 
         "SnapshotGroupVolume": {
           "description": "Creates a new group volume snapshot,  the volume ratio between all players. It is used by SetGroupVolume and SetRelativeGroupVolume",
-          "remarks":"Send to non-coordinator returns error code 701"
+          "remarks": "Sould be send to coordinator only"
         }
-      }
+      },
+      "errors": [
+        { "code": 701, "description": "Player isn't the coordinator" }
+      ]
     },
     "MusicServicesService": {
       "description": "External music services",
       "actions": {
         "ListAvailableServices": {
-          "description": "Load music service list (xml), see ListAndParseAvailableServices() for parsed version."
+          "description": "Load music service list as xml",
+          "remarks": "Some libraries also support ListAndParseAvailableServices"
         }
       }
     },
@@ -296,22 +305,23 @@
           "description": "Get bass level between -10 and 10"
         },
         "GetEQ": {
-          "description": "Get EQ value (see SetEQ) for different EQTypes - not supported by all devices (is TV related)",
+          "description": "Get EQ value (see SetEQ) for different EQTypes",
           "params": {
             "EQType": "EQ type such as DialogLevel, NightMode, SubGain"
-          }
+          },
+          "remarks": "Not supported by all speakers, TV related"
         },
         "GetLoudness": {
-          "description": "Get loudness 1 for on, 0 for off",
+          "description": "Whether or not Loudness is on",
           "params": {
             "Channel": "Master"
           }
         },
         "GetTreble": {
-          "description": "Get treble between -10 and 10"
+          "description": "Get treble, between -10 and 10"
         },
         "GetVolume": {
-          "description": "Get volume between 0 and 100",
+          "description": "Get volume, between 0 and 100",
           "params": {
             "Channel": "Master"
           }
@@ -323,11 +333,12 @@
           }
         },
         "SetEQ": {
-          "description": "Set EQ value for different types - not supported by all devices (is TV related)",
+          "description": "Set EQ value for different types",
           "params": {
             "EQType": "DialogLevel, NightMode, SubGain",
             "DesiredValue": "DialogLevel and NightMode: 0 for off, 1 for on. SubGain between -10 and 10"
-          }
+          },
+          "remarks": "Not supported by all speakers, TV related"
         },
         "SetLoudness": {
           "description": "Set loudness on / off",
@@ -376,7 +387,8 @@
           "description": "Get information about the current Zone"
         },
         "GetZoneGroupState": {
-          "description": "Get all the Sonos groups, (as XML)"
+          "description": "Get all the Sonos groups, (as XML)",
+          "remarks": "Some libraries also support GetParsedZoneGroupState that parses the xml for you."
         }
       }
     }
@@ -401,6 +413,5 @@
     { "code": 610, "description": "Invalid sequence" },
     { "code": 611, "description": "Invalid control URL" },
     { "code": 612, "description": "No such session" }
-
   ]
 }

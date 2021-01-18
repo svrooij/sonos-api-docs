@@ -15,7 +15,6 @@ The MusicServicesService is available on these models: `v1-S1` / `v1-S5` / `v1-S
 
 ---
 
-
 ## Service data
 {: .no_toc }
 
@@ -33,9 +32,10 @@ The MusicServicesService is available on these models: `v1-S1` / `v1-S5` / `v1-S
 ```http
 POST /MusicServices/Control
 Host: 192.168.x.x:1400
-SOAP-Action: "urn:schemas-upnp-org:service:MusicServices:1#{ActionName}"
-Content-Type: text/xml; charset=utf8
+soapaction: "urn:schemas-upnp-org:service:MusicServices:1#{ActionName}"
+Content-Type: text/xml; charset="utf-8"
 
+<?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     {ActionBodyHere}
@@ -73,7 +73,7 @@ Outputs:
 
 ### ListAvailableServices
 
-Load music service list (xml), see ListAndParseAvailableServices() for parsed version.
+Load music service list as xml
 
 Action body:
 
@@ -91,6 +91,8 @@ Outputs:
 | **AvailableServiceDescriptorList** | `string` |  |
 | **AvailableServiceTypeList** | `string` |  |
 | **AvailableServiceListVersion** | `string` |  |
+
+**Remarks** Some libraries also support ListAndParseAvailableServices
 
 ### UpdateAvailableServices
 
