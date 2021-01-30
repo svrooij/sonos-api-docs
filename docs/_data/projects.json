@@ -56,6 +56,86 @@
         "link": "https://github.com/SoCo/SoCo"
       },
       "usesGenerator": false
-    }
+    },
+    {
+      "name": "SoCo-docs",
+      "description": "Documentation for SoCo",
+      "link": "https://soco.readthedocs.io/en/latest/index.html",
+      "author": {
+        "name": "unknown",
+        "link": "https://github.com/SoCo/SoCo"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "duncan3dc-php-sonos",
+      "description": "A PHP library for interacting with Sonos speakers.",
+      "link": "https://github.com/duncan3dc/sonos",
+      "author": {
+        "name": "Craig Duncan",
+        "link": "https://github.com/duncan3dc"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "gotwalt-ruby-sonos",
+      "description": "Control Sonos speakers with Ruby.",
+      "link": "https://github.com/gotwalt/sonos",
+      "author": {
+        "name": "Aaron Gotwalt",
+        "link": "https://github.com/gotwalt"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "Liver64-php-sonos",
+      "description": "GERMAN LANGUAGE: sonos2 ist eine Sammlung von Befehlen welche die php class PHPSonos nutzt um Sonos player via http Befehle von Loxone aus zu steuern.",
+      "link": "https://github.com/Liver64/PHP-Sonos-and-Loxone",
+      "author": {
+        "name": "Liver64",
+        "link": "https://github.com/Liver64"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "FHEM-sonos",
+      "description": "GERMAN LANGUAGE: FHEM integration",
+      "link": "https://wiki.fhem.de/wiki/SONOS",
+      "author": {
+        "name": "unknown"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "szatmary-go-sonos",
+      "description": "Golang package for controlling Sonoses",
+      "link": "https://github.com/szatmary/sonos",
+      "author": {
+        "name": "Matthew Szatmary",
+        "link": "https://github.com/szatmary"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "Coollision-go-sonos",
+      "description": "Documentation go sonos",
+      "link": "https://pkg.go.dev/github.com/Coollision/sonos#section-documentation",
+      "author": {
+        "name": "Coollision",
+        "link": "https://github.com/Coollision"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "ianr0bkny-go-sonos",
+      "description": "A Go-language library for accessing UPnP AV devices",
+      "link": "https://github.com/ianr0bkny/go-sonos",
+      "author": {
+        "name": "Ian T Richards",
+        "link": "https://github.com/ianr0bkny"
+      },
+      "usesGenerator": false
+    }              
+
   ]
 }
