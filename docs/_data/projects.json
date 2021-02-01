@@ -135,6 +135,24 @@
         "link": "https://github.com/ianr0bkny"
       },
       "usesGenerator": false
+    },    
+    {
+      "name": "UpNP-Organization",
+      "description": "OCF Open Connectivity Foundation",
+      "link": "https://openconnectivity.org/",
+      "author": {
+        "name": "none"
+      },
+      "usesGenerator": false
+    },
+    {
+      "name": "UpNP-docs",
+      "description": "UpNP documents from the Open Connectivity Foundation. Most relevant is UPnP Device Architecture in subdirectory documents and UPnP-av-AVTransport-v3-Service in subdirectory standardizeddcps\\MediaServer_4 and MediaRenderer_3",
+      "link": "https://openconnectivity.org/",
+      "author": {
+        "name": "none"
+      },
+      "usesGenerator": false
     }              
 
   ]
