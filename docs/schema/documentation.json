@@ -66,6 +66,7 @@
           "type":"string"
         }
       },
+      "type": "object",
       "required": ["code", "description"]
     }
   },
