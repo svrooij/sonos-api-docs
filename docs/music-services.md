@@ -1,7 +1,7 @@
 ---
 layout: default
 title: External music services
-nav_order: 3
+nav_order: 10
 has_toc: false
 ---
 

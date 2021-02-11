@@ -15,9 +15,17 @@
           "title": "Project description",
           "type": "string"
         },
+        "language": {
+          "title": "Used language",
+          "description": "The language where this project is written in, or can be used with",
+          "type":"string"
+        },
         "link": {
           "title": "Link to project page",
-          "description": "Either the project page or the repository",
+          "type": "string"
+        },
+        "repository": {
+          "title": "Link to repository page",
           "type": "string"
         },
         "tags": {
@@ -31,8 +39,11 @@
       },
       "type": "object",
       "required": [
-        "name",
-        "link"
+        "name"
+      ],
+      "anyOf": [
+        { "required": ["link"]},
+        { "required": ["repository"]}
       ]
     }
   },

@@ -1,0 +1,32 @@
+<div class="github-component d-flex flex-column flex-justify-between height-full text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3">
+  <div>
+    <div class="d-flex flex-justify-between flex-items-start mb-1">
+      <h1 class="f4 lh-condensed mb-1">
+        <a href="{{ project.link | default: project.repository }}">
+          {{ project.name }}
+        </a>
+      </h1>
+      {% if project.usesGenerator %}{% octicon star-fill height:20 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo title:"This project uses the generator" %}{% endif %}
+    </div>
+    <div class="text-gray mb-2 ws-normal">{{ project.description }}</div>
+    <p>{% for tag in project.tags %}<code class="language-plaintext highlighter-rouge">{{tag}}</code>{% if forloop.last == false %}&nbsp;{% endif %}{% endfor %}</p>
+  </div>
+  <div class="d-flex flex-justify-between f6">
+    {% if project.language %}
+        <span class="repo-language-color ml-0 mr-1" style="background-color:{{site.data.colors[project.language]["color"]}}"></span>
+        <span class="mr-3" itemprop="programmingLanguage">{{ project.language }}</span>
+    {% endif %}
+    {% if project.author %}
+    <a href="{{ project.author.link }}" class="d-inline-block link-gray mr-4">
+      {% octicon person height:16 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo %}
+      {{ project.author.name }}
+    </a>
+    {% endif %}
+    {% if project.repository %}
+      <a href="{{ project.repository }}" class="d-inline-block link-gray mr-1">
+        {% octicon repo height:16 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo %}
+      </a>
+    {% endif %}
+
+  </div>
+</div>

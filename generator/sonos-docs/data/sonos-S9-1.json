@@ -2,8 +2,8 @@
   "model": "S9",
   "modelDescription": "Sonos Playbar",
   "softwareGeneration": 1,
-  "softwareVersion": "57.3-81090",
-  "discoveryDate": "2020-11-01T09:31:21.461Z",
+  "softwareVersion": "57.4-83220",
+  "discoveryDate": "2021-02-11T11:22:43.267Z",
   "services": [
     {
       "name": "AlarmClock",

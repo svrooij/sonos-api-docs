@@ -1,0 +1,49 @@
+name: JSON validation
+
+on:
+  push:
+    branches:
+    - main
+    - beta
+    paths:
+    - 'docs/schema/*.json'
+    - 'docs/documentation.json'
+    - 'docs/_data/projects.json'
+    - 'generator/sonos-docs/templates/**/template.json'
+    - '.github/workflows/json-validation.yml'
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  validate-docs:
+    name: Validate main JSON files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Use node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Validate docs/_data/projects.json
+        run: npx ajv-cli validate -d ./docs/_data/projects.json -s ./docs/schema/projects.json -r ./docs/schema/author.json
+      - name: Validate docs/documentation.json
+        run: npx ajv-cli -s ./docs/schema/documentation.json -d ./docs/documentation.json
+
+  validate-templates:
+    name: Validate template JSON files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Use node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Validate docs template.json
+        run: npx ajv-cli -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/docs/template.json
+      - name: Validate ts template.json
+        run: npx ajv-cli -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/ts/template.json
+      - name: Validate node template.json
+        run: npx ajv-cli -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/node/template.json
