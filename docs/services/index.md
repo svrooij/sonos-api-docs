@@ -14,7 +14,7 @@ Every sonos speaker has several soap services. Each service has one or more acti
 ## UPNP specifications
 
 Sonos speaker follow the [MediaServer:4 and MediaRenderer:3 specifications](https://openconnectivity.org/developer/specifications/upnp-resources/upnp/mediaserver4-and-mediarenderer3/) by the [Open Connectivity Foundation](https://openconnectivity.org/).
-These documents can provide you with some extra guidelines. 
+These documents can provide you with some extra guidelines.
 
 ## All available services
 {: .no_toc }
