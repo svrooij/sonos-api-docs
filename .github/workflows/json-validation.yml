@@ -41,11 +41,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Install validator
-        run: npm i g ajv-cli
-      - name: Validate docs generator template
-        run: ajv -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/docs/template.json
-      - name: Validate ts generator template
-        run: ajv -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/ts/template.json
-      - name: Validate node generator template
-        run: ajv -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/node/template.json
+      - name: Validate docs template.json
+        run: npx ajv-cli -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/docs/template.json
+      - name: Validate ts template.json
+        run: npx ajv-cli -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/ts/template.json
+      - name: Validate node template.json
+        run: npx ajv-cli -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/node/template.json
