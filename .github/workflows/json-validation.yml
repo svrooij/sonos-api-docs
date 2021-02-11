@@ -10,6 +10,7 @@ on:
     - 'docs/documentation.json'
     - 'docs/_data/projects.json'
     - 'generator/sonos-docs/templates/**/template.json'
+    - '.github/workflows/json-validation.yml'
   pull_request:
     branches:
     - main
