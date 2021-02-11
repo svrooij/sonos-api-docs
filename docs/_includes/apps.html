@@ -1,0 +1,23 @@
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Apps</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Open source apps talking to sonos speakers</p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+
+  {% assign generated_apps = site.data.projects.apps | where:'usesGenerator', true | sort: 'name' %}
+  {% assign other_apps = site.data.projects.apps | where:'usesGenerator', false | sort: 'name' %}
+
+  {% for project in generated_apps %}
+
+    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+      {% include project-card.html %}
+    </div>
+
+  {% endfor %}
+
+  {% for project in other_apps %}
+
+  <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+    {% include project-card.html %}
+  </div>
+
+{% endfor %}
+</div>

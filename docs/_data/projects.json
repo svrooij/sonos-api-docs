@@ -5,6 +5,8 @@
       "name": "sonos2mqtt",
       "description": "Control sonos speakers from your mqtt server",
       "link": "https://svrooij.io/sonos2mqtt/",
+      "language": "TypeScript",
+      "repository": "https://github.com/svrooij/sonos2mqtt",
       "tags": ["mqtt", "home-automation"],
       "author": {
         "name": "Stephan van Rooij",
@@ -15,20 +17,30 @@
     {
       "name": "sonos cli",
       "description": "Control your sonos speakers from the console.",
-      "link": "https://github.com/svrooij/sonos-cli",
+      "language": "TypeScript",
+      "repository": "https://github.com/svrooij/sonos-cli",
       "tags": ["cli"],
       "author": {
         "name": "Stephan van Rooij",
         "link": "https://svrooij.io/"
       },
       "usesGenerator": true
+    },
+    {
+      "name": "FHEM-sonos",
+      "description": "GERMAN LANGUAGE: FHEM integration",
+      "tags": ["FHEM"],
+      "link": "https://wiki.fhem.de/wiki/SONOS",
+      "usesGenerator": false
     }
   ],
   "libraries": [
     {
       "name": "@svrooij/sonos",
-      "description": "A Typescript/Node library to control your sonos speakers from every Typescript/node app.",
+      "description": "The most feature complete sonos library for node and TypeScript, since it uses a generator to create all the service classes",
       "link": "http://svrooij.io/node-sonos-ts/",
+      "repository": "https://github.com/svrooij/node-sonos-ts",
+      "language": "TypeScript",
       "tags": ["typescript", "node"],
       "author": {
         "name": "Stephan van Rooij",
@@ -39,8 +51,8 @@
     {
       "name": "sonos",
       "description": "Node library to control your sonos speakers.",
-      "link": "https://github.com/bencevans/node-sonos",
-      "tags": ["node"],
+      "repository": "https://github.com/bencevans/node-sonos",
+      "language": "JavaScript",
       "author": {
         "name": "Ben Evans",
         "link": "https://github.com/bencevans/"
@@ -50,27 +62,20 @@
     {
       "name": "SoCo",
       "description": "Python library to control your sonos speakers",
-      "link": "https://github.com/SoCo/SoCo",
-      "author": {
-        "name": "unknown",
-        "link": "https://github.com/SoCo/SoCo"
-      },
-      "usesGenerator": false
-    },
-    {
-      "name": "SoCo-docs",
-      "description": "Documentation for SoCo",
       "link": "https://soco.readthedocs.io/en/latest/index.html",
+      "repository": "https://github.com/SoCo/SoCo",
+      "language": "Python",
       "author": {
-        "name": "unknown",
-        "link": "https://github.com/SoCo/SoCo"
+        "name": "Rahim Sonawalla",
+        "link": "https://github.com/rahims"
       },
       "usesGenerator": false
     },
     {
       "name": "duncan3dc-php-sonos",
-      "description": "A PHP library for interacting with Sonos speakers.",
-      "link": "https://github.com/duncan3dc/sonos",
+      "description": "PHP library for interacting with Sonos speakers.",
+      "repository": "https://github.com/duncan3dc/sonos",
+      "language": "PHP",
       "author": {
         "name": "Craig Duncan",
         "link": "https://github.com/duncan3dc"
@@ -80,7 +85,8 @@
     {
       "name": "gotwalt-ruby-sonos",
       "description": "Control Sonos speakers with Ruby.",
-      "link": "https://github.com/gotwalt/sonos",
+      "repository": "https://github.com/gotwalt/sonos",
+      "language": "Ruby",
       "author": {
         "name": "Aaron Gotwalt",
         "link": "https://github.com/gotwalt"
@@ -90,7 +96,9 @@
     {
       "name": "Liver64-php-sonos",
       "description": "GERMAN LANGUAGE: sonos2 ist eine Sammlung von Befehlen welche die php class PHPSonos nutzt um Sonos player via http Befehle von Loxone aus zu steuern.",
-      "link": "https://github.com/Liver64/PHP-Sonos-and-Loxone",
+      "repository": "https://github.com/Liver64/PHP-Sonos-and-Loxone",
+      "language": "PHP",
+      "tags": ["loxone", "german"],
       "author": {
         "name": "Liver64",
         "link": "https://github.com/Liver64"
@@ -98,28 +106,11 @@
       "usesGenerator": false
     },
     {
-      "name": "FHEM-sonos",
-      "description": "GERMAN LANGUAGE: FHEM integration",
-      "link": "https://wiki.fhem.de/wiki/SONOS",
-      "author": {
-        "name": "unknown"
-      },
-      "usesGenerator": false
-    },
-    {
-      "name": "szatmary-go-sonos",
-      "description": "Golang package for controlling Sonoses",
-      "link": "https://github.com/szatmary/sonos",
-      "author": {
-        "name": "Matthew Szatmary",
-        "link": "https://github.com/szatmary"
-      },
-      "usesGenerator": false
-    },
-    {
       "name": "Coollision-go-sonos",
-      "description": "Documentation go sonos",
+      "description": "Golang package for controlling Sonoses",
       "link": "https://pkg.go.dev/github.com/Coollision/sonos#section-documentation",
+      "repository": "https://github.com/Coollision/sonos",
+      "language": "Go",
       "author": {
         "name": "Coollision",
         "link": "https://github.com/Coollision"
@@ -129,31 +120,14 @@
     {
       "name": "ianr0bkny-go-sonos",
       "description": "A Go-language library for accessing UPnP AV devices",
-      "link": "https://github.com/ianr0bkny/go-sonos",
+      "repository": "https://github.com/ianr0bkny/go-sonos",
+      "language": "Go",
       "author": {
         "name": "Ian T Richards",
         "link": "https://github.com/ianr0bkny"
       },
       "usesGenerator": false
-    },    
-    {
-      "name": "UpNP-Organization",
-      "description": "OCF Open Connectivity Foundation",
-      "link": "https://openconnectivity.org/",
-      "author": {
-        "name": "none"
-      },
-      "usesGenerator": false
-    },
-    {
-      "name": "UpNP-docs",
-      "description": "UpNP documents from the Open Connectivity Foundation. Most relevant is UPnP Device Architecture in subdirectory documents and UPnP-av-AVTransport-v3-Service in subdirectory standardizeddcps\\MediaServer_4 and MediaRenderer_3",
-      "link": "https://openconnectivity.org/",
-      "author": {
-        "name": "none"
-      },
-      "usesGenerator": false
-    }              
+    }            
 
   ]
 }
