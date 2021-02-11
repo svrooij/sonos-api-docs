@@ -21,12 +21,14 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Install validator
-        run: npm i g ajv-cli
+      - name: Use node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
       - name: Validate docs/_data/projects.json
-        run: ajv validate -d ./docs/_data/projects.json -s ./docs/schema/projects.json -r ./docs/schema/author.json
+        run: npx ajv-cli validate -d ./docs/_data/projects.json -s ./docs/schema/projects.json -r ./docs/schema/author.json
       - name: Validate docs/documentation.json
-        run: ajv -s ./docs/schema/documentation.json -d ./docs/documentation.json
+        run: npx ajv-cli -s ./docs/schema/documentation.json -d ./docs/documentation.json
 
   validate-templates:
     name: Validate template JSON files
@@ -34,6 +36,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Use node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
       - name: Install validator
         run: npm i g ajv-cli
       - name: Validate docs generator template
