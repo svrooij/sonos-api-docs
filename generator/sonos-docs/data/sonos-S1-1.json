@@ -2,8 +2,8 @@
   "model": "S1",
   "modelDescription": "Sonos Play:1",
   "softwareGeneration": 1,
-  "softwareVersion": "57.4-83220",
-  "discoveryDate": "2021-02-11T11:22:48.033Z",
+  "softwareVersion": "57.6-88280",
+  "discoveryDate": "2021-07-21T14:51:41.469Z",
   "services": [
     {
       "name": "AlarmClock",
