@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Service that controls stuff related to transport (play/pause/next/special urls)
 
-The AVTransportService is available on these models: `v1-S1` / `v1-S5` / `v1-S9`.
+The AVTransportService is available on these models: `Sonos One (S13) S2` / `Sonos Roam (S27) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -1127,57 +1127,57 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AbsoluteCounterPosition | ❌ | `i4` |  |
-| AbsoluteTimePosition | ❌ | `string` |  |
-| AlarmIDRunning | ❌ | `ui4` |  |
-| AlarmLoggedStartTime | ❌ | `string` |  |
-| AlarmRunning | ❌ | `boolean` |  |
-| AVTransportURI | ❌ | `string` |  |
-| AVTransportURIMetaData | ❌ | `string` |  |
-| CurrentCrossfadeMode | ❌ | `boolean` |  |
-| CurrentMediaDuration | ❌ | `string` |  |
-| CurrentPlayMode | ❌ | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
-| CurrentRecordQualityMode | ❌ | `string` |  |
-| CurrentSection | ❌ | `ui4` |  |
-| CurrentTrack | ❌ | `ui4` |  |
-| CurrentTrackDuration | ❌ | `string` |  |
-| CurrentTrackMetaData | ❌ | `string` |  |
-| CurrentTrackURI | ❌ | `string` |  |
-| CurrentTransportActions | ❌ | `string` |  |
-| CurrentValidPlayModes | ❌ | `string` |  |
-| DirectControlAccountID | ❌ | `string` |  |
-| DirectControlClientID | ❌ | `string` |  |
-| DirectControlIsSuspended | ❌ | `boolean` |  |
-| EnqueuedTransportURI | ❌ | `string` |  |
-| EnqueuedTransportURIMetaData | ❌ | `string` |  |
+| AbsoluteCounterPosition |  | `i4` |  |
+| AbsoluteTimePosition |  | `string` |  |
+| AlarmIDRunning |  | `ui4` |  |
+| AlarmLoggedStartTime |  | `string` |  |
+| AlarmRunning |  | `boolean` |  |
+| AVTransportURI |  | `string` |  |
+| AVTransportURIMetaData |  | `string` |  |
+| CurrentCrossfadeMode |  | `boolean` |  |
+| CurrentMediaDuration |  | `string` |  |
+| CurrentPlayMode |  | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
+| CurrentRecordQualityMode |  | `string` |  |
+| CurrentSection |  | `ui4` |  |
+| CurrentTrack |  | `ui4` |  |
+| CurrentTrackDuration |  | `string` |  |
+| CurrentTrackMetaData |  | `string` |  |
+| CurrentTrackURI |  | `string` |  |
+| CurrentTransportActions |  | `string` |  |
+| CurrentValidPlayModes |  | `string` |  |
+| DirectControlAccountID |  | `string` |  |
+| DirectControlClientID |  | `string` |  |
+| DirectControlIsSuspended |  | `boolean` |  |
+| EnqueuedTransportURI |  | `string` |  |
+| EnqueuedTransportURIMetaData |  | `string` |  |
 | LastChange | ✔ | `string` |  |
-| MuseSessions | ❌ | `string` |  |
-| NextAVTransportURI | ❌ | `string` |  |
-| NextAVTransportURIMetaData | ❌ | `string` |  |
-| NextTrackMetaData | ❌ | `string` |  |
-| NextTrackURI | ❌ | `string` |  |
-| NumberOfTracks | ❌ | `ui4` |  |
-| PlaybackStorageMedium | ❌ | `string` | `NONE` / `NETWORK` |
-| PossiblePlaybackStorageMedia | ❌ | `string` |  |
-| PossibleRecordQualityModes | ❌ | `string` |  |
-| PossibleRecordStorageMedia | ❌ | `string` |  |
-| QueueUpdateID | ❌ | `ui4` |  |
-| RecordMediumWriteStatus | ❌ | `string` |  |
-| RecordStorageMedium | ❌ | `string` |  |
-| RelativeCounterPosition | ❌ | `i4` |  |
-| RelativeTimePosition | ❌ | `string` |  |
-| RestartPending | ❌ | `boolean` |  |
-| SleepTimerGeneration | ❌ | `ui4` |  |
-| SnoozeRunning | ❌ | `boolean` |  |
-| TransportErrorDescription | ❌ | `string` |  |
-| TransportErrorHttpCode | ❌ | `string` |  |
-| TransportErrorHttpHeaders | ❌ | `string` |  |
-| TransportErrorURI | ❌ | `string` |  |
-| TransportPlaySpeed | ❌ | `string` |  |
-| TransportState | ❌ | `string` | `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` |
-| TransportStatus | ❌ | `string` |  |
+| MuseSessions |  | `string` |  |
+| NextAVTransportURI |  | `string` |  |
+| NextAVTransportURIMetaData |  | `string` |  |
+| NextTrackMetaData |  | `string` |  |
+| NextTrackURI |  | `string` |  |
+| NumberOfTracks |  | `ui4` |  |
+| PlaybackStorageMedium |  | `string` | `NONE` / `NETWORK` |
+| PossiblePlaybackStorageMedia |  | `string` |  |
+| PossibleRecordQualityModes |  | `string` |  |
+| PossibleRecordStorageMedia |  | `string` |  |
+| QueueUpdateID |  | `ui4` |  |
+| RecordMediumWriteStatus |  | `string` |  |
+| RecordStorageMedium |  | `string` |  |
+| RelativeCounterPosition |  | `i4` |  |
+| RelativeTimePosition |  | `string` |  |
+| RestartPending |  | `boolean` |  |
+| SleepTimerGeneration |  | `ui4` |  |
+| SnoozeRunning |  | `boolean` |  |
+| TransportErrorDescription |  | `string` |  |
+| TransportErrorHttpCode |  | `string` |  |
+| TransportErrorHttpHeaders |  | `string` |  |
+| TransportErrorURI |  | `string` |  |
+| TransportPlaySpeed |  | `string` |  |
+| TransportState |  | `string` | `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` |
+| TransportStatus |  | `string` |  |
 
-If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. A `❌` doesn't mean that is won't emit events.
+If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. Other properties might be send as a part of `LastChange`
 
 ## Custom errors
 
@@ -1210,3 +1210,13 @@ The AVTransportService has the following known custom errors.
 ---
 
 This file is automatically generated with [@svrooij/sonos-docs](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs), do not edit manually.
+
+| Device | Software generation | Software version | Discovery date |
+|:-------|:--------------------|:-----------------|:---------------|
+| `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
+| `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
+| `Sonos Play:5 (S6)` | S2 | 63.2-90210 | 2021-07-21T23:31:45.324Z |
+| `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |
+| `Sonos Play:1 (S1)` | S1 | 57.6-88280 | 2021-07-21T14:51:41.469Z |
+| `Sonos Play:5 (S5)` | S1 | 57.6-88280 | 2021-07-21T14:51:44.187Z |
+| `Sonos Playbar (S9)` | S1 | 57.6-88280 | 2021-07-21T14:51:47.050Z |

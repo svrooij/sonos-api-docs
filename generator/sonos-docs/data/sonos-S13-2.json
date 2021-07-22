@@ -1,0 +1,6118 @@
+{
+  "model": "S13",
+  "modelDescription": "Sonos One",
+  "softwareGeneration": 2,
+  "softwareVersion": "63.2-90210",
+  "discoveryDate": "2021-07-21T23:31:19.273Z",
+  "services": [
+    {
+      "name": "AlarmClock",
+      "serviceName": "AlarmClockService",
+      "discoveryUri": "/xml/AlarmClock1.xml",
+      "serviceId": "urn:upnp-org:serviceId:AlarmClock",
+      "serviceType": "urn:schemas-upnp-org:service:AlarmClock:1",
+      "controlURL": "/AlarmClock/Control",
+      "eventSubURL": "/AlarmClock/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_ISO8601Time",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Recurrence",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "ONCE",
+            "WEEKDAYS",
+            "WEEKENDS",
+            "DAILY"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmList",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmEnabled",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmProgramURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmProgramMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmPlayMode",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "NORMAL",
+            "REPEAT_ALL",
+            "SHUFFLE_NOREPEAT",
+            "SHUFFLE"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmVolume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmIncludeLinkedZones",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmRoomUUID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TimeZoneIndex",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TimeZoneAutoAdjustDst",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TimeZoneInformation",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TimeStamp",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "TimeZone",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "TimeServer",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "TimeGeneration",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "AlarmListVersion",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "DailyIndexRefreshTime",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "TimeFormat",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "DateFormat",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetFormat",
+          "inputs": [
+            {
+              "name": "DesiredTimeFormat",
+              "direction": "in",
+              "relatedStateVariableName": "TimeFormat"
+            },
+            {
+              "name": "DesiredDateFormat",
+              "direction": "in",
+              "relatedStateVariableName": "DateFormat"
+            }
+          ]
+        },
+        {
+          "name": "GetFormat",
+          "outputs": [
+            {
+              "name": "CurrentTimeFormat",
+              "direction": "out",
+              "relatedStateVariableName": "TimeFormat"
+            },
+            {
+              "name": "CurrentDateFormat",
+              "direction": "out",
+              "relatedStateVariableName": "DateFormat"
+            }
+          ]
+        },
+        {
+          "name": "SetTimeZone",
+          "inputs": [
+            {
+              "name": "Index",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneIndex"
+            },
+            {
+              "name": "AutoAdjustDst",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneAutoAdjustDst"
+            }
+          ]
+        },
+        {
+          "name": "GetTimeZone",
+          "outputs": [
+            {
+              "name": "Index",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneIndex"
+            },
+            {
+              "name": "AutoAdjustDst",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneAutoAdjustDst"
+            }
+          ]
+        },
+        {
+          "name": "GetTimeZoneAndRule",
+          "outputs": [
+            {
+              "name": "Index",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneIndex"
+            },
+            {
+              "name": "AutoAdjustDst",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneAutoAdjustDst"
+            },
+            {
+              "name": "CurrentTimeZone",
+              "direction": "out",
+              "relatedStateVariableName": "TimeZone"
+            }
+          ]
+        },
+        {
+          "name": "GetTimeZoneRule",
+          "inputs": [
+            {
+              "name": "Index",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneIndex"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "TimeZone",
+              "direction": "out",
+              "relatedStateVariableName": "TimeZone"
+            }
+          ]
+        },
+        {
+          "name": "SetTimeServer",
+          "inputs": [
+            {
+              "name": "DesiredTimeServer",
+              "direction": "in",
+              "relatedStateVariableName": "TimeServer"
+            }
+          ]
+        },
+        {
+          "name": "GetTimeServer",
+          "outputs": [
+            {
+              "name": "CurrentTimeServer",
+              "direction": "out",
+              "relatedStateVariableName": "TimeServer"
+            }
+          ]
+        },
+        {
+          "name": "SetTimeNow",
+          "inputs": [
+            {
+              "name": "DesiredTime",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "TimeZoneForDesiredTime",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeZoneInformation"
+            }
+          ]
+        },
+        {
+          "name": "GetHouseholdTimeAtStamp",
+          "inputs": [
+            {
+              "name": "TimeStamp",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TimeStamp"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "HouseholdUTCTime",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            }
+          ]
+        },
+        {
+          "name": "GetTimeNow",
+          "outputs": [
+            {
+              "name": "CurrentUTCTime",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "CurrentLocalTime",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "CurrentTimeZone",
+              "direction": "out",
+              "relatedStateVariableName": "TimeZone"
+            },
+            {
+              "name": "CurrentTimeGeneration",
+              "direction": "out",
+              "relatedStateVariableName": "TimeGeneration"
+            }
+          ]
+        },
+        {
+          "name": "CreateAlarm",
+          "inputs": [
+            {
+              "name": "StartLocalTime",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "Duration",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "Recurrence",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Recurrence"
+            },
+            {
+              "name": "Enabled",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmEnabled"
+            },
+            {
+              "name": "RoomUUID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmRoomUUID"
+            },
+            {
+              "name": "ProgramURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmProgramURI"
+            },
+            {
+              "name": "ProgramMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmProgramMetaData"
+            },
+            {
+              "name": "PlayMode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmPlayMode"
+            },
+            {
+              "name": "Volume",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmVolume"
+            },
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmIncludeLinkedZones"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "AssignedID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmID"
+            }
+          ]
+        },
+        {
+          "name": "UpdateAlarm",
+          "inputs": [
+            {
+              "name": "ID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmID"
+            },
+            {
+              "name": "StartLocalTime",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "Duration",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "Recurrence",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Recurrence"
+            },
+            {
+              "name": "Enabled",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmEnabled"
+            },
+            {
+              "name": "RoomUUID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmRoomUUID"
+            },
+            {
+              "name": "ProgramURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmProgramURI"
+            },
+            {
+              "name": "ProgramMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmProgramMetaData"
+            },
+            {
+              "name": "PlayMode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmPlayMode"
+            },
+            {
+              "name": "Volume",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmVolume"
+            },
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmIncludeLinkedZones"
+            }
+          ]
+        },
+        {
+          "name": "DestroyAlarm",
+          "inputs": [
+            {
+              "name": "ID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmID"
+            }
+          ]
+        },
+        {
+          "name": "ListAlarms",
+          "outputs": [
+            {
+              "name": "CurrentAlarmList",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmList"
+            },
+            {
+              "name": "CurrentAlarmListVersion",
+              "direction": "out",
+              "relatedStateVariableName": "AlarmListVersion"
+            }
+          ]
+        },
+        {
+          "name": "SetDailyIndexRefreshTime",
+          "inputs": [
+            {
+              "name": "DesiredDailyIndexRefreshTime",
+              "direction": "in",
+              "relatedStateVariableName": "DailyIndexRefreshTime"
+            }
+          ]
+        },
+        {
+          "name": "GetDailyIndexRefreshTime",
+          "outputs": [
+            {
+              "name": "CurrentDailyIndexRefreshTime",
+              "direction": "out",
+              "relatedStateVariableName": "DailyIndexRefreshTime"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AVTransport",
+      "serviceName": "AVTransportService",
+      "discoveryUri": "/xml/AVTransport1.xml",
+      "serviceId": "urn:upnp-org:serviceId:AVTransport",
+      "serviceType": "urn:schemas-upnp-org:service:AVTransport:1",
+      "controlURL": "/MediaRenderer/AVTransport/Control",
+      "eventSubURL": "/MediaRenderer/AVTransport/Event",
+      "stateVariables": [
+        {
+          "name": "TransportState",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "STOPPED",
+            "PLAYING",
+            "PAUSED_PLAYBACK",
+            "TRANSITIONING"
+          ]
+        },
+        {
+          "name": "TransportStatus",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "TransportErrorDescription",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "TransportErrorURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "TransportErrorHttpCode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "TransportErrorHttpHeaders",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "PlaybackStorageMedium",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "NONE",
+            "NETWORK"
+          ]
+        },
+        {
+          "name": "RecordStorageMedium",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": "NONE"
+        },
+        {
+          "name": "PossiblePlaybackStorageMedia",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "PossibleRecordStorageMedia",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentPlayMode",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "NORMAL",
+            "REPEAT_ALL",
+            "REPEAT_ONE",
+            "SHUFFLE_NOREPEAT",
+            "SHUFFLE",
+            "SHUFFLE_REPEAT_ONE"
+          ]
+        },
+        {
+          "name": "CurrentCrossfadeMode",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "TransportPlaySpeed",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": 1
+        },
+        {
+          "name": "RecordMediumWriteStatus",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentRecordQualityMode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "PossibleRecordQualityModes",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "NumberOfTracks",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTrack",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentSection",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTrackDuration",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentMediaDuration",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTrackMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTrackURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AVTransportURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AVTransportURIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "NextAVTransportURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "NextAVTransportURIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RelativeTimePosition",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AbsoluteTimePosition",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RelativeCounterPosition",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "AbsoluteCounterPosition",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTransportActions",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SleepTimerGeneration",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "SnoozeRunning",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "AlarmRunning",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "AlarmIDRunning",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "AlarmLoggedStartTime",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RestartPending",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "LastChange",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "NextTrackMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "NextTrackURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "EnqueuedTransportURIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "EnqueuedTransportURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentValidPlayModes",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "MuseSessions",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "DirectControlClientID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "DirectControlAccountID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "DirectControlIsSuspended",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SeekMode",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "TRACK_NR",
+            "REL_TIME",
+            "TIME_DELTA"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_SeekTarget",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_InstanceID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MemberList",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TransportSettings",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_CurrentAVTransportURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SourceState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_VLIState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Queue",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MemberID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_URI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_LIST_URI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_URIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_LIST_URIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ObjectID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_GroupID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_PlayerID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TrackNumber",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_NumTracks",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_NumTracksChange",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_EnqueueAsNext",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SavedQueueTitle",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ResumePlayback",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ISO8601Time",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmVolume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmIncludeLinkedZones",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ResetVolumeAfter",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SleepTimerState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlarmState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_StreamRestartState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RejoinGroup",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "QueueUpdateID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TrackList",
+          "dataType": "string",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetAVTransportURI",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CurrentURI",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURI"
+            },
+            {
+              "name": "CurrentURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURIMetaData"
+            }
+          ]
+        },
+        {
+          "name": "SetNextAVTransportURI",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "NextURI",
+              "direction": "in",
+              "relatedStateVariableName": "NextAVTransportURI"
+            },
+            {
+              "name": "NextURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "NextAVTransportURIMetaData"
+            }
+          ]
+        },
+        {
+          "name": "AddURIToQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "EnqueuedURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "EnqueuedURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            },
+            {
+              "name": "DesiredFirstTrackNumberEnqueued",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "EnqueueAsNext",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "FirstTrackNumberEnqueued",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumTracksAdded",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            }
+          ]
+        },
+        {
+          "name": "AddMultipleURIsToQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "QueueUpdateID"
+            },
+            {
+              "name": "NumberOfURIs",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "EnqueuedURIs",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_LIST_URI"
+            },
+            {
+              "name": "EnqueuedURIsMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_LIST_URIMetaData"
+            },
+            {
+              "name": "ContainerURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "ContainerMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            },
+            {
+              "name": "DesiredFirstTrackNumberEnqueued",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "EnqueueAsNext",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "FirstTrackNumberEnqueued",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumTracksAdded",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "ReorderTracksInQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "StartingIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumberOfTracks",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "InsertBefore",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "RemoveTrackFromQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "RemoveTrackRangeFromQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "QueueUpdateID"
+            },
+            {
+              "name": "StartingIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumberOfTracks",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "RemoveAllTracksFromQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "SaveQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Title",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SavedQueueTitle"
+            },
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "AssignedObjectID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            }
+          ]
+        },
+        {
+          "name": "BackupQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "CreateSavedQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Title",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SavedQueueTitle"
+            },
+            {
+              "name": "EnqueuedURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "EnqueuedURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NumTracksAdded",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "AssignedObjectID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "AddURIToSavedQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "QueueUpdateID"
+            },
+            {
+              "name": "EnqueuedURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "EnqueuedURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            },
+            {
+              "name": "AddAtIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NumTracksAdded",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "ReorderTracksInSavedQueue",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "QueueUpdateID"
+            },
+            {
+              "name": "TrackList",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackList"
+            },
+            {
+              "name": "NewPositionList",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackList"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "QueueLengthChange",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracksChange"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "QueueUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "GetMediaInfo",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NrTracks",
+              "direction": "out",
+              "relatedStateVariableName": "NumberOfTracks"
+            },
+            {
+              "name": "MediaDuration",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentMediaDuration"
+            },
+            {
+              "name": "CurrentURI",
+              "direction": "out",
+              "relatedStateVariableName": "AVTransportURI"
+            },
+            {
+              "name": "CurrentURIMetaData",
+              "direction": "out",
+              "relatedStateVariableName": "AVTransportURIMetaData"
+            },
+            {
+              "name": "NextURI",
+              "direction": "out",
+              "relatedStateVariableName": "NextAVTransportURI"
+            },
+            {
+              "name": "NextURIMetaData",
+              "direction": "out",
+              "relatedStateVariableName": "NextAVTransportURIMetaData"
+            },
+            {
+              "name": "PlayMedium",
+              "direction": "out",
+              "relatedStateVariableName": "PlaybackStorageMedium"
+            },
+            {
+              "name": "RecordMedium",
+              "direction": "out",
+              "relatedStateVariableName": "RecordStorageMedium"
+            },
+            {
+              "name": "WriteStatus",
+              "direction": "out",
+              "relatedStateVariableName": "RecordMediumWriteStatus"
+            }
+          ]
+        },
+        {
+          "name": "GetTransportInfo",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentTransportState",
+              "direction": "out",
+              "relatedStateVariableName": "TransportState"
+            },
+            {
+              "name": "CurrentTransportStatus",
+              "direction": "out",
+              "relatedStateVariableName": "TransportStatus"
+            },
+            {
+              "name": "CurrentSpeed",
+              "direction": "out",
+              "relatedStateVariableName": "TransportPlaySpeed"
+            }
+          ]
+        },
+        {
+          "name": "GetPositionInfo",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Track",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentTrack"
+            },
+            {
+              "name": "TrackDuration",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentTrackDuration"
+            },
+            {
+              "name": "TrackMetaData",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentTrackMetaData"
+            },
+            {
+              "name": "TrackURI",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentTrackURI"
+            },
+            {
+              "name": "RelTime",
+              "direction": "out",
+              "relatedStateVariableName": "RelativeTimePosition"
+            },
+            {
+              "name": "AbsTime",
+              "direction": "out",
+              "relatedStateVariableName": "AbsoluteTimePosition"
+            },
+            {
+              "name": "RelCount",
+              "direction": "out",
+              "relatedStateVariableName": "RelativeCounterPosition"
+            },
+            {
+              "name": "AbsCount",
+              "direction": "out",
+              "relatedStateVariableName": "AbsoluteCounterPosition"
+            }
+          ]
+        },
+        {
+          "name": "GetDeviceCapabilities",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "PlayMedia",
+              "direction": "out",
+              "relatedStateVariableName": "PossiblePlaybackStorageMedia"
+            },
+            {
+              "name": "RecMedia",
+              "direction": "out",
+              "relatedStateVariableName": "PossibleRecordStorageMedia"
+            },
+            {
+              "name": "RecQualityModes",
+              "direction": "out",
+              "relatedStateVariableName": "PossibleRecordQualityModes"
+            }
+          ]
+        },
+        {
+          "name": "GetTransportSettings",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "PlayMode",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentPlayMode"
+            },
+            {
+              "name": "RecQualityMode",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentRecordQualityMode"
+            }
+          ]
+        },
+        {
+          "name": "GetCrossfadeMode",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CrossfadeMode",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentCrossfadeMode"
+            }
+          ]
+        },
+        {
+          "name": "Stop",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "Play",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Speed",
+              "direction": "in",
+              "relatedStateVariableName": "TransportPlaySpeed"
+            }
+          ]
+        },
+        {
+          "name": "Pause",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "Seek",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Unit",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SeekMode"
+            },
+            {
+              "name": "Target",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SeekTarget"
+            }
+          ]
+        },
+        {
+          "name": "Next",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "Previous",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "SetPlayMode",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "NewPlayMode",
+              "direction": "in",
+              "relatedStateVariableName": "CurrentPlayMode"
+            }
+          ]
+        },
+        {
+          "name": "SetCrossfadeMode",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CrossfadeMode",
+              "direction": "in",
+              "relatedStateVariableName": "CurrentCrossfadeMode"
+            }
+          ]
+        },
+        {
+          "name": "NotifyDeletedURI",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DeletedURI",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURI"
+            }
+          ]
+        },
+        {
+          "name": "GetCurrentTransportActions",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Actions",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentTransportActions"
+            }
+          ]
+        },
+        {
+          "name": "BecomeCoordinatorOfStandaloneGroup",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "DelegatedGroupCoordinatorID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_PlayerID"
+            },
+            {
+              "name": "NewGroupID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_GroupID"
+            }
+          ]
+        },
+        {
+          "name": "DelegateGroupCoordinationTo",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "NewCoordinator",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "RejoinGroup",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RejoinGroup"
+            }
+          ]
+        },
+        {
+          "name": "BecomeGroupCoordinator",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CurrentCoordinator",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "CurrentGroupID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_GroupID"
+            },
+            {
+              "name": "OtherMembers",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberList"
+            },
+            {
+              "name": "TransportSettings",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TransportSettings"
+            },
+            {
+              "name": "CurrentURI",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURI"
+            },
+            {
+              "name": "CurrentURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURIMetaData"
+            },
+            {
+              "name": "SleepTimerState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SleepTimerState"
+            },
+            {
+              "name": "AlarmState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmState"
+            },
+            {
+              "name": "StreamRestartState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_StreamRestartState"
+            },
+            {
+              "name": "CurrentQueueTrackList",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Queue"
+            },
+            {
+              "name": "CurrentVLIState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VLIState"
+            }
+          ]
+        },
+        {
+          "name": "BecomeGroupCoordinatorAndSource",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CurrentCoordinator",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "CurrentGroupID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_GroupID"
+            },
+            {
+              "name": "OtherMembers",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberList"
+            },
+            {
+              "name": "CurrentURI",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURI"
+            },
+            {
+              "name": "CurrentURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURIMetaData"
+            },
+            {
+              "name": "SleepTimerState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SleepTimerState"
+            },
+            {
+              "name": "AlarmState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmState"
+            },
+            {
+              "name": "StreamRestartState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_StreamRestartState"
+            },
+            {
+              "name": "CurrentAVTTrackList",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Queue"
+            },
+            {
+              "name": "CurrentQueueTrackList",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Queue"
+            },
+            {
+              "name": "CurrentSourceState",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SourceState"
+            },
+            {
+              "name": "ResumePlayback",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ResumePlayback"
+            }
+          ]
+        },
+        {
+          "name": "ChangeCoordinator",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CurrentCoordinator",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "NewCoordinator",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "NewTransportSettings",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TransportSettings"
+            },
+            {
+              "name": "CurrentAVTransportURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_CurrentAVTransportURI"
+            }
+          ]
+        },
+        {
+          "name": "ChangeTransportSettings",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "NewTransportSettings",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TransportSettings"
+            },
+            {
+              "name": "CurrentAVTransportURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_CurrentAVTransportURI"
+            }
+          ]
+        },
+        {
+          "name": "ConfigureSleepTimer",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "NewSleepTimerDuration",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            }
+          ]
+        },
+        {
+          "name": "GetRemainingSleepTimerDuration",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "RemainingSleepTimerDuration",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "CurrentSleepTimerGeneration",
+              "direction": "out",
+              "relatedStateVariableName": "SleepTimerGeneration"
+            }
+          ]
+        },
+        {
+          "name": "RunAlarm",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "AlarmID",
+              "direction": "in",
+              "relatedStateVariableName": "AlarmIDRunning"
+            },
+            {
+              "name": "LoggedStartTime",
+              "direction": "in",
+              "relatedStateVariableName": "AlarmLoggedStartTime"
+            },
+            {
+              "name": "Duration",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            },
+            {
+              "name": "ProgramURI",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURI"
+            },
+            {
+              "name": "ProgramMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURIMetaData"
+            },
+            {
+              "name": "PlayMode",
+              "direction": "in",
+              "relatedStateVariableName": "CurrentPlayMode"
+            },
+            {
+              "name": "Volume",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmVolume"
+            },
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmIncludeLinkedZones"
+            }
+          ]
+        },
+        {
+          "name": "StartAutoplay",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "ProgramURI",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURI"
+            },
+            {
+              "name": "ProgramMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "AVTransportURIMetaData"
+            },
+            {
+              "name": "Volume",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmVolume"
+            },
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmIncludeLinkedZones"
+            },
+            {
+              "name": "ResetVolumeAfter",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ResetVolumeAfter"
+            }
+          ]
+        },
+        {
+          "name": "GetRunningAlarmProperties",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "AlarmID",
+              "direction": "out",
+              "relatedStateVariableName": "AlarmIDRunning"
+            },
+            {
+              "name": "GroupID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_GroupID"
+            },
+            {
+              "name": "LoggedStartTime",
+              "direction": "out",
+              "relatedStateVariableName": "AlarmLoggedStartTime"
+            }
+          ]
+        },
+        {
+          "name": "SnoozeAlarm",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Duration",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ISO8601Time"
+            }
+          ]
+        },
+        {
+          "name": "EndDirectControlSession",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ConnectionManager",
+      "serviceName": "ConnectionManagerService",
+      "discoveryUri": "/xml/ConnectionManager1.xml",
+      "serviceId": "urn:upnp-org:serviceId:ConnectionManager",
+      "serviceType": "urn:schemas-upnp-org:service:ConnectionManager:1",
+      "controlURL": "/MediaRenderer/ConnectionManager/Control",
+      "eventSubURL": "/MediaRenderer/ConnectionManager/Event",
+      "stateVariables": [
+        {
+          "name": "SourceProtocolInfo",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SinkProtocolInfo",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "CurrentConnectionIDs",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "A_ARG_TYPE_ConnectionStatus",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "OK",
+            "ContentFormatMismatch",
+            "InsufficientBandwidth",
+            "UnreliableChannel",
+            "Unknown"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_ConnectionManager",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Direction",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "Input",
+            "Output"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_ProtocolInfo",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ConnectionID",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AVTransportID",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RcsID",
+          "dataType": "i4",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "GetProtocolInfo",
+          "outputs": [
+            {
+              "name": "Source",
+              "direction": "out",
+              "relatedStateVariableName": "SourceProtocolInfo"
+            },
+            {
+              "name": "Sink",
+              "direction": "out",
+              "relatedStateVariableName": "SinkProtocolInfo"
+            }
+          ]
+        },
+        {
+          "name": "GetCurrentConnectionIDs",
+          "outputs": [
+            {
+              "name": "ConnectionIDs",
+              "direction": "out",
+              "relatedStateVariableName": "CurrentConnectionIDs"
+            }
+          ]
+        },
+        {
+          "name": "GetCurrentConnectionInfo",
+          "inputs": [
+            {
+              "name": "ConnectionID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ConnectionID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "RcsID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RcsID"
+            },
+            {
+              "name": "AVTransportID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AVTransportID"
+            },
+            {
+              "name": "ProtocolInfo",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ProtocolInfo"
+            },
+            {
+              "name": "PeerConnectionManager",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ConnectionManager"
+            },
+            {
+              "name": "PeerConnectionID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ConnectionID"
+            },
+            {
+              "name": "Direction",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Direction"
+            },
+            {
+              "name": "Status",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ConnectionStatus"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContentDirectory",
+      "serviceName": "ContentDirectoryService",
+      "discoveryUri": "/xml/ContentDirectory1.xml",
+      "serviceId": "urn:upnp-org:serviceId:ContentDirectory",
+      "serviceType": "urn:schemas-upnp-org:service:ContentDirectory:1",
+      "controlURL": "/MediaServer/ContentDirectory/Control",
+      "eventSubURL": "/MediaServer/ContentDirectory/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_ObjectID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Result",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SearchCriteria",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_BrowseFlag",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "BrowseMetadata",
+            "BrowseDirectChildren"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_Filter",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SortCriteria",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Prefix",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Index",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Count",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TagValueList",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AlbumArtistDisplayOption",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SortOrder",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_LastIndexChange",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SearchCapabilities",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SortCapabilities",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SystemUpdateID",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "ContainerUpdateIDs",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ShareIndexInProgress",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "ShareIndexLastError",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "UserRadioUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SavedQueuesUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ShareListUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "RecentlyPlayedUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "Browseable",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "RadioFavoritesUpdateID",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "RadioLocationUpdateID",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "FavoritesUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "FavoritePresetsUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "GetSearchCapabilities",
+          "outputs": [
+            {
+              "name": "SearchCaps",
+              "direction": "out",
+              "relatedStateVariableName": "SearchCapabilities"
+            }
+          ]
+        },
+        {
+          "name": "GetSortCapabilities",
+          "outputs": [
+            {
+              "name": "SortCaps",
+              "direction": "out",
+              "relatedStateVariableName": "SortCapabilities"
+            }
+          ]
+        },
+        {
+          "name": "GetSystemUpdateID",
+          "outputs": [
+            {
+              "name": "Id",
+              "direction": "out",
+              "relatedStateVariableName": "SystemUpdateID"
+            }
+          ]
+        },
+        {
+          "name": "GetAlbumArtistDisplayOption",
+          "outputs": [
+            {
+              "name": "AlbumArtistDisplayOption",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AlbumArtistDisplayOption"
+            }
+          ]
+        },
+        {
+          "name": "GetLastIndexChange",
+          "outputs": [
+            {
+              "name": "LastIndexChange",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_LastIndexChange"
+            }
+          ]
+        },
+        {
+          "name": "Browse",
+          "inputs": [
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "BrowseFlag",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_BrowseFlag"
+            },
+            {
+              "name": "Filter",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Filter"
+            },
+            {
+              "name": "StartingIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Index"
+            },
+            {
+              "name": "RequestedCount",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            },
+            {
+              "name": "SortCriteria",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SortCriteria"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Result",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Result"
+            },
+            {
+              "name": "NumberReturned",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            },
+            {
+              "name": "TotalMatches",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "FindPrefix",
+          "inputs": [
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "Prefix",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Prefix"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StartingIndex",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Index"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "GetAllPrefixLocations",
+          "inputs": [
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "TotalPrefixes",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            },
+            {
+              "name": "PrefixAndIndexCSV",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Result"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "CreateObject",
+          "inputs": [
+            {
+              "name": "ContainerID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "Elements",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Result"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "ObjectID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "Result",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Result"
+            }
+          ]
+        },
+        {
+          "name": "UpdateObject",
+          "inputs": [
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            },
+            {
+              "name": "CurrentTagValue",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TagValueList"
+            },
+            {
+              "name": "NewTagValue",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TagValueList"
+            }
+          ]
+        },
+        {
+          "name": "DestroyObject",
+          "inputs": [
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            }
+          ]
+        },
+        {
+          "name": "RefreshShareIndex",
+          "inputs": [
+            {
+              "name": "AlbumArtistDisplayOption",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlbumArtistDisplayOption"
+            }
+          ]
+        },
+        {
+          "name": "RequestResort",
+          "inputs": [
+            {
+              "name": "SortOrder",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SortOrder"
+            }
+          ]
+        },
+        {
+          "name": "GetShareIndexInProgress",
+          "outputs": [
+            {
+              "name": "IsIndexing",
+              "direction": "out",
+              "relatedStateVariableName": "ShareIndexInProgress"
+            }
+          ]
+        },
+        {
+          "name": "GetBrowseable",
+          "outputs": [
+            {
+              "name": "IsBrowseable",
+              "direction": "out",
+              "relatedStateVariableName": "Browseable"
+            }
+          ]
+        },
+        {
+          "name": "SetBrowseable",
+          "inputs": [
+            {
+              "name": "Browseable",
+              "direction": "in",
+              "relatedStateVariableName": "Browseable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeviceProperties",
+      "serviceName": "DevicePropertiesService",
+      "discoveryUri": "/xml/DeviceProperties1.xml",
+      "serviceId": "urn:upnp-org:serviceId:DeviceProperties",
+      "serviceType": "urn:schemas-upnp-org:service:DeviceProperties:1",
+      "controlURL": "/DeviceProperties/Control",
+      "eventSubURL": "/DeviceProperties/Event",
+      "stateVariables": [
+        {
+          "name": "HouseholdID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SettingsReplicationState",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ZoneName",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "Icon",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "Configuration",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "TargetRoomName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "Invisible",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "IsZoneBridge",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "AirPlayEnabled",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "SupportsAudioIn",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "SupportsAudioClip",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "IsIdle",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "MoreInfo",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ChannelMapSet",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "HTSatChanMapSet",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "HTFreq",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "HTBondedZoneCommitState",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "Orientation",
+          "dataType": "i4",
+          "sendEvents": true
+        },
+        {
+          "name": "LastChangedPlayState",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "RoomCalibrationState",
+          "dataType": "i4",
+          "sendEvents": true
+        },
+        {
+          "name": "AvailableRoomCalibration",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SatRoomUUID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "LEDState",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "On",
+            "Off"
+          ]
+        },
+        {
+          "name": "SerialNumber",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SoftwareVersion",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "DisplaySoftwareVersion",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "HardwareVersion",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "IPAddress",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "MACAddress",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CopyrightInfo",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "ExtraInfo",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "HTAudioIn",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "Flags",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "AutoplayIncludeLinkedZones",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "AutoplayRoomUUID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AutoplaySource",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AutoplayVolume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "AutoplayUseVolume",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "TVConfigurationError",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "HdmiCecAvailable",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "WirelessMode",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "WirelessLeafOnly",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "HasConfiguredSSID",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "ChannelFreq",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "BehindWifiExtender",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "WifiEnabled",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "ConfigMode",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SecureRegState",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "A_ARG_TYPE_ConfigModeOptions",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ConfigModeState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ButtonState",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "ButtonLockState",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "On",
+            "Off"
+          ]
+        },
+        {
+          "name": "VoiceConfigState",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "MicEnabled",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "KeepGrouped",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionChirpChannel",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionDurationMilliseconds",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionPlayId",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio",
+          "dataType": "boolean",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetLEDState",
+          "inputs": [
+            {
+              "name": "DesiredLEDState",
+              "direction": "in",
+              "relatedStateVariableName": "LEDState"
+            }
+          ]
+        },
+        {
+          "name": "GetLEDState",
+          "outputs": [
+            {
+              "name": "CurrentLEDState",
+              "direction": "out",
+              "relatedStateVariableName": "LEDState"
+            }
+          ]
+        },
+        {
+          "name": "AddBondedZones",
+          "inputs": [
+            {
+              "name": "ChannelMapSet",
+              "direction": "in",
+              "relatedStateVariableName": "ChannelMapSet"
+            }
+          ]
+        },
+        {
+          "name": "RemoveBondedZones",
+          "inputs": [
+            {
+              "name": "ChannelMapSet",
+              "direction": "in",
+              "relatedStateVariableName": "ChannelMapSet"
+            },
+            {
+              "name": "KeepGrouped",
+              "direction": "in",
+              "relatedStateVariableName": "KeepGrouped"
+            }
+          ]
+        },
+        {
+          "name": "CreateStereoPair",
+          "inputs": [
+            {
+              "name": "ChannelMapSet",
+              "direction": "in",
+              "relatedStateVariableName": "ChannelMapSet"
+            }
+          ]
+        },
+        {
+          "name": "SeparateStereoPair",
+          "inputs": [
+            {
+              "name": "ChannelMapSet",
+              "direction": "in",
+              "relatedStateVariableName": "ChannelMapSet"
+            }
+          ]
+        },
+        {
+          "name": "SetZoneAttributes",
+          "inputs": [
+            {
+              "name": "DesiredZoneName",
+              "direction": "in",
+              "relatedStateVariableName": "ZoneName"
+            },
+            {
+              "name": "DesiredIcon",
+              "direction": "in",
+              "relatedStateVariableName": "Icon"
+            },
+            {
+              "name": "DesiredConfiguration",
+              "direction": "in",
+              "relatedStateVariableName": "Configuration"
+            },
+            {
+              "name": "DesiredTargetRoomName",
+              "direction": "in",
+              "relatedStateVariableName": "TargetRoomName"
+            }
+          ]
+        },
+        {
+          "name": "GetZoneAttributes",
+          "outputs": [
+            {
+              "name": "CurrentZoneName",
+              "direction": "out",
+              "relatedStateVariableName": "ZoneName"
+            },
+            {
+              "name": "CurrentIcon",
+              "direction": "out",
+              "relatedStateVariableName": "Icon"
+            },
+            {
+              "name": "CurrentConfiguration",
+              "direction": "out",
+              "relatedStateVariableName": "Configuration"
+            },
+            {
+              "name": "CurrentTargetRoomName",
+              "direction": "out",
+              "relatedStateVariableName": "TargetRoomName"
+            }
+          ]
+        },
+        {
+          "name": "GetHouseholdID",
+          "outputs": [
+            {
+              "name": "CurrentHouseholdID",
+              "direction": "out",
+              "relatedStateVariableName": "HouseholdID"
+            }
+          ]
+        },
+        {
+          "name": "GetZoneInfo",
+          "outputs": [
+            {
+              "name": "SerialNumber",
+              "direction": "out",
+              "relatedStateVariableName": "SerialNumber"
+            },
+            {
+              "name": "SoftwareVersion",
+              "direction": "out",
+              "relatedStateVariableName": "SoftwareVersion"
+            },
+            {
+              "name": "DisplaySoftwareVersion",
+              "direction": "out",
+              "relatedStateVariableName": "DisplaySoftwareVersion"
+            },
+            {
+              "name": "HardwareVersion",
+              "direction": "out",
+              "relatedStateVariableName": "HardwareVersion"
+            },
+            {
+              "name": "IPAddress",
+              "direction": "out",
+              "relatedStateVariableName": "IPAddress"
+            },
+            {
+              "name": "MACAddress",
+              "direction": "out",
+              "relatedStateVariableName": "MACAddress"
+            },
+            {
+              "name": "CopyrightInfo",
+              "direction": "out",
+              "relatedStateVariableName": "CopyrightInfo"
+            },
+            {
+              "name": "ExtraInfo",
+              "direction": "out",
+              "relatedStateVariableName": "ExtraInfo"
+            },
+            {
+              "name": "HTAudioIn",
+              "direction": "out",
+              "relatedStateVariableName": "HTAudioIn"
+            },
+            {
+              "name": "Flags",
+              "direction": "out",
+              "relatedStateVariableName": "Flags"
+            }
+          ]
+        },
+        {
+          "name": "SetAutoplayLinkedZones",
+          "inputs": [
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplayIncludeLinkedZones"
+            },
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ]
+        },
+        {
+          "name": "GetAutoplayLinkedZones",
+          "inputs": [
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "IncludeLinkedZones",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayIncludeLinkedZones"
+            }
+          ]
+        },
+        {
+          "name": "SetAutoplayRoomUUID",
+          "inputs": [
+            {
+              "name": "RoomUUID",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplayRoomUUID"
+            },
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ]
+        },
+        {
+          "name": "GetAutoplayRoomUUID",
+          "inputs": [
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "RoomUUID",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayRoomUUID"
+            }
+          ]
+        },
+        {
+          "name": "SetAutoplayVolume",
+          "inputs": [
+            {
+              "name": "Volume",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplayVolume"
+            },
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ]
+        },
+        {
+          "name": "GetAutoplayVolume",
+          "inputs": [
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentVolume",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayVolume"
+            }
+          ]
+        },
+        {
+          "name": "SetUseAutoplayVolume",
+          "inputs": [
+            {
+              "name": "UseVolume",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplayUseVolume"
+            },
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ]
+        },
+        {
+          "name": "GetUseAutoplayVolume",
+          "inputs": [
+            {
+              "name": "Source",
+              "direction": "in",
+              "relatedStateVariableName": "AutoplaySource"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "UseVolume",
+              "direction": "out",
+              "relatedStateVariableName": "AutoplayUseVolume"
+            }
+          ]
+        },
+        {
+          "name": "AddHTSatellite",
+          "inputs": [
+            {
+              "name": "HTSatChanMapSet",
+              "direction": "in",
+              "relatedStateVariableName": "HTSatChanMapSet"
+            }
+          ]
+        },
+        {
+          "name": "RemoveHTSatellite",
+          "inputs": [
+            {
+              "name": "SatRoomUUID",
+              "direction": "in",
+              "relatedStateVariableName": "SatRoomUUID"
+            }
+          ]
+        },
+        {
+          "name": "EnterConfigMode",
+          "inputs": [
+            {
+              "name": "Mode",
+              "direction": "in",
+              "relatedStateVariableName": "ConfigMode"
+            },
+            {
+              "name": "Options",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ConfigModeOptions"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "State",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ConfigModeState"
+            }
+          ]
+        },
+        {
+          "name": "ExitConfigMode",
+          "inputs": [
+            {
+              "name": "Options",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ConfigModeOptions"
+            }
+          ]
+        },
+        {
+          "name": "GetButtonState",
+          "outputs": [
+            {
+              "name": "State",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ButtonState"
+            }
+          ]
+        },
+        {
+          "name": "SetButtonLockState",
+          "inputs": [
+            {
+              "name": "DesiredButtonLockState",
+              "direction": "in",
+              "relatedStateVariableName": "ButtonLockState"
+            }
+          ]
+        },
+        {
+          "name": "GetButtonLockState",
+          "outputs": [
+            {
+              "name": "CurrentButtonLockState",
+              "direction": "out",
+              "relatedStateVariableName": "ButtonLockState"
+            }
+          ]
+        },
+        {
+          "name": "RoomDetectionStartChirping",
+          "inputs": [
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpChannel"
+            },
+            {
+              "name": "DurationMilliseconds",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionDurationMilliseconds"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "PlayId",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
+            },
+            {
+              "name": "ChirpIfPlayingSwappableAudio",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio"
+            }
+          ]
+        },
+        {
+          "name": "RoomDetectionStopChirping",
+          "inputs": [
+            {
+              "name": "PlayId",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GroupManagement",
+      "serviceName": "GroupManagementService",
+      "discoveryUri": "/xml/GroupManagement1.xml",
+      "serviceId": "urn:upnp-org:serviceId:GroupManagement",
+      "serviceType": "urn:schemas-upnp-org:service:GroupManagement:1",
+      "controlURL": "/GroupManagement/Control",
+      "eventSubURL": "/GroupManagement/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_MemberID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TransportSettings",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AVTransportURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_BufferingResultCode",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_BootSeq",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "GroupCoordinatorIsLocal",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "LocalGroupUUID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "VirtualLineInGroupID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SourceAreaIds",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "ResetVolumeAfter",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "VolumeAVTransportURI",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "AddMember",
+          "inputs": [
+            {
+              "name": "MemberID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "BootSeq",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_BootSeq"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentTransportSettings",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TransportSettings"
+            },
+            {
+              "name": "CurrentURI",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AVTransportURI"
+            },
+            {
+              "name": "GroupUUIDJoined",
+              "direction": "out",
+              "relatedStateVariableName": "LocalGroupUUID"
+            },
+            {
+              "name": "ResetVolumeAfter",
+              "direction": "out",
+              "relatedStateVariableName": "ResetVolumeAfter"
+            },
+            {
+              "name": "VolumeAVTransportURI",
+              "direction": "out",
+              "relatedStateVariableName": "VolumeAVTransportURI"
+            }
+          ]
+        },
+        {
+          "name": "RemoveMember",
+          "inputs": [
+            {
+              "name": "MemberID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            }
+          ]
+        },
+        {
+          "name": "ReportTrackBufferingResult",
+          "inputs": [
+            {
+              "name": "MemberID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "ResultCode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_BufferingResultCode"
+            }
+          ]
+        },
+        {
+          "name": "SetSourceAreaIds",
+          "inputs": [
+            {
+              "name": "DesiredSourceAreaIds",
+              "direction": "in",
+              "relatedStateVariableName": "SourceAreaIds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GroupRenderingControl",
+      "serviceName": "GroupRenderingControlService",
+      "discoveryUri": "/xml/GroupRenderingControl1.xml",
+      "serviceId": "urn:upnp-org:serviceId:GroupRenderingControl",
+      "serviceType": "urn:schemas-upnp-org:service:GroupRenderingControl:1",
+      "controlURL": "/MediaRenderer/GroupRenderingControl/Control",
+      "eventSubURL": "/MediaRenderer/GroupRenderingControl/Event",
+      "stateVariables": [
+        {
+          "name": "GroupMute",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "GroupVolume",
+          "dataType": "ui2",
+          "sendEvents": true
+        },
+        {
+          "name": "GroupVolumeChangeable",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "A_ARG_TYPE_InstanceID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_VolumeAdjustment",
+          "dataType": "i4",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "GetGroupMute",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentMute",
+              "direction": "out",
+              "relatedStateVariableName": "GroupMute"
+            }
+          ]
+        },
+        {
+          "name": "SetGroupMute",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DesiredMute",
+              "direction": "in",
+              "relatedStateVariableName": "GroupMute"
+            }
+          ]
+        },
+        {
+          "name": "GetGroupVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentVolume",
+              "direction": "out",
+              "relatedStateVariableName": "GroupVolume"
+            }
+          ]
+        },
+        {
+          "name": "SetGroupVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DesiredVolume",
+              "direction": "in",
+              "relatedStateVariableName": "GroupVolume"
+            }
+          ]
+        },
+        {
+          "name": "SetRelativeGroupVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Adjustment",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VolumeAdjustment"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewVolume",
+              "direction": "out",
+              "relatedStateVariableName": "GroupVolume"
+            }
+          ]
+        },
+        {
+          "name": "SnapshotGroupVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MusicServices",
+      "serviceName": "MusicServicesService",
+      "discoveryUri": "/xml/MusicServices1.xml",
+      "serviceId": "urn:upnp-org:serviceId:MusicServices",
+      "serviceType": "urn:schemas-upnp-org:service:MusicServices:1",
+      "controlURL": "/MusicServices/Control",
+      "eventSubURL": "/MusicServices/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_ServiceDescriptorList",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ServiceTypeList",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "ServiceId",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "ServiceListVersion",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "Username",
+          "dataType": "string",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "GetSessionId",
+          "inputs": [
+            {
+              "name": "ServiceId",
+              "direction": "in",
+              "relatedStateVariableName": "ServiceId"
+            },
+            {
+              "name": "Username",
+              "direction": "in",
+              "relatedStateVariableName": "Username"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "SessionId",
+              "direction": "out",
+              "relatedStateVariableName": "SessionId"
+            }
+          ]
+        },
+        {
+          "name": "ListAvailableServices",
+          "outputs": [
+            {
+              "name": "AvailableServiceDescriptorList",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ServiceDescriptorList"
+            },
+            {
+              "name": "AvailableServiceTypeList",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ServiceTypeList"
+            },
+            {
+              "name": "AvailableServiceListVersion",
+              "direction": "out",
+              "relatedStateVariableName": "ServiceListVersion"
+            }
+          ]
+        },
+        {
+          "name": "UpdateAvailableServices"
+        }
+      ]
+    },
+    {
+      "name": "QPlay",
+      "serviceName": "QPlayService",
+      "discoveryUri": "/xml/QPlay1.xml",
+      "serviceId": "urn:tencent-com:serviceId:QPlay",
+      "serviceType": "urn:schemas-tencent-com:service:QPlay:1",
+      "controlURL": "/QPlay/Control",
+      "eventSubURL": "/QPlay/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_Seed",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Code",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_DID",
+          "dataType": "string",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "QPlayAuth",
+          "inputs": [
+            {
+              "name": "Seed",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Seed"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Code",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Code"
+            },
+            {
+              "name": "MID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_MID"
+            },
+            {
+              "name": "DID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_DID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Queue",
+      "serviceName": "QueueService",
+      "discoveryUri": "/xml/Queue1.xml",
+      "serviceId": "urn:sonos-com:serviceId:Queue",
+      "serviceType": "urn:schemas-sonos-com:service:Queue:1",
+      "controlURL": "/MediaRenderer/Queue/Control",
+      "eventSubURL": "/MediaRenderer/Queue/Event",
+      "stateVariables": [
+        {
+          "name": "LastChange",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "UpdateID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "Curated",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_QueueID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_QueueOwnerID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_QueueOwnerContext",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_QueuePolicy",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_URI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_LIST_URI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_URIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ObjectID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TrackNumber",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_NumTracks",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_EnqueueAsNext",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SavedQueueTitle",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Index",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Count",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Result",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_SavedQueueTitle",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_TrackNumbersCSV",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_LIST_URI_AND_METADATA",
+          "dataType": "string",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "AddURI",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            },
+            {
+              "name": "EnqueuedURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "EnqueuedURIMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            },
+            {
+              "name": "DesiredFirstTrackNumberEnqueued",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "EnqueueAsNext",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "FirstTrackNumberEnqueued",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumTracksAdded",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "AddMultipleURIs",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            },
+            {
+              "name": "ContainerURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "ContainerMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            },
+            {
+              "name": "DesiredFirstTrackNumberEnqueued",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "EnqueueAsNext",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EnqueueAsNext"
+            },
+            {
+              "name": "NumberOfURIs",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "EnqueuedURIsAndMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_LIST_URI_AND_METADATA"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "FirstTrackNumberEnqueued",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumTracksAdded",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "AttachQueue",
+          "inputs": [
+            {
+              "name": "QueueOwnerID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueOwnerID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "QueueID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "QueueOwnerContext",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueOwnerContext"
+            }
+          ]
+        },
+        {
+          "name": "Backup"
+        },
+        {
+          "name": "Browse",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "StartingIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Index"
+            },
+            {
+              "name": "RequestedCount",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Result",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Result"
+            },
+            {
+              "name": "NumberReturned",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            },
+            {
+              "name": "TotalMatches",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_Count"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "CreateQueue",
+          "inputs": [
+            {
+              "name": "QueueOwnerID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueOwnerID"
+            },
+            {
+              "name": "QueueOwnerContext",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueOwnerContext"
+            },
+            {
+              "name": "QueuePolicy",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueuePolicy"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "QueueID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            }
+          ]
+        },
+        {
+          "name": "RemoveAllTracks",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "RemoveTrackRange",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            },
+            {
+              "name": "StartingIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumberOfTracks",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "ReorderTracks",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "StartingIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NumberOfTracks",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "InsertBefore",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "ReplaceAllTracks",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "UpdateID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateID"
+            },
+            {
+              "name": "ContainerURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URI"
+            },
+            {
+              "name": "ContainerMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_URIMetaData"
+            },
+            {
+              "name": "CurrentTrackIndex",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumber"
+            },
+            {
+              "name": "NewCurrentTrackIndices",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_TrackNumbersCSV"
+            },
+            {
+              "name": "NumberOfURIs",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "EnqueuedURIsAndMetaData",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_LIST_URI_AND_METADATA"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewQueueLength",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_NumTracks"
+            },
+            {
+              "name": "NewUpdateID",
+              "direction": "out",
+              "relatedStateVariableName": "UpdateID"
+            }
+          ]
+        },
+        {
+          "name": "SaveAsSonosPlaylist",
+          "inputs": [
+            {
+              "name": "QueueID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_QueueID"
+            },
+            {
+              "name": "Title",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_SavedQueueTitle"
+            },
+            {
+              "name": "ObjectID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "AssignedObjectID",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RenderingControl",
+      "serviceName": "RenderingControlService",
+      "discoveryUri": "/xml/RenderingControl1.xml",
+      "serviceId": "urn:upnp-org:serviceId:RenderingControl",
+      "serviceType": "urn:schemas-upnp-org:service:RenderingControl:1",
+      "controlURL": "/MediaRenderer/RenderingControl/Control",
+      "eventSubURL": "/MediaRenderer/RenderingControl/Event",
+      "stateVariables": [
+        {
+          "name": "LastChange",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "Mute",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "Volume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_LeftVolume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RightVolume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "VolumeDB",
+          "dataType": "i2",
+          "sendEvents": false
+        },
+        {
+          "name": "Bass",
+          "dataType": "i2",
+          "sendEvents": false
+        },
+        {
+          "name": "Treble",
+          "dataType": "i2",
+          "sendEvents": false
+        },
+        {
+          "name": "EQValue",
+          "dataType": "i2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_EQType",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "Loudness",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "SupportsOutputFixed",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "OutputFixed",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "HeadphoneConnected",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Channel",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "Master",
+            "LF",
+            "RF"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_MuteChannel",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "Master",
+            "LF",
+            "RF",
+            "SpeakerOnly"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_InstanceID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_VolumeAdjustment",
+          "dataType": "i4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RampType",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "SLEEP_TIMER_RAMP_TYPE",
+            "ALARM_RAMP_TYPE",
+            "AUTOPLAY_RAMP_TYPE"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_RampTimeSeconds",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ResetVolumeAfter",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ProgramURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_ChannelMap",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AudioDelay",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AudioDelayLeftRear",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AudioDelayRightRear",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "DialogLevel",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SpeakerSize",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "SubCrossover",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SubEnabled",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "SubGain",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SubPolarity",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SurroundLevel",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "MusicSurroundLevel",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "NightMode",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "SurroundEnabled",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "SurroundMode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "PresetNameList",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RoomCalibrationID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RoomCalibrationCoefficients",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RoomCalibrationCalibrationMode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RoomCalibrationEnabled",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "RoomCalibrationAvailable",
+          "dataType": "boolean",
+          "sendEvents": false
+        }
+      ],
+      "actions": [
+        {
+          "name": "GetMute",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MuteChannel"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentMute",
+              "direction": "out",
+              "relatedStateVariableName": "Mute"
+            }
+          ]
+        },
+        {
+          "name": "SetMute",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MuteChannel"
+            },
+            {
+              "name": "DesiredMute",
+              "direction": "in",
+              "relatedStateVariableName": "Mute"
+            }
+          ]
+        },
+        {
+          "name": "ResetBasicEQ",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Bass",
+              "direction": "out",
+              "relatedStateVariableName": "Bass"
+            },
+            {
+              "name": "Treble",
+              "direction": "out",
+              "relatedStateVariableName": "Treble"
+            },
+            {
+              "name": "Loudness",
+              "direction": "out",
+              "relatedStateVariableName": "Loudness"
+            },
+            {
+              "name": "LeftVolume",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_LeftVolume"
+            },
+            {
+              "name": "RightVolume",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RightVolume"
+            }
+          ]
+        },
+        {
+          "name": "ResetExtEQ",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "EQType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EQType"
+            }
+          ]
+        },
+        {
+          "name": "GetVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentVolume",
+              "direction": "out",
+              "relatedStateVariableName": "Volume"
+            }
+          ]
+        },
+        {
+          "name": "SetVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            },
+            {
+              "name": "DesiredVolume",
+              "direction": "in",
+              "relatedStateVariableName": "Volume"
+            }
+          ]
+        },
+        {
+          "name": "SetRelativeVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            },
+            {
+              "name": "Adjustment",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VolumeAdjustment"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewVolume",
+              "direction": "out",
+              "relatedStateVariableName": "Volume"
+            }
+          ]
+        },
+        {
+          "name": "GetVolumeDB",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentVolume",
+              "direction": "out",
+              "relatedStateVariableName": "VolumeDB"
+            }
+          ]
+        },
+        {
+          "name": "SetVolumeDB",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            },
+            {
+              "name": "DesiredVolume",
+              "direction": "in",
+              "relatedStateVariableName": "VolumeDB"
+            }
+          ]
+        },
+        {
+          "name": "GetVolumeDBRange",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "MinValue",
+              "direction": "out",
+              "relatedStateVariableName": "VolumeDB"
+            },
+            {
+              "name": "MaxValue",
+              "direction": "out",
+              "relatedStateVariableName": "VolumeDB"
+            }
+          ]
+        },
+        {
+          "name": "GetBass",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentBass",
+              "direction": "out",
+              "relatedStateVariableName": "Bass"
+            }
+          ]
+        },
+        {
+          "name": "SetBass",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DesiredBass",
+              "direction": "in",
+              "relatedStateVariableName": "Bass"
+            }
+          ]
+        },
+        {
+          "name": "GetTreble",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentTreble",
+              "direction": "out",
+              "relatedStateVariableName": "Treble"
+            }
+          ]
+        },
+        {
+          "name": "SetTreble",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DesiredTreble",
+              "direction": "in",
+              "relatedStateVariableName": "Treble"
+            }
+          ]
+        },
+        {
+          "name": "GetEQ",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "EQType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EQType"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentValue",
+              "direction": "out",
+              "relatedStateVariableName": "EQValue"
+            }
+          ]
+        },
+        {
+          "name": "SetEQ",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "EQType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_EQType"
+            },
+            {
+              "name": "DesiredValue",
+              "direction": "in",
+              "relatedStateVariableName": "EQValue"
+            }
+          ]
+        },
+        {
+          "name": "GetLoudness",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentLoudness",
+              "direction": "out",
+              "relatedStateVariableName": "Loudness"
+            }
+          ]
+        },
+        {
+          "name": "SetLoudness",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            },
+            {
+              "name": "DesiredLoudness",
+              "direction": "in",
+              "relatedStateVariableName": "Loudness"
+            }
+          ]
+        },
+        {
+          "name": "GetSupportsOutputFixed",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentSupportsFixed",
+              "direction": "out",
+              "relatedStateVariableName": "SupportsOutputFixed"
+            }
+          ]
+        },
+        {
+          "name": "GetOutputFixed",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentFixed",
+              "direction": "out",
+              "relatedStateVariableName": "OutputFixed"
+            }
+          ]
+        },
+        {
+          "name": "SetOutputFixed",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DesiredFixed",
+              "direction": "in",
+              "relatedStateVariableName": "OutputFixed"
+            }
+          ]
+        },
+        {
+          "name": "GetHeadphoneConnected",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentHeadphoneConnected",
+              "direction": "out",
+              "relatedStateVariableName": "HeadphoneConnected"
+            }
+          ]
+        },
+        {
+          "name": "RampToVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            },
+            {
+              "name": "RampType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RampType"
+            },
+            {
+              "name": "DesiredVolume",
+              "direction": "in",
+              "relatedStateVariableName": "Volume"
+            },
+            {
+              "name": "ResetVolumeAfter",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ResetVolumeAfter"
+            },
+            {
+              "name": "ProgramURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ProgramURI"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "RampTime",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RampTimeSeconds"
+            }
+          ]
+        },
+        {
+          "name": "RestoreVolumePriorToRamp",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Channel"
+            }
+          ]
+        },
+        {
+          "name": "SetChannelMap",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "ChannelMap",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_ChannelMap"
+            }
+          ]
+        },
+        {
+          "name": "SetRoomCalibrationX",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CalibrationID",
+              "direction": "in",
+              "relatedStateVariableName": "RoomCalibrationID"
+            },
+            {
+              "name": "Coefficients",
+              "direction": "in",
+              "relatedStateVariableName": "RoomCalibrationCoefficients"
+            },
+            {
+              "name": "CalibrationMode",
+              "direction": "in",
+              "relatedStateVariableName": "RoomCalibrationCalibrationMode"
+            }
+          ]
+        },
+        {
+          "name": "GetRoomCalibrationStatus",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "RoomCalibrationEnabled",
+              "direction": "out",
+              "relatedStateVariableName": "RoomCalibrationEnabled"
+            },
+            {
+              "name": "RoomCalibrationAvailable",
+              "direction": "out",
+              "relatedStateVariableName": "RoomCalibrationAvailable"
+            }
+          ]
+        },
+        {
+          "name": "SetRoomCalibrationStatus",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "RoomCalibrationEnabled",
+              "direction": "in",
+              "relatedStateVariableName": "RoomCalibrationEnabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SystemProperties",
+      "serviceName": "SystemPropertiesService",
+      "discoveryUri": "/xml/SystemProperties1.xml",
+      "serviceId": "urn:upnp-org:serviceId:SystemProperties",
+      "serviceType": "urn:schemas-upnp-org:service:SystemProperties:1",
+      "controlURL": "/SystemProperties/Control",
+      "eventSubURL": "/SystemProperties/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_VariableName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_VariableStringValue",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountType",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountUID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountUDN",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountPassword",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountNickname",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountCredential",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountMd",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_IsExpired",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_StubsCreated",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RDMEnabled",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_OAuthDeviceID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AuthorizationCode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UserIdHashCode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_AccountTier",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RedirectURI",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CustomerID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "UpdateID",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "UpdateIDX",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "VoiceUpdateID",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "ThirdPartyHash",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetString",
+          "inputs": [
+            {
+              "name": "VariableName",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VariableName"
+            },
+            {
+              "name": "StringValue",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VariableStringValue"
+            }
+          ]
+        },
+        {
+          "name": "GetString",
+          "inputs": [
+            {
+              "name": "VariableName",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VariableName"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "StringValue",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_VariableStringValue"
+            }
+          ]
+        },
+        {
+          "name": "Remove",
+          "inputs": [
+            {
+              "name": "VariableName",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_VariableName"
+            }
+          ]
+        },
+        {
+          "name": "GetWebCode",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "WebCode",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_VariableStringValue"
+            }
+          ]
+        },
+        {
+          "name": "ProvisionCredentialedTrialAccountX",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountID"
+            },
+            {
+              "name": "AccountPassword",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountPassword"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "IsExpired",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_IsExpired"
+            },
+            {
+              "name": "AccountUDN",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUDN"
+            }
+          ]
+        },
+        {
+          "name": "AddAccountX",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountID"
+            },
+            {
+              "name": "AccountPassword",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountPassword"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "AccountUDN",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUDN"
+            }
+          ]
+        },
+        {
+          "name": "AddOAuthAccountX",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountToken",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountCredential"
+            },
+            {
+              "name": "AccountKey",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountCredential"
+            },
+            {
+              "name": "OAuthDeviceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_OAuthDeviceID"
+            },
+            {
+              "name": "AuthorizationCode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AuthorizationCode"
+            },
+            {
+              "name": "RedirectURI",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RedirectURI"
+            },
+            {
+              "name": "UserIdHashCode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UserIdHashCode"
+            },
+            {
+              "name": "AccountTier",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountTier"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "AccountUDN",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUDN"
+            },
+            {
+              "name": "AccountNickname",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountNickname"
+            }
+          ]
+        },
+        {
+          "name": "RemoveAccount",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountID"
+            }
+          ]
+        },
+        {
+          "name": "EditAccountPasswordX",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountID"
+            },
+            {
+              "name": "NewAccountPassword",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountPassword"
+            }
+          ]
+        },
+        {
+          "name": "SetAccountNicknameX",
+          "inputs": [
+            {
+              "name": "AccountUDN",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUDN"
+            },
+            {
+              "name": "AccountNickname",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountNickname"
+            }
+          ]
+        },
+        {
+          "name": "RefreshAccountCredentialsX",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountUID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUID"
+            },
+            {
+              "name": "AccountToken",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountCredential"
+            },
+            {
+              "name": "AccountKey",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountCredential"
+            }
+          ]
+        },
+        {
+          "name": "EditAccountMd",
+          "inputs": [
+            {
+              "name": "AccountType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountType"
+            },
+            {
+              "name": "AccountID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountID"
+            },
+            {
+              "name": "NewAccountMd",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountMd"
+            }
+          ]
+        },
+        {
+          "name": "DoPostUpdateTasks"
+        },
+        {
+          "name": "ResetThirdPartyCredentials"
+        },
+        {
+          "name": "EnableRDM",
+          "inputs": [
+            {
+              "name": "RDMValue",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RDMEnabled"
+            }
+          ]
+        },
+        {
+          "name": "GetRDM",
+          "outputs": [
+            {
+              "name": "RDMValue",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RDMEnabled"
+            }
+          ]
+        },
+        {
+          "name": "ReplaceAccountX",
+          "inputs": [
+            {
+              "name": "AccountUDN",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUDN"
+            },
+            {
+              "name": "NewAccountID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountID"
+            },
+            {
+              "name": "NewAccountPassword",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountPassword"
+            },
+            {
+              "name": "AccountToken",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountCredential"
+            },
+            {
+              "name": "AccountKey",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountCredential"
+            },
+            {
+              "name": "OAuthDeviceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_OAuthDeviceID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "NewAccountUDN",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_AccountUDN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VirtualLineIn",
+      "serviceName": "VirtualLineInService",
+      "discoveryUri": "/xml/VirtualLineIn1.xml",
+      "serviceId": "urn:upnp-org:serviceId:VirtualLineIn",
+      "serviceType": "urn:schemas-upnp-org:service:VirtualLineIn:1",
+      "controlURL": "/MediaRenderer/VirtualLineIn/Control",
+      "eventSubURL": "/MediaRenderer/VirtualLineIn/Event",
+      "stateVariables": [
+        {
+          "name": "A_ARG_TYPE_InstanceID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_PlayerID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Volume",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_CurrentTransportSettings",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Speed",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTrackMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "EnqueuedTransportURIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AVTransportURIMetaData",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "CurrentTransportActions",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "LastChange",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "StartTransmission",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CoordinatorID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_PlayerID"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CurrentTransportSettings",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_CurrentTransportSettings"
+            }
+          ]
+        },
+        {
+          "name": "StopTransmission",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "CoordinatorID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_PlayerID"
+            }
+          ]
+        },
+        {
+          "name": "Play",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "Speed",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Speed"
+            }
+          ]
+        },
+        {
+          "name": "Pause",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "Next",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "Previous",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "Stop",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        },
+        {
+          "name": "SetVolume",
+          "inputs": [
+            {
+              "name": "InstanceID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            },
+            {
+              "name": "DesiredVolume",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Volume"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZoneGroupTopology",
+      "serviceName": "ZoneGroupTopologyService",
+      "discoveryUri": "/xml/ZoneGroupTopology1.xml",
+      "serviceId": "urn:upnp-org:serviceId:ZoneGroupTopology",
+      "serviceType": "urn:schemas-upnp-org:service:ZoneGroupTopology:1",
+      "controlURL": "/ZoneGroupTopology/Control",
+      "eventSubURL": "/ZoneGroupTopology/Event",
+      "stateVariables": [
+        {
+          "name": "AvailableSoftwareUpdate",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ZoneGroupState",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ThirdPartyMediaServersX",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "AlarmRunSequence",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "MuseHouseholdId",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ZoneGroupName",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ZoneGroupID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "ZonePlayerUUIDsInGroup",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateType",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "All",
+            "Software"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_CachedOnly",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateItem",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateURL",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateFlags",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UpdateExtraOptions",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Version",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MemberID",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_UnresponsiveDeviceActionType",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "Remove",
+            "TopologyMonitorProbe",
+            "VerifyThenRemoveSystemwide"
+          ]
+        },
+        {
+          "name": "DiagnosticID",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_IncludeControllers",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_Origin",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MobileDeviceName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MobileDeviceUDN",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_MobileIPAndPort",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "AreasUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "SourceAreasUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "NetsettingsUpdateID",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "CheckForUpdate",
+          "inputs": [
+            {
+              "name": "UpdateType",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateType"
+            },
+            {
+              "name": "CachedOnly",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_CachedOnly"
+            },
+            {
+              "name": "Version",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Version"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "UpdateItem",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateItem"
+            }
+          ]
+        },
+        {
+          "name": "BeginSoftwareUpdate",
+          "inputs": [
+            {
+              "name": "UpdateURL",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateURL"
+            },
+            {
+              "name": "Flags",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateFlags"
+            },
+            {
+              "name": "ExtraOptions",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UpdateExtraOptions"
+            }
+          ]
+        },
+        {
+          "name": "ReportUnresponsiveDevice",
+          "inputs": [
+            {
+              "name": "DeviceUUID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
+            },
+            {
+              "name": "DesiredAction",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_UnresponsiveDeviceActionType"
+            }
+          ]
+        },
+        {
+          "name": "ReportAlarmStartedRunning"
+        },
+        {
+          "name": "SubmitDiagnostics",
+          "inputs": [
+            {
+              "name": "IncludeControllers",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_IncludeControllers"
+            },
+            {
+              "name": "Type",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Origin"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "DiagnosticID",
+              "direction": "out",
+              "relatedStateVariableName": "DiagnosticID"
+            }
+          ]
+        },
+        {
+          "name": "RegisterMobileDevice",
+          "inputs": [
+            {
+              "name": "MobileDeviceName",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MobileDeviceName"
+            },
+            {
+              "name": "MobileDeviceUDN",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MobileDeviceUDN"
+            },
+            {
+              "name": "MobileIPAndPort",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_MobileIPAndPort"
+            }
+          ]
+        },
+        {
+          "name": "GetZoneGroupAttributes",
+          "outputs": [
+            {
+              "name": "CurrentZoneGroupName",
+              "direction": "out",
+              "relatedStateVariableName": "ZoneGroupName"
+            },
+            {
+              "name": "CurrentZoneGroupID",
+              "direction": "out",
+              "relatedStateVariableName": "ZoneGroupID"
+            },
+            {
+              "name": "CurrentZonePlayerUUIDsInGroup",
+              "direction": "out",
+              "relatedStateVariableName": "ZonePlayerUUIDsInGroup"
+            },
+            {
+              "name": "CurrentMuseHouseholdId",
+              "direction": "out",
+              "relatedStateVariableName": "MuseHouseholdId"
+            }
+          ]
+        },
+        {
+          "name": "GetZoneGroupState",
+          "outputs": [
+            {
+              "name": "ZoneGroupState",
+              "direction": "out",
+              "relatedStateVariableName": "ZoneGroupState"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
