@@ -32,7 +32,7 @@ export default class Combine extends Command {
       description: 'File location of documenation, instead of url.',
     }),
     models: flags.string({
-      default: 'S1-1,S5-1,S9-1',
+      default: 'S1-1,S5-1,S9-1,S6-2,S13-2,S27-2,Sub-2',
       description: 'Models to use, separated by comma. as {model}-{softwareGen}',
     }),
     folder: flags.string({
