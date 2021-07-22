@@ -7,8 +7,17 @@ import * as fs from 'fs'
 
 import {SonosServicesDocumentation} from '../models/sonos-service-documentation'
 import SonosDevice from '../models/sonos-device'
-import { SonosService } from '../models/sonos-service'
-import { SonosServiceAction } from '../models/sonos-service-action'
+import {SonosService} from '../models/sonos-service'
+import {SonosServiceAction} from '../models/sonos-service-action'
+import ExtendedSonosDescription from '../models/extended-sonos-description'
+import SonosDiscoveryInfo from '../models/sonos-discovery-info'
+
+const sortDeviceInfo = function (a: SonosDiscoveryInfo, b: SonosDiscoveryInfo): number {
+  if (a.softwareGeneration === b.softwareGeneration) {
+    return a.model.localeCompare(b.model)
+  }
+  return b.softwareGeneration - a.softwareGeneration
+}
 
 export default class Combine extends Command {
   static description = 'Generate intermediate json file by combining the documentation file and the discovered services.'
@@ -103,10 +112,22 @@ export default class Combine extends Command {
     cli.action.start('Combining docs with discovery')
     const devices = discoveredServces.sort((a, b) => a.model.localeCompare(b.model))
 
-    const combinedServices = devices.slice(0,1)[0]
+    const firstDevice = devices.slice(0, 1)[0]
+
+    const combinedServices: ExtendedSonosDescription = {
+      ...firstDevice,
+      deviceInfo: [{
+        discoveryDate: firstDevice.discoveryDate,
+        model: firstDevice.model,
+        modelDescription: firstDevice.modelDescription,
+        softwareGeneration: firstDevice.softwareGeneration,
+        softwareVersion: firstDevice.softwareVersion,
+      }],
+    }
     const model = `v${combinedServices.softwareGeneration}-${combinedServices.model}`
     combinedServices.services.forEach(s => {
       s.availableAt = [model]
+      s.deviceInfo = combinedServices.deviceInfo
       s.actions?.forEach(a => {
         a.availableAt = [model]
       })
@@ -119,17 +140,34 @@ export default class Combine extends Command {
       if (d.softwareVersion.localeCompare(combinedServices.softwareVersion) > 0) {
         combinedServices.softwareVersion = d.softwareVersion
       }
+      const deviceInfo = {
+        discoveryDate: d.discoveryDate,
+        model: d.model,
+        modelDescription: d.modelDescription,
+        softwareGeneration: d.softwareGeneration,
+        softwareVersion: d.softwareVersion,
+      }
+
+      if (!combinedServices.deviceInfo.some(v => v.model === deviceInfo.model && v.softwareGeneration === deviceInfo.softwareGeneration)) {
+        combinedServices.deviceInfo.push(deviceInfo)
+      }
+
       d.services.forEach(service => {
         const index = combinedServices.services.findIndex(s => s.name === service.name)
         // this.log('Processing %s from %s', service.name, model);
         if (index === -1) {
           service.availableAt = [model]
+          service.deviceInfo = [deviceInfo]
           service.actions?.forEach(a => {
             a.availableAt = [model]
           })
           combinedServices.services.push(service)
         } else {
           combinedServices.services[index].availableAt?.push(model)
+          combinedServices.services[index].availableAt = combinedServices.services[index].availableAt?.sort((a, b) => a.localeCompare(b))
+          if (combinedServices.services[index].deviceInfo && !combinedServices.services[index].deviceInfo?.some(v => v.model === deviceInfo.model && v.softwareGeneration === deviceInfo.softwareGeneration)) {
+            combinedServices.services[index].deviceInfo?.push(deviceInfo)
+          }
           service.stateVariables?.forEach(sv => {
             if (!combinedServices.services[index].stateVariables?.some(v => sv.name === v.name)) {
               combinedServices.services[index].stateVariables?.push(sv)
@@ -148,6 +186,8 @@ export default class Combine extends Command {
               } else {
                 // @ts-ignore
                 combinedServices.services[index].actions[actionIndex].availableAt?.push(model)
+                // @ts-ignore
+                combinedServices.services[index].actions[actionIndex].availableAt = combinedServices.services[index].actions[actionIndex].availableAt?.sort((a, b) => a.localeCompare(b))
               }
             })
           }
@@ -157,14 +197,16 @@ export default class Combine extends Command {
 
     // Devices combined, lets add documentation
     combinedServices.discoveryDate = new Date()
-    combinedServices.model += '|' + otherDevices.map(d => d.model).join('|');
-    combinedServices.modelDescription += '|' + otherDevices.map(d => d.modelDescription).join('|');
-    combinedServices.errors = documentation?.errors?.sort((a,b)=> a.code - b.code);
+    combinedServices.model += '|' + otherDevices.map(d => d.model).join('|')
+    combinedServices.deviceInfo = combinedServices.deviceInfo.sort(sortDeviceInfo)
+    combinedServices.modelDescription += '|' + otherDevices.map(d => d.modelDescription).join('|')
+    combinedServices.errors = documentation?.errors?.sort((a, b) => a.code - b.code)
     combinedServices.services.forEach(s => {
+      s.deviceInfo = s.deviceInfo?.sort(sortDeviceInfo)
       const docs = documentation?.services[s.serviceName]
       if (typeof (docs) !== undefined) {
         s.description = docs?.description
-        s.errors = docs?.errors?.sort((a,b) => a.code - b.code);
+        s.errors = docs?.errors?.sort((a, b) => a.code - b.code)
         if (typeof (s.actions) !== undefined && docs?.actions) {
           const actions = docs?.actions ?? {}
           s.actions?.forEach(a => {

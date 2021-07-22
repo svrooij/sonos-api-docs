@@ -1,6 +1,7 @@
-import { SonosServiceAction } from './sonos-service-action';
-import SonosServiceError from './sonos-service-error';
-import SonosStateVariable from "./sonos-state-variable";
+import SonosDiscoveryInfo from './sonos-discovery-info'
+import {SonosServiceAction} from './sonos-service-action'
+import SonosServiceError from './sonos-service-error'
+import SonosStateVariable from './sonos-state-variable'
 
 export interface SonosService {
   name: string;
@@ -23,5 +24,6 @@ export interface SonosService {
   data?: { [key: string]: any };
 
   errors?: SonosServiceError[];
+  deviceInfo?: SonosDiscoveryInfo[];
 }
 

@@ -10,7 +10,8 @@ import {Template} from '../models/template'
 import {SonosService} from '../models/sonos-service'
 import StringHelper from '../helpers/string-helper'
 import SonosStateVariable from '../models/sonos-state-variable'
-import { SonosServiceActionArgument } from '../models/sonos-service-action'
+import {SonosServiceActionArgument} from '../models/sonos-service-action'
+import ExtendedSonosDescription from '../models/extended-sonos-description'
 
 export default class Generate extends Command {
   static description = 'Generate files based on the intermediate file and a template.'
@@ -51,38 +52,37 @@ export default class Generate extends Command {
     // {{lower var}} for lowercase
     handlebars.registerHelper('lower', (input: any) => {
       if (typeof input === 'string') {
-        return input.toLowerCase();
+        return input.toLowerCase()
       }
-      return input;
+      return input
     })
     // {{kebab var}} for kebab case
     handlebars.registerHelper('kebab', (input: any) => {
       if (typeof input === 'string') {
-        return StringHelper.camelToKebab(input);
+        return StringHelper.camelToKebab(input)
       }
-      return input;
+      return input
     })
     // unless val
     handlebars.registerHelper('are_equal', function (input?: string, compareTo?: string) {
-      if(arguments.length != 3) {
-        throw new handlebars.Exception('same requires exactly two argument');
+      if (arguments.length !== 3) {
+        throw new handlebars.Exception('same requires exactly two argument')
       }
-      //console.log('Compare items', arguments);
-      return input === compareTo;
+      // console.log('Compare items', arguments);
+      return input === compareTo
     })
-    handlebars.registerHelper('or', function(condition1: boolean, condition2: boolean) {
-      if(arguments.length != 3) {
-        throw new handlebars.Exception('or requires exactly two argument');
+    handlebars.registerHelper('or', function (condition1: boolean, condition2: boolean) {
+      if (arguments.length !== 3) {
+        throw new handlebars.Exception('or requires exactly two argument')
       }
-      return condition1 || condition2;
+      return condition1 || condition2
     })
-    handlebars.registerHelper('sonos_if_only_instance_id', function(input?: Array<SonosServiceActionArgument>, defaultParams?: string) {
-      if(input !== undefined && defaultParams !== undefined && input.length === 1 && input[0].name === 'InstanceID') {
-        return defaultParams;
+    handlebars.registerHelper('sonos_if_only_instance_id', function (input?: Array<SonosServiceActionArgument>, defaultParams?: string) {
+      if (input !== undefined && defaultParams !== undefined && input.length === 1 && input[0].name === 'InstanceID') {
+        return defaultParams
       }
-      return null;
+      return null
     })
-
 
     outputTemplate?.files.forEach(t => {
       if (t.usage === 'index') {
@@ -143,54 +143,51 @@ export default class Generate extends Command {
     return this.error('Template %s not found, use folder name or packaged template name', {exit: 20})
   }
 
-  private postProcess(input: string) : string {
-    // Do some post-processing on the template. HandlebarsJS doesn't support Outputting a 
-    return input
-      .replace(/-{-/g, '{')
-      .replace(/-}-/g, '}');
+  private postProcess(input: string): string {
+    // Do some post-processing on the template. HandlebarsJS doesn't support Outputting these chars '{' and '}'
+    return input.replace(/-{-/g, '{').replace(/-}-/g, '}')
   }
 
-  private getDeviceDescription(location: string, dataTypes: { [key: string]: string }, serviceData?: { [key: string]: any }): SonosDevice | undefined | never {
+  private getDeviceDescription(location: string, dataTypes: { [key: string]: string }, serviceData?: { [key: string]: any }): ExtendedSonosDescription | undefined | never {
     const intermediateFile = this.getFullPathAndCreateDirectory(location)
     if (!fs.existsSync(intermediateFile)) {
       return this.error('Intermediate file doesn\'t exist, generate with \'combine\' command first.', {exit: 10})
     }
 
     // Set relatedStateVariables to correct value.
-    const intermediate = JSON.parse(fs.readFileSync(intermediateFile).toString()) as SonosDevice
+    const intermediate = JSON.parse(fs.readFileSync(intermediateFile).toString()) as ExtendedSonosDescription
     intermediate.services.forEach(service => {
       service.kebabName = StringHelper.camelToKebab(service.name.replace('AV', 'Av').replace('HT', 'Ht'))
       if (typeof (service.stateVariables) !== undefined) {
         // Replace datatypes as specified in the template
-        if(dataTypes !== undefined) {
+        if (dataTypes !== undefined) {
           service.stateVariables?.forEach(v => {
-            v.dataType = this.getCorrectDataType(v.name, dataTypes) ?? dataTypes[v.dataType] ?? v.dataType;
+            v.dataType = this.getCorrectDataType(v.name, dataTypes) ?? dataTypes[v.dataType] ?? v.dataType
           })
-        } 
+        }
         service.eventVariables = service.stateVariables?.filter((v: SonosStateVariable) => !v.name.startsWith('A_ARG_TYPE')).sort((a, b) => a.name.localeCompare(b.name))
       }
       if (typeof (service.stateVariables) !== undefined && typeof (service.actions) !== undefined) {
-        service.outputVariables = {};
+        service.outputVariables = {}
         service.actions?.forEach(a => {
           a.inputs?.forEach(i => {
             i.relatedStateVariable = service.stateVariables?.find(v => v.name === i.relatedStateVariableName)
           })
           a.outputs?.forEach(o => {
             o.relatedStateVariable = service.stateVariables?.find(v => v.name === o.relatedStateVariableName)
-            if(o.relatedStateVariable) {
+            if (o.relatedStateVariable) {
               // @ts-ignore
               service.outputVariables[o.name] = this.getCorrectDataType(o.relatedStateVariable.name, dataTypes) ?? dataTypes[o.relatedStateVariable.dataType] ?? o.relatedStateVariable.dataType;
             }
           })
         })
-        if(Object.keys(service.outputVariables).length === 0) {
-          delete service.outputVariables;
+        if (Object.keys(service.outputVariables).length === 0) {
+          delete service.outputVariables
         }
       }
-      if(serviceData !== undefined){
-        service.data = serviceData[service.serviceName];
+      if (serviceData !== undefined) {
+        service.data = serviceData[service.serviceName]
       }
-      
     })
     intermediate.services = intermediate.services.sort((a, b) => a.name.localeCompare(b.name))
     return intermediate
@@ -210,8 +207,8 @@ export default class Generate extends Command {
 
   private getCorrectDataType(name: string, dataTypes: { [key: string]: string }): string | undefined {
     const type = Object.entries(dataTypes).find(e => name.endsWith(e[0]))
-    if(type !== undefined) {
-      return type[1];
+    if (type !== undefined) {
+      return type[1]
     }
   }
 }

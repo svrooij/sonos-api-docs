@@ -1,4 +1,4 @@
-import { SonosService } from './sonos-service';
+import {SonosService} from './sonos-service';
 import SonosServiceError from './sonos-service-error';
 
 export default interface SonosDevice {
