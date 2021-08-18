@@ -2,8 +2,8 @@
   "model": "S6",
   "modelDescription": "Sonos Play:5",
   "softwareGeneration": 2,
-  "softwareVersion": "63.2-90210",
-  "discoveryDate": "2021-07-21T23:31:45.324Z",
+  "softwareVersion": "64.3-19080",
+  "discoveryDate": "2021-08-18T06:06:35.970Z",
   "services": [
     {
       "name": "AlarmClock",
