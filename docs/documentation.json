@@ -221,7 +221,8 @@
             "Filter": "Which fields should be returned '*' for all.",
             "StartingIndex": "Paging, where to start",
             "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does restrict the number of items being searched (filter) but only the number being returned. ",
-            "SortCriteria": "Sort the results based on metadata fields. '+upnp:artist,+dc:title' for sorting on artist then on title."
+            "SortCriteria": "Sort the results based on metadata fields. '+upnp:artist,+dc:title' for sorting on artist then on title.",
+            "Result": "Is an encoded DIDL_Lite XML as string. You need to parse it!"
           },
           "remarks": "(1) If the title contains an apostrophe the returned uri will contain a '&apos;'. (2) Some libraries support a BrowseAndParse, so you don't have to parse the xml."
         }
@@ -445,7 +446,7 @@
     { "code": 602, "description": "Optional action not implemented" },
     { "code": 603, "description": "Out of memory" },
     { "code": 604, "description": "Human intervention required" },
-    { "code": 605, "description": "Sring argument too long" },
+    { "code": 605, "description": "String argument too long" },
     { "code": 606, "description": "Action not authorized" },
     { "code": 607, "description": "Signature failure" },
     { "code": 608, "description": "Signature missing" },
