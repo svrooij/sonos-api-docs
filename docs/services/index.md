@@ -21,22 +21,62 @@ These documents can provide you with some extra guidelines.
 
 | Service | Description |
 |:--------|:------------|
-| [**AlarmClock**](alarm-clock.html) | Control the sonos alarms |
-| [**AudioIn**](audio-in.html) |  |
+| [**AlarmClock**](alarm-clock.html) | Control the sonos alarms and times |
+| [**AudioIn**](audio-in.html) | Control line in |
 | [**AVTransport**](av-transport.html) | Service that controls stuff related to transport (play/pause/next/special urls) |
-| [**ConnectionManager**](connection-manager.html) |  |
+| [**ConnectionManager**](connection-manager.html) | Services related to connections and protocols  |
 | [**ContentDirectory**](content-directory.html) | Browse for local content |
 | [**DeviceProperties**](device-properties.html) | Modify device properties, like led status and stereo pairs |
-| [**GroupManagement**](group-management.html) |  |
-| [**GroupRenderingControl**](group-rendering-control.html) | Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players. |
-| [**HTControl**](ht-control.html) |  |
+| [**GroupManagement**](group-management.html) | Services related to groups |
+| [**GroupRenderingControl**](group-rendering-control.html) | Volume related controls for groups.  |
+| [**HTControl**](ht-control.html) | Service related to the TV remote control |
 | [**MusicServices**](music-services.html) | External music services |
-| [**QPlay**](q-play.html) |  |
+| [**QPlay**](q-play.html) | Services related to Chinese Tencent Qplay service |
 | [**Queue**](queue.html) | Modify and browse queues |
 | [**RenderingControl**](rendering-control.html) | Volume related controls |
 | [**SystemProperties**](system-properties.html) | Manage system-wide settings, mainly account stuff. |
 | [**VirtualLineIn**](virtual-line-in.html) |  |
 | [**ZoneGroupTopology**](zone-group-topology.html) | Zone config stuff, eg getting all the configured sonos zones. |
+
+## Calls
+
+The essential parameter of an SOAP request are:
+
+- address such as `http://192.168.178.37:1400`
+- service endpoint such as `/MediaRenderer/RenderingControl/Control`
+- service name such as `RenderingControl`
+- action such as `SetMute`
+- input args such as `{ "InstanceID": 0, "Channel": "Master",  "DesiredMute": 1 }`.
+
+The last 4 items are described in detail in the Service Section of this documentation and have to be transformed into a valid SOAP request - see the following example.
+
+### CAUTION!
+
+- Sonos type boolean uses value 1 for true and 0 for false
+- Some responses contain DIDL-Lite or other xml data and need further parsing. Example: Action Browse, property Result from ContentDirectoryService
+
+Some library do the conversion (1 to true and vice versa) or the parsing for your automatically.
+
+### Example
+
+url: `http://192.168.178.37:1400/MediaRenderer/RenderingControl/Control`
+
+Method: `post`
+
+Header:
+
+`{
+   "SOAPAction": "urn:schemas-upnp-org:service:RenderingControl:1#SetMute",
+  "Content-type": 'text/xml; charset=utf8'
+}`
+
+Body:
+
+`<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetMute xmlns:u=\"urn:schemas-upnp-org:service:RenderingControl:1\"><InstanceID>0</InstanceID><Channel>Master</Channel><DesiredMute>1</DesiredMute></u:SetMute></s:Body></s:Envelope>`
+
+Response:
+
+`<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body><u:SetMuteResponse xmlns:u="urn:schemas-upnp-org:service:RenderingControl:1"></u:SetMuteResponse></s:Body></s:Envelope>`
 
 ## UPNP errors
 

@@ -55,7 +55,7 @@
       "errors": [{ "code": 801, "description": "Duplicate alarm time" }]
     },
     "AudioInService": {
-      "description": "Service that control the line in. Service name:'AudioIn', Endpoint: '/AudioIn/Control')"
+      "description": "Control line in. Service name:'AudioIn', Endpoint: '/AudioIn/Control')"
     },
     "AVTransportService": {
       "description": "Service that controls stuff related to transport (play/pause/next/special urls). Service name: 'AVTransport', Endpoint: '/MediaRenderer/AVTransport/Control'",
