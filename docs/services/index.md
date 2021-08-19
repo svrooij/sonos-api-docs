@@ -7,6 +7,7 @@ has_toc: false
 ---
 
 # Sonos SOAP Services
+
 {: .no_toc }
 
 Every sonos speaker has several soap services. Each service has one or more actions you can call.
@@ -17,6 +18,7 @@ Sonos speaker follow the [MediaServer:4 and MediaRenderer:3 specifications](http
 These documents can provide you with some extra guidelines.
 
 ## All available services
+
 {: .no_toc }
 
 | Service | Description |
@@ -50,7 +52,7 @@ The essential parameter of an SOAP request are:
 
 The last 4 items are described in detail in the Service Section of this documentation and have to be transformed into a valid SOAP request - see the following example.
 
-### CAUTION!
+### CAUTION
 
 - Sonos type boolean uses value 1 for true and 0 for false
 - Some responses contain DIDL-Lite or other xml data and need further parsing. Example: Action Browse, property Result from ContentDirectoryService
