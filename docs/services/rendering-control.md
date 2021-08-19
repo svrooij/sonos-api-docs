@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Volume related controls
 
-The RenderingControlService is available on these models: `Sonos One (S13) S2` / `Sonos Roam (S27) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The RenderingControlService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -73,7 +73,7 @@ Outputs:
 
 ### GetEQ
 
-Get EQ value (see SetEQ) for different EQTypes
+Get EQ value &#x27;Subgain&#x27; between -10 and 10
 
 Action body:
 
@@ -89,15 +89,15 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **EQType** | `string` | EQ type such as DialogLevel, NightMode, SubGain |
+| **EQType** | `string` | EQ type such as `DialogLevel`, `NightMode`, `SubGain` |
 
 Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentValue** | `i2` |  |
+| **CurrentValue** | `i2` | Subgain number between -10 and 10, DialogLevel and Nightmode 1 for true 0 for false |
 
-**Remarks** Not supported by all speakers, TV related
+**Remarks** Not all EQ types are available on every speaker
 
 ### GetHeadphoneConnected
 
@@ -119,7 +119,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentHeadphoneConnected** | `boolean` |  |
+| **CurrentHeadphoneConnected** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetLoudness
 
@@ -145,7 +145,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentLoudness** | `boolean` |  |
+| **CurrentLoudness** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetMute
 
@@ -169,7 +169,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentMute** | `boolean` |  |
+| **CurrentMute** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetOutputFixed
 
@@ -191,7 +191,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentFixed** | `boolean` |  |
+| **CurrentFixed** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetRoomCalibrationStatus
 
@@ -213,8 +213,8 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **RoomCalibrationEnabled** | `boolean` |  |
-| **RoomCalibrationAvailable** | `boolean` |  |
+| **RoomCalibrationEnabled** | `boolean` |  `1` for true and `0` for false  |
+| **RoomCalibrationAvailable** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetSupportsOutputFixed
 
@@ -236,11 +236,11 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentSupportsFixed** | `boolean` |  |
+| **CurrentSupportsFixed** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetTreble
 
-Get treble, between -10 and 10
+Get treble
 
 Action body:
 
@@ -260,11 +260,11 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentTreble** | `i2` |  |
+| **CurrentTreble** | `i2` | Number between -10 and 10 |
 
 ### GetVolume
 
-Get volume, between 0 and 100
+Get volume
 
 Action body:
 
@@ -286,7 +286,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentVolume** | `ui2` |  |
+| **CurrentVolume** | `ui2` | Number between 0 and 100 |
 
 ### GetVolumeDB
 
@@ -360,7 +360,7 @@ Inputs:
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **RampType** | `string` |  Allowed values: `SLEEP_TIMER_RAMP_TYPE` / `ALARM_RAMP_TYPE` / `AUTOPLAY_RAMP_TYPE` |
 | **DesiredVolume** | `ui2` |  |
-| **ResetVolumeAfter** | `boolean` |  |
+| **ResetVolumeAfter** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 | **ProgramURI** | `string` |  |
 
 Outputs:
@@ -391,7 +391,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **Bass** | `i2` |  |
 | **Treble** | `i2` |  |
-| **Loudness** | `boolean` |  |
+| **Loudness** | `boolean` |  `1` for true and `0` for false  |
 | **LeftVolume** | `ui2` |  |
 | **RightVolume** | `ui2` |  |
 
@@ -433,7 +433,7 @@ Inputs:
 
 ### SetBass
 
-Set bass level
+Set bass level, between -10 and 10
 
 Action body:
 
@@ -449,7 +449,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **DesiredBass** | `i2` | between -10 and 10 |
+| **DesiredBass** | `i2` |  |
 
 ### SetChannelMap
 
@@ -489,7 +489,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **EQType** | `string` | DialogLevel, NightMode, SubGain |
-| **DesiredValue** | `i2` | DialogLevel and NightMode: 0 for off, 1 for on. SubGain between -10 and 10 |
+| **DesiredValue** | `i2` | SubGain between -10 and 10, 1 or 0 for others |
 
 **Remarks** Not supported by all speakers, TV related
 
@@ -513,7 +513,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
-| **DesiredLoudness** | `boolean` | true for on |
+| **DesiredLoudness** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetMute
 
@@ -533,7 +533,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` / `SpeakerOnly` |
-| **DesiredMute** | `boolean` |  |
+| **DesiredMute** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetOutputFixed
 
@@ -551,7 +551,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **DesiredFixed** | `boolean` |  |
+| **DesiredFixed** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetRelativeVolume
 
@@ -595,7 +595,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **RoomCalibrationEnabled** | `boolean` |  |
+| **RoomCalibrationEnabled** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetRoomCalibrationX
 
@@ -703,26 +703,26 @@ Timeout: Second-3600
 | Bass |  | `i2` |  |
 | DialogLevel |  | `string` |  |
 | EQValue |  | `i2` |  |
-| HeadphoneConnected |  | `boolean` |  |
+| HeadphoneConnected |  | `boolean` |  `1` for true and `0` for false  |
 | LastChange | ✔ | `string` |  |
-| Loudness |  | `boolean` |  |
+| Loudness |  | `boolean` |  `1` for true and `0` for false  |
 | MusicSurroundLevel |  | `string` |  |
-| Mute |  | `boolean` |  |
-| NightMode |  | `boolean` |  |
-| OutputFixed |  | `boolean` |  |
+| Mute |  | `boolean` |  `1` for true and `0` for false  |
+| NightMode |  | `boolean` |  `1` for true and `0` for false  |
+| OutputFixed |  | `boolean` |  `1` for true and `0` for false  |
 | PresetNameList |  | `string` |  |
-| RoomCalibrationAvailable |  | `boolean` |  |
+| RoomCalibrationAvailable |  | `boolean` |  `1` for true and `0` for false  |
 | RoomCalibrationCalibrationMode |  | `string` |  |
 | RoomCalibrationCoefficients |  | `string` |  |
-| RoomCalibrationEnabled |  | `boolean` |  |
+| RoomCalibrationEnabled |  | `boolean` |  `1` for true and `0` for false  |
 | RoomCalibrationID |  | `string` |  |
 | SpeakerSize |  | `ui4` |  |
 | SubCrossover |  | `string` |  |
-| SubEnabled |  | `boolean` |  |
+| SubEnabled |  | `boolean` |  `1` for true and `0` for false  |
 | SubGain |  | `string` |  |
 | SubPolarity |  | `string` |  |
-| SupportsOutputFixed |  | `boolean` |  |
-| SurroundEnabled |  | `boolean` |  |
+| SupportsOutputFixed |  | `boolean` |  `1` for true and `0` for false  |
+| SurroundEnabled |  | `boolean` |  `1` for true and `0` for false  |
 | SurroundLevel |  | `string` |  |
 | SurroundMode |  | `string` |  |
 | Treble |  | `i2` |  |
@@ -738,8 +738,10 @@ This file is automatically generated with [@svrooij/sonos-docs](https://github.c
 | Device | Software generation | Software version | Discovery date |
 |:-------|:--------------------|:-----------------|:---------------|
 | `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
+| `Sonos Beam (S14)` | S2 | 64.3-19080 | 2021-08-18T06:04:08.308Z |
 | `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
-| `Sonos Play:5 (S6)` | S2 | 63.2-90210 | 2021-07-21T23:31:45.324Z |
+| `Sonos Play:3 (S3)` | S2 | 64.3-19080 | 2021-08-18T06:09:36.692Z |
+| `Sonos Play:5 (S6)` | S2 | 64.3-19080 | 2021-08-18T06:06:35.970Z |
 | `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |
 | `Sonos Play:1 (S1)` | S1 | 57.6-88280 | 2021-07-21T14:51:41.469Z |
 | `Sonos Play:5 (S5)` | S1 | 57.6-88280 | 2021-07-21T14:51:44.187Z |

@@ -8,7 +8,7 @@ parent: Sonos UPNP
 
 Service that controls stuff related to transport (play/pause/next/special urls)
 
-The AVTransportService is available on these models: `Sonos One (S13) S2` / `Sonos Roam (S27) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The AVTransportService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -77,7 +77,7 @@ Inputs:
 | **ContainerURI** | `string` |  |
 | **ContainerMetaData** | `string` |  |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
-| **EnqueueAsNext** | `boolean` |  |
+| **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 Outputs:
 
@@ -89,6 +89,8 @@ Outputs:
 | **NewUpdateID** | `ui4` |  |
 
 ### AddURIToQueue
+
+Adds songs to the SONOS queue
 
 Action body:
 
@@ -109,8 +111,8 @@ Inputs:
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **EnqueuedURI** | `string` |  |
 | **EnqueuedURIMetaData** | `string` |  |
-| **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
-| **EnqueueAsNext** | `boolean` |  |
+| **DesiredFirstTrackNumberEnqueued** | `ui4` | use `0` to add at the end or `1` to insert at the beginning |
+| **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 Outputs:
 
@@ -119,6 +121,8 @@ Outputs:
 | **FirstTrackNumberEnqueued** | `ui4` |  |
 | **NumTracksAdded** | `ui4` |  |
 | **NewQueueLength** | `ui4` |  |
+
+**Remarks** In NORMAL play mode the songs are added prior to the specified `DesiredFirstTrackNumberEnqueued`.
 
 ### AddURIToSavedQueue
 
@@ -271,7 +275,7 @@ Inputs:
 | **CurrentAVTTrackList** | `string` |  |
 | **CurrentQueueTrackList** | `string` |  |
 | **CurrentSourceState** | `string` |  |
-| **ResumePlayback** | `boolean` |  |
+| **ResumePlayback** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### ChangeCoordinator
 
@@ -319,7 +323,7 @@ Inputs:
 
 ### ConfigureSleepTimer
 
-Stop playing after set sleep timer
+Stop playing after set sleep timer or cancel
 
 Action body:
 
@@ -335,7 +339,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **NewSleepTimerDuration** | `string` | Time to stop after, as hh:mm:ss |
+| **NewSleepTimerDuration** | `string` | Time to stop after, as `hh:mm:ss` or empty string to cancel |
 
 **Remarks** Send to non-coordinator returns error code 800
 
@@ -390,7 +394,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **NewCoordinator** | `string` | uuid of the new coordinator - must be in same group |
-| **RejoinGroup** | `boolean` | Should former coordinator rejoin the group? |
+| **RejoinGroup** | `boolean` | Should former coordinator rejoin the group? Allowed values: `1` (= true) / `0` (= false)  |
 
 **Remarks** Send to non-coordinator has no results - should be avoided.
 
@@ -412,7 +416,7 @@ Inputs:
 
 ### GetCrossfadeMode
 
-Get crossfade mode, 1 for on, 0 for off
+Get crossfade mode
 
 Action body:
 
@@ -432,7 +436,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CrossfadeMode** | `boolean` |  |
+| **CrossfadeMode** | `boolean` |  `1` for true and `0` for false  |
 
 **Remarks** Send to non-coordinator may return wrong value as only the coordinator value in a group
 
@@ -460,7 +464,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **Actions** | `string` |  |
 
-**Remarks** Send to non-coordinator always returns Stop, Play
+**Remarks** Send to non-coordinator returns only `Start` and `Stop` since it cannot control the stream.
 
 ### GetDeviceCapabilities
 
@@ -551,7 +555,7 @@ Outputs:
 
 ### GetRemainingSleepTimerDuration
 
-Get time left on sleeptimer or empty string
+Get time left on sleeptimer.
 
 Action body:
 
@@ -571,7 +575,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **RemainingSleepTimerDuration** | `string` |  |
+| **RemainingSleepTimerDuration** | `string` | Format hh:mm:ss or empty string if not set |
 | **CurrentSleepTimerGeneration** | `ui4` |  |
 
 **Remarks** Send to non-coordinator returns error code 800
@@ -653,11 +657,11 @@ Outputs:
 | **PlayMode** | `string` |  Possible values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | **RecQualityMode** | `string` |  |
 
-**Remarks** Send to non-coordinator returns the settings of it&#x27;s queue
+**Remarks** Send to non-coordinator returns the settings of it's queue
 
 ### Next
 
-Go to next song, not always supported - see GetCurrentTransportActions
+Go to next song
 
 Action body:
 
@@ -672,6 +676,8 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
+
+**Remarks** Possibly not supported at the moment see GetCurrentTransportActions
 
 ### NotifyDeletedURI
 
@@ -731,7 +737,7 @@ Inputs:
 
 ### Previous
 
-Go to previous song, not always supported - GetCurrentTransportActions
+Go to previous song
 
 Action body:
 
@@ -747,9 +753,11 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 
+**Remarks** Possibly not supported at the moment see GetCurrentTransportActions
+
 ### RemoveAllTracksFromQueue
 
-Flushes the SONOS queue. If queue is already empty it throw error 804
+Flushes the SONOS queue.
 
 Action body:
 
@@ -765,7 +773,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 
-**Remarks** Send to non-coordinator returns error code 800.
+**Remarks** If queue is already empty it throw error 804. Send to non-coordinator returns error code 800.
 
 ### RemoveTrackFromQueue
 
@@ -789,6 +797,8 @@ Inputs:
 
 ### RemoveTrackRangeFromQueue
 
+Removes the specified range of songs from the SONOS queue.
+
 Action body:
 
 ```xml
@@ -805,8 +815,8 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **UpdateID** | `ui4` |  |
-| **StartingIndex** | `ui4` |  |
+| **UpdateID** | `ui4` | Leave blank |
+| **StartingIndex** | `ui4` | between 1 and queue-length |
 | **NumberOfTracks** | `ui4` |  |
 
 Outputs:
@@ -901,7 +911,7 @@ Inputs:
 | **ProgramMetaData** | `string` |  |
 | **PlayMode** | `string` |  Allowed values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | **Volume** | `ui2` |  |
-| **IncludeLinkedZones** | `boolean` |  |
+| **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SaveQueue
 
@@ -923,7 +933,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **Title** | `string` | SONOS playlist title |
-| **ObjectID** | `string` |  |
+| **ObjectID** | `string` | Leave blank |
 
 Outputs:
 
@@ -935,7 +945,7 @@ Outputs:
 
 ### Seek
 
-Seek track in queue, time delta or absolute time in song, not always supported - see GetCurrentTransportActions
+Seek track in queue, time delta or absolute time in song
 
 Action body:
 
@@ -953,7 +963,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
 | **Unit** | `string` | What to seek Allowed values: `TRACK_NR` / `REL_TIME` / `TIME_DELTA` |
-| **Target** | `string` | Position of track in queue (start at 1) or hh:mm:ss for REL_TIME or +/-hh:mm:ss for TIME_DELTA |
+| **Target** | `string` | Position of track in queue (start at 1) or `hh:mm:ss` for `REL_TIME` or `+/-hh:mm:ss` for `TIME_DELTA` |
 
 **Remarks** Returns error code 701 in case that content does not support Seek or send to non-coordinator
 
@@ -983,7 +993,7 @@ Inputs:
 
 ### SetCrossfadeMode
 
-Set crossfade mode off
+Set crossfade mode
 
 Action body:
 
@@ -999,7 +1009,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **CrossfadeMode** | `boolean` | true for on, false for off |
+| **CrossfadeMode** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 **Remarks** Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode.
 
@@ -1063,7 +1073,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **Duration** | `string` | Snooze time as hh:mm:ss, 10 minutes = 00:10:00 |
+| **Duration** | `string` | Snooze time as `hh:mm:ss`, 10 minutes = 00:10:00 |
 
 ### StartAutoplay
 
@@ -1088,8 +1098,8 @@ Inputs:
 | **ProgramURI** | `string` |  |
 | **ProgramMetaData** | `string` |  |
 | **Volume** | `ui2` |  |
-| **IncludeLinkedZones** | `boolean` |  |
-| **ResetVolumeAfter** | `boolean` |  |
+| **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
+| **ResetVolumeAfter** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### Stop
 
@@ -1131,10 +1141,10 @@ Timeout: Second-3600
 | AbsoluteTimePosition |  | `string` |  |
 | AlarmIDRunning |  | `ui4` |  |
 | AlarmLoggedStartTime |  | `string` |  |
-| AlarmRunning |  | `boolean` |  |
+| AlarmRunning |  | `boolean` |  `1` for true and `0` for false  |
 | AVTransportURI |  | `string` |  |
 | AVTransportURIMetaData |  | `string` |  |
-| CurrentCrossfadeMode |  | `boolean` |  |
+| CurrentCrossfadeMode |  | `boolean` |  `1` for true and `0` for false  |
 | CurrentMediaDuration |  | `string` |  |
 | CurrentPlayMode |  | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | CurrentRecordQualityMode |  | `string` |  |
@@ -1147,7 +1157,7 @@ Timeout: Second-3600
 | CurrentValidPlayModes |  | `string` |  |
 | DirectControlAccountID |  | `string` |  |
 | DirectControlClientID |  | `string` |  |
-| DirectControlIsSuspended |  | `boolean` |  |
+| DirectControlIsSuspended |  | `boolean` |  `1` for true and `0` for false  |
 | EnqueuedTransportURI |  | `string` |  |
 | EnqueuedTransportURIMetaData |  | `string` |  |
 | LastChange | ✔ | `string` |  |
@@ -1166,9 +1176,9 @@ Timeout: Second-3600
 | RecordStorageMedium |  | `string` |  |
 | RelativeCounterPosition |  | `i4` |  |
 | RelativeTimePosition |  | `string` |  |
-| RestartPending |  | `boolean` |  |
+| RestartPending |  | `boolean` |  `1` for true and `0` for false  |
 | SleepTimerGeneration |  | `ui4` |  |
-| SnoozeRunning |  | `boolean` |  |
+| SnoozeRunning |  | `boolean` |  `1` for true and `0` for false  |
 | TransportErrorDescription |  | `string` |  |
 | TransportErrorHttpCode |  | `string` |  |
 | TransportErrorHttpHeaders |  | `string` |  |
@@ -1206,6 +1216,7 @@ The AVTransportService has the following known custom errors.
 | `737` | No dns configured |
 | `738` | Bad domain |
 | `739` | Server error |
+| `800` | Command not supported or not a coordinator |
 
 ---
 
@@ -1214,8 +1225,10 @@ This file is automatically generated with [@svrooij/sonos-docs](https://github.c
 | Device | Software generation | Software version | Discovery date |
 |:-------|:--------------------|:-----------------|:---------------|
 | `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
+| `Sonos Beam (S14)` | S2 | 64.3-19080 | 2021-08-18T06:04:08.308Z |
 | `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
-| `Sonos Play:5 (S6)` | S2 | 63.2-90210 | 2021-07-21T23:31:45.324Z |
+| `Sonos Play:3 (S3)` | S2 | 64.3-19080 | 2021-08-18T06:09:36.692Z |
+| `Sonos Play:5 (S6)` | S2 | 64.3-19080 | 2021-08-18T06:06:35.970Z |
 | `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |
 | `Sonos Play:1 (S1)` | S1 | 57.6-88280 | 2021-07-21T14:51:41.469Z |
 | `Sonos Play:5 (S5)` | S1 | 57.6-88280 | 2021-07-21T14:51:44.187Z |

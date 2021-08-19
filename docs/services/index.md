@@ -1,13 +1,12 @@
 ---
 layout: default
-title: Sonos UPNP
+title: Sonos Services
 has_children: true
 nav_order: 5
 has_toc: false
 ---
 
 # Sonos SOAP Services
-
 {: .no_toc }
 
 Every sonos speaker has several soap services. Each service has one or more actions you can call.
@@ -15,10 +14,9 @@ Every sonos speaker has several soap services. Each service has one or more acti
 ## UPNP specifications
 
 Sonos speaker follow the [MediaServer:4 and MediaRenderer:3 specifications](https://openconnectivity.org/developer/specifications/upnp-resources/upnp/mediaserver4-and-mediarenderer3/) by the [Open Connectivity Foundation](https://openconnectivity.org/).
-These documents can provide you with some extra guidelines.
+These documents can provide you with some extra guidelines. More details can be found at [Sonos communication](/sonos-soap.html), which show you how to exactly do a call to the sonos speakers.
 
 ## All available services
-
 {: .no_toc }
 
 | Service | Description |
@@ -26,59 +24,19 @@ These documents can provide you with some extra guidelines.
 | [**AlarmClock**](alarm-clock.html) | Control the sonos alarms and times |
 | [**AudioIn**](audio-in.html) | Control line in |
 | [**AVTransport**](av-transport.html) | Service that controls stuff related to transport (play/pause/next/special urls) |
-| [**ConnectionManager**](connection-manager.html) | Services related to connections and protocols  |
+| [**ConnectionManager**](connection-manager.html) | Services related to connections and protocols |
 | [**ContentDirectory**](content-directory.html) | Browse for local content |
-| [**DeviceProperties**](device-properties.html) | Modify device properties, like led status and stereo pairs |
+| [**DeviceProperties**](device-properties.html) | Modify device properties, like LED status and stereo pairs |
 | [**GroupManagement**](group-management.html) | Services related to groups |
-| [**GroupRenderingControl**](group-rendering-control.html) | Volume related controls for groups.  |
+| [**GroupRenderingControl**](group-rendering-control.html) | Volume related controls for groups |
 | [**HTControl**](ht-control.html) | Service related to the TV remote control |
-| [**MusicServices**](music-services.html) | External music services |
+| [**MusicServices**](music-services.html) | Access to external music services, like Spotify or Youtube Music |
 | [**QPlay**](q-play.html) | Services related to Chinese Tencent Qplay service |
 | [**Queue**](queue.html) | Modify and browse queues |
 | [**RenderingControl**](rendering-control.html) | Volume related controls |
-| [**SystemProperties**](system-properties.html) | Manage system-wide settings, mainly account stuff. |
+| [**SystemProperties**](system-properties.html) | Manage system-wide settings, mainly account stuff |
 | [**VirtualLineIn**](virtual-line-in.html) |  |
-| [**ZoneGroupTopology**](zone-group-topology.html) | Zone config stuff, eg getting all the configured sonos zones. |
-
-## Calls
-
-The essential parameter of an SOAP request are:
-
-- address such as `http://192.168.178.37:1400`
-- service endpoint such as `/MediaRenderer/RenderingControl/Control`
-- service name such as `RenderingControl`
-- action such as `SetMute`
-- input args such as `{ "InstanceID": 0, "Channel": "Master",  "DesiredMute": 1 }`.
-
-The last 4 items are described in detail in the Service Section of this documentation and have to be transformed into a valid SOAP request - see the following example.
-
-### CAUTION
-
-- Sonos type boolean uses value 1 for true and 0 for false
-- Some responses contain DIDL-Lite or other xml data and need further parsing. Example: Action Browse, property Result from ContentDirectoryService
-
-Some library do the conversion (1 to true and vice versa) or the parsing for your automatically.
-
-### Example
-
-url: `http://192.168.178.37:1400/MediaRenderer/RenderingControl/Control`
-
-Method: `post`
-
-Header:
-
-`{
-   "SOAPAction": "urn:schemas-upnp-org:service:RenderingControl:1#SetMute",
-  "Content-type": 'text/xml; charset=utf8'
-}`
-
-Body:
-
-`<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetMute xmlns:u=\"urn:schemas-upnp-org:service:RenderingControl:1\"><InstanceID>0</InstanceID><Channel>Master</Channel><DesiredMute>1</DesiredMute></u:SetMute></s:Body></s:Envelope>`
-
-Response:
-
-`<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body><u:SetMuteResponse xmlns:u="urn:schemas-upnp-org:service:RenderingControl:1"></u:SetMuteResponse></s:Body></s:Envelope>`
+| [**ZoneGroupTopology**](zone-group-topology.html) | Zone config stuff, eg getting all the configured sonos zones |
 
 ## UPNP errors
 
@@ -97,7 +55,7 @@ These are the default UPNP errors.
 | `602` | Optional action not implemented |
 | `603` | Out of memory |
 | `604` | Human intervention required |
-| `605` | Sring argument too long |
+| `605` | String argument too long |
 | `606` | Action not authorized |
 | `607` | Signature failure |
 | `608` | Signature missing |
@@ -113,8 +71,10 @@ This file is automatically generated with [@svrooij/sonos-docs](https://github.c
 | Device | Software generation | Software version | Discovery date |
 |:-------|:--------------------|:-----------------|:---------------|
 | `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
+| `Sonos Beam (S14)` | S2 | 64.3-19080 | 2021-08-18T06:04:08.308Z |
 | `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
-| `Sonos Play:5 (S6)` | S2 | 63.2-90210 | 2021-07-21T23:31:45.324Z |
+| `Sonos Play:3 (S3)` | S2 | 64.3-19080 | 2021-08-18T06:09:36.692Z |
+| `Sonos Play:5 (S6)` | S2 | 64.3-19080 | 2021-08-18T06:06:35.970Z |
 | `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |
 | `Sonos Play:1 (S1)` | S1 | 57.6-88280 | 2021-07-21T14:51:41.469Z |
 | `Sonos Play:5 (S5)` | S1 | 57.6-88280 | 2021-07-21T14:51:44.187Z |

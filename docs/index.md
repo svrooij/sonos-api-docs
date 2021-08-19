@@ -56,9 +56,17 @@ You can find the generator [here](https://github.com/svrooij/sonos-api-docs/tree
 
 You can use the generator to generate your own discovery files, but we also have the files available for download.
 
-- [Sonos Play:1 - software generation 1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-1.json)
-- [Sonos Play:5 - software generation 1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S5-1.json)
-- [Sonos Playbar - software generation 1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-1.json)
+| Player | Discovery file(s) |
+| ------ | ----------------- |
+| Sonos Play:1 | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-1.json) - [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-2.json) |
+| Sonos Play:3 | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S3-2.json) |
+| Sonos Play:5 (old) | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S5-1.json) |
+| Sonos Play:5 (new) | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S6-1.json) |
+| Sonos Playbar | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-1.json) |
+| Sonos One | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S13-2.json) |
+| Sonos Beam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S14-2.json) |
+| Sonos Roam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S27-2.json) |
+| Sonos Sub | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-Sub-2.json) |
 
 These files toghether with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
 
