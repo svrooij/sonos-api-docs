@@ -4,13 +4,13 @@
   "license": "MIT",
   "services": {
     "AlarmClockService": {
-      "description": "Control the sonos alarms. Service name:'AlarmClock', Endpoint: '/AlarmClock/Control' ",
+      "description": "Control the sonos alarms and times",
       "actions": {
         "CreateAlarm": {
           "description": "Create a single alarm, all properties are required",
           "params": {
-            "StartLocalTime": "The start time as hh:mm:ss",
-            "Duration": "The duration as hh:mm:ss",
+            "StartLocalTime": "The start time as `hh:mm:ss`",
+            "Duration": "The duration as `hh:mm:ss`",
             "Recurrence": "Repeat this alarm on",
             "Enabled": "Alarm enabled after creation",
             "RoomUUID": "The UUID of the speaker you want this alarm for",
@@ -18,7 +18,8 @@
             "ProgramMetaData": "The sound metadata, can be empty string",
             "PlayMode": "Alarm play mode",
             "Volume": "Volume between 0 and 100",
-            "IncludeLinkedZones": "Should grouped players also play the alarm?"
+            "IncludeLinkedZones": "Should grouped players also play the alarm?",
+            "AssignedID": "The ID of the new alarm"
           }
         },
         "DestroyAlarm": {
@@ -37,9 +38,9 @@
         "UpdateAlarm": {
           "description": "Update an alarm, all parameters are required.",
           "params": {
-            "ID": "The ID of the alarm see ListAndParseAlarms",
-            "StartLocalTime": "The start time as hh:mm:ss",
-            "Duration": "The duration as hh:mm:ss",
+            "ID": "The ID of the alarm see ListAlarms",
+            "StartLocalTime": "The start time as `hh:mm:ss`",
+            "Duration": "The duration as `hh:mm:ss`",
             "Recurrence": "Repeat this alarm on",
             "Enabled": "Alarm enabled after creation",
             "RoomUUID": "The UUID of the speaker you want this alarm for",
@@ -55,16 +56,16 @@
       "errors": [{ "code": 801, "description": "Duplicate alarm time" }]
     },
     "AudioInService": {
-      "description": "Control line in. Service name:'AudioIn', Endpoint: '/AudioIn/Control')"
+      "description": "Control line in"
     },
     "AVTransportService": {
-      "description": "Service that controls stuff related to transport (play/pause/next/special urls). Service name: 'AVTransport', Endpoint: '/MediaRenderer/AVTransport/Control'",
+      "description": "Service that controls stuff related to transport (play/pause/next/special urls)",
       "actions": {
         "AddURIToQueue": {
-          "description": "Adds songs to the SONOS queue. In NORMAL play mode the songs are added prior to the specified 'DesiredFirstTrackNumberEnqueued'.",
-          "remarks": "Use 0 as 'DesiredFirstTrackNumberEnqueued' to insert at the end, 1 to insert at the beginning",
+          "description": "Adds songs to the SONOS queue",
+          "remarks": "In NORMAL play mode the songs are added prior to the specified `DesiredFirstTrackNumberEnqueued`.",
           "params": {
-            "DesiredFirstTrackNumberEnqueued": "use 0 to add at the end"
+            "DesiredFirstTrackNumberEnqueued": "use `0` to add at the end or `1` to insert at the beginning"
           }
         },
         "BecomeCoordinatorOfStandaloneGroup": {
@@ -74,7 +75,7 @@
           "description": "Stop playing after set sleep timer or cancel",
           "remarks":"Send to non-coordinator returns error code 800",
           "params": {
-            "NewSleepTimerDuration": "Time to stop after, as hh:mm:ss or empty string to cancel"
+            "NewSleepTimerDuration": "Time to stop after, as `hh:mm:ss` or empty string to cancel"
           }
         },
         "DelegateGroupCoordinationTo": {
@@ -91,7 +92,7 @@
         },
         "GetCurrentTransportActions": {
           "description": "Get current transport actions such as Set, Stop, Pause, Play, X_DLNA_SeekTime, Next, X_DLNA_SeekTrackNr",
-          "remarks":"Send to non-coordinator returns invalid value."
+          "remarks":"Send to non-coordinator returns only `Start` and `Stop` since it cannot control the stream."
         },
         "GetMediaInfo": {
           "description": "Get information about the current playing media (queue)"
@@ -115,7 +116,8 @@
           "remarks":"Send to non-coordinator returns the settings of it's queue"
         },
         "Next": {
-          "description": "Go to next song, not always supported - see GetCurrentTransportActions"
+          "description": "Go to next song",
+          "remarks": "Possibly not supported at the moment see GetCurrentTransportActions"
         },
         "Pause": {
           "description": "Pause playback"
@@ -127,15 +129,15 @@
           }
         },
         "Previous": {
-          "description": "Go to previous song, not always supported - GetCurrentTransportActions"
+          "description": "Go to previous song",
+          "remarks": "Possibly not supported at the moment see GetCurrentTransportActions"
         },
         "RemoveAllTracksFromQueue": {
-          "description": "Flushes the SONOS queue. If queue is already empty it throw error 804",
-          "remarks":"Send to non-coordinator returns error code 800."
+          "description": "Flushes the SONOS queue.",
+          "remarks":"If queue is already empty it throw error 804. Send to non-coordinator returns error code 800."
         },
         "RemoveTrackRangeFromQueue": {
           "description": "Removes the specified range of songs from the SONOS queue.",
-          "remarks": "Use 0 as 'DesiredFirstTrackNumberEnqueued' to insert at the end, 1 to insert at the beginning",
           "params": {
             "UpdateID": "Leave blank",
             "StartingIndex": "between 1 and queue-length"
@@ -150,11 +152,11 @@
           }
         },
         "Seek": {
-          "description": "Seek track in queue, time delta or absolute time in song, not always supported - see GetCurrentTransportActions",
+          "description": "Seek track in queue, time delta or absolute time in song",
           "remarks":"Returns error code 701 in case that content does not support Seek or send to non-coordinator",
           "params": {
-            "Unit": "What to seek. ",
-            "Target": "Position of track in queue (start at 1) or hh:mm:ss for REL_TIME or +/-hh:mm:ss for TIME_DELTA"
+            "Unit": "What to seek",
+            "Target": "Position of track in queue (start at 1) or `hh:mm:ss` for `REL_TIME` or `+/-hh:mm:ss` for `TIME_DELTA`"
           }
         },
         "SetAVTransportURI": {
@@ -179,7 +181,7 @@
         "SnoozeAlarm": {
           "description": "Snooze the current alarm for some time.",
           "params": {
-            "Duration": "Snooze time as hh:mm:ss, 10 minutes = 00:10:00"
+            "Duration": "Snooze time as `hh:mm:ss`, 10 minutes = 00:10:00"
           }
         },
         "Stop": {
@@ -207,27 +209,28 @@
         { "code": 718, "description": "Invalid InstanceID" },
         { "code": 737, "description": "No dns configured" },
         { "code": 738, "description": "Bad domain" },
-        { "code": 739, "description": "Server error" }
+        { "code": 739, "description": "Server error" },
+        { "code": 800, "description": "Command not supported or not a coordinator" }
       ]
     },
     "ConnectionManagerService": {
-      "description": "Services related to connections and protocols. Service name:'ConnectionManager',  Endpoint: '/MediaRenderer/ConnectionManager/Control' and '/MediaServer/ConnectionManager/Control'"
+      "description": "Services related to connections and protocols"
     },
     "ContentDirectoryService": {
-      "description": "Browse for local content. Service name:'ContentDirectory', Endpoint: '/MediaServer/ContentDirectory/Control'",
+      "description": "Browse for local content",
       "actions": {
         "Browse": {
           "description": "Browse for content. Recommendation: Send one request, check the 'TotalMatches' and - if necessary - do additional requests with higher 'StartingIndex'. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
           "params": {
             "ObjectID": "The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS'] with optionally ':search+query' behind it.",
             "BrowseFlag": "How to browse",
-            "Filter": "Which fields should be returned '*' for all.",
+            "Filter": "Which fields should be returned `*` for all.",
             "StartingIndex": "Paging, where to start",
             "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does restrict the number of items being searched (filter) but only the number being returned. ",
-            "SortCriteria": "Sort the results based on metadata fields. '+upnp:artist,+dc:title' for sorting on artist then on title.",
+            "SortCriteria": "Sort the results based on metadata fields. `+upnp:artist,+dc:title` for sorting on artist then on title.",
             "Result": "Encoded DIDL-Lite XML. See remark (2)"
           },
-          "remarks": "(1) If the title contains an apostrophe the returned uri will contain a '&apos;'. (2) Some libraries support a BrowseAndParse, so you don't have to parse the xml."
+          "remarks": "(1) If the title contains an apostrophe the returned uri will contain a `&apos;`. (2) Some libraries support a BrowseAndParse, so you don't have to parse the xml."
         }
       },
       "errors": [
@@ -253,13 +256,19 @@
       ]
     },
     "DevicePropertiesService": {
-      "description": "Modify device properties, like LED status and stereo pairs. Service name:'DeviceProperties', Endpoint: '/DeviceProperties/Control'",
+      "description": "Modify device properties, like LED status and stereo pairs",
       "actions": {
         "GetButtonLockState": {
-          "description": "Get the current button lock state - On or Off (case sensitive)"
+          "description": "Get the current button lock state",
+          "params": {
+            "CurrentButtonLockState": "Button lock state as `On` or `Off`"
+          }
         },
         "GetLEDState": {
-          "description": "Get the current LED state - On or Off (case sensitive)"
+          "description": "Get the current LED state",
+          "params": {
+            "CurrentLEDState": "LED state as `On` or `Off`"
+          }
         },
         "CreateStereoPair": {
           "description": "Create a stereo pair (left, right speakers), right one becomes hidden",
@@ -276,18 +285,24 @@
           "remarks": "No all speakers support StereoPairs"
         },
         "SetButtonLockState": {
-          "description": "Set the button lock state - On or Off (case sensitive)"
+          "description": "Set the button lock state",
+          "params": {
+            "DesiredButtonLockState": "Desired state as `On` or `Off`"
+          }
         },
         "SetLEDState": {
-          "description": "Set the LED state - On or Off (case sensitive)"
+          "description": "Set the LED state",
+          "params": {
+            "DesiredLEDState": "Desired state as `On` or `Off`"
+          }
         }
       }
     },
     "GroupManagementService": {
-      "description": "Services related to groups. Service name:'GroupManagement', Endpoint: '/GroupManagement/Control'"
+      "description": "Services related to groups"
     },
     "GroupRenderingControlService": {
-      "description": "Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players. Service name:'GroupRenderingControl',  Endpoint: '/MediaRenderer/GroupRenderingControl/Control' ",
+      "description": "Volume related controls for groups",
       "actions": {
         "GetGroupMute": {
           "description": "Get the group mute state.",
@@ -299,10 +314,7 @@
         },
         "SetGroupMute": {
           "description": "(Un-/)Mute the entire group",
-          "remarks": "Should be send to coordinator only",
-          "params": {
-            "DesiredMute": "True for mute, false for un-mute"
-          }
+          "remarks": "Should be send to coordinator only"
         },
         "SetGroupVolume": {
           "description": "Change group volume. Players volume will be changed proportionally based on last snapshot",
@@ -328,10 +340,10 @@
       ]
     },
     "HTControlService": {
-      "description": "Service related to the TV remote control. Service name:'HTControl', Endpoint: '/HTControl/Control'"
+      "description": "Service related to the TV remote control"
     },
     "MusicServicesService": {
-      "description": "External music services. Service name:'MusicServices', Endpoint: '/MusicServices/Control'",
+      "description": "Access to external music services, like Spotify or Youtube Music",
       "actions": {
         "ListAvailableServices": {
           "description": "Load music service list as xml",
@@ -340,23 +352,24 @@
       }
     },
     "QueueService": {
-      "description": "Modify and browse queues. Service name:'Queue', Endpoint: '/MediaRenderer/Queue/Control'"
+      "description": "Modify and browse queues"
     },
     "QPlayService": {
-      "description": "Services related to Chinese Tencent Qplay service. Service name:'QPlay', Endpoint: '/QPlay/Control'"
+      "description": "Services related to Chinese Tencent Qplay service"
     },
     "RenderingControlService": {
-      "description": "Volume related controls. Service name:'RenderingControl', Endpoint: '/MediaRenderer/RenderingControl/Control'",
+      "description": "Volume related controls",
       "actions": {
         "GetBass": {
           "description": "Get bass level between -10 and 10"
         },
         "GetEQ": {
-          "description": "Get EQ value (see SetEQ) for different EQTypes. 'Subgain' between -10 and 10",
+          "description": "Get EQ value 'Subgain' between -10 and 10",
           "params": {
-            "EQType": "EQ type such as 'DialogLevel', 'NightMode', 'SubGain'"
+            "EQType": "EQ type such as `DialogLevel`, `NightMode`, `SubGain`",
+            "CurrentValue": "Subgain number between -10 and 10, DialogLevel and Nightmode 1 for true 0 for false"
           },
-          "remarks": "Not supported by all speakers, TV related"
+          "remarks": "Not all EQ types are available on every speaker"
         },
         "GetLoudness": {
           "description": "Whether or not Loudness is on",
@@ -365,12 +378,16 @@
           }
         },
         "GetTreble": {
-          "description": "Get treble, between -10 and 10"
+          "description": "Get treble",
+          "params": {
+            "CurrentTreble": "Number between -10 and 10"
+          }
         },
         "GetVolume": {
-          "description": "Get volume, between 0 and 100",
+          "description": "Get volume",
           "params": {
-            "Channel": "Master"
+            "Channel": "Master",
+            "CurrentVolume": "Number between 0 and 100"
           }
         },
         "SetBass": {
@@ -380,7 +397,7 @@
           "description": "Set EQ value for different types",
           "params": {
             "EQType": "DialogLevel, NightMode, SubGain",
-            "DesiredValue": "SubGain between -10 and 10"
+            "DesiredValue": "SubGain between -10 and 10, 1 or 0 for others"
           },
           "remarks": "Not supported by all speakers, TV related"
         },
@@ -396,14 +413,14 @@
       }
     },
     "SystemPropertiesService": {
-      "description": "Manage system-wide settings, mainly account stuff. Service name:'SystemProperties', Endpoint: '/SystemProperties/Control'",
+      "description": "Manage system-wide settings, mainly account stuff",
       "actions": {
         "GetString": {
           "description": "Get a saved string.",
           "params": {
             "VariableName": "The key for this variable"
           },
-          "remarks": "Strings are saved in the system with SetString, every speaker should send the same data. Will error when not existing"
+          "remarks": "Strings are saved in the system with SetString, every speaker should return the same data. Will error when not existing"
         },
         "Remove": {
           "description": "Remove a saved string",
@@ -421,11 +438,8 @@
         }
       }
     },
-    "VirtualLineInService": {
-      "description": "Service name:'VirtualLineIn', Endpoint: '/MediaRenderer/VirtualLineIn/Control'"
-    },
     "ZoneGroupTopologyService": {
-      "description": "Zone config stuff, eg getting all the configured sonos zones. Service name:'ZoneGroupTopology', Endpoint: '/ZoneGroupTopology/Control'",
+      "description": "Zone config stuff, eg getting all the configured sonos zones",
       "actions": {
         "GetZoneGroupAttributes": {
           "description": "Get information about the current Zone"

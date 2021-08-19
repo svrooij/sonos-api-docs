@@ -9,6 +9,7 @@ CLI tool to generate documentation for the undocumented sonos api
 [![License](https://img.shields.io/npm/l/sonos-docs.svg)](https://github.com//sonos-api-docs/blob/master/package.json)
 
 <!-- toc -->
+* [sonos-docs](#sonos-docs)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -19,7 +20,7 @@ $ npm install -g @svrooij/sonos-docs
 $ sonos-docs COMMAND
 running command...
 $ sonos-docs (-v|--version|version)
-@svrooij/sonos-docs/0.0.0 win32-x64 node-v12.16.3
+@svrooij/sonos-docs/0.0.0 linux-x64 node-v14.17.4
 $ sonos-docs --help [COMMAND]
 USAGE
   $ sonos-docs COMMAND
@@ -55,12 +56,13 @@ OPTIONS
 
   --folder=folder              Load discovered services from this folder. Loaded from repository if empty
 
-  --models=models              [default: S1-1,S5-1,S9-1] Models to use, separated by comma. as {model}-{softwareGen}
+  --models=models              [default: S1-1,S5-1,S9-1,S3-2,S6-2,S13-2,S14-2,S27-2,Sub-2] Models to use, separated by
+                               comma. as {model}-{softwareGen}
 
   --out=out                    [default: data/intermediate.json] Output filename
 ```
 
-_See code: [src\commands\combine.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src\commands\combine.ts)_
+_See code: [src/commands/combine.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src/commands/combine.ts)_
 
 ## `sonos-docs generate TEMPLATE OUTPUT`
 
@@ -79,7 +81,7 @@ OPTIONS
   -i, --intermediate=intermediate  [default: data/intermediate.json] intermediate file to use. generate with 'combine'
 ```
 
-_See code: [src\commands\generate.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src\commands\generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src/commands/generate.ts)_
 
 ## `sonos-docs help [COMMAND]`
 
@@ -96,7 +98,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src\commands\help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
 
 ## `sonos-docs musicservices IP`
 
@@ -113,14 +115,17 @@ OPTIONS
   -x, --extended          show extra columns
   --columns=columns       only show provided columns (comma-separated)
   --csv                   output is csv format [alias: --output=csv]
+  --docs                  Show a markdown table
   --filter=filter         filter property by partial string matching, ex: name=foo
   --no-header             hide table header from output
   --no-truncate           do not truncate output to fit screen
   --output=csv|json|yaml  output in a more machine friendly format
+  --saveJson=saveJson     If set, save music services as json
+  --show                  Show the music services
   --sort=sort             property to sort by (prepend '-' for descending)
 ```
 
-_See code: [src\commands\musicservices.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src\commands\musicservices.ts)_
+_See code: [src/commands/musicservices.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src/commands/musicservices.ts)_
 
 ## `sonos-docs services IP`
 
@@ -139,5 +144,5 @@ OPTIONS
   -h, --help           show CLI help
 ```
 
-_See code: [src\commands\services.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src\commands\services.ts)_
+_See code: [src/commands/services.ts](https://github.com/svrooij/sonos-api-docs/blob/v0.0.0/src/commands/services.ts)_
 <!-- commandsstop -->
