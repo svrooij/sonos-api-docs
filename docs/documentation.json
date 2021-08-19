@@ -4,7 +4,7 @@
   "license": "MIT",
   "services": {
     "AlarmClockService": {
-      "description": "Control the sonos alarms. Endpoint: '/AlarmClock/Control' ",
+      "description": "Control the sonos alarms. Service name:'AlarmClock', Endpoint: '/AlarmClock/Control' ",
       "actions": {
         "CreateAlarm": {
           "description": "Create a single alarm, all properties are required",
@@ -29,6 +29,9 @@
         },
         "ListAlarms": {
           "description": "Get the AlarmList as XML",
+          "params": {
+            "CurrentAlarmList": "xml string, see remarks"
+          },
           "remarks": "Some libraries also provide a ListAndParseAlarms where the alarm list xml is parsed"
         },
         "UpdateAlarm": {
@@ -52,10 +55,10 @@
       "errors": [{ "code": 801, "description": "Duplicate alarm time" }]
     },
     "AudioInService": {
-      "description": "Service that control the line in. Endpoint: '/AudioIn/Control')"
+      "description": "Service that control the line in. Service name:'AudioIn', Endpoint: '/AudioIn/Control')"
     },
     "AVTransportService": {
-      "description": "Service that controls stuff related to transport (play/pause/next/special urls). Endpoint: '/MediaRenderer/AVTransport/Control'",
+      "description": "Service that controls stuff related to transport (play/pause/next/special urls). Service name: 'AVTransport', Endpoint: '/MediaRenderer/AVTransport/Control'",
       "actions": {
         "AddURIToQueue": {
           "description": "Adds songs to the SONOS queue. In NORMAL play mode the songs are added prior to the specified 'DesiredFirstTrackNumberEnqueued'.",
@@ -208,10 +211,10 @@
       ]
     },
     "ConnectionManagerService": {
-      "description": "Services related to connections and protocols. Endpoint: '/MediaRenderer/ConnectionManager/Control' and '/MediaServer/ConnectionManager/Control'"
+      "description": "Services related to connections and protocols. Service name:'ConnectionManager',  Endpoint: '/MediaRenderer/ConnectionManager/Control' and '/MediaServer/ConnectionManager/Control'"
     },
     "ContentDirectoryService": {
-      "description": "Browse for local content. Endpoint: '/MediaServer/ContentDirectory/Control'",
+      "description": "Browse for local content. Service name:'ContentDirectory', Endpoint: '/MediaServer/ContentDirectory/Control'",
       "actions": {
         "Browse": {
           "description": "Browse for content. Recommendation: Send one request, check the 'TotalMatches' and - if necessary - do additional requests with higher 'StartingIndex'. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
@@ -222,7 +225,7 @@
             "StartingIndex": "Paging, where to start",
             "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does restrict the number of items being searched (filter) but only the number being returned. ",
             "SortCriteria": "Sort the results based on metadata fields. '+upnp:artist,+dc:title' for sorting on artist then on title.",
-            "Result": "Is an encoded DIDL_Lite XML as string. You need to parse it!"
+            "Result": "Encoded DIDL-Lite XML. See remark (2)"
           },
           "remarks": "(1) If the title contains an apostrophe the returned uri will contain a '&apos;'. (2) Some libraries support a BrowseAndParse, so you don't have to parse the xml."
         }
@@ -250,7 +253,7 @@
       ]
     },
     "DevicePropertiesService": {
-      "description": "Modify device properties, like LED status and stereo pairs. Endpoint: '/DeviceProperties/Control'",
+      "description": "Modify device properties, like LED status and stereo pairs. Service name:'DeviceProperties', Endpoint: '/DeviceProperties/Control'",
       "actions": {
         "GetButtonLockState": {
           "description": "Get the current button lock state - On or Off (case sensitive)"
@@ -281,10 +284,10 @@
       }
     },
     "GroupManagementService": {
-      "description": "Services related to groups. Endpoint: '/GroupManagement/Control'"
+      "description": "Services related to groups. Service name:'GroupManagement', Endpoint: '/GroupManagement/Control'"
     },
     "GroupRenderingControlService": {
-      "description": "Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players. Endpoint: '/MediaRenderer/GroupRenderingControl/Control' ",
+      "description": "Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players. Service name:'GroupRenderingControl',  Endpoint: '/MediaRenderer/GroupRenderingControl/Control' ",
       "actions": {
         "GetGroupMute": {
           "description": "Get the group mute state.",
@@ -325,10 +328,10 @@
       ]
     },
     "HTControlService": {
-      "description": "Service related to the TV remote control. Endpoint: '/HTControl/Control'"
+      "description": "Service related to the TV remote control. Service name:'HTControl', Endpoint: '/HTControl/Control'"
     },
     "MusicServicesService": {
-      "description": "External music services. Endpoint: '/MusicServices/Control'",
+      "description": "External music services. Service name:'MusicServices', Endpoint: '/MusicServices/Control'",
       "actions": {
         "ListAvailableServices": {
           "description": "Load music service list as xml",
@@ -337,13 +340,13 @@
       }
     },
     "QueueService": {
-      "description": "Modify and browse queues. Endpoint: '/MediaRenderer/Queue/Control'"
+      "description": "Modify and browse queues. Service name:'Queue', Endpoint: '/MediaRenderer/Queue/Control'"
     },
     "QPlayService": {
-      "description": "Services related to Chinese Tencent Qplay service. Endpoint: '/QPlay/Control'"
+      "description": "Services related to Chinese Tencent Qplay service. Service name:'QPlay', Endpoint: '/QPlay/Control'"
     },
     "RenderingControlService": {
-      "description": "Volume related controls. Endpoint: '/MediaRenderer/RenderingControl/Control'",
+      "description": "Volume related controls. Service name:'RenderingControl', Endpoint: '/MediaRenderer/RenderingControl/Control'",
       "actions": {
         "GetBass": {
           "description": "Get bass level between -10 and 10"
@@ -393,7 +396,7 @@
       }
     },
     "SystemPropertiesService": {
-      "description": "Manage system-wide settings, mainly account stuff. Endpoint: '/SystemProperties/Control'",
+      "description": "Manage system-wide settings, mainly account stuff. Service name:'SystemProperties', Endpoint: '/SystemProperties/Control'",
       "actions": {
         "GetString": {
           "description": "Get a saved string.",
@@ -419,16 +422,19 @@
       }
     },
     "VirtualLineInService": {
-      "description": "Endpoint: '/MediaRenderer/VirtualLineIn/Control'"
+      "description": "Service name:'VirtualLineIn', Endpoint: '/MediaRenderer/VirtualLineIn/Control'"
     },
     "ZoneGroupTopologyService": {
-      "description": "Zone config stuff, eg getting all the configured sonos zones. Endpoint: '/ZoneGroupTopology/Control'",
+      "description": "Zone config stuff, eg getting all the configured sonos zones. Service name:'ZoneGroupTopology', Endpoint: '/ZoneGroupTopology/Control'",
       "actions": {
         "GetZoneGroupAttributes": {
           "description": "Get information about the current Zone"
         },
         "GetZoneGroupState": {
           "description": "Get all the Sonos groups, (as XML)",
+          "params": {
+            "ZoneGroupState": "xml string, see remarks"
+          },
           "remarks": "Some libraries also support GetParsedZoneGroupState that parses the xml for you."
         }
       }
