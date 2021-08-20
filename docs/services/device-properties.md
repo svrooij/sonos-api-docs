@@ -6,9 +6,9 @@ parent: Sonos UPNP
 # DevicePropertiesService
 {: .no_toc }
 
-Modify device properties, like led status and stereo pairs
+Modify device properties, like LED status and stereo pairs
 
-The DevicePropertiesService is available on these models: `Sonos One (S13) S2` / `Sonos Roam (S27) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The DevicePropertiesService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -159,7 +159,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **IncludeLinkedZones** | `boolean` |  |
+| **IncludeLinkedZones** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetAutoplayRoomUUID
 
@@ -207,6 +207,8 @@ Outputs:
 
 ### GetButtonLockState
 
+Get the current button lock state
+
 Action body:
 
 ```xml
@@ -220,7 +222,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentButtonLockState** | `string` |  Possible values: `On` / `Off` |
+| **CurrentButtonLockState** | `string` | Button lock state as `On` or `Off` Possible values: `On` / `Off` |
 
 ### GetButtonState
 
@@ -258,6 +260,8 @@ Outputs:
 
 ### GetLEDState
 
+Get the current LED state
+
 Action body:
 
 ```xml
@@ -271,7 +275,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentLEDState** | `string` |  Possible values: `On` / `Off` |
+| **CurrentLEDState** | `string` | LED state as `On` or `Off` Possible values: `On` / `Off` |
 
 ### GetUseAutoplayVolume
 
@@ -293,7 +297,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **UseVolume** | `boolean` |  |
+| **UseVolume** | `boolean` |  `1` for true and `0` for false  |
 
 ### GetZoneAttributes
 
@@ -356,7 +360,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **ChannelMapSet** | `string` |  |
-| **KeepGrouped** | `boolean` |  |
+| **KeepGrouped** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### RemoveHTSatellite
 
@@ -397,7 +401,7 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **PlayId** | `ui4` |  |
-| **ChirpIfPlayingSwappableAudio** | `boolean` |  |
+| **ChirpIfPlayingSwappableAudio** | `boolean` |  `1` for true and `0` for false  |
 
 ### RoomDetectionStopChirping
 
@@ -450,7 +454,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **IncludeLinkedZones** | `boolean` |  |
+| **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 | **Source** | `string` |  |
 
 ### SetAutoplayRoomUUID
@@ -491,6 +495,8 @@ Inputs:
 
 ### SetButtonLockState
 
+Set the button lock state
+
 Action body:
 
 ```xml
@@ -503,9 +509,11 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **DesiredButtonLockState** | `string` |  Allowed values: `On` / `Off` |
+| **DesiredButtonLockState** | `string` | Desired state as `On` or `Off` Allowed values: `On` / `Off` |
 
 ### SetLEDState
+
+Set the LED state
 
 Action body:
 
@@ -519,7 +527,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **DesiredLEDState** | `string` |  Allowed values: `On` / `Off` |
+| **DesiredLEDState** | `string` | Desired state as `On` or `Off` Allowed values: `On` / `Off` |
 
 ### SetUseAutoplayVolume
 
@@ -536,7 +544,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **UseVolume** | `boolean` |  |
+| **UseVolume** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 | **Source** | `string` |  |
 
 ### SetZoneAttributes
@@ -577,11 +585,11 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AirPlayEnabled | ✔ | `boolean` |  |
-| AutoplayIncludeLinkedZones |  | `boolean` |  |
+| AirPlayEnabled | ✔ | `boolean` |  `1` for true and `0` for false  |
+| AutoplayIncludeLinkedZones |  | `boolean` |  `1` for true and `0` for false  |
 | AutoplayRoomUUID |  | `string` |  |
 | AutoplaySource |  | `string` |  |
-| AutoplayUseVolume |  | `boolean` |  |
+| AutoplayUseVolume |  | `boolean` |  `1` for true and `0` for false  |
 | AutoplayVolume |  | `ui2` |  |
 | AvailableRoomCalibration | ✔ | `string` |  |
 | BehindWifiExtender | ✔ | `ui4` |  |
@@ -595,19 +603,19 @@ Timeout: Second-3600
 | ExtraInfo |  | `string` |  |
 | Flags |  | `ui4` |  |
 | HardwareVersion |  | `string` |  |
-| HasConfiguredSSID | ✔ | `boolean` |  |
-| HdmiCecAvailable | ✔ | `boolean` |  |
+| HasConfiguredSSID | ✔ | `boolean` |  `1` for true and `0` for false  |
+| HdmiCecAvailable | ✔ | `boolean` |  `1` for true and `0` for false  |
 | HouseholdID |  | `string` |  |
 | HTAudioIn |  | `ui4` |  |
 | HTBondedZoneCommitState | ✔ | `ui4` |  |
 | HTFreq | ✔ | `ui4` |  |
 | HTSatChanMapSet | ✔ | `string` |  |
 | Icon | ✔ | `string` |  |
-| Invisible | ✔ | `boolean` |  |
+| Invisible | ✔ | `boolean` |  `1` for true and `0` for false  |
 | IPAddress |  | `string` |  |
-| IsIdle | ✔ | `boolean` |  |
-| IsZoneBridge | ✔ | `boolean` |  |
-| KeepGrouped |  | `boolean` |  |
+| IsIdle | ✔ | `boolean` |  `1` for true and `0` for false  |
+| IsZoneBridge | ✔ | `boolean` |  `1` for true and `0` for false  |
+| KeepGrouped |  | `boolean` |  `1` for true and `0` for false  |
 | LastChangedPlayState | ✔ | `string` |  |
 | LEDState |  | `string` | `On` / `Off` |
 | MACAddress |  | `string` |  |
@@ -620,13 +628,13 @@ Timeout: Second-3600
 | SerialNumber |  | `string` |  |
 | SettingsReplicationState | ✔ | `string` |  |
 | SoftwareVersion |  | `string` |  |
-| SupportsAudioClip | ✔ | `boolean` |  |
-| SupportsAudioIn | ✔ | `boolean` |  |
+| SupportsAudioClip | ✔ | `boolean` |  `1` for true and `0` for false  |
+| SupportsAudioIn | ✔ | `boolean` |  `1` for true and `0` for false  |
 | TargetRoomName |  | `string` |  |
-| TVConfigurationError | ✔ | `boolean` |  |
+| TVConfigurationError | ✔ | `boolean` |  `1` for true and `0` for false  |
 | VoiceConfigState | ✔ | `ui4` |  |
-| WifiEnabled | ✔ | `boolean` |  |
-| WirelessLeafOnly | ✔ | `boolean` |  |
+| WifiEnabled | ✔ | `boolean` |  `1` for true and `0` for false  |
+| WirelessLeafOnly | ✔ | `boolean` |  `1` for true and `0` for false  |
 | WirelessMode | ✔ | `ui4` |  |
 | ZoneName | ✔ | `string` |  |
 
@@ -639,8 +647,10 @@ This file is automatically generated with [@svrooij/sonos-docs](https://github.c
 | Device | Software generation | Software version | Discovery date |
 |:-------|:--------------------|:-----------------|:---------------|
 | `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
+| `Sonos Beam (S14)` | S2 | 64.3-19080 | 2021-08-18T06:04:08.308Z |
 | `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
-| `Sonos Play:5 (S6)` | S2 | 63.2-90210 | 2021-07-21T23:31:45.324Z |
+| `Sonos Play:3 (S3)` | S2 | 64.3-19080 | 2021-08-18T06:09:36.692Z |
+| `Sonos Play:5 (S6)` | S2 | 64.3-19080 | 2021-08-18T06:06:35.970Z |
 | `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |
 | `Sonos Play:1 (S1)` | S1 | 57.6-88280 | 2021-07-21T14:51:41.469Z |
 | `Sonos Play:5 (S5)` | S1 | 57.6-88280 | 2021-07-21T14:51:44.187Z |

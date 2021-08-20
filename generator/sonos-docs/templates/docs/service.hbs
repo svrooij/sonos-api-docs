@@ -74,7 +74,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 {{#each inputs}}
-| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}}{{#if relatedStateVariable.allowedValues}} Allowed values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
+| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}}{{#if (are_equal relatedStateVariable.dataType 'boolean')}} Allowed values: `1` (= true) / `0` (= false) {{/if}}{{#if relatedStateVariable.allowedValues}} Allowed values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
 {{/each}}
 {{else}}
 
@@ -87,12 +87,12 @@ Outputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 {{#each outputs}}
-| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}}{{#if relatedStateVariable.allowedValues}} Possible values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
+| **{{name}}** | `{{relatedStateVariable.dataType}}` | {{{description}}}{{#if (are_equal relatedStateVariable.dataType 'boolean')}} `1` for true and `0` for false {{/if}}{{#if relatedStateVariable.allowedValues}} Possible values: {{#each relatedStateVariable.allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}}{{/if}} |
 {{/each}}
 {{/if}}
 {{#if remarks}}
 
-**Remarks** {{remarks}}
+**Remarks** {{{remarks}}}
 {{/if}}
 
 {{/each}}
@@ -116,7 +116,7 @@ Timeout: Second-3600
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
 {{#each eventVariables}}
-| {{name}} | {{#if sendEvents}}✔{{/if}} | `{{dataType}}` | {{#each allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}} |
+| {{name}} | {{#if sendEvents}}✔{{/if}} | `{{dataType}}` | {{#if (are_equal dataType 'boolean')}} `1` for true and `0` for false {{/if}}{{#each allowedValues}}`{{this}}`{{#unless @last}} / {{/unless}}{{/each}} |
 {{/each}}
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. Other properties might be send as a part of `LastChange`
@@ -130,7 +130,7 @@ The {{serviceName}} has the following known custom errors.
 | Error code | Description |
 |:-----------|:------------|
 {{#each errors}}
-| `{{code}}` | {{description}} |
+| `{{code}}` | {{{description}}} |
 {{/each}}
 {{/if}}
 

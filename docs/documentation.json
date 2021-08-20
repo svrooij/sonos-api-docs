@@ -4,13 +4,13 @@
   "license": "MIT",
   "services": {
     "AlarmClockService": {
-      "description": "Control the sonos alarms",
+      "description": "Control the sonos alarms and times",
       "actions": {
         "CreateAlarm": {
           "description": "Create a single alarm, all properties are required",
           "params": {
-            "StartLocalTime": "The start time as hh:mm:ss",
-            "Duration": "The duration as hh:mm:ss",
+            "StartLocalTime": "The start time as `hh:mm:ss`",
+            "Duration": "The duration as `hh:mm:ss`",
             "Recurrence": "Repeat this alarm on",
             "Enabled": "Alarm enabled after creation",
             "RoomUUID": "The UUID of the speaker you want this alarm for",
@@ -18,7 +18,8 @@
             "ProgramMetaData": "The sound metadata, can be empty string",
             "PlayMode": "Alarm play mode",
             "Volume": "Volume between 0 and 100",
-            "IncludeLinkedZones": "Should grouped players also play the alarm?"
+            "IncludeLinkedZones": "Should grouped players also play the alarm?",
+            "AssignedID": "The ID of the new alarm"
           }
         },
         "DestroyAlarm": {
@@ -29,14 +30,17 @@
         },
         "ListAlarms": {
           "description": "Get the AlarmList as XML",
+          "params": {
+            "CurrentAlarmList": "xml string, see remarks"
+          },
           "remarks": "Some libraries also provide a ListAndParseAlarms where the alarm list xml is parsed"
         },
         "UpdateAlarm": {
           "description": "Update an alarm, all parameters are required.",
           "params": {
-            "ID": "The ID of the alarm see ListAndParseAlarms",
-            "StartLocalTime": "The start time as hh:mm:ss",
-            "Duration": "The duration as hh:mm:ss",
+            "ID": "The ID of the alarm see ListAlarms",
+            "StartLocalTime": "The start time as `hh:mm:ss`",
+            "Duration": "The duration as `hh:mm:ss`",
             "Recurrence": "Repeat this alarm on",
             "Enabled": "Alarm enabled after creation",
             "RoomUUID": "The UUID of the speaker you want this alarm for",
@@ -51,17 +55,27 @@
       },
       "errors": [{ "code": 801, "description": "Duplicate alarm time" }]
     },
+    "AudioInService": {
+      "description": "Control line in"
+    },
     "AVTransportService": {
       "description": "Service that controls stuff related to transport (play/pause/next/special urls)",
       "actions": {
+        "AddURIToQueue": {
+          "description": "Adds songs to the SONOS queue",
+          "remarks": "In NORMAL play mode the songs are added prior to the specified `DesiredFirstTrackNumberEnqueued`.",
+          "params": {
+            "DesiredFirstTrackNumberEnqueued": "use `0` to add at the end or `1` to insert at the beginning"
+          }
+        },
         "BecomeCoordinatorOfStandaloneGroup": {
           "description": "Leave the current group and revert to a single player."
         },
         "ConfigureSleepTimer": {
-          "description": "Stop playing after set sleep timer",
+          "description": "Stop playing after set sleep timer or cancel",
           "remarks":"Send to non-coordinator returns error code 800",
           "params": {
-            "NewSleepTimerDuration": "Time to stop after, as hh:mm:ss"
+            "NewSleepTimerDuration": "Time to stop after, as `hh:mm:ss` or empty string to cancel"
           }
         },
         "DelegateGroupCoordinationTo": {
@@ -73,12 +87,12 @@
           }
         },
         "GetCrossfadeMode": {
-          "description": "Get crossfade mode, 1 for on, 0 for off",
+          "description": "Get crossfade mode",
           "remarks":"Send to non-coordinator may return wrong value as only the coordinator value in a group"
         },
         "GetCurrentTransportActions": {
           "description": "Get current transport actions such as Set, Stop, Pause, Play, X_DLNA_SeekTime, Next, X_DLNA_SeekTrackNr",
-          "remarks":"Send to non-coordinator always returns Stop, Play"
+          "remarks":"Send to non-coordinator returns only `Start` and `Stop` since it cannot control the stream."
         },
         "GetMediaInfo": {
           "description": "Get information about the current playing media (queue)"
@@ -87,8 +101,11 @@
           "description": "Get information about current position (position in queue and time in current song)"
         },
         "GetRemainingSleepTimerDuration": {
-          "description": "Get time left on sleeptimer or empty string",
-          "remarks":"Send to non-coordinator returns error code 800"
+          "description": "Get time left on sleeptimer.",
+          "remarks":"Send to non-coordinator returns error code 800",
+          "params": {
+            "RemainingSleepTimerDuration": "Format hh:mm:ss or empty string if not set"
+          }
         },
         "GetTransportInfo": {
           "description": "Get current transport status, speed and state such as PLAYING, STOPPED, PLAYING, PAUSED_PLAYBACK, TRANSITIONING, NO_MEDIA_PRESENT",
@@ -99,7 +116,8 @@
           "remarks":"Send to non-coordinator returns the settings of it's queue"
         },
         "Next": {
-          "description": "Go to next song, not always supported - see GetCurrentTransportActions"
+          "description": "Go to next song",
+          "remarks": "Possibly not supported at the moment see GetCurrentTransportActions"
         },
         "Pause": {
           "description": "Pause playback"
@@ -111,25 +129,34 @@
           }
         },
         "Previous": {
-          "description": "Go to previous song, not always supported - GetCurrentTransportActions"
+          "description": "Go to previous song",
+          "remarks": "Possibly not supported at the moment see GetCurrentTransportActions"
         },
         "RemoveAllTracksFromQueue": {
-          "description": "Flushes the SONOS queue. If queue is already empty it throw error 804",
-          "remarks":"Send to non-coordinator returns error code 800."
+          "description": "Flushes the SONOS queue.",
+          "remarks":"If queue is already empty it throw error 804. Send to non-coordinator returns error code 800."
+        },
+        "RemoveTrackRangeFromQueue": {
+          "description": "Removes the specified range of songs from the SONOS queue.",
+          "params": {
+            "UpdateID": "Leave blank",
+            "StartingIndex": "between 1 and queue-length"
+          }
         },
         "SaveQueue": {
           "description": "Saves the current SONOS queue as a SONOS playlist and outputs objectID",
           "remarks":"Send to non-coordinator returns error code 800",
           "params": {
-            "Title": "SONOS playlist title"
+            "Title": "SONOS playlist title", 
+            "ObjectID": "Leave blank"
           }
         },
         "Seek": {
-          "description": "Seek track in queue, time delta or absolute time in song, not always supported - see GetCurrentTransportActions",
+          "description": "Seek track in queue, time delta or absolute time in song",
           "remarks":"Returns error code 701 in case that content does not support Seek or send to non-coordinator",
           "params": {
             "Unit": "What to seek",
-            "Target": "Position of track in queue (start at 1) or hh:mm:ss for REL_TIME or +/-hh:mm:ss for TIME_DELTA"
+            "Target": "Position of track in queue (start at 1) or `hh:mm:ss` for `REL_TIME` or `+/-hh:mm:ss` for `TIME_DELTA`"
           }
         },
         "SetAVTransportURI": {
@@ -141,11 +168,8 @@
           }
         },
         "SetCrossfadeMode": {
-          "description": "Set crossfade mode off",
-          "remarks":"Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode.",
-          "params": {
-            "CrossfadeMode": "true for on, false for off"
-          }
+          "description": "Set crossfade mode",
+          "remarks":"Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode."
         },
         "SetPlayMode": {
           "description": "Set the PlayMode",
@@ -157,7 +181,7 @@
         "SnoozeAlarm": {
           "description": "Snooze the current alarm for some time.",
           "params": {
-            "Duration": "Snooze time as hh:mm:ss, 10 minutes = 00:10:00"
+            "Duration": "Snooze time as `hh:mm:ss`, 10 minutes = 00:10:00"
           }
         },
         "Stop": {
@@ -185,23 +209,28 @@
         { "code": 718, "description": "Invalid InstanceID" },
         { "code": 737, "description": "No dns configured" },
         { "code": 738, "description": "Bad domain" },
-        { "code": 739, "description": "Server error" }
+        { "code": 739, "description": "Server error" },
+        { "code": 800, "description": "Command not supported or not a coordinator" }
       ]
+    },
+    "ConnectionManagerService": {
+      "description": "Services related to connections and protocols"
     },
     "ContentDirectoryService": {
       "description": "Browse for local content",
       "actions": {
         "Browse": {
-          "description": "Browse for content.",
+          "description": "Browse for content. Recommendation: Send one request, check the 'TotalMatches' and - if necessary - do additional requests with higher 'StartingIndex'. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
           "params": {
             "ObjectID": "The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS'] with optionally ':search+query' behind it.",
             "BrowseFlag": "How to browse",
-            "Filter": "Which fields should be returned '*' for all.",
+            "Filter": "Which fields should be returned `*` for all.",
             "StartingIndex": "Paging, where to start",
-            "RequestedCount": "Paging, number of items",
-            "SortCriteria": "Sort the results based on metadata fields. '+upnp:artist,+dc:title' for sorting on artist then on title."
+            "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does restrict the number of items being searched (filter) but only the number being returned. ",
+            "SortCriteria": "Sort the results based on metadata fields. `+upnp:artist,+dc:title` for sorting on artist then on title.",
+            "Result": "Encoded DIDL-Lite XML. See remark (2)"
           },
-          "remarks": "Some libraries support a BrowseAndParse, so you don't have to parse the xml."
+          "remarks": "(1) If the title contains an apostrophe the returned uri will contain a `&apos;`. (2) Some libraries support a BrowseAndParse, so you don't have to parse the xml."
         }
       },
       "errors": [
@@ -222,13 +251,25 @@
         { "code": 716, "description": "Transfer busy" },
         { "code": 717, "description": "No such file transfer" },
         { "code": 718, "description": "No such destination resource" },
-        { "code": 719, "description": "Destinaton resource access denied" },
+        { "code": 719, "description": "Destination resource access denied" },
         { "code": 720, "description": "Cannot process the request" }
       ]
     },
     "DevicePropertiesService": {
-      "description": "Modify device properties, like led status and stereo pairs",
+      "description": "Modify device properties, like LED status and stereo pairs",
       "actions": {
+        "GetButtonLockState": {
+          "description": "Get the current button lock state",
+          "params": {
+            "CurrentButtonLockState": "Button lock state as `On` or `Off`"
+          }
+        },
+        "GetLEDState": {
+          "description": "Get the current LED state",
+          "params": {
+            "CurrentLEDState": "LED state as `On` or `Off`"
+          }
+        },
         "CreateStereoPair": {
           "description": "Create a stereo pair (left, right speakers), right one becomes hidden",
           "params": {
@@ -242,52 +283,67 @@
             "ChannelMapSet": "example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF"
           },
           "remarks": "No all speakers support StereoPairs"
+        },
+        "SetButtonLockState": {
+          "description": "Set the button lock state",
+          "params": {
+            "DesiredButtonLockState": "Desired state as `On` or `Off`"
+          }
+        },
+        "SetLEDState": {
+          "description": "Set the LED state",
+          "params": {
+            "DesiredLEDState": "Desired state as `On` or `Off`"
+          }
         }
       }
     },
+    "GroupManagementService": {
+      "description": "Services related to groups"
+    },
     "GroupRenderingControlService": {
-      "description": "Volume related controls for groups. Group volume is the average volume of all players. Snapshot stores the volume ratio between players.",
+      "description": "Volume related controls for groups",
       "actions": {
         "GetGroupMute": {
-          "description": "Whether or not the group is muted.",
-          "remarks": "Sould be send to coordinator only"
+          "description": "Get the group mute state.",
+          "remarks": "Should be send to coordinator only"
         },
         "GetGroupVolume": {
           "description": "Get the group volume.",
-          "remarks": "Sould be send to coordinator only"
+          "remarks": "Should be send to coordinator only"
         },
         "SetGroupMute": {
           "description": "(Un-/)Mute the entire group",
-          "remarks": "Sould be send to coordinator only",
-          "params": {
-            "DesiredMute": "True for mute, false for un-mute"
-          }
+          "remarks": "Should be send to coordinator only"
         },
         "SetGroupVolume": {
           "description": "Change group volume. Players volume will be changed proportionally based on last snapshot",
-          "remarks": "Sould be send to coordinator only",
+          "remarks": "Should be send to coordinator only",
           "params": {
             "DesiredVolume": "New volume between 0 and 100"
           }
         },
         "SetRelativeGroupVolume": {
           "description": "Relatively change group volume - returns final group volume. Players volume will be changed proportionally based on last snapshot",
-          "remarks": "Sould be send to coordinator only",
+          "remarks": "Should be send to coordinator only",
           "params": {
             "Adjustment": "Number between -100 and +100"
           }
         }, 
         "SnapshotGroupVolume": {
           "description": "Creates a new group volume snapshot,  the volume ratio between all players. It is used by SetGroupVolume and SetRelativeGroupVolume",
-          "remarks": "Sould be send to coordinator only"
+          "remarks": "Should be send to coordinator only"
         }
       },
       "errors": [
         { "code": 701, "description": "Player isn't the coordinator" }
       ]
     },
+    "HTControlService": {
+      "description": "Service related to the TV remote control"
+    },
     "MusicServicesService": {
-      "description": "External music services",
+      "description": "Access to external music services, like Spotify or Youtube Music",
       "actions": {
         "ListAvailableServices": {
           "description": "Load music service list as xml",
@@ -298,6 +354,9 @@
     "QueueService": {
       "description": "Modify and browse queues"
     },
+    "QPlayService": {
+      "description": "Services related to Chinese Tencent Qplay service"
+    },
     "RenderingControlService": {
       "description": "Volume related controls",
       "actions": {
@@ -305,11 +364,12 @@
           "description": "Get bass level between -10 and 10"
         },
         "GetEQ": {
-          "description": "Get EQ value (see SetEQ) for different EQTypes",
+          "description": "Get EQ value 'Subgain' between -10 and 10",
           "params": {
-            "EQType": "EQ type such as DialogLevel, NightMode, SubGain"
+            "EQType": "EQ type such as `DialogLevel`, `NightMode`, `SubGain`",
+            "CurrentValue": "Subgain number between -10 and 10, DialogLevel and Nightmode 1 for true 0 for false"
           },
-          "remarks": "Not supported by all speakers, TV related"
+          "remarks": "Not all EQ types are available on every speaker"
         },
         "GetLoudness": {
           "description": "Whether or not Loudness is on",
@@ -318,33 +378,31 @@
           }
         },
         "GetTreble": {
-          "description": "Get treble, between -10 and 10"
+          "description": "Get treble",
+          "params": {
+            "CurrentTreble": "Number between -10 and 10"
+          }
         },
         "GetVolume": {
-          "description": "Get volume, between 0 and 100",
+          "description": "Get volume",
           "params": {
-            "Channel": "Master"
+            "Channel": "Master",
+            "CurrentVolume": "Number between 0 and 100"
           }
         },
         "SetBass": {
-          "description": "Set bass level",
-          "params": {
-            "DesiredBass": "between -10 and 10"
-          }
+          "description": "Set bass level, between -10 and 10"
         },
         "SetEQ": {
           "description": "Set EQ value for different types",
           "params": {
             "EQType": "DialogLevel, NightMode, SubGain",
-            "DesiredValue": "DialogLevel and NightMode: 0 for off, 1 for on. SubGain between -10 and 10"
+            "DesiredValue": "SubGain between -10 and 10, 1 or 0 for others"
           },
           "remarks": "Not supported by all speakers, TV related"
         },
         "SetLoudness": {
-          "description": "Set loudness on / off",
-          "params": {
-            "DesiredLoudness": "true for on"
-          }
+          "description": "Set loudness on / off"
         },
         "SetTreble": {
           "description": "Set treble level",
@@ -355,14 +413,14 @@
       }
     },
     "SystemPropertiesService": {
-      "description": "Manage system-wide settings, mainly account stuff.",
+      "description": "Manage system-wide settings, mainly account stuff",
       "actions": {
         "GetString": {
           "description": "Get a saved string.",
           "params": {
             "VariableName": "The key for this variable"
           },
-          "remarks": "Strings are saved in the system with SetString, every speaker should send the same data. Will error when not existing"
+          "remarks": "Strings are saved in the system with SetString, every speaker should return the same data. Will error when not existing"
         },
         "Remove": {
           "description": "Remove a saved string",
@@ -381,13 +439,16 @@
       }
     },
     "ZoneGroupTopologyService": {
-      "description": "Zone config stuff, eg getting all the configured sonos zones.",
+      "description": "Zone config stuff, eg getting all the configured sonos zones",
       "actions": {
         "GetZoneGroupAttributes": {
           "description": "Get information about the current Zone"
         },
         "GetZoneGroupState": {
           "description": "Get all the Sonos groups, (as XML)",
+          "params": {
+            "ZoneGroupState": "xml string, see remarks"
+          },
           "remarks": "Some libraries also support GetParsedZoneGroupState that parses the xml for you."
         }
       }
@@ -405,7 +466,7 @@
     { "code": 602, "description": "Optional action not implemented" },
     { "code": 603, "description": "Out of memory" },
     { "code": 604, "description": "Human intervention required" },
-    { "code": 605, "description": "Sring argument too long" },
+    { "code": 605, "description": "String argument too long" },
     { "code": 606, "description": "Action not authorized" },
     { "code": 607, "description": "Signature failure" },
     { "code": 608, "description": "Signature missing" },
