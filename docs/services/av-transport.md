@@ -1,14 +1,14 @@
 ---
 layout: default
-title: AVTransportService
-parent: Sonos UPNP
+title: AVTransport
+parent: Sonos Services
 ---
-# AVTransportService
+# AVTransport service
 {: .no_toc }
 
 Service that controls stuff related to transport (play/pause/next/special urls)
 
-The AVTransportService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The AVTransport service is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -29,7 +29,7 @@ The AVTransportService is available on these models: `Sonos One (S13) S2` / `Son
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /MediaRenderer/AVTransport/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:AVTransport:1#{ActionName}"
@@ -69,7 +69,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **UpdateID** | `ui4` |  |
 | **NumberOfURIs** | `ui4` |  |
 | **EnqueuedURIs** | `string` |  |
@@ -108,7 +108,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EnqueuedURI** | `string` |  |
 | **EnqueuedURIMetaData** | `string` |  |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` | use `0` to add at the end or `1` to insert at the beginning |
@@ -143,7 +143,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ObjectID** | `string` |  |
 | **UpdateID** | `ui4` |  |
 | **EnqueuedURI** | `string` |  |
@@ -172,7 +172,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 ### BecomeCoordinatorOfStandaloneGroup
 
@@ -190,7 +190,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -224,7 +224,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CurrentCoordinator** | `string` |  |
 | **CurrentGroupID** | `string` |  |
 | **OtherMembers** | `string` |  |
@@ -263,7 +263,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CurrentCoordinator** | `string` |  |
 | **CurrentGroupID** | `string` |  |
 | **OtherMembers** | `string` |  |
@@ -295,7 +295,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CurrentCoordinator** | `string` |  |
 | **NewCoordinator** | `string` |  |
 | **NewTransportSettings** | `string` |  |
@@ -317,7 +317,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NewTransportSettings** | `string` |  |
 | **CurrentAVTransportURI** | `string` |  |
 
@@ -338,7 +338,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NewSleepTimerDuration** | `string` | Time to stop after, as `hh:mm:ss` or empty string to cancel |
 
 **Remarks** Send to non-coordinator returns error code 800
@@ -360,7 +360,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Title** | `string` |  |
 | **EnqueuedURI** | `string` |  |
 | **EnqueuedURIMetaData** | `string` |  |
@@ -392,7 +392,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NewCoordinator** | `string` | uuid of the new coordinator - must be in same group |
 | **RejoinGroup** | `boolean` | Should former coordinator rejoin the group? Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -412,7 +412,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 ### GetCrossfadeMode
 
@@ -430,7 +430,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -456,7 +456,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -480,7 +480,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -506,7 +506,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -538,7 +538,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -569,7 +569,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -594,7 +594,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -620,7 +620,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -648,7 +648,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -675,7 +675,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 **Remarks** Possibly not supported at the moment see GetCurrentTransportActions
 
@@ -694,7 +694,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **DeletedURI** | `string` |  |
 
 ### Pause
@@ -713,7 +713,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 ### Play
 
@@ -732,7 +732,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Speed** | `string` | Play speed usually 1, can be a fraction of 1 Allowed values: `1` |
 
 ### Previous
@@ -751,7 +751,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 **Remarks** Possibly not supported at the moment see GetCurrentTransportActions
 
@@ -771,7 +771,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 **Remarks** If queue is already empty it throw error 804. Send to non-coordinator returns error code 800.
 
@@ -791,7 +791,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ObjectID** | `string` |  |
 | **UpdateID** | `ui4` |  |
 
@@ -814,7 +814,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **UpdateID** | `ui4` | Leave blank |
 | **StartingIndex** | `ui4` | between 1 and queue-length |
 | **NumberOfTracks** | `ui4` |  |
@@ -843,7 +843,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **StartingIndex** | `ui4` |  |
 | **NumberOfTracks** | `ui4` |  |
 | **InsertBefore** | `ui4` |  |
@@ -867,7 +867,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ObjectID** | `string` |  |
 | **UpdateID** | `ui4` |  |
 | **TrackList** | `string` |  |
@@ -903,7 +903,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **AlarmID** | `ui4` |  |
 | **LoggedStartTime** | `string` |  |
 | **Duration** | `string` |  |
@@ -931,7 +931,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Title** | `string` | SONOS playlist title |
 | **ObjectID** | `string` | Leave blank |
 
@@ -961,7 +961,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Unit** | `string` | What to seek Allowed values: `TRACK_NR` / `REL_TIME` / `TIME_DELTA` |
 | **Target** | `string` | Position of track in queue (start at 1) or `hh:mm:ss` for `REL_TIME` or `+/-hh:mm:ss` for `TIME_DELTA` |
 
@@ -985,7 +985,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CurrentURI** | `string` | The new TransportURI - its a special SONOS format |
 | **CurrentURIMetaData** | `string` | Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri |
 
@@ -1008,7 +1008,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CrossfadeMode** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 **Remarks** Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode.
@@ -1029,7 +1029,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NextURI** | `string` |  |
 | **NextURIMetaData** | `string` |  |
 
@@ -1050,7 +1050,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NewPlayMode** | `string` | New playmode Allowed values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 
 **Remarks** Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.
@@ -1072,7 +1072,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Duration** | `string` | Snooze time as `hh:mm:ss`, 10 minutes = 00:10:00 |
 
 ### StartAutoplay
@@ -1094,7 +1094,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ProgramURI** | `string` |  |
 | **ProgramMetaData** | `string` |  |
 | **Volume** | `ui2` |  |
@@ -1117,7 +1117,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 ## Events
 
@@ -1125,7 +1125,7 @@ The AVTransportService has variables that might be emitted if you subscribe to e
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /MediaRenderer/AVTransport/Event
 Host: 192.168.x.x:1400
 callback: <http://...>

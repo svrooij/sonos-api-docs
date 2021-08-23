@@ -1,14 +1,14 @@
 ---
 layout: default
-title: HTControlService
-parent: Sonos UPNP
+title: HTControl
+parent: Sonos Services
 ---
-# HTControlService
+# HTControl service
 {: .no_toc }
 
 Service related to the TV remote control
 
-The HTControlService is available on these models: `Sonos Beam (S14) S2` / `Sonos Playbar (S9) S1`.
+The HTControl service is available on these models: `Sonos Beam (S14) S2` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -29,7 +29,7 @@ The HTControlService is available on these models: `Sonos Beam (S14) S2` / `Sono
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /HTControl/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:HTControl:1#{ActionName}"
@@ -186,7 +186,7 @@ The HTControlService has variables that might be emitted if you subscribe to eve
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /HTControl/Event
 Host: 192.168.x.x:1400
 callback: <http://...>

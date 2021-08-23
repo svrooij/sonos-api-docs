@@ -1,14 +1,14 @@
 ---
 layout: default
-title: MusicServicesService
-parent: Sonos UPNP
+title: MusicServices
+parent: Sonos Services
 ---
-# MusicServicesService
+# MusicServices service
 {: .no_toc }
 
 Access to external music services, like Spotify or Youtube Music
 
-The MusicServicesService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The MusicServices service is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -29,7 +29,7 @@ The MusicServicesService is available on these models: `Sonos One (S13) S2` / `S
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /MusicServices/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:MusicServices:1#{ActionName}"
@@ -111,7 +111,7 @@ The MusicServicesService has variables that might be emitted if you subscribe to
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /MusicServices/Event
 Host: 192.168.x.x:1400
 callback: <http://...>
