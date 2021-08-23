@@ -7,7 +7,12 @@ has_toc: false
 
 # Sonos communication
 
-If you want to communicate with your sonos speakers on your local network you're forced to use SOAP in most cases.
+To communicate with your Sonos speakers on your local network use:
+
+- SOAP to call the SONOS services at port 1400 and subscribe to events [see services](#sonos-services)
+- HTTP requests at port 1400 to scrape the UPnP service information or get a simple device status information [see http requests](#http-endpoints)
+- UDP Datagram and Simple Service Discovery Protocol (SSDP) at port 1900 to discover SONOS player [see auto discovery](#auto-discovery)
+- New secure RestURL at `https://{ip}:1443/api` (not covered in this documentation)
 
 ## Sonos Services
 
@@ -95,3 +100,33 @@ Generic error (when deleting an alarm that doesn't exists) body (HTTP status cod
 ```
 
 Sometimes you're getting a more specific error code, we tried describing all of them in the [documentation.json](https://github.com/svrooij/sonos-api-docs/blob/main/docs/documentation.json)
+
+## HTTP Endpoints
+
+Apart from the soap services, sonos also has some http endpoints available where you can get extra information:
+
+| URL | Description |
+| --- | ----------- |
+| `http://{ip}:1400/status/info` | playerId, serialNumber, groupId, householdId, capabilities, versions and more (JSON format) |
+| `http://{ip}:1400/status` | several additional connection information |
+| `http://{ip}:1400/status/batterystatus` | battery status for devices with battery (JSON format) |
+| `http://{ip}:1400/region.htm` | to select a Wifi region out of USA/Canada, EU, CHINA, JAPAN, ISRAEL, RUSSIA, SOUTH KOREA |
+| `http://{ip}:1400/support/review` | a list of all players with playerID and links to more information |
+| `http://{ip}:1400/xml/device_description.xml` | Sonos services description, used by the [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) |
+
+## Auto discovery
+
+Each sonos speaker can be discovered by the [SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) or **Simple Service Discovery Protocol**.
+In short each speaker listens for a `ssdp:discovery` command. 
+
+Which is actually just a simple UDP packet send to port `1900` on multicast address `239.255.255.250` and `255.255.255.255` with the following body:
+
+```text
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: ssdp:discover
+MX: 1
+ST: urn:schemas-upnp-org:device:ZonePlayer:1
+```
+
+By sending a this UDP multicast packet, you will get a response from all speakers available on your network. See [sonos-device-discovery.ts](https://github.com/svrooij/node-sonos-ts/blob/master/src/sonos-device-discovery.ts) for a sample on how to do that in TypeScript/Node. That should give you some pointers on how to do that in another language.
