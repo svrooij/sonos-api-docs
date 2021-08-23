@@ -519,7 +519,7 @@ Outputs:
 | **NextURI** | `string` |  |
 | **NextURIMetaData** | `string` |  |
 | **PlayMedium** | `string` |  Possible values: `NONE` / `NETWORK` |
-| **RecordMedium** | `string` |  Possible values:  |
+| **RecordMedium** | `string` |  Possible values: `NONE` |
 | **WriteStatus** | `string` |  |
 
 ### GetPositionInfo
@@ -628,7 +628,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **CurrentTransportState** | `string` |  Possible values: `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` |
 | **CurrentTransportStatus** | `string` |  |
-| **CurrentSpeed** | `string` |  Possible values:  |
+| **CurrentSpeed** | `string` |  Possible values: `1` |
 
 **Remarks** Send to non-coordinator always returns PLAYING
 
@@ -733,7 +733,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be 0 |
-| **Speed** | `string` | Play speed usually 1, can be a fraction of 1 Allowed values:  |
+| **Speed** | `string` | Play speed usually 1, can be a fraction of 1 Allowed values: `1` |
 
 ### Previous
 
@@ -1173,7 +1173,7 @@ Timeout: Second-3600
 | PossibleRecordStorageMedia |  | `string` |  |
 | QueueUpdateID |  | `ui4` |  |
 | RecordMediumWriteStatus |  | `string` |  |
-| RecordStorageMedium |  | `string` |  |
+| RecordStorageMedium |  | `string` | `NONE` |
 | RelativeCounterPosition |  | `i4` |  |
 | RelativeTimePosition |  | `string` |  |
 | RestartPending |  | `boolean` |  `1` for true and `0` for false  |
@@ -1183,7 +1183,7 @@ Timeout: Second-3600
 | TransportErrorHttpCode |  | `string` |  |
 | TransportErrorHttpHeaders |  | `string` |  |
 | TransportErrorURI |  | `string` |  |
-| TransportPlaySpeed |  | `string` |  |
+| TransportPlaySpeed |  | `string` | `1` |
 | TransportState |  | `string` | `STOPPED` / `PLAYING` / `PAUSED_PLAYBACK` / `TRANSITIONING` |
 | TransportStatus |  | `string` |  |
 
