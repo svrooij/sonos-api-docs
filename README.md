@@ -1,10 +1,13 @@
-# sonos-api-docs
+# Unofficial Sonos docs
+
+[![Sonos api documentation][badge_sonos-docs]][link_sonos-docs]
+[![Sonos2mqtt][badge_sonos-mqtt]][link_sonos-mqtt]
+[![Sonos cli][badge_sonos-cli]][link_sonos-cli]
+[![Sonos typescript this library][badge_sonos-typescript]][link_sonos-typescript]
+[![Join us on Discord][badge_discord]][link_discord]
+[![Support me on Github][badge_sponsor]][link_sponsor]
 
 Sonos api documentation for the local UPNP api and a [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) to generate clients and documentation based on service discovery
-
-[![Join us on Discord][badge_discord]][link_discord]
-[![github issues][badge_issues]][link_issues]
-[![Support me on Github][badge_sponsor]][link_sponsor]
 
 This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). It's just a set of text files to document a hidden and **unsupported** api.
 
@@ -12,34 +15,31 @@ This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). I
 
 Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api-docs/services/](https://svrooij.io/sonos-api-docs/services/)
 
-### Manual documentation file
+[![Sonos api documentation][badge_sonos-docs]][link_sonos-docs]
 
-We cannot get all the information by using service discovery, there is one file that we manually edit to document some the actions (accepting pull-request to improve).
+[Read documentation](https://svrooij.io/sonos-api-docs)
 
-- View/edit source [source documentation.json](https://github.com/svrooij/sonos-api-docs/blob/main/docs/documentation.json)
-- Download [documentation.json](http://svrooij.io/sonos-api-docs/documentation.json)
+### Manually documented
 
-This file has a [documentation json schema](https://svrooij.io/sonos-api-docs/schema/documentation.json) which means VS Code will guide you when editing this file.
-
-## Generator
-
-You can find the generator [here](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) and use it to generate your own sonos client in your preferred language.
+The [sonos services](https://svrooij.io/sonos-api-docs/services/) have no documentation, that is way we manually created a [documentation.json](http://svrooij.io/sonos-api-docs/documentation.json) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
 
 ### Device discovery files
 
 You can use the generator to generate your own discovery files, but we also have the files available for download.
 
-- [Sonos Play:1 - software generation 1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-1.json)
-- [Sonos Play:5 - software generation 1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S5-1.json)
-- [Sonos Playbar - software generation 1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-1.json)
+| Player | Discovery file(s) |
+| ------ | ----------------- |
+| Sonos Play:1 | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-1.json) - [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-2.json) |
+| Sonos Play:3 | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S3-2.json) |
+| Sonos Play:5 (old) | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S5-1.json) |
+| Sonos Play:5 (new) | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S6-2.json) |
+| Sonos Playbar | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-1.json) |
+| Sonos One | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S13-2.json) |
+| Sonos Beam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S14-2.json) |
+| Sonos Roam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S27-2.json) |
+| Sonos Sub | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-Sub-2.json) |
 
 These files toghether with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
-
-### Templates
-
-The generator uses [handlebars.js templates](https://handlebarsjs.com/) to generate the documentation/strong typed clients. Check-out the [docs template](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs) as a sample to develop your own templates.
-
-A template is a folder with a [template.json](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs/template.json) file, that describes the template and specifies what templates should be used to either generate an index (all services in a single file), or a seperate file for each service.
 
 ## Community
 
@@ -73,10 +73,18 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
 specification. Contributions of any kind welcome!
 
-[badge_discord]: https://img.shields.io/discord/782374564054564875
-[badge_issues]: https://img.shields.io/github/issues/svrooij/sonos-api-docs
-[badge_sponsor]: https://img.shields.io/badge/Sponsor-on%20Github-red
+[badge_discord]: https://img.shields.io/discord/782374564054564875?style=flat-square
+[badge_issues]: https://img.shields.io/github/issues/svrooij/node-sonos-ts?style=flat-square
+[badge_sonos-cli]: https://img.shields.io/badge/sonos-cli-blue?style=flat-square
+[badge_sonos-docs]: https://img.shields.io/badge/sonos-api-blue?style=flat-square
+[badge_sonos-mqtt]: https://img.shields.io/badge/sonos-mqtt-blue?style=flat-square
+[badge_sonos-typescript]: https://img.shields.io/badge/sonos-typescript-blue?style=flat-square
+[badge_sponsor]: https://img.shields.io/badge/Sponsor-on%20Github-red?style=flat-square
 
 [link_discord]: https://discord.gg/ZUdEuhh5RF
 [link_sponsor]: https://github.com/sponsors/svrooij
 [link_issues]: https://github.com/svrooij/sonos-api-docs/issues
+[link_sonos-cli]: https://github.com/svrooij/sonos-cli
+[link_sonos-docs]: https://svrooij.io/sonos-api-docs
+[link_sonos-mqtt]: https://svrooij.io/sonos2mqtt
+[link_sonos-typescript]: https://svrooij.io/node-sonos-ts
