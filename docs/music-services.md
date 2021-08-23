@@ -17,7 +17,7 @@ Figuring out the authencation details tooks me a lot of time. If you're using th
 
 ## Disclaimer
 
-The documentation on this page should allow you to browse external music services with an trith party application. You'll still need to connect the service to your speaker with a supported sonos application to be able to play music from this service.
+The documentation on this page should allow you to browse external music services with an third party application. You'll still need to connect the service to your speaker with a supported Sonos application to be able to play music from this service.
 
 The provided documentation is "as-is", I'm not taking any responsibility. Don't try to pirate music using the data provided here. Most services encrypt the songs anyway.
 
@@ -118,19 +118,19 @@ The music services can choose between the following methods of authentication, S
 
 After login in with **DeviceLink** or **AppLink**, you should have a **Key** and a **Token**, these are valid for at least an hour, sometimes much longer.
 
-> If the key an token became invalid and you're trying to use them, you will get a new key and token in the response body in the soap error message and should retry the request (with the new key and token).
+If the key an token became invalid and you're trying to use them, you will get a new key and token in the response body in the soap error message and should retry the request (with the new key and token).
 
 For every authenticated request you'll need the following data from your sonos speaker.
 
-- `%DEVICE_ID%` - Load this string from the [SystemProperties Service](https://svrooij.io/sonos-api-docs/services/system-properties.html#getstring) with the **GetString** method, supplying `R_TrialZPSerial`.
-- `%HOUSEHOLD_ID%` - Load this from the [DeviceProperties service](https://svrooij.io/sonos-api-docs/services/device-properties.html#gethouseholdid).
-- `%KEY%` - Got with **AppLink** or **DeviceLink**
-- `%TOKEN%` - Got with **AppLink** or **DeviceLink**
-- `%ACTION%` - The name of the action
+- `{DEVICE_ID}` - Load this string from the [SystemProperties Service](/services/system-properties.html#getstring) with the **GetString** method, supplying `R_TrialZPSerial`.
+- `{HOUSEHOLD_ID}` - Load this from the [DeviceProperties service](/services/device-properties.html#gethouseholdid).
+- `{KEY}` - Got with **AppLink** or **DeviceLink**
+- `{TOKEN}` - Got with **AppLink** or **DeviceLink**
+- `{ACTION_NAME}` - The name of the action
 
 Then it's like every other soap call to the sonos device, do a **POST** soap request to the `MusicService -> SecureURI` with the following HTTP headers.
 
-```plain
+```text
 SOAP-Action: "http://www.sonos.com/Services/1.1#%ACTION%"
 Content-Type: text/xml; charset=utf8
 Accept-Lanugage: en-US
@@ -140,6 +140,7 @@ User-Agent: Linux UPnP/1.0 Sonos/29.3-87071 (ICRU_iPhone7,1); iOS/Version 8.2 (B
 
 And the following body (with the action body inside off-course):
 
+{% raw %}
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:s="http://www.sonos.com/Services/1.1">
   <soap:Header>
@@ -147,22 +148,22 @@ And the following body (with the action body inside off-course):
       <s:timezone>+01:00</s:timezone>
     </s:context>
     <s:credentials>
-      <s:deviceId>%DEVICE_ID%</s:deviceId>
+      <s:deviceId>{DEVICE_ID}</s:deviceId>
       <s:loginToken>
-        <s:token>%TOKEN%</s:token>
-        <s:key>%KEY%</s:key>
-        <s:householdId>%HOUSEHOLD_ID%</s:householdId>
+        <s:token>{TOKEN}</s:token>
+        <s:key>{KEY}</s:key>
+        <s:householdId>{HOUSEHOLD_ID}</s:householdId>
       </s:loginToken>
     </s:credentials>
   </soap:Header>
   <soap:Body>
-    <s:%ACTION%>
-      ... action body here ...
-    </s:%ACTION>
+    <s:{ACTION_NAME}>
+      {ACTION_BODY}
+    </s:{ACTION_NAME}>
   </soap:Body>
 </soap:Envelope>
 ```
-
+{% endraw %}
 
 ### Authentication - Save tokens in device
 
@@ -172,14 +173,14 @@ Since you'll need to save the key and token somewhere, why not use the [SystemPr
 
 To do **AppLink** authentication you'll need to load the following values from the sonos speaker. These values are needed for **every** request to the service.
 
-- `%DEVICE_ID%` - Load this string from the [SystemProperties Service](https://svrooij.io/sonos-api-docs/services/system-properties.html#getstring) with the **GetString** method, supplying `R_TrialZPSerial`.
-- `%HOUSEHOLD_ID%` - Load this from the [DeviceProperties service](https://svrooij.io/sonos-api-docs/services/device-properties.html#gethouseholdid).
+- `{DEVICE_ID}` - Load this string from the [SystemProperties Service](https://svrooij.io/sonos-api-docs/services/system-properties.html#getstring) with the **GetString** method, supplying `R_TrialZPSerial`.
+- `{HOUSEHOLD_ID}` - Load this from the [DeviceProperties service](https://svrooij.io/sonos-api-docs/services/device-properties.html#gethouseholdid).
 
 #### AppLink - Step 1
 
 Do a **POST** soap request to the `MusicService -> SecureURI` with the following HTTP headers.
 
-```plain
+```text
 SOAP-Action: "http://www.sonos.com/Services/1.1#getAppLink"
 Content-Type: text/xml; charset=utf8
 Accept-Lanugage: en-US
@@ -188,7 +189,7 @@ User-Agent: Linux UPnP/1.0 Sonos/29.3-87071 (ICRU_iPhone7,1); iOS/Version 8.2 (B
 ```
 
 And the following body the following body:
-
+{% raw %}
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:s="http://www.sonos.com/Services/1.1">
   <soap:Header>
@@ -196,21 +197,22 @@ And the following body the following body:
       <s:timezone>+01:00</s:timezone>
     </s:context>
     <s:credentials>
-      <s:deviceId>%DEVICE_ID%</s:deviceId>
+      <s:deviceId>{DEVICE_ID}</s:deviceId>
       <s:loginToken>
         <s:token></s:token>
         <s:key></s:key>
-        <s:householdId>%HOUSEHOLD_ID%</s:householdId>
+        <s:householdId>{HOUSEHOLD_ID}</s:householdId>
       </s:loginToken>
     </s:credentials>
   </soap:Header>
   <soap:Body>
     <s:getAppLink>
-      <s:householdId>%HOUSEHOLD_ID%</s:householdId>
+      <s:householdId>{HOUSEHOLD_ID}</s:householdId>
     </s:getAppLink>
   </soap:Body>
 </soap:Envelope>
 ```
+{% endraw %}
 
 You should get a response that looks like this:
 
@@ -227,7 +229,7 @@ Continue **after** logging-in, with the following request.
 
 Do a **POST** soap request to the `MusicService -> SecureURI` with the following http headers:
 
-```plain
+```text
 SOAP-Action: "http://www.sonos.com/Services/1.1#getDeviceAuthToken"
 Content-Type: text/xml; charset=utf8
 Accept-Lanugage: en-US
@@ -237,6 +239,7 @@ User-Agent: Linux UPnP/1.0 Sonos/29.3-87071 (ICRU_iPhone7,1); iOS/Version 8.2 (B
 
 with the following body:
 
+{% raw %}
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:s="http://www.sonos.com/Services/1.1">
   <soap:Header>
@@ -244,23 +247,24 @@ with the following body:
       <s:timezone>+01:00</s:timezone>
     </s:context>
     <s:credentials>
-      <s:deviceId>%DEVICE_ID%</s:deviceId>
+      <s:deviceId>{DEVICE_ID}</s:deviceId>
       <s:loginToken>
         <s:token></s:token>
         <s:key></s:key>
-        <s:householdId>%HOUSEHOLD_ID%</s:householdId>
+        <s:householdId>{HOUSEHOLD_ID}</s:householdId>
       </s:loginToken>
     </s:credentials>
   </soap:Header>
   <soap:Body>
     <s:getDeviceAuthToken>
-      <s:householdId>%HOUSEHOLD_ID%</s:householdId>
-      <s:linkCode>%linkcode_from_step_1%</s:linkCode>
-      <s:linkDeviceId>%DEVICE_ID%</s:linkDeviceId>
+      <s:householdId>{HOUSEHOLD_ID}</s:householdId>
+      <s:linkCode>{LINKCODE_FROM_STEP_ONE}</s:linkCode>
+      <s:linkDeviceId>{DEVICE_ID}</s:linkDeviceId>
     </s:getDeviceAuthToken>
   </soap:Body>
 </soap:Envelope>
 ```
+{% endraw %}
 
 This will result in a `privateKey` and an `authToken`, these need to be supplied with every request in the `credentials -> loginToken` soap header as `key` and `token`.
 
@@ -272,7 +276,7 @@ This will result in a `privateKey` and an `authToken`, these need to be supplied
 
 Do a **POST** soap request to the `MusicService -> SecureURI` with the following HTTP headers.
 
-```plain
+```text
 SOAP-Action: "http://www.sonos.com/Services/1.1#getDeviceLinkCode"
 Content-Type: text/xml; charset=utf8
 Accept-Lanugage: en-US
@@ -282,6 +286,7 @@ User-Agent: Linux UPnP/1.0 Sonos/29.3-87071 (ICRU_iPhone7,1); iOS/Version 8.2 (B
 
 With the following body:
 
+{% raw %}
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:s="http://www.sonos.com/Services/1.1">
   <soap:Header>
@@ -289,21 +294,22 @@ With the following body:
       <s:timezone>+01:00</s:timezone>
     </s:context>
     <s:credentials>
-      <s:deviceId>%DEVICE_ID%</s:deviceId>
+      <s:deviceId>{DEVICE_ID}</s:deviceId>
       <s:loginToken>
         <s:token></s:token>
         <s:key></s:key>
-        <s:householdId>%HOUSEHOLD_ID%</s:householdId>
+        <s:householdId>{HOUSEHOLD_ID}</s:householdId>
       </s:loginToken>
     </s:credentials>
   </soap:Header>
   <soap:Body>
     <s:getDeviceLinkCode>
-      <s:householdId>%HOUSEHOLD_ID%</s:householdId>
+      <s:householdId>{HOUSEHOLD_ID}</s:householdId>
     </s:getDeviceLinkCode>
   </soap:Body>
 </soap:Envelope>
 ```
+{% endraw %}
 
 This will results in a response with at least the following data:
 

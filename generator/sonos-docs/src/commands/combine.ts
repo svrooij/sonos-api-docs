@@ -218,7 +218,7 @@ export default class Combine extends Command {
               const actionArguments = action?.params ?? {}
               if (actionArguments) {
                 a.inputs?.forEach(i => {
-                  i.description = actionArguments[i.name] ?? (i.name === 'InstanceID' ? 'InstanceID should always be 0' : undefined)
+                  i.description = actionArguments[i.name] ?? (i.name === 'InstanceID' ? 'InstanceID should always be `0`' : undefined)
                 })
                 a.outputs?.forEach(o => {
                   o.description = actionArguments[o.name]
@@ -229,6 +229,14 @@ export default class Combine extends Command {
         }
       }
       s.actions = s.actions?.sort((a: SonosServiceAction, b: SonosServiceAction) => a.name.localeCompare(b.name))
+      // Force allowed values of state variables to be an array
+      if (s.stateVariables) {
+        s.stateVariables.forEach(v => {
+          if (v.allowedValues && !Array.isArray(v.allowedValues)) {
+            v.allowedValues = [v.allowedValues];
+          }
+        })
+      }
     })
     combinedServices.services = combinedServices.services.sort((a: SonosService, b: SonosService) => a.name.localeCompare(b.name))
     cli.action.stop()

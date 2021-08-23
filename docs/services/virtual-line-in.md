@@ -1,12 +1,12 @@
 ---
 layout: default
-title: VirtualLineInService
-parent: Sonos UPNP
+title: VirtualLineIn
+parent: Sonos Services
 ---
-# VirtualLineInService
+# VirtualLineIn service
 {: .no_toc }
 
-The VirtualLineInService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The VirtualLineIn service is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -27,7 +27,7 @@ The VirtualLineInService is available on these models: `Sonos One (S13) S2` / `S
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /MediaRenderer/VirtualLineIn/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:VirtualLineIn:1#{ActionName}"
@@ -193,7 +193,7 @@ The VirtualLineInService has variables that might be emitted if you subscribe to
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /MediaRenderer/VirtualLineIn/Event
 Host: 192.168.x.x:1400
 callback: <http://...>

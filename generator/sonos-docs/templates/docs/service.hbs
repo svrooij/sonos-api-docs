@@ -1,9 +1,9 @@
 ---
 layout: default
-title: {{serviceName}}
-parent: Sonos UPNP
+title: {{name}}
+parent: Sonos Services
 ---
-# {{serviceName}}
+# {{name}} service
 {: .no_toc }
 {{#if description}}
 
@@ -11,7 +11,7 @@ parent: Sonos UPNP
 {{/if}}
 
 {{#if availableAt}}
-The {{serviceName}} is available on these models: {{#each deviceInfo}}`{{modelDescription}} ({{model}}) S{{softwareGeneration}}`{{#unless @last}} / {{/unless}}{{/each}}.
+The {{name}} service is available on these models: {{#each deviceInfo}}`{{modelDescription}} ({{model}}) S{{softwareGeneration}}`{{#unless @last}} / {{/unless}}{{/each}}.
 {{/if}}
 
 1. TOC
@@ -33,7 +33,7 @@ The {{serviceName}} is available on these models: {{#each deviceInfo}}`{{modelDe
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST {{controlURL}}
 Host: 192.168.x.x:1400
 soapaction: "{{serviceType}}#{ActionName}"
@@ -103,7 +103,7 @@ The {{serviceName}} has variables that might be emitted if you subscribe to even
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE {{eventSubURL}}
 Host: 192.168.x.x:1400
 callback: <http://...>

@@ -1,14 +1,14 @@
 ---
 layout: default
-title: RenderingControlService
-parent: Sonos UPNP
+title: RenderingControl
+parent: Sonos Services
 ---
-# RenderingControlService
+# RenderingControl service
 {: .no_toc }
 
 Volume related controls
 
-The RenderingControlService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The RenderingControl service is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -29,7 +29,7 @@ The RenderingControlService is available on these models: `Sonos One (S13) S2` /
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /MediaRenderer/RenderingControl/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:RenderingControl:1#{ActionName}"
@@ -63,7 +63,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -88,7 +88,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EQType** | `string` | EQ type such as `DialogLevel`, `NightMode`, `SubGain` |
 
 Outputs:
@@ -113,7 +113,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -138,7 +138,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -162,7 +162,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` / `SpeakerOnly` |
 
 Outputs:
@@ -185,7 +185,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -207,7 +207,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -230,7 +230,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -254,7 +254,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -279,7 +279,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -303,7 +303,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -327,7 +327,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -356,7 +356,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **RampType** | `string` |  Allowed values: `SLEEP_TIMER_RAMP_TYPE` / `ALARM_RAMP_TYPE` / `AUTOPLAY_RAMP_TYPE` |
 | **DesiredVolume** | `ui2` |  |
@@ -383,7 +383,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -410,7 +410,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EQType** | `string` |  |
 
 ### RestoreVolumePriorToRamp
@@ -428,7 +428,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 ### SetBass
@@ -448,7 +448,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **DesiredBass** | `i2` |  |
 
 ### SetChannelMap
@@ -466,7 +466,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ChannelMap** | `string` |  |
 
 ### SetEQ
@@ -487,7 +487,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EQType** | `string` | DialogLevel, NightMode, SubGain |
 | **DesiredValue** | `i2` | SubGain between -10 and 10, 1 or 0 for others |
 
@@ -511,7 +511,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredLoudness** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -531,7 +531,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` / `SpeakerOnly` |
 | **DesiredMute** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -550,7 +550,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **DesiredFixed** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetRelativeVolume
@@ -569,7 +569,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **Adjustment** | `i4` |  |
 
@@ -594,7 +594,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **RoomCalibrationEnabled** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetRoomCalibrationX
@@ -614,7 +614,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CalibrationID** | `string` |  |
 | **Coefficients** | `string` |  |
 | **CalibrationMode** | `string` |  |
@@ -636,7 +636,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **DesiredTreble** | `i2` | between -10 and 10 |
 
 ### SetVolume
@@ -655,7 +655,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredVolume** | `ui2` |  |
 
@@ -675,7 +675,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredVolume** | `i2` |  |
 
@@ -685,7 +685,7 @@ The RenderingControlService has variables that might be emitted if you subscribe
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /MediaRenderer/RenderingControl/Event
 Host: 192.168.x.x:1400
 callback: <http://...>

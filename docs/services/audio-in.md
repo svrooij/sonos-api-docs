@@ -1,14 +1,14 @@
 ---
 layout: default
-title: AudioInService
-parent: Sonos UPNP
+title: AudioIn
+parent: Sonos Services
 ---
-# AudioInService
+# AudioIn service
 {: .no_toc }
 
 Control line in
 
-The AudioInService is available on these models: `Sonos Play:5 (S6) S2` / `Sonos Play:5 (S5) S1`.
+The AudioIn service is available on these models: `Sonos Play:5 (S6) S2` / `Sonos Play:5 (S5) S1`.
 
 1. TOC
 {:toc}
@@ -29,7 +29,7 @@ The AudioInService is available on these models: `Sonos Play:5 (S6) S2` / `Sonos
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /AudioIn/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:AudioIn:1#{ActionName}"
@@ -179,7 +179,7 @@ The AudioInService has variables that might be emitted if you subscribe to event
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /AudioIn/Event
 Host: 192.168.x.x:1400
 callback: <http://...>

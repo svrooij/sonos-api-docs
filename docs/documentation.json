@@ -220,13 +220,13 @@
       "description": "Browse for local content",
       "actions": {
         "Browse": {
-          "description": "Browse for content. Recommendation: Send one request, check the 'TotalMatches' and - if necessary - do additional requests with higher 'StartingIndex'. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
+          "description": "Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1). Recommendation: Send one request, check the 'TotalMatches' and - if necessary - do additional requests with higher 'StartingIndex'. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
           "params": {
-            "ObjectID": "The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS'] with optionally ':search+query' behind it.",
+            "ObjectID": "The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS', 'S:', 'SQ:', 'FV:2', 'R:0/0', 'R:0/1'] with optionally ':search+query' behind it.",
             "BrowseFlag": "How to browse",
             "Filter": "Which fields should be returned `*` for all.",
-            "StartingIndex": "Paging, where to start",
-            "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does restrict the number of items being searched (filter) but only the number being returned. ",
+            "StartingIndex": "Paging, where to start, usually 0",
+            "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does NOT restrict the number of items being searched (filter) but only the number being returned. ",
             "SortCriteria": "Sort the results based on metadata fields. `+upnp:artist,+dc:title` for sorting on artist then on title.",
             "Result": "Encoded DIDL-Lite XML. See remark (2)"
           },
@@ -259,16 +259,10 @@
       "description": "Modify device properties, like LED status and stereo pairs",
       "actions": {
         "GetButtonLockState": {
-          "description": "Get the current button lock state",
-          "params": {
-            "CurrentButtonLockState": "Button lock state as `On` or `Off`"
-          }
+          "description": "Get the current button lock state"
         },
         "GetLEDState": {
-          "description": "Get the current LED state",
-          "params": {
-            "CurrentLEDState": "LED state as `On` or `Off`"
-          }
+          "description": "Get the current LED state"
         },
         "CreateStereoPair": {
           "description": "Create a stereo pair (left, right speakers), right one becomes hidden",
@@ -285,16 +279,10 @@
           "remarks": "No all speakers support StereoPairs"
         },
         "SetButtonLockState": {
-          "description": "Set the button lock state",
-          "params": {
-            "DesiredButtonLockState": "Desired state as `On` or `Off`"
-          }
+          "description": "Set the button lock state"
         },
         "SetLEDState": {
-          "description": "Set the LED state",
-          "params": {
-            "DesiredLEDState": "Desired state as `On` or `Off`"
-          }
+          "description": "Set the LED state"
         }
       }
     },
@@ -372,10 +360,7 @@
           "remarks": "Not all EQ types are available on every speaker"
         },
         "GetLoudness": {
-          "description": "Whether or not Loudness is on",
-          "params": {
-            "Channel": "Master"
-          }
+          "description": "Whether or not Loudness is on"
         },
         "GetTreble": {
           "description": "Get treble",
@@ -386,7 +371,6 @@
         "GetVolume": {
           "description": "Get volume",
           "params": {
-            "Channel": "Master",
             "CurrentVolume": "Number between 0 and 100"
           }
         },

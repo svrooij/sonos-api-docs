@@ -1,14 +1,14 @@
 ---
 layout: default
-title: GroupRenderingControlService
-parent: Sonos UPNP
+title: GroupRenderingControl
+parent: Sonos Services
 ---
-# GroupRenderingControlService
+# GroupRenderingControl service
 {: .no_toc }
 
 Volume related controls for groups
 
-The GroupRenderingControlService is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The GroupRenderingControl service is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
 
 1. TOC
 {:toc}
@@ -29,7 +29,7 @@ The GroupRenderingControlService is available on these models: `Sonos One (S13) 
 ### Sample request
 {: .no_toc }
 
-```http
+```text
 POST /MediaRenderer/GroupRenderingControl/Control
 Host: 192.168.x.x:1400
 soapaction: "urn:schemas-upnp-org:service:GroupRenderingControl:1#{ActionName}"
@@ -63,7 +63,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -89,7 +89,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 Outputs:
 
@@ -116,7 +116,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **DesiredMute** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 **Remarks** Should be send to coordinator only
@@ -138,7 +138,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **DesiredVolume** | `ui2` | New volume between 0 and 100 |
 
 **Remarks** Should be send to coordinator only
@@ -160,7 +160,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Adjustment** | `i4` | Number between -100 and +100 |
 
 Outputs:
@@ -187,7 +187,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be 0 |
+| **InstanceID** | `ui4` | InstanceID should always be `0` |
 
 **Remarks** Should be send to coordinator only
 
@@ -197,7 +197,7 @@ The GroupRenderingControlService has variables that might be emitted if you subs
 
 ### Subscribe to events
 
-```http
+```text
 SUBSCRIBE /MediaRenderer/GroupRenderingControl/Event
 Host: 192.168.x.x:1400
 callback: <http://...>
