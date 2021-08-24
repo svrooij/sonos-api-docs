@@ -103,16 +103,16 @@ At the moment the following music services are supported.
 
 ## Authentication
 
-Sonos locked down communication with most service, by no longer allowing access to the needed access tokens. Those are (my guess) still saved inside the speakers but no longer accessible to external apps. The methods below allow you to get access to those credentails again.
+Sonos locked down communication with most service, by no longer allowing access to the needed access tokens. Those are (my guess) still saved inside the speakers but no longer accessible to external apps. The methods below allow you to get access to those credentials again.
 
-The music services can choose between the following methods of authentication, Sonos [advices](https://developer.sonos.com/build/content-service-add-features/add-authentication/upgrade-to-oauth/) all partners to migrate to **AppLink** as a way of authenting users.
+The music services can choose between the following methods of authentication, Sonos [advices](https://developer.sonos.com/build/content-service-add-features/add-authentication/upgrade-to-oauth/) all partners to migrate to **AppLink** as a way of authenticating users.
 
 | Policy | Name | Description |
 |:-------|:-----|:------------|
 | `Anonymous` | No authentication | Just works |
 | `UserId` | UserId | Currently not supported by these docs (needs description) |
 | `DeviceLink` | DeviceLink authentication | Somehow you'll need to link your device to the external service. |
-| `AppLink` | AppLink authentication | Looks like the improved DeviceLink authentication. **Recommened by Sonos** |
+| `AppLink` | AppLink authentication | Looks like the improved DeviceLink authentication. **Recommended by Sonos** |
 
 ### Authenticated requests
 

@@ -73,7 +73,7 @@ Outputs:
 
 ### GetEQ
 
-Get EQ value &#x27;Subgain&#x27; between -10 and 10
+Get equalizer value
 
 Action body:
 
@@ -89,13 +89,13 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **EQType** | `string` | EQ type such as `DialogLevel`, `NightMode`, `SubGain` |
+| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient) |
 
 Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentValue** | `i2` | Subgain number between -10 and 10, DialogLevel and Nightmode 1 for true 0 for false |
+| **CurrentValue** | `i2` | Booleans return `1` / `0`, rest number as specified |
 
 **Remarks** Not all EQ types are available on every speaker
 
@@ -139,7 +139,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -280,7 +280,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -471,7 +471,7 @@ Inputs:
 
 ### SetEQ
 
-Set EQ value for different types
+Set equalizer value for different types
 
 Action body:
 
@@ -488,8 +488,8 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **EQType** | `string` | DialogLevel, NightMode, SubGain |
-| **DesiredValue** | `i2` | SubGain between -10 and 10, 1 or 0 for others |
+| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient) |
+| **DesiredValue** | `i2` | Booleans required `1` for true or `0` for false, rest number as specified |
 
 **Remarks** Not supported by all speakers, TV related
 

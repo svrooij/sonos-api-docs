@@ -220,9 +220,9 @@
       "description": "Browse for local content",
       "actions": {
         "Browse": {
-          "description": "Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1). Recommendation: Send one request, check the 'TotalMatches' and - if necessary - do additional requests with higher 'StartingIndex'. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
+          "description": "Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1). Recommendation: Send one request, check the `TotalMatches` and - if necessary - do additional requests with higher `StartingIndex`. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
           "params": {
-            "ObjectID": "The search query, ['A:ARTIST','A:ALBUMARTIST','A:ALBUM','A:GENRE','A:COMPOSER','A:TRACKS','A:PLAYLISTS', 'S:', 'SQ:', 'FV:2', 'R:0/0', 'R:0/1'] with optionally ':search+query' behind it.",
+            "ObjectID": "The search query, (`A:ARTIST` / `A:ALBUMARTIST` / `A:ALBUM` / `A:GENRE` / `A:COMPOSER` / `A:TRACKS` / `A:PLAYLISTS` / `S:` / `SQ:` / `FV:2` / `R:0/0` / `R:0/1`) with optionally `:search+query` behind it.",
             "BrowseFlag": "How to browse",
             "Filter": "Which fields should be returned `*` for all.",
             "StartingIndex": "Paging, where to start, usually 0",
@@ -264,17 +264,23 @@
         "GetLEDState": {
           "description": "Get the current LED state"
         },
+        "GetZoneInfo": {
+          "description": "Get information about this specific speaker",
+          "params": {
+            "HTAudioIn": "SPDIF input, `0` not connected / `2` stereo / `7` Dolby 2.0 / `18` dolby 5.1 / `21` not listening / `22` silence"
+          }
+        },
         "CreateStereoPair": {
           "description": "Create a stereo pair (left, right speakers), right one becomes hidden",
           "params": {
-            "ChannelMapSet": "example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF"
+            "ChannelMapSet": "example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF`"
           },
           "remarks": "No all speakers support StereoPairs"
         },
         "SeparateStereoPair": {
           "description": "Separate a stereo pair",
           "params": {
-            "ChannelMapSet": "example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF"
+            "ChannelMapSet": "example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF`"
           },
           "remarks": "No all speakers support StereoPairs"
         },
@@ -352,10 +358,10 @@
           "description": "Get bass level between -10 and 10"
         },
         "GetEQ": {
-          "description": "Get EQ value 'Subgain' between -10 and 10",
+          "description": "Get equalizer value",
           "params": {
-            "EQType": "EQ type such as `DialogLevel`, `NightMode`, `SubGain`",
-            "CurrentValue": "Subgain number between -10 and 10, DialogLevel and Nightmode 1 for true 0 for false"
+            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient)",
+            "CurrentValue": "Booleans return `1` / `0`, rest number as specified"
           },
           "remarks": "Not all EQ types are available on every speaker"
         },
@@ -378,10 +384,10 @@
           "description": "Set bass level, between -10 and 10"
         },
         "SetEQ": {
-          "description": "Set EQ value for different types",
+          "description": "Set equalizer value for different types",
           "params": {
-            "EQType": "DialogLevel, NightMode, SubGain",
-            "DesiredValue": "SubGain between -10 and 10, 1 or 0 for others"
+            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient)",
+            "DesiredValue": "Booleans required `1` for true or `0` for false, rest number as specified"
           },
           "remarks": "Not supported by all speakers, TV related"
         },
