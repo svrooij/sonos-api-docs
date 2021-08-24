@@ -352,10 +352,10 @@
           "description": "Get bass level between -10 and 10"
         },
         "GetEQ": {
-          "description": "Get EQ value",
+          "description": "Get equalizer value",
           "params": {
-            "EQType": "EQ type such as `DialogLevel`, `NightMode`, `SubGain`",
-            "CurrentValue": "`Subgain` number between -10 and 10, `DialogLevel` and `Nightmode` 1 for true 0 for false"
+            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient)",
+            "CurrentValue": "Booleans return `1` / `0`, rest number as specified"
           },
           "remarks": "Not all EQ types are available on every speaker"
         },
@@ -378,10 +378,10 @@
           "description": "Set bass level, between -10 and 10"
         },
         "SetEQ": {
-          "description": "Set EQ value for different types",
+          "description": "Set equalizer value for different types",
           "params": {
-            "EQType": "DialogLevel, NightMode, SubGain",
-            "DesiredValue": "SubGain between -10 and 10, 1 or 0 for others"
+            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient)",
+            "DesiredValue": "Booleans required `1` for true or `0` for false, rest number as specified"
           },
           "remarks": "Not supported by all speakers, TV related"
         },
