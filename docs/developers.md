@@ -57,7 +57,7 @@ We build a custom [generator](https://github.com/svrooij/sonos-api-docs/tree/mai
 
 ### Discover services from sonos speaker
 
-You can use the generator to generate [device discovery files](/#device-discovery-files). For each model we generated a discovery json, as available on main page. We generate this file by parsing the device discovery document available at `http://{sonos_ip}:1400/xml/device_description.xml`. Not every model has the same services, but it seems that if a service is available it's the same as all other models that have that service.
+You can use the generator to generate [device discovery files]({{ '/#device-discovery-files' | relative_url }}). For each model we generated a discovery json, as available on main page. We generate this file by parsing the device discovery document available at `http://{sonos_ip}:1400/xml/device_description.xml`. Not every model has the same services, but it seems that if a service is available it's the same as all other models that have that service.
 
 (Re)generate discovery files:
 
@@ -98,7 +98,7 @@ npm run intermediate
 
 ### Regenerate documentation
 
-Once you generated the **intermediate.json** file, you can use the generator to (re)generate the [service documentation](/services). This step is mandatory if you changed either the **documentation.json** or if you added/updated one of the discovery files. 
+Once you generated the **intermediate.json** file, you can use the generator to (re)generate the [service documentation]({{ '/services' | relative_url }}). This step is mandatory if you changed either the **documentation.json** or if you added/updated one of the discovery files. 
 
 The resulting files, are **not to be changed manually**, since changes will get lost upon the next generation.
 

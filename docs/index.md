@@ -23,11 +23,11 @@ This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). I
 
 ## Documentation
 
-Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api-docs/services/](services/)
+Check-out the (generated) documentation about all the [SONOS UPNP services]({{'services/' | relative_url }})
 
 ### Manually documented
 
-The [sonos services](https://svrooij.io/sonos-api-docs/services/) have no documentation, that is way we manually created a [documentation.json](/documentation.json) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
+The [sonos services]({{'/services/' | relative_url }}) have no documentation, that is way we manually created a [documentation.json]({{ '/documentation.json' | relative_url }}) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
 
 - View/edit source [source documentation.json](https://github.com/svrooij/sonos-api-docs/blob/main/docs/documentation.json)
 - Download [documentation.json](http://svrooij.io/sonos-api-docs/documentation.json)

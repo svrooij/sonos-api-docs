@@ -16,30 +16,30 @@ To communicate with your Sonos speakers on your local network use:
 
 ## Sonos Services
 
-Each sonos speaker has [several soap services](/services) defined. All which have several actions that can be executed. The documentation of these services is scraped from the discovery file that every sonos speaker has available at `http://{ip}:1400/xml/device_description.xml`.
+Each sonos speaker has [several soap services]({{'services/' | relative_url }}) defined. All which have several actions that can be executed. The documentation of these services is scraped from the discovery file that every sonos speaker has available at `http://{ip}:1400/xml/device_description.xml`.
 
 ## Sonos SOAP remarks
 
 - Sonos communicates booleans as `1` for true and `0` for false. This is something to keep in mind if you see **boolean** somewhere.
-- Some actions (like [ListAlarms](https://svrooij.io/sonos-api-docs/services/alarm-clock.html#listalarms)) return encoded xml as string. Before you can read these, you'll have to decode them and then parse them as XML. Libraries like [node-sonos-ts](https://svrooij.io/node-sonos-ts/sonos-device/services/alarm-clock-service.html#listalarms) provide a way that already parses the the output so you don't have to.
+- Some actions (like [ListAlarms]({{'services/alarm-clock.html#listalarms' | relative_url }})) return encoded xml as string. Before you can read these, you'll have to decode them and then parse them as XML. Libraries like [node-sonos-ts](https://svrooij.io/node-sonos-ts/sonos-device/services/alarm-clock-service.html#listalarms) provide a way that already parses the the output so you don't have to.
 
 ## SOAP call
 
 A SOAP call is just a http request, with some special headers and some xml formatted body. Each request is a `POST` request to some endpoint.
 
-In this sample we described the [SetMute](/services/rendering-control.html#setmute) command.
+In this sample we described the [SetMute]({{ '/services/rendering-control.html#setmute' | relative_url }}) command.
 
 | What | Sample |
 | ---- | ------ |
 | IP of speaker | `192.168.0.31` |
-| [Control endpoint](/services/rendering-control.html#service-data) | `/MediaRenderer/RenderingControl/Control` |
+| [Control endpoint]({{'/services/rendering-control.html#service-data' | relative_url }}) | `/MediaRenderer/RenderingControl/Control` |
 | Service type | `urn:schemas-upnp-org:service:RenderingControl:1`
 
-You can find this information on the page describing one of [many sonos services](/services/).
+You can find this information on the page describing one of [many sonos services]({{'/services/' | relative_url }}).
 
 ### SOAP call Rendering control - SetMute
 
-You do a HTTP `POST` request to the [control endpoint](/services/rendering-control.html#service-data) of the `RenderingControlService`. This service has a service type of `urn:schemas-upnp-org:service:RenderingControl:1` which is needed in the `soapaction` http header and in the soap body. Where you also specify the name of the action `SetMute` in this case.
+You do a HTTP `POST` request to the [control endpoint]({{'/services/rendering-control.html#service-data' | relative_url }}) of the `RenderingControlService`. This service has a service type of `urn:schemas-upnp-org:service:RenderingControl:1` which is needed in the `soapaction` http header and in the soap body. Where you also specify the name of the action `SetMute` in this case.
 
 URL `http://192.168.0.31:1400/MediaRenderer/RenderingControl/Control`
 
