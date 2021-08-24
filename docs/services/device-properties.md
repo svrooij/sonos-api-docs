@@ -95,7 +95,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **ChannelMapSet** | `string` | example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF |
+| **ChannelMapSet** | `string` | example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF` |
 
 **Remarks** No all speakers support StereoPairs
 
@@ -222,7 +222,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentButtonLockState** | `string` | Button lock state as `On` or `Off` Possible values: `On` / `Off` |
+| **CurrentButtonLockState** | `string` |  Possible values: `On` / `Off` |
 
 ### GetButtonState
 
@@ -275,7 +275,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentLEDState** | `string` | LED state as `On` or `Off` Possible values: `On` / `Off` |
+| **CurrentLEDState** | `string` |  Possible values: `On` / `Off` |
 
 ### GetUseAutoplayVolume
 
@@ -435,7 +435,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **ChannelMapSet** | `string` | example: RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF |
+| **ChannelMapSet** | `string` | example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF` |
 
 **Remarks** No all speakers support StereoPairs
 
@@ -509,7 +509,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **DesiredButtonLockState** | `string` | Desired state as `On` or `Off` Allowed values: `On` / `Off` |
+| **DesiredButtonLockState** | `string` |  Allowed values: `On` / `Off` |
 
 ### SetLEDState
 
@@ -527,7 +527,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **DesiredLEDState** | `string` | Desired state as `On` or `Off` Allowed values: `On` / `Off` |
+| **DesiredLEDState** | `string` |  Allowed values: `On` / `Off` |
 
 ### SetUseAutoplayVolume
 

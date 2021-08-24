@@ -73,7 +73,7 @@ Outputs:
 
 ### GetEQ
 
-Get EQ value &#x27;Subgain&#x27; between -10 and 10
+Get EQ value
 
 Action body:
 
@@ -95,7 +95,7 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentValue** | `i2` | Subgain number between -10 and 10, DialogLevel and Nightmode 1 for true 0 for false |
+| **CurrentValue** | `i2` | `Subgain` number between -10 and 10, `DialogLevel` and `Nightmode` 1 for true 0 for false |
 
 **Remarks** Not all EQ types are available on every speaker
 
@@ -139,7 +139,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
@@ -280,7 +280,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **Channel** | `string` | Master Allowed values: `Master` / `LF` / `RF` |
+| **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
 
