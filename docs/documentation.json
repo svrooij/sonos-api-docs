@@ -264,6 +264,12 @@
         "GetLEDState": {
           "description": "Get the current LED state"
         },
+        "GetZoneInfo": {
+          "description": "Get information about this specific speaker",
+          "params": {
+            "HTAudioIn": "SPDIF input, `0` not connected / `2` stereo / `7` Dolby 2.0 / `18` dolby 5.1 / `21` not listening / `22` silence"
+          }
+        },
         "CreateStereoPair": {
           "description": "Create a stereo pair (left, right speakers), right one becomes hidden",
           "params": {

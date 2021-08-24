@@ -320,6 +320,8 @@ Outputs:
 
 ### GetZoneInfo
 
+Get information about this specific speaker
+
 Action body:
 
 ```xml
@@ -341,7 +343,7 @@ Outputs:
 | **MACAddress** | `string` |  |
 | **CopyrightInfo** | `string` |  |
 | **ExtraInfo** | `string` |  |
-| **HTAudioIn** | `ui4` |  |
+| **HTAudioIn** | `ui4` | SPDIF input, `0` not connected / `2` stereo / `7` Dolby 2.0 / `18` dolby 5.1 / `21` not listening / `22` silence |
 | **Flags** | `ui4` |  |
 
 ### RemoveBondedZones
