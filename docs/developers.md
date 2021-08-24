@@ -49,7 +49,7 @@ The [documentation.json](https://github.com/svrooij/sonos-api-docs/blob/main/doc
 This file is used as one of the inputs for the generator.
 It allows us to set a nice description for each service and action. It also offers a way to describe each input/output parameter.
 
-For example [this part](https://github.com/svrooij/sonos-api-docs/blob/25aad3a3a25c029514669869705597df03c2b5d2/docs/documentation.json#L6-L37) is the source for the documentation you see on [this page](/services/alarm-clock.html).
+For example [this part](https://github.com/svrooij/sonos-api-docs/blob/25aad3a3a25c029514669869705597df03c2b5d2/docs/documentation.json#L6-L37) is the source for the documentation you see on [this page]({{ '/services/alarm-clock.html' | relative_url }}).
 
 ## Custom generator
 
