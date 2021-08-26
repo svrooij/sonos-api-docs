@@ -32,6 +32,27 @@
       "tags": ["FHEM"],
       "link": "https://wiki.fhem.de/wiki/SONOS",
       "usesGenerator": false
+    },
+    {
+      "name": "Noson",
+      "description": "(unofficial) Sonos controller for Linux",
+      "tags": ["Noson", "Linux"],
+      "link": "https://github.com/janbar/noson-app",
+      "repository": "https://github.com/janbar/noson-app"
+    },
+    {
+      "name": "Sonos command line (cloud based)",
+      "description": "Sonos CLI that uses the cloud, written in Rust",
+      "link": "https://github.com/mlang/ronor",
+      "tags": ["cli", "Ronor"],
+      "repository": "https://github.com/mlang/ronor"
+    },
+    {
+      "name": "ioBroker.sonos",
+      "description": "Sonos support for ioBroker",
+      "link": "https://github.com/ioBroker/ioBroker.sonos",
+      "repository": "https://github.com/ioBroker/ioBroker.sonos",
+      "tags": ["ioBroker"]
     }
   ],
   "libraries": [
@@ -127,6 +148,21 @@
         "link": "https://github.com/ianr0bkny"
       },
       "usesGenerator": false
+    },
+    {
+      "name": "Sonos for IP-Symcon",
+      "description": "IP-Symcon PHP Modul um Sonos Lautsprecher zu steuern",
+      "repository": "https://github.com/tkugelberg/Sonos",
+      "language": "PHP",
+      "author": {
+        "name": "Thorsten Kugelberg",
+        "link": "https://github.com/tkugelberg"
+      }
+    },
+    {
+      "name": "Sonos API in Java",
+      "repository": "https://github.com/vmichalak/sonos-controller",
+      "language":"Java"
     }            
 
   ]
