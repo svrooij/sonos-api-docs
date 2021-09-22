@@ -43,7 +43,7 @@ jobs:
     defaults:
       run:
         working-directory: generator/sonos-docs
-     steps:
+    steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
