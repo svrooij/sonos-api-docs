@@ -21,7 +21,7 @@ Check-out the (generated) documentation about all the SONOS UPNP services [svroo
 
 ### Manually documented
 
-The [sonos services](https://svrooij.io/sonos-api-docs/services/) have no documentation, that is way we manually created a [documentation.json](http://svrooij.io/sonos-api-docs/documentation.json) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
+The [sonos services](https://svrooij.io/sonos-api-docs/services/) have no documentation, that is why we manually created a [documentation.json](http://svrooij.io/sonos-api-docs/documentation.json) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
 
 ### Device discovery files
 
@@ -39,7 +39,7 @@ You can use the generator to generate your own discovery files, but we also have
 | Sonos Roam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S27-2.json) |
 | Sonos Sub | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-Sub-2.json) |
 
-These files toghether with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
+These files together with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
 
 ## Community
 

@@ -55,5 +55,6 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_JSCPD: false
           VALIDATE_HTML: false
+          FILTER_REGEX_EXCLUDE: .*docs/services/*.md
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
