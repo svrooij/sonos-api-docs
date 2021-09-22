@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - ci-build
     paths:
       - '.github/workflows/generator.yml'
       - 'generator/sonos-docs/src/**/*.ts'

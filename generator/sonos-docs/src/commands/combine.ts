@@ -20,7 +20,7 @@ const sortDeviceInfo = function (a: SonosDiscoveryInfo, b: SonosDiscoveryInfo): 
 }
 
 export default class Combine extends Command {
-  static description = 'Generate intermediate json file by combining the documentation file and the discovered services.'
+  static description = 'Generate combined.json file by combining the documentation file and the discovered services.'
 
   static flags = {
     docsUrl: flags.string({
@@ -44,7 +44,7 @@ export default class Combine extends Command {
     }),
     out: flags.string({
       description: 'Output filename',
-      default: 'data/intermediate.json',
+      default: '.cache/combined.json',
     }),
     help: flags.help({char: 'h'}),
   }
@@ -60,23 +60,23 @@ export default class Combine extends Command {
     if (flags.docsFile) {
       const filename = this.getFullPathAndCreateDirectory(flags.docsFile)
       if (!fs.existsSync(filename)) {
-        return this.error('Documenation file doesn\'t exists!', {exit: 10})
+        return this.error('Documentation file doesn\'t exists!', {exit: 10})
       }
       documentation = JSON.parse(fs.readFileSync(filename).toString()) as SonosServicesDocumentation
       this.log('Loaded local documentation from %s', filename)
     }
 
     if (documentation === undefined) {
-      cli.action.start('Loading documentaton')
+      cli.action.start('Loading documentation')
       const response = await fetch(flags.docsUrl)
       if (!response.ok) {
-        return this.error(`Documentation not dowloaded ${response.statusText}`, {exit: 20})
+        return this.error(`Documentation not downloaded ${response.statusText}`, {exit: 20})
       }
       documentation = (await response.json()) as SonosServicesDocumentation
       cli.action.stop()
     }
 
-    let discoveredServces: SonosDevice[] = []
+    let discoveredServices: SonosDevice[] = []
 
     const models = flags.models.split(',').map(m => `sonos-${m}.json`)
     this.log('Use discovery files', models)
@@ -89,15 +89,15 @@ export default class Combine extends Command {
 
           if (fs.existsSync(filename)) {
             this.debug('Loading service discovery from:', filename)
-            discoveredServces.push(JSON.parse(fs.readFileSync(filename).toString()))
+            discoveredServices.push(JSON.parse(fs.readFileSync(filename).toString()))
           }
         })
       }
     } else {
-      discoveredServces = await Promise.all<SonosDevice>(models.map(async (model): Promise<SonosDevice> => {
+      discoveredServices = await Promise.all<SonosDevice>(models.map(async (model): Promise<SonosDevice> => {
         const response = await fetch(`${flags.discoveryUrl}/${model}`)
         if (response.ok) {
-          return response.json()
+          return response.json() as any as SonosDevice;
         }
         throw new Error(`File from ${response.url} could not be loaded, ${response.statusText}`)
       }))
@@ -105,12 +105,12 @@ export default class Combine extends Command {
 
     cli.action.stop()
 
-    if (discoveredServces.length === 0) {
+    if (discoveredServices.length === 0) {
       return this.error('No discovery files loaded', {exit: 30})
     }
 
     cli.action.start('Combining docs with discovery')
-    const devices = discoveredServces.sort((a, b) => a.model.localeCompare(b.model))
+    const devices = discoveredServices.sort((a, b) => a.model.localeCompare(b.model))
 
     const firstDevice = devices.slice(0, 1)[0]
 
