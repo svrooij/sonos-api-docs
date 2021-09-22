@@ -51,7 +51,8 @@ jobs:
       - name: Install depencencies
         run: npm ci
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        run: npx semantic-release
+        #uses: cycjimmy/semantic-release-action@v2
         id: semantic
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
