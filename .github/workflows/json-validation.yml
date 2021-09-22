@@ -33,4 +33,4 @@ jobs:
       - name: Validate docs/documentation.json
         run: ajv validate -s ./docs/schema/documentation.json -d ./docs/documentation.json
       - name: Validate template json files
-        run: ajv validate -s ./docs/schema/template.json -d ./generator/sonos-docs/templates/**/template.json -r ./docs/schema/author.json
+        run: ajv validate -s ./docs/schema/template.json -d "./generator/sonos-docs/templates/**/template.json" -r ./docs/schema/author.json
