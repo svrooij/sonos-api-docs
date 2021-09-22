@@ -53,6 +53,16 @@
       "link": "https://github.com/ioBroker/ioBroker.sonos",
       "repository": "https://github.com/ioBroker/ioBroker.sonos",
       "tags": ["ioBroker"]
+    },
+    {
+      "name": "Bonob",
+      "description": "Custom sonos music service for self-hosted Navidrome",
+      "link": "https://github.com/simojenki/bonob",
+      "repository": "https://github.com/simojenki/bonob",
+      "author": {
+        "name": "Simon J",
+        "link": "https://github.com/simojenki"
+      }
     }
   ],
   "libraries": [

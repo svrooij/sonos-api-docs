@@ -21,7 +21,7 @@ export default class Musicservices extends Command {
     cli.action.start(`Loading music services from ${args.ip}`)
     const device = new SonosDevice(args.ip);
 
-    const musicServices = await device.MusicServicesList();
+    const musicServices = await device.MusicServicesService.ListAndParseAvailableServices()
     cli.action.stop();
 
     if(flags.saveJson !== undefined) {

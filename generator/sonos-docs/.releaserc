@@ -1,0 +1,3 @@
+{
+  "branches": ['main', 'master', { name: 'ci-build', prerelease: true }]
+}
