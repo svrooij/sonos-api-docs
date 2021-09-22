@@ -23,6 +23,29 @@
     }
   },
   {
+    "Name": "80s80s - REAL 80s Radio",
+    "Version": "1.1",
+    "Uri": "https://sonos80s.regiocast.customers.nuuk.de/wsdl",
+    "SecureUri": "https://sonos80s.regiocast.customers.nuuk.de/wsdl",
+    "ContainerType": "MService",
+    "Capabilities": "513",
+    "Presentation": {
+      "Strings": {
+        "Version": "1",
+        "Uri": "https://sonos80s.regiocast.customers.nuuk.de/sr80s"
+      },
+      "PresentationMap": {
+        "Version": "1",
+        "Uri": "https://sonos80s.regiocast.customers.nuuk.de/pm"
+      }
+    },
+    "Id": 321,
+    "Policy": {
+      "Auth": "Anonymous",
+      "PollInterval": 120
+    }
+  },
+  {
     "Name": "Anghami",
     "Version": "1.1",
     "Uri": "https://api.anghami.com/anghmob/SonosAPI.php",
@@ -114,14 +137,14 @@
     "Uri": "https://sonos.audible.com/smapi",
     "SecureUri": "https://sonos.audible.com/smapi",
     "ContainerType": "MService",
-    "Capabilities": "1095249",
+    "Capabilities": "1160785",
     "Presentation": {
       "Strings": {
         "Version": "5",
         "Uri": "https://sonos.audible.com/smapi/strings.xml"
       },
       "PresentationMap": {
-        "Version": "5",
+        "Version": "6",
         "Uri": "https://sonos.audible.com/smapi/PresentationMap.xml"
       }
     },
@@ -153,7 +176,7 @@
   {
     "Name": "Bandcamp",
     "Version": "1.1",
-    "Uri": "http://sns.bandcamp.com/api/sonos/2/sonos_api",
+    "Uri": "https://sns.bandcamp.com/api/sonos/2/sonos_api",
     "SecureUri": "https://sns.bandcamp.com/api/sonos/2/sonos_api",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -182,8 +205,8 @@
     "Capabilities": "197184",
     "Presentation": {
       "Strings": {
-        "Version": "1",
-        "Uri": "https://sonos1.dev.bookmate.com/resource.xml"
+        "Version": "2",
+        "Uri": "https://sonos.bookmate.com/resource.xml"
       }
     },
     "Id": 307,
@@ -281,6 +304,52 @@
     }
   },
   {
+    "Name": "Convoy Network",
+    "Version": "1.1",
+    "Uri": "https://sonos.convoynetwork.com/musicservice",
+    "SecureUri": "https://sonos.convoynetwork.com/musicservice",
+    "ContainerType": "MService",
+    "Capabilities": "512",
+    "Presentation": {
+      "Strings": {
+        "Version": "1",
+        "Uri": "https://sonos.convoynetwork.com/static/strings.xml"
+      },
+      "PresentationMap": {
+        "Version": "2",
+        "Uri": "https://sonos.convoynetwork.com/static/presentationmap.xml"
+      }
+    },
+    "Id": 315,
+    "Policy": {
+      "Auth": "Anonymous",
+      "PollInterval": 30
+    }
+  },
+  {
+    "Name": "Custom Channels",
+    "Version": "1.1",
+    "Uri": "http://ensemble.customchannels.net/sonos",
+    "SecureUri": "https://ensemble.customchannels.net/sonos",
+    "ContainerType": "MService",
+    "Capabilities": "8704",
+    "Presentation": {
+      "Strings": {
+        "Version": "3",
+        "Uri": "http://ensemble.customchannels.net/sonos/strings.xml"
+      },
+      "PresentationMap": {
+        "Version": "1",
+        "Uri": "http://ensemble.customchannels.net/sonos/pmap.xml"
+      }
+    },
+    "Id": 213,
+    "Policy": {
+      "Auth": "UserId",
+      "PollInterval": 60
+    }
+  },
+  {
     "Name": "Deezer",
     "Version": "1.1",
     "Uri": "http://api.deezer.com/sonos",
@@ -354,7 +423,7 @@
     "Capabilities": "537153",
     "Presentation": {
       "Strings": {
-        "Version": "5",
+        "Version": "6",
         "Uri": "https://web.familystream.com/api/sonos_2.0/str.xml"
       },
       "PresentationMap": {
@@ -461,29 +530,6 @@
     }
   },
   {
-    "Name": "Google Play Music",
-    "Version": "1.1",
-    "Uri": "https://mclients.googleapis.com/music/sonos/wsf/smapi",
-    "SecureUri": "https://mclients.googleapis.com/music/sonos/wsf/smapi",
-    "ContainerType": "MService",
-    "Capabilities": "98899",
-    "Presentation": {
-      "Strings": {
-        "Version": "11",
-        "Uri": "https://mclients.googleapis.com/music/sonos/strings.xml"
-      },
-      "PresentationMap": {
-        "Version": "15",
-        "Uri": "https://www.gstatic.com/play/music/sonosfe/pmap.xml"
-      }
-    },
-    "Id": 151,
-    "Policy": {
-      "Auth": "DeviceLink",
-      "PollInterval": 60
-    }
-  },
-  {
     "Name": "Hearts of Space",
     "Version": "1.1",
     "Uri": "http://sonos.hos.com/SOAP/Server1.2.php",
@@ -530,7 +576,7 @@
     "Version": "1.1",
     "Uri": "https://sonos.ibroadcast.com/",
     "SecureUri": "https://sonos.ibroadcast.com/",
-    "ContainerType": "SoundLab",
+    "ContainerType": "MService",
     "Capabilities": "4198977",
     "Manifest": {
       "Version": "2",
@@ -571,14 +617,14 @@
     "Uri": "https://api-v3.talparad.io/sonos/SMAPI",
     "SecureUri": "https://api-v3.talparad.io/sonos/SMAPI",
     "ContainerType": "MService",
-    "Capabilities": "5050945",
+    "Capabilities": "4522497",
     "Manifest": {
       "Version": "1",
       "Uri": "https://mnfts.ws.sonos.com/p/juke.json"
     },
     "Id": 300,
     "Policy": {
-      "Auth": "AppLink",
+      "Auth": "Anonymous",
       "PollInterval": 120
     }
   },
@@ -689,6 +735,29 @@
     "Policy": {
       "Auth": "UserId",
       "PollInterval": 60
+    }
+  },
+  {
+    "Name": "Murfie",
+    "Version": "1.1",
+    "Uri": "https://murfie.com/sonos/xmlapi",
+    "SecureUri": "https://murfie.com/sonos/xmlapi",
+    "ContainerType": "SoundLab",
+    "Capabilities": "513",
+    "Presentation": {
+      "Strings": {
+        "Version": "9",
+        "Uri": "https://murfie.com/static/sonos/strings1.xml"
+      },
+      "PresentationMap": {
+        "Version": "10",
+        "Uri": "https://murfie.com/static/sonos/presentation_map1.xml"
+      }
+    },
+    "Id": 33,
+    "Policy": {
+      "Auth": "DeviceLink",
+      "PollInterval": 300
     }
   },
   {
@@ -830,6 +899,29 @@
     }
   },
   {
+    "Name": "Piraten.FM",
+    "Version": "1.1",
+    "Uri": "https://piraten.fm/sonos",
+    "SecureUri": "https://piraten.fm/sonos",
+    "ContainerType": "SoundLab",
+    "Capabilities": "512",
+    "Presentation": {
+      "Strings": {
+        "Version": "1",
+        "Uri": "https://piraten.fm/assets/sonos/strings.xml"
+      },
+      "PresentationMap": {
+        "Version": "1",
+        "Uri": "https://piraten.fm/assets/sonos/presentation.xml"
+      }
+    },
+    "Id": 324,
+    "Policy": {
+      "Auth": "Anonymous",
+      "PollInterval": 30
+    }
+  },
+  {
     "Name": "Plex",
     "Version": "1.1",
     "Uri": "https://sonos.plex.tv/v2.2/soap",
@@ -899,29 +991,6 @@
     }
   },
   {
-    "Name": "Primephonic",
-    "Version": "1.1",
-    "Uri": "https://sonos-api.primephonic.com/server.php",
-    "SecureUri": "https://sonos-api.primephonic.com/server.php",
-    "ContainerType": "MService",
-    "Capabilities": "577",
-    "Presentation": {
-      "Strings": {
-        "Version": "1",
-        "Uri": "https://sonos-api.primephonic.com/static/strings.xml"
-      },
-      "PresentationMap": {
-        "Version": "1",
-        "Uri": "https://sonos-api.primephonic.com/static/pm.xml"
-      }
-    },
-    "Id": 301,
-    "Policy": {
-      "Auth": "AppLink",
-      "PollInterval": 60
-    }
-  },
-  {
     "Name": "Qobuz",
     "Version": "1.1",
     "Uri": "http://www.qobuz.com/api.xml/0.3/sonos",
@@ -987,18 +1056,18 @@
   {
     "Name": "radio.net",
     "Version": "1.1",
-    "Uri": "https://api.radio.de/sonos/v1/ws",
-    "SecureUri": "https://api.radio.de/sonos/v1/ws",
+    "Uri": "https://prod.radio-api.net/sonos/v1/ws",
+    "SecureUri": "https://prod.radio-api.net/sonos/v1/ws",
     "ContainerType": "MService",
-    "Capabilities": "889409",
+    "Capabilities": "627201",
     "Presentation": {
       "Strings": {
-        "Version": "1",
-        "Uri": "https://api.radio.de/sonos/v1/strings.xml"
+        "Version": "2",
+        "Uri": "https://prod.radio-api.net/sonos/v1/strings.xml"
       },
       "PresentationMap": {
-        "Version": "1",
-        "Uri": "https://api.radio.de/sonos/v1/presentationmap.xml"
+        "Version": "2",
+        "Uri": "https://prod.radio-api.net/sonos/v1/presentationmap.xml"
       }
     },
     "Id": 264,
@@ -1058,7 +1127,7 @@
     "Version": "1.1",
     "Uri": "https://smapi.radioshop.net/SonosService.svc",
     "SecureUri": "https://smapi.radioshop.net/SonosService.svc",
-    "ContainerType": "SoundLab",
+    "ContainerType": "MService",
     "Capabilities": "512",
     "Presentation": {
       "Strings": {
@@ -1176,13 +1245,13 @@
     "ContainerType": "Preload",
     "Capabilities": "12583425",
     "Manifest": {
-      "Version": "11",
-      "Uri": "https://mnfts.ws.sonos.com/p/sonos-radio.3.json"
+      "Version": "14",
+      "Uri": "https://mnfts.ws.sonos.com/p/sonos-radio.6.json"
     },
     "Id": 303,
     "Policy": {
       "Auth": "Anonymous",
-      "PollInterval": 0
+      "PollInterval": 300
     }
   },
   {
@@ -1279,8 +1348,8 @@
     "ContainerType": "MService",
     "Capabilities": "5310995",
     "Manifest": {
-      "Version": "8",
-      "Uri": "https://mnfts.ws.sonos.com/p/spotify-manifest.json"
+      "Version": "12",
+      "Uri": "https://mnfts.ws.sonos.com/p/spotify-manifest.5.json"
     },
     "Id": 9,
     "Policy": {
@@ -1337,23 +1406,23 @@
   {
     "Name": "Stitcher",
     "Version": "1.1",
-    "Uri": "https://stitcher.com/Service/Sonos/Sonos.php",
-    "SecureUri": "https://stitcher.com/Service/Sonos/Sonos.php",
+    "Uri": "https://api.prod.stitcher.com/Sonos",
+    "SecureUri": "https://api.prod.stitcher.com/Sonos",
     "ContainerType": "MService",
-    "Capabilities": "4675",
+    "Capabilities": "45651",
     "Presentation": {
       "Strings": {
-        "Version": "4",
-        "Uri": "https://stitcher.com/Service/Sonos/stitcher_string.xml"
+        "Version": "5",
+        "Uri": "https://stitcherx-assets.s3.amazonaws.com/sonos/strings.xml"
       },
       "PresentationMap": {
-        "Version": "10",
-        "Uri": "https://stitcher.com/Service/Sonos/stitcher_pmap.xml"
+        "Version": "11",
+        "Uri": "https://stitcherx-assets.s3.amazonaws.com/sonos/pmap.xml"
       }
     },
     "Id": 13,
     "Policy": {
-      "Auth": "UserId",
+      "Auth": "AppLink",
       "PollInterval": 60
     }
   },
@@ -1412,11 +1481,11 @@
     "Capabilities": "70145",
     "Presentation": {
       "Strings": {
-        "Version": "2",
+        "Version": "3",
         "Uri": "https://sonos.playsr.com/assets/strings.xml"
       },
       "PresentationMap": {
-        "Version": "2",
+        "Version": "3",
         "Uri": "https://sonos.playsr.com/assets/presentationmap.xml"
       }
     },
@@ -1470,6 +1539,25 @@
     "Policy": {
       "Auth": "DeviceLink",
       "PollInterval": 30
+    }
+  },
+  {
+    "Name": "toníque",
+    "Version": "1.1",
+    "Uri": "http://sonos.tonique.com/ws",
+    "SecureUri": "https://sonos.tonique.com/ws",
+    "ContainerType": "MService",
+    "Capabilities": "512",
+    "Presentation": {
+      "Strings": {
+        "Version": "3",
+        "Uri": "http://sonos.tonique.com/static/strings"
+      }
+    },
+    "Id": 287,
+    "Policy": {
+      "Auth": "AppLink",
+      "PollInterval": 120
     }
   },
   {
@@ -1581,6 +1669,23 @@
     "Policy": {
       "Auth": "Anonymous",
       "PollInterval": 30
+    }
+  },
+  {
+    "Name": "Yogi Tunes",
+    "Version": "1.1",
+    "Uri": "https://yogi-tunes.ca/server.php",
+    "SecureUri": "https://yogi-tunes.ca/server.php",
+    "ContainerType": "MService",
+    "Capabilities": "4196865",
+    "Manifest": {
+      "Version": "3",
+      "Uri": "https://mnfts.ws.sonos.com/p/yogi.3.json"
+    },
+    "Id": 317,
+    "Policy": {
+      "Auth": "AppLink",
+      "PollInterval": 60
     }
   },
   {

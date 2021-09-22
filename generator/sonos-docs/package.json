@@ -1,8 +1,8 @@
 {
   "name": "@svrooij/sonos-docs",
   "description": "CLI tool to generate documentation for the undocumented sonos api",
-  "version": "0.0.0",
-  "author": "Stephan van Rooij @svrooij",
+  "version": "0.0.0-development",
+  "author": "Stephan van Rooij <sonos@svrooij.io> (https://svrooij.io)",
   "bin": {
     "sonos-docs": "./bin/run"
   },
