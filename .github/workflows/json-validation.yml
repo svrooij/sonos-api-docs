@@ -26,9 +26,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Install ajv-cli
+        run: npm i -g ajv-cli
       - name: Validate docs/_data/projects.json
-        run: npx ajv-cli validate -d ./docs/_data/projects.json -s ./docs/schema/projects.json -r ./docs/schema/author.json
+        run: ajv validate -d ./docs/_data/projects.json -s ./docs/schema/projects.json -r ./docs/schema/author.json
       - name: Validate docs/documentation.json
-        run: npx ajv-cli validate -s ./docs/schema/documentation.json -d ./docs/documentation.json
+        run: ajv validate -s ./docs/schema/documentation.json -d ./docs/documentation.json
       - name: Validate template json files
-        run: npx ajv-cli validate -s ./docs/schema/template.json -r ./docs/schema/author.json -d ./generator/sonos-docs/templates/**/template.json
+        run: ajv validate -s ./docs/schema/template.json -d ./generator/sonos-docs/templates/**/template.json -r ./docs/schema/author.json
