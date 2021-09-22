@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# .new-version file used in Github workflow
+.new-version

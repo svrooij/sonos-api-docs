@@ -57,15 +57,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Did release?
+        id: did_release
+        run: '(test -f .new-version && echo "::set-output name=new_release_published::true" && echo "::set-output name=new_release_version::$(cat ./.new-version)") || echo "::set-output name=new_release_published::false"'
       - name: Setup node for Github Registry
-        if: steps.semantic.outputs.new_release_published == 'true'
+        if: steps.did_release.outputs.new_release_published == 'true'
         uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: 'https://npm.pkg.github.com'
           scope: 'svrooij'
       - name: Publish To GitHub Package Registry
-        if: steps.semantic.outputs.new_release_published == 'true'
+        if: steps.did_release.outputs.new_release_published == 'true'
         run: |
           npm publish
         env:

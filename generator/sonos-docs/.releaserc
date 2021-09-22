@@ -5,6 +5,6 @@
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     '@semantic-release/github',
-    ['@semantic-release/exec', { success: 'echo "::set-output name=new_release_published::true"' }],
+    ['@semantic-release/exec', { success: 'echo "${nextRelease.version}" > ./.new-version' }],
     ]
 }
