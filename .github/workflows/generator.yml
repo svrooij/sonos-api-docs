@@ -1,0 +1,36 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - ci-build
+    paths:
+      - '.github/workflows/generator.yml'
+      - 'generator/sonos-docs/**'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/generator.yml'
+      - 'generator/sonos-docs/**'
+
+jobs:
+  test:
+    name: 'Build and test on Node v${{ matrix.node }}'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 16]
+    defaults:
+      run:
+        working-directory: generator/sonos-docs
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install depencencies
+        run: npm ci
+      - name: Build library
+        run: npm run prepack
