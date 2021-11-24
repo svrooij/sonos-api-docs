@@ -63,6 +63,13 @@
         "name": "Simon J",
         "link": "https://github.com/simojenki"
       }
+    },
+    {
+      "name": "SoCo CLI",
+      "description": "Powerful command line controller for Sonos",
+      "link": "https://github.com/avantrec/soco-cli",
+      "repository": "https://github.com/avantrec/soco-cli",
+      "tags": ["SoCo-CLI"]
     }
   ],
   "libraries": [
