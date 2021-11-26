@@ -1,6 +1,6 @@
 <h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Apps</h2>
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Open source apps talking to sonos speakers</p>
-<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+<div class="d-sm-flex flex-wrap gutter-condensed mb-3">
 
   {% assign generated_apps = site.data.projects.apps | where:'usesGenerator', true | sort: 'name' %}
   {% assign other_apps = site.data.projects.apps | where:'usesGenerator', false | sort: 'name' %}
