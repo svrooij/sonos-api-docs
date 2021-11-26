@@ -3,6 +3,11 @@
   "$id": "https://svrooij.io/sonos-api-docs/schema/projects.json",
   "definitions": {
     "Project": {
+      "default": {
+        "name": "",
+        "repository": "",
+        "usesGenerator": false
+      },
       "properties": {
         "author": {
           "$ref": "author.json"
@@ -33,13 +38,14 @@
           "type":"array"
         },
         "usesGenerator": {
-          "title": "Does the project use this generator?",
+          "title": "Project generated with provided generator?",
           "type":"boolean"
         }
       },
       "type": "object",
       "required": [
-        "name"
+        "name",
+        "usesGenerator"
       ],
       "anyOf": [
         { "required": ["link"]},
