@@ -38,6 +38,7 @@ You can use the generator to generate your own discovery files, but we also have
 | Sonos Beam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S14-2.json) |
 | Sonos Roam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S27-2.json) |
 | Sonos Sub | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-Sub-2.json) |
+| SYMFONISK Bookshelf| [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S21-2.json) |
 
 These files together with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
 
