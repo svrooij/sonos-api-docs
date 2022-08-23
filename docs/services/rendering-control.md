@@ -89,7 +89,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient) |
+| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) |
 
 Outputs:
 
@@ -488,7 +488,7 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient) |
+| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) |
 | **DesiredValue** | `i2` | Booleans required `1` for true or `0` for false, rest number as specified |
 
 **Remarks** Not supported by all speakers, TV related
