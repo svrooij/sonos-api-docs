@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/generator.yml'
       - 'generator/sonos-docs/src/**/*.ts'
+      - 'generator/sonos-docs/.releaserc'
 
   pull_request:
     branches:
