@@ -2,8 +2,8 @@
   "model": "S18",
   "modelDescription": "Sonos One",
   "softwareGeneration": 2,
-  "softwareVersion": "68.3-30100",
-  "discoveryDate": "2022-06-26T09:03:01.959Z",
+  "softwareVersion": "70.1-34112",
+  "discoveryDate": "2022-11-03T11:45:41.697Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2918,6 +2918,11 @@
           "sendEvents": true
         },
         {
+          "name": "EthLink",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
           "name": "ConfigMode",
           "dataType": "string",
           "sendEvents": true
@@ -2963,6 +2968,11 @@
         },
         {
           "name": "KeepGrouped",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "HTForwardEnabled",
           "dataType": "boolean",
           "sendEvents": false
         },
@@ -3359,6 +3369,16 @@
           ]
         },
         {
+          "name": "GetHTForwardState",
+          "outputs": [
+            {
+              "name": "IsHTForwardEnabled",
+              "direction": "out",
+              "relatedStateVariableName": "HTForwardEnabled"
+            }
+          ]
+        },
+        {
           "name": "SetButtonLockState",
           "inputs": [
             {
@@ -3390,6 +3410,11 @@
               "name": "DurationMilliseconds",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionDurationMilliseconds"
+            },
+            {
+              "name": "ChirpIfPlayingSwappableAudio",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio"
             }
           ],
           "outputs": [
@@ -3397,11 +3422,6 @@
               "name": "PlayId",
               "direction": "out",
               "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
-            },
-            {
-              "name": "ChirpIfPlayingSwappableAudio",
-              "direction": "out",
-              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio"
             }
           ]
         },
@@ -4456,8 +4476,7 @@
           "allowedValues": [
             "Master",
             "LF",
-            "RF",
-            "SpeakerOnly"
+            "RF"
           ]
         },
         {
@@ -5121,31 +5140,6 @@
           ]
         },
         {
-          "name": "SetRoomCalibrationX",
-          "inputs": [
-            {
-              "name": "InstanceID",
-              "direction": "in",
-              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
-            {
-              "name": "CalibrationID",
-              "direction": "in",
-              "relatedStateVariableName": "RoomCalibrationID"
-            },
-            {
-              "name": "Coefficients",
-              "direction": "in",
-              "relatedStateVariableName": "RoomCalibrationCoefficients"
-            },
-            {
-              "name": "CalibrationMode",
-              "direction": "in",
-              "relatedStateVariableName": "RoomCalibrationCalibrationMode"
-            }
-          ]
-        },
-        {
           "name": "GetRoomCalibrationStatus",
           "inputs": [
             {
@@ -5687,7 +5681,7 @@
         {
           "name": "CurrentTrackMetaData",
           "dataType": "string",
-          "sendEvents": false
+          "sendEvents": true
         },
         {
           "name": "EnqueuedTransportURIMetaData",
@@ -5703,11 +5697,6 @@
           "name": "CurrentTransportActions",
           "dataType": "string",
           "sendEvents": false
-        },
-        {
-          "name": "LastChange",
-          "dataType": "string",
-          "sendEvents": true
         }
       ],
       "actions": [

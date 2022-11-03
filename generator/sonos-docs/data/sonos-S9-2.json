@@ -1,9 +1,9 @@
 {
-  "model": "S1",
-  "modelDescription": "Sonos Play:1",
-  "softwareGeneration": 1,
-  "softwareVersion": "57.10-25140",
-  "discoveryDate": "2022-03-16T16:41:42.975Z",
+  "model": "S9",
+  "modelDescription": "Sonos Playbar",
+  "softwareGeneration": 2,
+  "softwareVersion": "70.1-34112",
+  "discoveryDate": "2022-11-03T11:59:25.517Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2709,6 +2709,11 @@
           "sendEvents": true
         },
         {
+          "name": "TargetRoomName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
           "name": "Invisible",
           "dataType": "boolean",
           "sendEvents": true
@@ -2913,6 +2918,11 @@
           "sendEvents": true
         },
         {
+          "name": "EthLink",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
           "name": "ConfigMode",
           "dataType": "string",
           "sendEvents": true
@@ -2958,6 +2968,31 @@
         },
         {
           "name": "KeepGrouped",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "HTForwardEnabled",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionChirpChannel",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionDurationMilliseconds",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionPlayId",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio",
           "dataType": "boolean",
           "sendEvents": false
         }
@@ -3045,6 +3080,11 @@
               "name": "DesiredConfiguration",
               "direction": "in",
               "relatedStateVariableName": "Configuration"
+            },
+            {
+              "name": "DesiredTargetRoomName",
+              "direction": "in",
+              "relatedStateVariableName": "TargetRoomName"
             }
           ]
         },
@@ -3065,6 +3105,11 @@
               "name": "CurrentConfiguration",
               "direction": "out",
               "relatedStateVariableName": "Configuration"
+            },
+            {
+              "name": "CurrentTargetRoomName",
+              "direction": "out",
+              "relatedStateVariableName": "TargetRoomName"
             }
           ]
         },
@@ -3324,6 +3369,16 @@
           ]
         },
         {
+          "name": "GetHTForwardState",
+          "outputs": [
+            {
+              "name": "IsHTForwardEnabled",
+              "direction": "out",
+              "relatedStateVariableName": "HTForwardEnabled"
+            }
+          ]
+        },
+        {
           "name": "SetButtonLockState",
           "inputs": [
             {
@@ -3340,6 +3395,43 @@
               "name": "CurrentButtonLockState",
               "direction": "out",
               "relatedStateVariableName": "ButtonLockState"
+            }
+          ]
+        },
+        {
+          "name": "RoomDetectionStartChirping",
+          "inputs": [
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpChannel"
+            },
+            {
+              "name": "DurationMilliseconds",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionDurationMilliseconds"
+            },
+            {
+              "name": "ChirpIfPlayingSwappableAudio",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "PlayId",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
+            }
+          ]
+        },
+        {
+          "name": "RoomDetectionStopChirping",
+          "inputs": [
+            {
+              "name": "PlayId",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
             }
           ]
         }
@@ -3619,6 +3711,148 @@
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HTControl",
+      "serviceName": "HTControlService",
+      "discoveryUri": "/xml/HTControl1.xml",
+      "serviceId": "urn:upnp-org:serviceId:HTControl",
+      "serviceType": "urn:schemas-upnp-org:service:HTControl:1",
+      "controlURL": "/HTControl/Control",
+      "eventSubURL": "/HTControl/Event",
+      "stateVariables": [
+        {
+          "name": "TOSLinkConnected",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "IRRepeaterState",
+          "dataType": "string",
+          "sendEvents": true,
+          "allowedValues": [
+            "On",
+            "Off",
+            "Disabled"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_Timeout",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_IRRemoteName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_IRCode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RemoteConfigured",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "LEDFeedbackState",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "On",
+            "Off"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetIRRepeaterState",
+          "inputs": [
+            {
+              "name": "DesiredIRRepeaterState",
+              "direction": "in",
+              "relatedStateVariableName": "IRRepeaterState"
+            }
+          ]
+        },
+        {
+          "name": "GetIRRepeaterState",
+          "outputs": [
+            {
+              "name": "CurrentIRRepeaterState",
+              "direction": "out",
+              "relatedStateVariableName": "IRRepeaterState"
+            }
+          ]
+        },
+        {
+          "name": "IdentifyIRRemote",
+          "inputs": [
+            {
+              "name": "Timeout",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Timeout"
+            }
+          ]
+        },
+        {
+          "name": "LearnIRCode",
+          "inputs": [
+            {
+              "name": "IRCode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_IRCode"
+            },
+            {
+              "name": "Timeout",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Timeout"
+            }
+          ]
+        },
+        {
+          "name": "CommitLearnedIRCodes",
+          "inputs": [
+            {
+              "name": "Name",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_IRRemoteName"
+            }
+          ]
+        },
+        {
+          "name": "IsRemoteConfigured",
+          "outputs": [
+            {
+              "name": "RemoteConfigured",
+              "direction": "out",
+              "relatedStateVariableName": "RemoteConfigured"
+            }
+          ]
+        },
+        {
+          "name": "SetLEDFeedbackState",
+          "inputs": [
+            {
+              "name": "LEDFeedbackState",
+              "direction": "in",
+              "relatedStateVariableName": "LEDFeedbackState"
+            }
+          ]
+        },
+        {
+          "name": "GetLEDFeedbackState",
+          "outputs": [
+            {
+              "name": "LEDFeedbackState",
+              "direction": "out",
+              "relatedStateVariableName": "LEDFeedbackState"
             }
           ]
         }
@@ -4384,8 +4618,7 @@
           "allowedValues": [
             "Master",
             "LF",
-            "RF",
-            "SpeakerOnly"
+            "RF"
           ]
         },
         {
@@ -5049,31 +5282,6 @@
           ]
         },
         {
-          "name": "SetRoomCalibrationX",
-          "inputs": [
-            {
-              "name": "InstanceID",
-              "direction": "in",
-              "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
-            },
-            {
-              "name": "CalibrationID",
-              "direction": "in",
-              "relatedStateVariableName": "RoomCalibrationID"
-            },
-            {
-              "name": "Coefficients",
-              "direction": "in",
-              "relatedStateVariableName": "RoomCalibrationCoefficients"
-            },
-            {
-              "name": "CalibrationMode",
-              "direction": "in",
-              "relatedStateVariableName": "RoomCalibrationCalibrationMode"
-            }
-          ]
-        },
-        {
           "name": "GetRoomCalibrationStatus",
           "inputs": [
             {
@@ -5615,7 +5823,7 @@
         {
           "name": "CurrentTrackMetaData",
           "dataType": "string",
-          "sendEvents": false
+          "sendEvents": true
         },
         {
           "name": "EnqueuedTransportURIMetaData",
@@ -5631,11 +5839,6 @@
           "name": "CurrentTransportActions",
           "dataType": "string",
           "sendEvents": false
-        },
-        {
-          "name": "LastChange",
-          "dataType": "string",
-          "sendEvents": true
         }
       ],
       "actions": [
