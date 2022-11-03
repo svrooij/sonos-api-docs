@@ -11,11 +11,14 @@ permalink: /
 # Unofficial Sonos Docs
 
 [![Sonos api documentation][badge_sonos-docs]][link_sonos-docs]
+[![Github Issues][badge_issues]][link_issues]
 [![Sonos2mqtt][badge_sonos-mqtt]][link_sonos-mqtt]
 [![Sonos cli][badge_sonos-cli]][link_sonos-cli]
 [![Sonos typescript this library][badge_sonos-typescript]][link_sonos-typescript]
 [![Join us on Discord][badge_discord]][link_discord]
+
 [![Support me on Github][badge_sponsor]][link_sponsor]
+[![Follow on Twitter][badge_twitter]][link_twitter]
 
 Sonos api documentation for the local UPNP api and a [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) to generate clients and documentation based on service discovery
 
@@ -44,7 +47,7 @@ cd generator/sonos-docs
 
 # Generate intermediate file
 npm run intermediate
-# or ./bin/run combine --docsFile=../../docs/documentation.json --models=S1-1,S5-1,S9-1 --folder=data
+# or ./bin/run combine --docsFile=../../docs/documentation.json  --folder=data
 
 # Generate documentation
 npm run docs
@@ -61,11 +64,11 @@ You can use the generator to generate your own discovery files, but we also have
 
 | Player | Discovery file(s) |
 | ------ | ----------------- |
-| Sonos Play:1 | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-1.json) - [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-2.json) |
+| Sonos Play:1 | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S1-2.json) |
 | Sonos Play:3 | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S3-2.json) |
 | Sonos Play:5 (old) | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S5-1.json) |
 | Sonos Play:5 (new) | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S6-2.json) |
-| Sonos Playbar | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-1.json) |
+| Sonos Playbar | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-2.json) |
 | Sonos One | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S13-2.json) |
 | Sonos Beam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S14-2.json) |
 | Sonos Roam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S27-2.json) |
@@ -114,13 +117,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
 specification. Contributions of any kind welcome!
 
-[badge_discord]: https://img.shields.io/discord/782374564054564875?style=flat-square
-[badge_issues]: https://img.shields.io/github/issues/svrooij/node-sonos-ts?style=flat-square
-[badge_sonos-cli]: https://img.shields.io/badge/sonos-cli-blue?style=flat-square
-[badge_sonos-docs]: https://img.shields.io/badge/sonos-api-blue?style=flat-square
-[badge_sonos-mqtt]: https://img.shields.io/badge/sonos-mqtt-blue?style=flat-square
-[badge_sonos-typescript]: https://img.shields.io/badge/sonos-typescript-blue?style=flat-square
-[badge_sponsor]: https://img.shields.io/badge/Sponsor-on%20Github-red?style=flat-square
+[badge_discord]: https://img.shields.io/discord/782374564054564875?style=for-the-badge
+[badge_issues]: https://img.shields.io/github/issues/svrooij/sonos-api-docs?style=for-the-badge
+[badge_sonos-cli]: https://img.shields.io/badge/sonos-cli-blue?style=for-the-badge
+[badge_sonos-docs]: https://img.shields.io/badge/sonos-api-blue?style=for-the-badge
+[badge_sonos-mqtt]: https://img.shields.io/badge/sonos-mqtt-blue?style=for-the-badge
+[badge_sonos-typescript]: https://img.shields.io/badge/sonos-typescript-blue?style=for-the-badge
+[badge_sponsor]: https://img.shields.io/github/sponsors/svrooij?logo=github&style=for-the-badge
+[badge_twitter]: https://img.shields.io/twitter/follow/svrooij?logo=twitter&style=for-the-badge
 
 [link_discord]: https://discord.gg/ZUdEuhh5RF
 [link_sponsor]: https://github.com/sponsors/svrooij
@@ -129,3 +133,4 @@ specification. Contributions of any kind welcome!
 [link_sonos-docs]: https://svrooij.io/sonos-api-docs
 [link_sonos-mqtt]: https://svrooij.io/sonos2mqtt
 [link_sonos-typescript]: https://svrooij.io/node-sonos-ts
+[link_twitter]: https://twitter.com/svrooij
