@@ -360,7 +360,7 @@
         "GetEQ": {
           "description": "Get equalizer value",
           "params": {
-            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient)",
+            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full)",
             "CurrentValue": "Booleans return `1` / `0`, rest number as specified"
           },
           "remarks": "Not all EQ types are available on every speaker"
@@ -386,7 +386,7 @@
         "SetEQ": {
           "description": "Set equalizer value for different types",
           "params": {
-            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = full, 1 = ambient)",
+            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full)",
             "DesiredValue": "Booleans required `1` for true or `0` for false, rest number as specified"
           },
           "remarks": "Not supported by all speakers, TV related"

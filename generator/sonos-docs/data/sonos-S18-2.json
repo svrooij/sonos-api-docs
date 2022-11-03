@@ -1,9 +1,9 @@
 {
-  "model": "S5",
-  "modelDescription": "Sonos Play:5",
-  "softwareGeneration": 1,
-  "softwareVersion": "57.10-25140",
-  "discoveryDate": "2022-03-16T16:33:24.502Z",
+  "model": "S18",
+  "modelDescription": "Sonos One",
+  "softwareGeneration": 2,
+  "softwareVersion": "68.3-30100",
+  "discoveryDate": "2022-06-26T09:03:01.959Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -476,161 +476,6 @@
               "name": "CurrentDailyIndexRefreshTime",
               "direction": "out",
               "relatedStateVariableName": "DailyIndexRefreshTime"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "AudioIn",
-      "serviceName": "AudioInService",
-      "discoveryUri": "/xml/AudioIn1.xml",
-      "serviceId": "urn:upnp-org:serviceId:AudioIn",
-      "serviceType": "urn:schemas-upnp-org:service:AudioIn:1",
-      "controlURL": "/AudioIn/Control",
-      "eventSubURL": "/AudioIn/Event",
-      "stateVariables": [
-        {
-          "name": "A_ARG_TYPE_MemberID",
-          "dataType": "string",
-          "sendEvents": false
-        },
-        {
-          "name": "A_ARG_TYPE_TransportSettings",
-          "dataType": "string",
-          "sendEvents": false
-        },
-        {
-          "name": "AudioInputName",
-          "dataType": "string",
-          "sendEvents": true
-        },
-        {
-          "name": "Icon",
-          "dataType": "string",
-          "sendEvents": true
-        },
-        {
-          "name": "LineInConnected",
-          "dataType": "boolean",
-          "sendEvents": true
-        },
-        {
-          "name": "LeftLineInLevel",
-          "dataType": "i4",
-          "sendEvents": true
-        },
-        {
-          "name": "RightLineInLevel",
-          "dataType": "i4",
-          "sendEvents": true
-        },
-        {
-          "name": "A_ARG_TYPE_ObjectID",
-          "dataType": "string",
-          "sendEvents": false
-        },
-        {
-          "name": "Playing",
-          "dataType": "boolean",
-          "sendEvents": true
-        }
-      ],
-      "actions": [
-        {
-          "name": "StartTransmissionToGroup",
-          "inputs": [
-            {
-              "name": "CoordinatorID",
-              "direction": "in",
-              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
-            }
-          ],
-          "outputs": [
-            {
-              "name": "CurrentTransportSettings",
-              "direction": "out",
-              "relatedStateVariableName": "A_ARG_TYPE_TransportSettings"
-            }
-          ]
-        },
-        {
-          "name": "StopTransmissionToGroup",
-          "inputs": [
-            {
-              "name": "CoordinatorID",
-              "direction": "in",
-              "relatedStateVariableName": "A_ARG_TYPE_MemberID"
-            }
-          ]
-        },
-        {
-          "name": "SetAudioInputAttributes",
-          "inputs": [
-            {
-              "name": "DesiredName",
-              "direction": "in",
-              "relatedStateVariableName": "AudioInputName"
-            },
-            {
-              "name": "DesiredIcon",
-              "direction": "in",
-              "relatedStateVariableName": "Icon"
-            }
-          ]
-        },
-        {
-          "name": "GetAudioInputAttributes",
-          "outputs": [
-            {
-              "name": "CurrentName",
-              "direction": "out",
-              "relatedStateVariableName": "AudioInputName"
-            },
-            {
-              "name": "CurrentIcon",
-              "direction": "out",
-              "relatedStateVariableName": "Icon"
-            }
-          ]
-        },
-        {
-          "name": "SetLineInLevel",
-          "inputs": [
-            {
-              "name": "DesiredLeftLineInLevel",
-              "direction": "in",
-              "relatedStateVariableName": "LeftLineInLevel"
-            },
-            {
-              "name": "DesiredRightLineInLevel",
-              "direction": "in",
-              "relatedStateVariableName": "RightLineInLevel"
-            }
-          ]
-        },
-        {
-          "name": "GetLineInLevel",
-          "outputs": [
-            {
-              "name": "CurrentLeftLineInLevel",
-              "direction": "out",
-              "relatedStateVariableName": "LeftLineInLevel"
-            },
-            {
-              "name": "CurrentRightLineInLevel",
-              "direction": "out",
-              "relatedStateVariableName": "RightLineInLevel"
-            }
-          ]
-        },
-        {
-          "name": "SelectAudio",
-          "inputs": [
-            {
-              "name": "ObjectID",
-              "direction": "in",
-              "relatedStateVariableName": "A_ARG_TYPE_ObjectID"
             }
           ]
         }
@@ -2864,6 +2709,11 @@
           "sendEvents": true
         },
         {
+          "name": "TargetRoomName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
           "name": "Invisible",
           "dataType": "boolean",
           "sendEvents": true
@@ -3115,6 +2965,26 @@
           "name": "KeepGrouped",
           "dataType": "boolean",
           "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionChirpChannel",
+          "dataType": "ui2",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionDurationMilliseconds",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionPlayId",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio",
+          "dataType": "boolean",
+          "sendEvents": false
         }
       ],
       "actions": [
@@ -3200,6 +3070,11 @@
               "name": "DesiredConfiguration",
               "direction": "in",
               "relatedStateVariableName": "Configuration"
+            },
+            {
+              "name": "DesiredTargetRoomName",
+              "direction": "in",
+              "relatedStateVariableName": "TargetRoomName"
             }
           ]
         },
@@ -3220,6 +3095,11 @@
               "name": "CurrentConfiguration",
               "direction": "out",
               "relatedStateVariableName": "Configuration"
+            },
+            {
+              "name": "CurrentTargetRoomName",
+              "direction": "out",
+              "relatedStateVariableName": "TargetRoomName"
             }
           ]
         },
@@ -3495,6 +3375,43 @@
               "name": "CurrentButtonLockState",
               "direction": "out",
               "relatedStateVariableName": "ButtonLockState"
+            }
+          ]
+        },
+        {
+          "name": "RoomDetectionStartChirping",
+          "inputs": [
+            {
+              "name": "Channel",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpChannel"
+            },
+            {
+              "name": "DurationMilliseconds",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionDurationMilliseconds"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "PlayId",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
+            },
+            {
+              "name": "ChirpIfPlayingSwappableAudio",
+              "direction": "out",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionChirpIfPlayingSwappableAudio"
+            }
+          ]
+        },
+        {
+          "name": "RoomDetectionStopChirping",
+          "inputs": [
+            {
+              "name": "PlayId",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RoomDetectionPlayId"
             }
           ]
         }

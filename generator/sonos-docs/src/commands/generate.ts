@@ -18,7 +18,7 @@ export default class Generate extends Command {
 
   static flags = {
     help: flags.help({char: 'h'}),
-    intermediate: flags.string({char: 'i', description: 'intermediate file to use. generate with \'combine\'', default: 'data/intermediate.json'}),
+    combined: flags.string({char: 'i', description: 'combined documentation file to use. generate with \'combine\'', default: '.cache/combined.json'}),
   }
 
   static args = [
@@ -39,7 +39,7 @@ export default class Generate extends Command {
     this.log('Starting generator with template \'%s\'', args.template)
 
     const outputTemplate = this.getTemplate(args.template)
-    const deviceDescription = this.getDeviceDescription(flags.intermediate, outputTemplate?.dataTypes ?? {}, outputTemplate?.serviceData)
+    const deviceDescription = this.getDeviceDescription(flags.combined, outputTemplate?.dataTypes ?? {}, outputTemplate?.serviceData)
 
     const outputBase = this.getFullPathAndCreateDirectory(args.output, true)
 
@@ -151,7 +151,7 @@ export default class Generate extends Command {
   private getDeviceDescription(location: string, dataTypes: { [key: string]: string }, serviceData?: { [key: string]: any }): ExtendedSonosDescription | undefined | never {
     const intermediateFile = this.getFullPathAndCreateDirectory(location)
     if (!fs.existsSync(intermediateFile)) {
-      return this.error('Intermediate file doesn\'t exist, generate with \'combine\' command first.', {exit: 10})
+      return this.error('Combined documentation file doesn\'t exist, generate with \'combine\' command first.', {exit: 10})
     }
 
     // Set relatedStateVariables to correct value.

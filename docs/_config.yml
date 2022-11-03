@@ -11,7 +11,7 @@ repository: svrooij/sonos-api-docs
 
 # Build settings
 markdown: kramdown
-remote_theme: svrooij/just-the-docs@relative-everything
+remote_theme: svrooij/just-the-docs@plausible
 plugins:
   - jekyll-feed
   - jekyll-octicons
@@ -29,7 +29,7 @@ aux_links:
 
 # Footer content appears at the bottom of every page's main content
 footer_content: >
-  Copyright &copy; 2021 Stephan van Rooij.
+  Copyright &copy; 2022 Stephan van Rooij.
   Distributed under <a
   href=\"https://github.com/svrooij/sonos-api-docs/tree/main/LICENSE\">
   MIT license.</a>
@@ -44,5 +44,4 @@ gh_edit_repository: "https://github.com/svrooij/sonos-api-docs"
 gh_edit_branch: "main/docs" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" 
 
-ga_tracking: UA-172036806-1
-ga_tracking_anonymize_ip: true
+plausible_domain: "sonos.svrooij.io"

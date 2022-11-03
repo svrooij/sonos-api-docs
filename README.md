@@ -35,9 +35,11 @@ You can use the generator to generate your own discovery files, but we also have
 | Sonos Play:5 (new) | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S6-2.json) |
 | Sonos Playbar | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S9-1.json) |
 | Sonos One | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S13-2.json) |
+| Sonos One (mic) | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S18-2.json) |
 | Sonos Beam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S14-2.json) |
 | Sonos Roam | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S27-2.json) |
 | Sonos Sub | [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-Sub-2.json) |
+| SYMFONISK Bookshelf| [S2](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S21-2.json) |
 
 These files together with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
 
@@ -50,7 +52,7 @@ If you need help building an app that talks to your sonos speakers, or you want 
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -60,14 +62,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://svrooij.nl"><img src="https://avatars2.githubusercontent.com/u/1292510?v=4" width="100px;" alt=""/><br /><sub><b>Stephan van Rooij</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=svrooij" title="Code">💻</a> <a href="https://github.com/svrooij/sonos-api-docs/commits?author=svrooij" title="Documentation">📖</a> <a href="#ideas-svrooij" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-svrooij" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/hklages"><img src="https://avatars3.githubusercontent.com/u/17273119?v=4" width="100px;" alt=""/><br /><sub><b>H. Klages</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=hklages" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/sschuberth"><img src="https://avatars0.githubusercontent.com/u/349154?v=4" width="100px;" alt=""/><br /><sub><b>Sebastian Schuberth</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=sschuberth" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://svrooij.nl"><img src="https://avatars2.githubusercontent.com/u/1292510?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stephan van Rooij</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=svrooij" title="Code">💻</a> <a href="https://github.com/svrooij/sonos-api-docs/commits?author=svrooij" title="Documentation">📖</a> <a href="#ideas-svrooij" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-svrooij" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/hklages"><img src="https://avatars3.githubusercontent.com/u/17273119?v=4?s=100" width="100px;" alt=""/><br /><sub><b>H. Klages</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=hklages" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/sschuberth"><img src="https://avatars0.githubusercontent.com/u/349154?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sebastian Schuberth</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=sschuberth" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/jkossis"><img src="https://avatars.githubusercontent.com/u/1247832?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jason Kossis</b></sub></a><br /><a href="https://github.com/svrooij/sonos-api-docs/commits?author=jkossis" title="Documentation">📖</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)

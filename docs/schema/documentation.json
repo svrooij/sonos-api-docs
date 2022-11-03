@@ -66,6 +66,10 @@
           "type":"string"
         }
       },
+      "default": {
+        "code": 0,
+        "description": ""
+      },
       "type": "object",
       "required": ["code", "description"]
     }

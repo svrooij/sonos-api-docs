@@ -76,7 +76,7 @@ npm install
 
 ### Combine discovery files and documentation
 
-If you changed the [documentation.json](#documentation.json) file or if you added/updated discovery files, you need to combine the two into one file, the **intermediate.json** file.
+If you changed the [documentation.json](#documentation.json) file or if you added/updated discovery files, you need to combine the two into one file, the **.cache/combined.json** file.
 
 This file is the result of the the manual documentation and the device discovery files. This file is almost 8000 lines of json at the moment, which is why it is ignored in git.
 Being able to inspect this json file should really help in debugging the generator.
@@ -94,11 +94,14 @@ npm install
 npm run intermediate-win
 # on Unix/mac short for ./bin/run combine --docsFile=../../docs/documentation.json --folder=data
 npm run intermediate
+
+# or with npx from the root directory
+npx @svrooij/sonos-docs combine --docsFile=./docs/documentation.json --folder=./generator/sonos-docs/data --out=./generator/sonos-docs/.cache/combined.json
 ```
 
 ### Regenerate documentation
 
-Once you generated the **intermediate.json** file, you can use the generator to (re)generate the [service documentation]({{ '/services' | relative_url }}). This step is mandatory if you changed either the **documentation.json** or if you added/updated one of the discovery files. 
+Once you generated the **combined.json** file, you can use the generator to (re)generate the [service documentation]({{ '/services' | relative_url }}). This step is mandatory if you changed either the **documentation.json** or if you added/updated one of the discovery files. 
 
 The resulting files, are **not to be changed manually**, since changes will get lost upon the next generation.
 
@@ -111,13 +114,16 @@ Regenerate documentation:
 
 ```bash
 # Fork, clone, go to '/generator/sonos-docs' and run npm install
-# generate intermediate, see above
+# generate combined.json, see above
 
 # Regenerate documentation
 # on windows, short for .\\bin\\run generate docs ../../docs
 npm run docs-win
 # on unix/mac, short for ./bin/run generate docs ../../docs
 npm run docs
+
+# or with npx (from root folder)
+npx @svrooij/sonos-docs generate docs ./docs -i ./generator/sonos-docs/.cache/combined.json
 ```
 
 ### Use generator for other library
@@ -134,7 +140,7 @@ Be sure to check out the [docs template](https://github.com/svrooij/sonos-api-do
 
 ```bash
 # Fork, clone, go to '/generator/sonos-docs' and run npm install
-# generate intermediate, see above
+# generate combined.json, see above
 
 # generate library
 # [template-folder] can either be a folder relative to the current location, a full path to a template folder or the name of the folder inside the generator folder.
@@ -143,4 +149,7 @@ Be sure to check out the [docs template](https://github.com/svrooij/sonos-api-do
 .\bin\run generate [template-folder] [root-output-folder]
 # on unix/mac
 ./bin/run generate [template-folder] [root-output-folder]
+
+# or with npx
+npx @svrooij/sonos-docs generate [template-folder] [root-output-folder] -i ./generator/sonos-docs/.cache/combined.json
 ```

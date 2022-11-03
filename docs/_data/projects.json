@@ -37,22 +37,36 @@
       "name": "Noson",
       "description": "(unofficial) Sonos controller for Linux",
       "tags": ["Noson", "Linux"],
-      "link": "https://github.com/janbar/noson-app",
-      "repository": "https://github.com/janbar/noson-app"
+      "language": "C++",
+      "author": {
+        "name": "Jean-Luc Barrière",
+        "link": "https://github.com/janbar"
+      },
+      "link": "http://janbar.github.io/noson-app/",
+      "repository": "https://github.com/janbar/noson-app",
+      "usesGenerator": false
     },
     {
-      "name": "Sonos command line (cloud based)",
+      "name": "Ronor - cli (cloud based)",
       "description": "Sonos CLI that uses the cloud, written in Rust",
       "link": "https://github.com/mlang/ronor",
       "tags": ["cli", "Ronor"],
-      "repository": "https://github.com/mlang/ronor"
+      "language": "Rust",
+      "author": {
+        "name": "Mario Lang",
+        "link": "https://github.com/mlang"
+      },
+      "repository": "https://github.com/mlang/ronor",
+      "usesGenerator": false
     },
     {
       "name": "ioBroker.sonos",
       "description": "Sonos support for ioBroker",
       "link": "https://github.com/ioBroker/ioBroker.sonos",
       "repository": "https://github.com/ioBroker/ioBroker.sonos",
-      "tags": ["ioBroker"]
+      "tags": ["ioBroker"],
+      "language": "JavaScript",
+      "usesGenerator": false
     },
     {
       "name": "Bonob",
@@ -62,7 +76,19 @@
       "author": {
         "name": "Simon J",
         "link": "https://github.com/simojenki"
-      }
+      },
+      "tags": ["Navidrome"],
+      "language": "TypeScript",
+      "usesGenerator": false
+    },
+    {
+      "name": "SoCo CLI",
+      "description": "Powerful command line controller for Sonos",
+      "link": "https://github.com/avantrec/soco-cli",
+      "repository": "https://github.com/avantrec/soco-cli",
+      "tags": ["cli"],
+      "language": "Python",
+      "usesGenerator": false
     }
   ],
   "libraries": [
@@ -167,12 +193,18 @@
       "author": {
         "name": "Thorsten Kugelberg",
         "link": "https://github.com/tkugelberg"
-      }
+      },
+      "usesGenerator": false
     },
     {
       "name": "Sonos API in Java",
       "repository": "https://github.com/vmichalak/sonos-controller",
-      "language":"Java"
+      "language":"Java",
+      "author": {
+        "name": "Valentin Michalak",
+        "link": "https://github.com/vmichalak"
+      },
+      "usesGenerator": false
     }            
 
   ]
