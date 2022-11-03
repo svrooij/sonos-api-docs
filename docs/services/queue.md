@@ -71,11 +71,11 @@ Inputs:
 | **QueueID** | `ui4` |  |
 | **UpdateID** | `ui4` |  |
 | **ContainerURI** | `string` |  |
-| **ContainerMetaData** | `string` |  |
+| **ContainerMetaData** | `string` |  Embedded XML |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
 | **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 | **NumberOfURIs** | `ui4` |  |
-| **EnqueuedURIsAndMetaData** | `string` |  |
+| **EnqueuedURIsAndMetaData** | `string` |  Embedded XML |
 
 Outputs:
 
@@ -108,7 +108,7 @@ Inputs:
 | **QueueID** | `ui4` |  |
 | **UpdateID** | `ui4` |  |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
 | **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -316,11 +316,11 @@ Inputs:
 | **QueueID** | `ui4` |  |
 | **UpdateID** | `ui4` |  |
 | **ContainerURI** | `string` |  |
-| **ContainerMetaData** | `string` |  |
+| **ContainerMetaData** | `string` |  Embedded XML |
 | **CurrentTrackIndex** | `ui4` |  |
 | **NewCurrentTrackIndices** | `string` |  |
 | **NumberOfURIs** | `ui4` |  |
-| **EnqueuedURIsAndMetaData** | `string` |  |
+| **EnqueuedURIsAndMetaData** | `string` |  Embedded XML |
 
 Outputs:
 

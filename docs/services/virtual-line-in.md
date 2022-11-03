@@ -205,10 +205,10 @@ Timeout: Second-3600
 
 | Variable | Sends events* | type | possible values |
 |:---------|:-------------|:-----|:----------------|
-| AVTransportURIMetaData |  | `string` |  |
-| CurrentTrackMetaData | ✔ | `string` |  |
+| AVTransportURIMetaData |  | `string` |  Embedded XML |
+| CurrentTrackMetaData | ✔ | `string` |  Embedded XML |
 | CurrentTransportActions |  | `string` |  |
-| EnqueuedTransportURIMetaData |  | `string` |  |
+| EnqueuedTransportURIMetaData |  | `string` |  Embedded XML |
 | LastChange | ✔ | `string` |  |
 
 If the variable has a `✔` in the Sends events column, the service discovery specifies this variable emits events. Other properties might be send as a part of `LastChange`

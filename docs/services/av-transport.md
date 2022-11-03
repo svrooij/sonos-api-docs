@@ -73,9 +73,9 @@ Inputs:
 | **UpdateID** | `ui4` |  |
 | **NumberOfURIs** | `ui4` |  |
 | **EnqueuedURIs** | `string` |  |
-| **EnqueuedURIsMetaData** | `string` |  |
+| **EnqueuedURIsMetaData** | `string` |  Embedded XML |
 | **ContainerURI** | `string` |  |
-| **ContainerMetaData** | `string` |  |
+| **ContainerMetaData** | `string` |  Embedded XML |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
 | **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -110,7 +110,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` | use `0` to add at the end or `1` to insert at the beginning |
 | **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -147,7 +147,7 @@ Inputs:
 | **ObjectID** | `string` |  |
 | **UpdateID** | `ui4` |  |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 | **AddAtIndex** | `ui4` |  |
 
 Outputs:
@@ -230,7 +230,7 @@ Inputs:
 | **OtherMembers** | `string` |  |
 | **TransportSettings** | `string` |  |
 | **CurrentURI** | `string` |  |
-| **CurrentURIMetaData** | `string` |  |
+| **CurrentURIMetaData** | `string` |  Embedded XML |
 | **SleepTimerState** | `string` |  |
 | **AlarmState** | `string` |  |
 | **StreamRestartState** | `string` |  |
@@ -268,7 +268,7 @@ Inputs:
 | **CurrentGroupID** | `string` |  |
 | **OtherMembers** | `string` |  |
 | **CurrentURI** | `string` |  |
-| **CurrentURIMetaData** | `string` |  |
+| **CurrentURIMetaData** | `string` |  Embedded XML |
 | **SleepTimerState** | `string` |  |
 | **AlarmState** | `string` |  |
 | **StreamRestartState** | `string` |  |
@@ -363,7 +363,7 @@ Inputs:
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Title** | `string` |  |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 
 Outputs:
 
@@ -515,9 +515,9 @@ Outputs:
 | **NrTracks** | `ui4` |  |
 | **MediaDuration** | `string` |  |
 | **CurrentURI** | `string` |  |
-| **CurrentURIMetaData** | `string` |  |
+| **CurrentURIMetaData** | `string` |  Embedded XML |
 | **NextURI** | `string` |  |
-| **NextURIMetaData** | `string` |  |
+| **NextURIMetaData** | `string` |  Embedded XML |
 | **PlayMedium** | `string` |  Possible values: `NONE` / `NETWORK` |
 | **RecordMedium** | `string` |  Possible values: `NONE` |
 | **WriteStatus** | `string` |  |
@@ -546,7 +546,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **Track** | `ui4` |  |
 | **TrackDuration** | `string` |  |
-| **TrackMetaData** | `string` |  |
+| **TrackMetaData** | `string` |  Embedded XML |
 | **TrackURI** | `string` |  |
 | **RelTime** | `string` |  |
 | **AbsTime** | `string` |  |
@@ -908,7 +908,7 @@ Inputs:
 | **LoggedStartTime** | `string` |  |
 | **Duration** | `string` |  |
 | **ProgramURI** | `string` |  |
-| **ProgramMetaData** | `string` |  |
+| **ProgramMetaData** | `string` |  Embedded XML |
 | **PlayMode** | `string` |  Allowed values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | **Volume** | `ui2` |  |
 | **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
@@ -987,7 +987,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CurrentURI** | `string` | The new TransportURI - its a special SONOS format |
-| **CurrentURIMetaData** | `string` | Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri |
+| **CurrentURIMetaData** | `string` | Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri Embedded XML |
 
 **Remarks** If set to another player RINCON, the player is grouped with that one.
 
@@ -1031,7 +1031,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NextURI** | `string` |  |
-| **NextURIMetaData** | `string` |  |
+| **NextURIMetaData** | `string` |  Embedded XML |
 
 ### SetPlayMode
 
@@ -1096,7 +1096,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ProgramURI** | `string` |  |
-| **ProgramMetaData** | `string` |  |
+| **ProgramMetaData** | `string` |  Embedded XML |
 | **Volume** | `ui2` |  |
 | **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 | **ResetVolumeAfter** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
@@ -1143,7 +1143,7 @@ Timeout: Second-3600
 | AlarmLoggedStartTime |  | `string` |  |
 | AlarmRunning |  | `boolean` |  `1` for true and `0` for false  |
 | AVTransportURI |  | `string` |  |
-| AVTransportURIMetaData |  | `string` |  |
+| AVTransportURIMetaData |  | `string` |  Embedded XML |
 | CurrentCrossfadeMode |  | `boolean` |  `1` for true and `0` for false  |
 | CurrentMediaDuration |  | `string` |  |
 | CurrentPlayMode |  | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
@@ -1151,7 +1151,7 @@ Timeout: Second-3600
 | CurrentSection |  | `ui4` |  |
 | CurrentTrack |  | `ui4` |  |
 | CurrentTrackDuration |  | `string` |  |
-| CurrentTrackMetaData |  | `string` |  |
+| CurrentTrackMetaData |  | `string` |  Embedded XML |
 | CurrentTrackURI |  | `string` |  |
 | CurrentTransportActions |  | `string` |  |
 | CurrentValidPlayModes |  | `string` |  |
@@ -1159,12 +1159,12 @@ Timeout: Second-3600
 | DirectControlClientID |  | `string` |  |
 | DirectControlIsSuspended |  | `boolean` |  `1` for true and `0` for false  |
 | EnqueuedTransportURI |  | `string` |  |
-| EnqueuedTransportURIMetaData |  | `string` |  |
+| EnqueuedTransportURIMetaData |  | `string` |  Embedded XML |
 | LastChange | ✔ | `string` |  |
 | MuseSessions |  | `string` |  |
 | NextAVTransportURI |  | `string` |  |
-| NextAVTransportURIMetaData |  | `string` |  |
-| NextTrackMetaData |  | `string` |  |
+| NextAVTransportURIMetaData |  | `string` |  Embedded XML |
+| NextTrackMetaData |  | `string` |  Embedded XML |
 | NextTrackURI |  | `string` |  |
 | NumberOfTracks |  | `ui4` |  |
 | PlaybackStorageMedium |  | `string` | `NONE` / `NETWORK` |
