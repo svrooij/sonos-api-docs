@@ -8,7 +8,7 @@ parent: Sonos Services
 
 Service that controls stuff related to transport (play/pause/next/special urls)
 
-The AVTransport service is available on these models: `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos One (S18) S2` / `SYMFONISK Bookshelf (S21) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Sub (Sub) S2` / `Sonos Play:1 (S1) S1` / `Sonos Play:5 (S5) S1` / `Sonos Playbar (S9) S1`.
+The AVTransport service is available on these models: `Sonos Play:1 (S1) S2` / `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos One (S18) S2` / `SYMFONISK Bookshelf (S21) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `Sonos Play:5 (S6) S2` / `Sonos Playbar (S9) S2` / `Sonos Sub (Sub) S2`.
 
 1. TOC
 {:toc}
@@ -73,9 +73,9 @@ Inputs:
 | **UpdateID** | `ui4` |  |
 | **NumberOfURIs** | `ui4` |  |
 | **EnqueuedURIs** | `string` |  |
-| **EnqueuedURIsMetaData** | `string` |  |
+| **EnqueuedURIsMetaData** | `string` |  Embedded XML |
 | **ContainerURI** | `string` |  |
-| **ContainerMetaData** | `string` |  |
+| **ContainerMetaData** | `string` |  Embedded XML |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` |  |
 | **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -110,7 +110,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 | **DesiredFirstTrackNumberEnqueued** | `ui4` | use `0` to add at the end or `1` to insert at the beginning |
 | **EnqueueAsNext** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -147,7 +147,7 @@ Inputs:
 | **ObjectID** | `string` |  |
 | **UpdateID** | `ui4` |  |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 | **AddAtIndex** | `ui4` |  |
 
 Outputs:
@@ -230,7 +230,7 @@ Inputs:
 | **OtherMembers** | `string` |  |
 | **TransportSettings** | `string` |  |
 | **CurrentURI** | `string` |  |
-| **CurrentURIMetaData** | `string` |  |
+| **CurrentURIMetaData** | `string` |  Embedded XML |
 | **SleepTimerState** | `string` |  |
 | **AlarmState** | `string` |  |
 | **StreamRestartState** | `string` |  |
@@ -268,7 +268,7 @@ Inputs:
 | **CurrentGroupID** | `string` |  |
 | **OtherMembers** | `string` |  |
 | **CurrentURI** | `string` |  |
-| **CurrentURIMetaData** | `string` |  |
+| **CurrentURIMetaData** | `string` |  Embedded XML |
 | **SleepTimerState** | `string` |  |
 | **AlarmState** | `string` |  |
 | **StreamRestartState** | `string` |  |
@@ -363,7 +363,7 @@ Inputs:
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **Title** | `string` |  |
 | **EnqueuedURI** | `string` |  |
-| **EnqueuedURIMetaData** | `string` |  |
+| **EnqueuedURIMetaData** | `string` |  Embedded XML |
 
 Outputs:
 
@@ -515,9 +515,9 @@ Outputs:
 | **NrTracks** | `ui4` |  |
 | **MediaDuration** | `string` |  |
 | **CurrentURI** | `string` |  |
-| **CurrentURIMetaData** | `string` |  |
+| **CurrentURIMetaData** | `string` |  Embedded XML |
 | **NextURI** | `string` |  |
-| **NextURIMetaData** | `string` |  |
+| **NextURIMetaData** | `string` |  Embedded XML |
 | **PlayMedium** | `string` |  Possible values: `NONE` / `NETWORK` |
 | **RecordMedium** | `string` |  Possible values: `NONE` |
 | **WriteStatus** | `string` |  |
@@ -546,7 +546,7 @@ Outputs:
 |:----------|:-----|:------------|
 | **Track** | `ui4` |  |
 | **TrackDuration** | `string` |  |
-| **TrackMetaData** | `string` |  |
+| **TrackMetaData** | `string` |  Embedded XML |
 | **TrackURI** | `string` |  |
 | **RelTime** | `string` |  |
 | **AbsTime** | `string` |  |
@@ -908,7 +908,7 @@ Inputs:
 | **LoggedStartTime** | `string` |  |
 | **Duration** | `string` |  |
 | **ProgramURI** | `string` |  |
-| **ProgramMetaData** | `string` |  |
+| **ProgramMetaData** | `string` |  Embedded XML |
 | **PlayMode** | `string` |  Allowed values: `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
 | **Volume** | `ui2` |  |
 | **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
@@ -987,7 +987,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **CurrentURI** | `string` | The new TransportURI - its a special SONOS format |
-| **CurrentURIMetaData** | `string` | Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri |
+| **CurrentURIMetaData** | `string` | Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri Embedded XML |
 
 **Remarks** If set to another player RINCON, the player is grouped with that one.
 
@@ -1031,7 +1031,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **NextURI** | `string` |  |
-| **NextURIMetaData** | `string` |  |
+| **NextURIMetaData** | `string` |  Embedded XML |
 
 ### SetPlayMode
 
@@ -1096,7 +1096,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **ProgramURI** | `string` |  |
-| **ProgramMetaData** | `string` |  |
+| **ProgramMetaData** | `string` |  Embedded XML |
 | **Volume** | `ui2` |  |
 | **IncludeLinkedZones** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 | **ResetVolumeAfter** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
@@ -1143,7 +1143,7 @@ Timeout: Second-3600
 | AlarmLoggedStartTime |  | `string` |  |
 | AlarmRunning |  | `boolean` |  `1` for true and `0` for false  |
 | AVTransportURI |  | `string` |  |
-| AVTransportURIMetaData |  | `string` |  |
+| AVTransportURIMetaData |  | `string` |  Embedded XML |
 | CurrentCrossfadeMode |  | `boolean` |  `1` for true and `0` for false  |
 | CurrentMediaDuration |  | `string` |  |
 | CurrentPlayMode |  | `string` | `NORMAL` / `REPEAT_ALL` / `REPEAT_ONE` / `SHUFFLE_NOREPEAT` / `SHUFFLE` / `SHUFFLE_REPEAT_ONE` |
@@ -1151,7 +1151,7 @@ Timeout: Second-3600
 | CurrentSection |  | `ui4` |  |
 | CurrentTrack |  | `ui4` |  |
 | CurrentTrackDuration |  | `string` |  |
-| CurrentTrackMetaData |  | `string` |  |
+| CurrentTrackMetaData |  | `string` |  Embedded XML |
 | CurrentTrackURI |  | `string` |  |
 | CurrentTransportActions |  | `string` |  |
 | CurrentValidPlayModes |  | `string` |  |
@@ -1159,12 +1159,12 @@ Timeout: Second-3600
 | DirectControlClientID |  | `string` |  |
 | DirectControlIsSuspended |  | `boolean` |  `1` for true and `0` for false  |
 | EnqueuedTransportURI |  | `string` |  |
-| EnqueuedTransportURIMetaData |  | `string` |  |
+| EnqueuedTransportURIMetaData |  | `string` |  Embedded XML |
 | LastChange | ✔ | `string` |  |
 | MuseSessions |  | `string` |  |
 | NextAVTransportURI |  | `string` |  |
-| NextAVTransportURIMetaData |  | `string` |  |
-| NextTrackMetaData |  | `string` |  |
+| NextAVTransportURIMetaData |  | `string` |  Embedded XML |
+| NextTrackMetaData |  | `string` |  Embedded XML |
 | NextTrackURI |  | `string` |  |
 | NumberOfTracks |  | `ui4` |  |
 | PlaybackStorageMedium |  | `string` | `NONE` / `NETWORK` |
@@ -1224,14 +1224,13 @@ This file is automatically generated with [@svrooij/sonos-docs](https://github.c
 
 | Device | Software generation | Software version | Discovery date |
 |:-------|:--------------------|:-----------------|:---------------|
+| `Sonos Play:1 (S1)` | S2 | 70.1-34112 | 2022-11-03T11:43:50.840Z |
 | `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
 | `Sonos Beam (S14)` | S2 | 64.3-19080 | 2021-08-18T06:04:08.308Z |
-| `Sonos One (S18)` | S2 | 68.3-30100 | 2022-06-26T09:03:01.959Z |
+| `Sonos One (S18)` | S2 | 70.1-34112 | 2022-11-03T11:45:41.697Z |
 | `SYMFONISK Bookshelf (S21)` | S2 | 66.4-23300 | 2022-01-01T11:41:01.361Z |
 | `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
 | `Sonos Play:3 (S3)` | S2 | 64.3-19080 | 2021-08-18T06:09:36.692Z |
 | `Sonos Play:5 (S6)` | S2 | 64.3-19080 | 2021-08-18T06:06:35.970Z |
+| `Sonos Playbar (S9)` | S2 | 70.1-34112 | 2022-11-03T11:59:25.517Z |
 | `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |
-| `Sonos Play:1 (S1)` | S1 | 57.10-25140 | 2022-03-16T16:41:42.975Z |
-| `Sonos Play:5 (S5)` | S1 | 57.10-25140 | 2022-03-16T16:33:24.502Z |
-| `Sonos Playbar (S9)` | S1 | 57.10-25140 | 2022-03-16T16:41:37.730Z |

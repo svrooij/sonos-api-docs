@@ -83,6 +83,16 @@ export default class Generate extends Command {
       }
       return null
     })
+    handlebars.registerHelper('ends_with', function (input?: string, endsWith?: string) {
+      if (arguments.length !== 3) {
+        throw new handlebars.Exception('same requires exactly two argument')
+      }
+      if (endsWith === undefined) {
+        throw new handlebars.Exception('2nd parameter has to be a string')
+      }
+
+      return input?.endsWith(endsWith) == true;
+    })
 
     outputTemplate?.files.forEach(t => {
       if (t.usage === 'index') {

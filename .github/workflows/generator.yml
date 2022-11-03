@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - main
+      - ci-build
     paths:
       - '.github/workflows/generator.yml'
       - 'generator/sonos-docs/src/**/*.ts'
+      - 'generator/sonos-docs/.releaserc'
 
   pull_request:
     branches:
@@ -50,24 +52,22 @@ jobs:
       - name: Install depencencies
         run: npm ci
       - name: Semantic Release
-        run: npx semantic-release
-        #uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v2
         id: semantic
+        with:
+          working_directory: generator/sonos-docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Did release?
-        id: did_release
-        run: '(test -f .new-version && echo "::set-output name=new_release_published::true" && echo "::set-output name=new_release_version::$(cat ./.new-version)") || echo "::set-output name=new_release_published::false"'
       - name: Setup node for Github Registry
-        if: steps.did_release.outputs.new_release_published == 'true'
+        if: steps.semantic.outputs.new_release_published == 'true'
         uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: 'https://npm.pkg.github.com'
           scope: 'svrooij'
       - name: Publish To GitHub Package Registry
-        if: steps.did_release.outputs.new_release_published == 'true'
+        if: steps.semantic.outputs.new_release_published == 'true'
         run: |
           npm publish
         env:

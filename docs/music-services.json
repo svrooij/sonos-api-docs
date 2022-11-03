@@ -2,7 +2,7 @@
   {
     "Name": "7digital",
     "Version": "1.1",
-    "Uri": "http://sonos-service.7digital.com/sonos.asmx",
+    "Uri": "https://sonos-service.7digital.com/sonos.asmx",
     "SecureUri": "https://sonos-service.7digital.com/sonos.asmx",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -74,16 +74,10 @@
     "Uri": "https://sonos-music.apple.com/ws/SonosSoap",
     "SecureUri": "https://sonos-music.apple.com/ws/SonosSoap",
     "ContainerType": "MService",
-    "Capabilities": "3117633",
-    "Presentation": {
-      "Strings": {
-        "Version": "24",
-        "Uri": "https://sonos-music.apple.com/xml/strings.xml"
-      },
-      "PresentationMap": {
-        "Version": "22",
-        "Uri": "http://sonos-pmap.ws.sonos.com/applemusicbrand_pmap3.xml"
-      }
+    "Capabilities": "7311937",
+    "Manifest": {
+      "Version": "7",
+      "Uri": "https://mnfts.ws.sonos.com/p/apple_manifest.4.json"
     },
     "Id": 204,
     "Policy": {
@@ -94,7 +88,7 @@
   {
     "Name": "ARTRADIO - RadioArt.com",
     "Version": "1.1",
-    "Uri": "http://sonos.radioart.com/",
+    "Uri": "https://sonos.radioart.com/",
     "SecureUri": "https://sonos.radioart.com/",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -117,13 +111,13 @@
   {
     "Name": "Atmosphere by Kollekt.fm",
     "Version": "1.1",
-    "Uri": "http://sonos-smapi.service.kollekt.fm/wsdl",
+    "Uri": "https://sonos-smapi.service.kollekt.fm/wsdl",
     "SecureUri": "https://sonos-smapi.service.kollekt.fm/wsdl",
     "ContainerType": "SoundLab",
     "Capabilities": "4260352",
     "Manifest": {
-      "Version": "1",
-      "Uri": "https://mnfts.ws.sonos.com/p/kollekt-fm.json"
+      "Version": "2",
+      "Uri": "https://mnfts.ws.sonos.com/p/kollekt-fm.2.json"
     },
     "Id": 306,
     "Policy": {
@@ -260,7 +254,7 @@
   {
     "Name": "CBC Radio &amp; Music",
     "Version": "1.1",
-    "Uri": "http://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc",
+    "Uri": "https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc",
     "SecureUri": "https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc",
     "ContainerType": "MService",
     "Capabilities": "594496",
@@ -304,6 +298,29 @@
     }
   },
   {
+    "Name": "Community Radio Plus",
+    "Version": "1.1",
+    "Uri": "https://sonoslb.radioapi.io/cbaa",
+    "SecureUri": "https://sonoslb.radioapi.io/cbaa",
+    "ContainerType": "SoundLab",
+    "Capabilities": "577",
+    "Presentation": {
+      "Strings": {
+        "Version": "1",
+        "Uri": "http://sonoslb.radioapi.io/cbaa/stringtable.xml"
+      },
+      "PresentationMap": {
+        "Version": "1",
+        "Uri": "http://sonoslb.radioapi.io/cbaa/presentationmap.xml"
+      }
+    },
+    "Id": 330,
+    "Policy": {
+      "Auth": "Anonymous",
+      "PollInterval": 30
+    }
+  },
+  {
     "Name": "Convoy Network",
     "Version": "1.1",
     "Uri": "https://sonos.convoynetwork.com/musicservice",
@@ -329,7 +346,7 @@
   {
     "Name": "Custom Channels",
     "Version": "1.1",
-    "Uri": "http://ensemble.customchannels.net/sonos",
+    "Uri": "https://ensemble.customchannels.net/sonos",
     "SecureUri": "https://ensemble.customchannels.net/sonos",
     "ContainerType": "MService",
     "Capabilities": "8704",
@@ -352,19 +369,13 @@
   {
     "Name": "Deezer",
     "Version": "1.1",
-    "Uri": "http://api.deezer.com/sonos",
+    "Uri": "https://api.deezer.com/sonos",
     "SecureUri": "https://api.deezer.com/sonos",
     "ContainerType": "MService",
-    "Capabilities": "25180755",
-    "Presentation": {
-      "Strings": {
-        "Version": "15",
-        "Uri": "http://files.deezer.com/xml/sonos_string_tables.xml"
-      },
-      "PresentationMap": {
-        "Version": "15",
-        "Uri": "http://files.deezer.com/xml/sonos_pmap.xml"
-      }
+    "Capabilities": "30423635",
+    "Manifest": {
+      "Version": "8",
+      "Uri": "https://mnfts.ws.sonos.com/p/deezer.6.json"
     },
     "Id": 2,
     "Policy": {
@@ -375,7 +386,7 @@
   {
     "Name": "deliver.media",
     "Version": "1.1",
-    "Uri": "http://sonos.deliver.media/musicservice",
+    "Uri": "https://sonos.deliver.media/musicservice",
     "SecureUri": "https://sonos.deliver.media/musicservice",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -398,7 +409,7 @@
   {
     "Name": "Epidemic Spaces",
     "Version": "1.1",
-    "Uri": "http://api.spaces.epidemicsound.com/sonos",
+    "Uri": "https://api.spaces.epidemicsound.com/sonos",
     "SecureUri": "https://api.spaces.epidemicsound.com/sonos",
     "ContainerType": "MService",
     "Capabilities": "66048",
@@ -417,7 +428,7 @@
   {
     "Name": "FamilyStream",
     "Version": "1.1",
-    "Uri": "http://web.familystream.com/api/sonos_2.0.php",
+    "Uri": "https://web.familystream.com/api/sonos_2.0.php",
     "SecureUri": "https://web.familystream.com/api/sonos_2.0.php",
     "ContainerType": "MService",
     "Capabilities": "537153",
@@ -509,7 +520,7 @@
   {
     "Name": "Global Player",
     "Version": "1.1",
-    "Uri": "http://sonoslb.radioapi.io/global",
+    "Uri": "https://sonoslb.radioapi.io/global",
     "SecureUri": "https://sonoslb.radioapi.io/global",
     "ContainerType": "MService",
     "Capabilities": "577",
@@ -530,32 +541,32 @@
     }
   },
   {
-    "Name": "Hearts of Space",
+    "Name": "HEARTS of SPACE",
     "Version": "1.1",
-    "Uri": "http://sonos.hos.com/SOAP/Server1.2.php",
-    "SecureUri": "https://sonos.hos.com/SOAP/Server1.2.php",
+    "Uri": "https://sonos-api.hos.com/ws",
+    "SecureUri": "https://sonos-api.hos.com/ws",
     "ContainerType": "MService",
-    "Capabilities": "512",
+    "Capabilities": "4680",
     "Presentation": {
       "Strings": {
-        "Version": "2",
-        "Uri": "http://sonos.hos.com/DATA/StringResources1.2.xml"
+        "Version": "4",
+        "Uri": "https://sonos-api.hos.com/sonos/strings.xml"
       },
       "PresentationMap": {
-        "Version": "2",
-        "Uri": "http://sonos-pmap.ws.sonos.com/hos_pmap.2.xml"
+        "Version": "4",
+        "Uri": "https://sonos-api.hos.com/presentationmap.xml"
       }
     },
     "Id": 36,
     "Policy": {
-      "Auth": "UserId",
-      "PollInterval": 1200
+      "Auth": "AppLink",
+      "PollInterval": 60
     }
   },
   {
     "Name": "hotelradio.fm",
     "Version": "1.1",
-    "Uri": "http://users.hotelradio.fm/sonosapi/index.php",
+    "Uri": "https://users.hotelradio.fm/sonosapi/index.php",
     "SecureUri": "https://users.hotelradio.fm/sonosapi/index.php",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -589,9 +600,32 @@
     }
   },
   {
+    "Name": "iChill Music Service",
+    "Version": "1.1",
+    "Uri": "https://upgrade.ichillmusic.com/sonoscallback-production.php",
+    "SecureUri": "https://upgrade.ichillmusic.com/sonoscallback-production.php",
+    "ContainerType": "SoundLab",
+    "Capabilities": "114259",
+    "Presentation": {
+      "Strings": {
+        "Version": "3",
+        "Uri": "http://upgrade.ichillmusic.com/strings.xml"
+      },
+      "PresentationMap": {
+        "Version": "3",
+        "Uri": "http://upgrade.ichillmusic.com/pmap.xml"
+      }
+    },
+    "Id": 327,
+    "Policy": {
+      "Auth": "AppLink",
+      "PollInterval": 3600
+    }
+  },
+  {
     "Name": "IDAGIO",
     "Version": "1.1",
-    "Uri": "http://idg-prod-sonos.herokuapp.com/smapi/action",
+    "Uri": "https://idg-prod-sonos.herokuapp.com/smapi/action",
     "SecureUri": "https://idg-prod-sonos.herokuapp.com/smapi/action",
     "ContainerType": "MService",
     "Capabilities": "602688",
@@ -671,7 +705,7 @@
   {
     "Name": "Minidisco",
     "Version": "1.1",
-    "Uri": "http://sonos.minidisco.nl/server.php",
+    "Uri": "https://sonos.minidisco.nl/server.php",
     "SecureUri": "https://sonos.minidisco.nl/server.php",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -717,7 +751,7 @@
   {
     "Name": "Mood Mix",
     "Version": "1.1",
-    "Uri": "http://sonos.mix.moodmedia.com/api",
+    "Uri": "https://sonos.mix.moodmedia.com/api",
     "SecureUri": "https://sonos.mix.moodmedia.com/api",
     "ContainerType": "MService",
     "Capabilities": "4609",
@@ -761,9 +795,28 @@
     }
   },
   {
+    "Name": "Music Your Brand",
+    "Version": "1.1",
+    "Uri": "https://api.musicyourbrand.com/sonos/soap",
+    "SecureUri": "https://api.musicyourbrand.com/sonos/soap",
+    "ContainerType": "SoundLab",
+    "Capabilities": "98824",
+    "Presentation": {
+      "Strings": {
+        "Version": "1",
+        "Uri": "https://api.musicyourbrand.com/sonos/string"
+      }
+    },
+    "Id": 329,
+    "Policy": {
+      "Auth": "AppLink",
+      "PollInterval": 3600
+    }
+  },
+  {
     "Name": "My Cloud Home",
     "Version": "1.1",
-    "Uri": "http://sonos.mycloud.com/musicservice",
+    "Uri": "https://sonos.mycloud.com/musicservice",
     "SecureUri": "https://sonos.mycloud.com/musicservice",
     "ContainerType": "MService",
     "Capabilities": "33281",
@@ -786,7 +839,7 @@
   {
     "Name": "myTuner Radio",
     "Version": "1.1",
-    "Uri": "http://sonos.mytuner.mobi/api/v2/sonos/soap",
+    "Uri": "https://sonos.mytuner.mobi/api/v2/sonos/soap",
     "SecureUri": "https://sonos.mytuner.mobi/api/v2/sonos/soap",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -809,8 +862,8 @@
   {
     "Name": "Napster",
     "Version": "1.1",
-    "Uri": "http://sonosapi-napster-ns.rhapsody.com/smapi",
-    "SecureUri": "https://sonosapi-napster.rhapsody.com/smapi",
+    "Uri": "https://sonos-resurrections-prod.napster.com/",
+    "SecureUri": "https://sonos-resurrections-prod.napster.com/",
     "ContainerType": "MService",
     "Capabilities": "595",
     "Presentation": {
@@ -832,18 +885,18 @@
   {
     "Name": "NRK Radio",
     "Version": "1.1",
-    "Uri": "http://psapi.nrk.no/sonos/sonos.svc",
+    "Uri": "https://psapi.nrk.no/sonos/sonos.svc",
     "SecureUri": "https://psapi.nrk.no/sonos/sonos.svc",
     "ContainerType": "MService",
     "Capabilities": "37377",
     "Presentation": {
       "Strings": {
-        "Version": "2",
-        "Uri": "http://psapi.nrk.no/sonos/localization/strings.xml"
+        "Version": "3",
+        "Uri": "https://psapi.nrk.no/sonos/localization/strings.xml"
       },
       "PresentationMap": {
-        "Version": "4",
-        "Uri": "http://psapi.nrk.no/sonos/presentationmap.xml"
+        "Version": "5",
+        "Uri": "https://psapi.nrk.no/sonos/presentationmap.xml"
       }
     },
     "Id": 277,
@@ -855,7 +908,7 @@
   {
     "Name": "NTS Radio",
     "Version": "1.1",
-    "Uri": "http://www.nts.live/smapi",
+    "Uri": "https://www.nts.live/smapi",
     "SecureUri": "https://www.nts.live/smapi",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -903,7 +956,7 @@
     "Version": "1.1",
     "Uri": "https://piraten.fm/sonos",
     "SecureUri": "https://piraten.fm/sonos",
-    "ContainerType": "SoundLab",
+    "ContainerType": "MService",
     "Capabilities": "512",
     "Presentation": {
       "Strings": {
@@ -947,7 +1000,7 @@
   {
     "Name": "Pocket Casts",
     "Version": "1.1",
-    "Uri": "http://integrations.pocketcasts.com/service/smapi",
+    "Uri": "https://integrations.pocketcasts.com/service/smapi",
     "SecureUri": "https://integrations.pocketcasts.com/service/smapi",
     "ContainerType": "MService",
     "Capabilities": "1028672",
@@ -970,7 +1023,7 @@
   {
     "Name": "PowerApp",
     "Version": "1.1",
-    "Uri": "http://api.powergroup.com.tr/Sonos/",
+    "Uri": "https://api.powergroup.com.tr/Sonos/",
     "SecureUri": "https://api.powergroup.com.tr/Sonos/",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -993,7 +1046,7 @@
   {
     "Name": "Qobuz",
     "Version": "1.1",
-    "Uri": "http://www.qobuz.com/api.xml/0.3/sonos",
+    "Uri": "https://www.qobuz.com/api.xml/0.3/sonos",
     "SecureUri": "https://www.qobuz.com/api.xml/0.3/sonos",
     "ContainerType": "MService",
     "Capabilities": "10835",
@@ -1016,7 +1069,7 @@
   {
     "Name": "Radio Javan",
     "Version": "1.1",
-    "Uri": "http://rjsonos.app/musicservice",
+    "Uri": "https://rjsonos.app/musicservice",
     "SecureUri": "https://rjsonos.app/musicservice",
     "ContainerType": "MService",
     "Capabilities": "528897",
@@ -1039,7 +1092,7 @@
   {
     "Name": "Radio Paradise",
     "Version": "1.1",
-    "Uri": "http://api.radioparadise.com/sonos/soap/server.php",
+    "Uri": "https://api.radioparadise.com/sonos/soap/server.php",
     "SecureUri": "https://api.radioparadise.com/sonos/soap/server.php",
     "ContainerType": "MService",
     "Capabilities": "4198912",
@@ -1077,32 +1130,9 @@
     }
   },
   {
-    "Name": "Radionomy",
-    "Version": "1.1",
-    "Uri": "https://reaper.ws.sonos.com/smapi",
-    "SecureUri": "https://reaper.ws.sonos.com/smapi",
-    "ContainerType": "MService",
-    "Capabilities": "0",
-    "Presentation": {
-      "Strings": {
-        "Version": "3",
-        "Uri": "https://sonos-str.ws.sonos.com/sonosReaper/strings.xml"
-      },
-      "PresentationMap": {
-        "Version": "5",
-        "Uri": "https://sonos-pmap.ws.sonos.com/reaper_pmap.xml"
-      }
-    },
-    "Id": 154,
-    "Policy": {
-      "Auth": "Anonymous",
-      "PollInterval": 60
-    }
-  },
-  {
     "Name": "radioPup",
     "Version": "1.1",
-    "Uri": "http://sonos.townsquaremedia.com/index.php",
+    "Uri": "https://sonos.townsquaremedia.com/index.php",
     "SecureUri": "https://sonos.townsquaremedia.com/index.php",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -1148,7 +1178,7 @@
   {
     "Name": "RauteMusik.FM",
     "Version": "1.1",
-    "Uri": "http://sonos-smapi.rautemusik.fm/smapi",
+    "Uri": "https://sonos-smapi.rautemusik.fm/smapi",
     "SecureUri": "https://sonos-smapi.rautemusik.fm/smapi",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -1194,7 +1224,7 @@
   {
     "Name": "RUSC",
     "Version": "1.1",
-    "Uri": "http://www.rusc.com/sonos.asmx",
+    "Uri": "https://www.rusc.com/sonos.asmx",
     "SecureUri": "https://www.rusc.com/sonos.asmx",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -1217,7 +1247,7 @@
   {
     "Name": "Saavn",
     "Version": "1.1",
-    "Uri": "http://www.saavn.com/apps/sonos/SonosAPI.php",
+    "Uri": "https://www.saavn.com/apps/sonos/SonosAPI.php",
     "SecureUri": "https://www.saavn.com/apps/sonos/SonosAPI.php",
     "ContainerType": "MService",
     "Capabilities": "12865",
@@ -1238,19 +1268,38 @@
     }
   },
   {
+    "Name": "Schlager Radio",
+    "Version": "1.1",
+    "Uri": "https://sonos.schlagerradio.de/wsdl/schlagerradio",
+    "SecureUri": "https://sonos.schlagerradio.de/wsdl/schlagerradio",
+    "ContainerType": "MService",
+    "Capabilities": "512",
+    "Presentation": {
+      "Strings": {
+        "Version": "1",
+        "Uri": "https://sonos.schlagerradio.de/Strings.xml"
+      }
+    },
+    "Id": 326,
+    "Policy": {
+      "Auth": "Anonymous",
+      "PollInterval": 30
+    }
+  },
+  {
     "Name": "Sonos Radio",
     "Version": "1.1",
     "Uri": "https://sali.sonos.radio/smapi",
     "SecureUri": "https://sali.sonos.radio/smapi",
-    "ContainerType": "Preload",
-    "Capabilities": "12583425",
+    "ContainerType": "MService",
+    "Capabilities": "13648393",
     "Manifest": {
-      "Version": "14",
-      "Uri": "https://mnfts.ws.sonos.com/p/sonos-radio.6.json"
+      "Version": "21",
+      "Uri": "https://mnfts.ws.sonos.com/p/sonos-radio.11.json"
     },
     "Id": 303,
     "Policy": {
-      "Auth": "Anonymous",
+      "Auth": "DeviceLink",
       "PollInterval": 300
     }
   },
@@ -1280,7 +1329,7 @@
   {
     "Name": "SOUNDMACHINE",
     "Version": "1.1",
-    "Uri": "http://provider.sound-machine.com/sonosapi",
+    "Uri": "https://provider.sound-machine.com/sonosapi",
     "SecureUri": "https://provider.sound-machine.com/sonosapi",
     "ContainerType": "MService",
     "Capabilities": "513",
@@ -1303,7 +1352,7 @@
   {
     "Name": "Soundsuit.fm",
     "Version": "1.1",
-    "Uri": "http://soundsuit.fm/smapi",
+    "Uri": "https://soundsuit.fm/smapi",
     "SecureUri": "https://soundsuit.fm/smapi",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -1331,8 +1380,8 @@
     "ContainerType": "MService",
     "Capabilities": "13632001",
     "Manifest": {
-      "Version": "11",
-      "Uri": "https://mnfts.ws.sonos.com/p/syb.2.json"
+      "Version": "12",
+      "Uri": "https://mnfts.ws.sonos.com/p/syb.3.json"
     },
     "Id": 295,
     "Policy": {
@@ -1358,32 +1407,9 @@
     }
   },
   {
-    "Name": "Spreaker",
-    "Version": "1.1",
-    "Uri": "http://sonos.spreaker.com/sonos/service/v1",
-    "SecureUri": "https://sonos.spreaker.com/sonos/service/v1",
-    "ContainerType": "MService",
-    "Capabilities": "513",
-    "Presentation": {
-      "Strings": {
-        "Version": "1",
-        "Uri": "https://www.spreaker.com/sonos/string_table.xml"
-      },
-      "PresentationMap": {
-        "Version": "2",
-        "Uri": "https://www.spreaker.com/sonos/presentation_map.xml"
-      }
-    },
-    "Id": 163,
-    "Policy": {
-      "Auth": "Anonymous",
-      "PollInterval": 30
-    }
-  },
-  {
     "Name": "Stingray Music",
     "Version": "1.1",
-    "Uri": "http://sonos.stingray.com/ws/Sonos",
+    "Uri": "https://sonos.stingray.com/ws/Sonos",
     "SecureUri": "https://sonos.stingray.com/ws/Sonos",
     "ContainerType": "MService",
     "Capabilities": "295427",
@@ -1429,7 +1455,7 @@
   {
     "Name": "storePlay",
     "Version": "1.1",
-    "Uri": "http://api.storeplay.com.au/sonos/SonosService.asmx",
+    "Uri": "https://api.storeplay.com.au/sonos/SonosService.asmx",
     "SecureUri": "https://api.storeplay.com.au/sonos/SonosService.asmx",
     "ContainerType": "MService",
     "Capabilities": "328193",
@@ -1452,18 +1478,18 @@
   {
     "Name": "Storytel",
     "Version": "1.1",
-    "Uri": "http://sonosapi.storytel.com/sonos/1.0",
+    "Uri": "https://sonosapi.storytel.com/sonos/1.0",
     "SecureUri": "https://sonosapi.storytel.com/sonos/1.0",
     "ContainerType": "MService",
     "Capabilities": "636481",
     "Presentation": {
       "Strings": {
         "Version": "2",
-        "Uri": "http://sonosapi.storytel.com/sonos-static/1.0/strings.xml"
+        "Uri": "https://sonosapi.storytel.com/sonos-static/1.0/strings.xml"
       },
       "PresentationMap": {
         "Version": "1",
-        "Uri": "http://sonosapi.storytel.com/sonos-static/1.0/pm.xml"
+        "Uri": "https://sonosapi.storytel.com/sonos-static/1.0/pm.xml"
       }
     },
     "Id": 226,
@@ -1485,7 +1511,7 @@
         "Uri": "https://sonos.playsr.com/assets/strings.xml"
       },
       "PresentationMap": {
-        "Version": "3",
+        "Version": "4",
         "Uri": "https://sonos.playsr.com/assets/presentationmap.xml"
       }
     },
@@ -1498,7 +1524,7 @@
   {
     "Name": "The Music Manager",
     "Version": "1.1",
-    "Uri": "http://themusicmanager.eu/sonos/SonosAPI.php",
+    "Uri": "https://themusicmanager.eu/sonos/SonosAPI.php",
     "SecureUri": "https://themusicmanager.eu/sonos/SonosAPI.php",
     "ContainerType": "MService",
     "Capabilities": "515",
@@ -1544,7 +1570,7 @@
   {
     "Name": "toníque",
     "Version": "1.1",
-    "Uri": "http://sonos.tonique.com/ws",
+    "Uri": "https://sonos.tonique.com/ws",
     "SecureUri": "https://sonos.tonique.com/ws",
     "ContainerType": "MService",
     "Capabilities": "512",
@@ -1563,7 +1589,7 @@
   {
     "Name": "Tribe of Noise",
     "Version": "1.1",
-    "Uri": "http://sonos.tribeofnoise.com/server-v2.1.php",
+    "Uri": "https://sonos.tribeofnoise.com/server-v2.1.php",
     "SecureUri": "https://sonos.tribeofnoise.com/server-v2.1.php",
     "ContainerType": "MService",
     "Capabilities": "4672",
@@ -1609,10 +1635,10 @@
   {
     "Name": "Tunify for Business",
     "Version": "1.1",
-    "Uri": "http://api.tunify.com/Sonos2/services/Sonos",
+    "Uri": "https://api.tunify.com/Sonos2/services/Sonos",
     "SecureUri": "https://api.tunify.com/Sonos2/services/Sonos",
     "ContainerType": "MService",
-    "Capabilities": "8769",
+    "Capabilities": "74305",
     "Presentation": {
       "Strings": {
         "Version": "4",
@@ -1655,7 +1681,7 @@
   {
     "Name": "Worldwide FM",
     "Version": "1.1",
-    "Uri": "http://wwfm-sonos.nextempire.net/sonos",
+    "Uri": "https://wwfm-sonos.nextempire.net/sonos",
     "SecureUri": "https://wwfm-sonos.nextempire.net/sonos",
     "ContainerType": "MService",
     "Capabilities": "512",

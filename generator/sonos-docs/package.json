@@ -1,7 +1,7 @@
 {
   "name": "@svrooij/sonos-docs",
   "description": "CLI tool to generate documentation for the undocumented sonos api",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "author": "Stephan van Rooij <sonos@svrooij.io> (https://svrooij.io)",
   "bin": {
     "sonos-docs": "./bin/run"
@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
-    "@semantic-release/exec": "^6.0.1",
     "@types/debug": "^4.1.7",
     "@types/node": "^16.9.6",
     "@types/node-fetch": "^2.5.7",
@@ -69,5 +68,20 @@
     "docs": "./bin/run generate docs ../../docs",
     "docs-win": ".\\bin\\run generate docs ../../docs"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "ci-build",
+        "prerelease": true
+      }
+    ]
+  }
 }
