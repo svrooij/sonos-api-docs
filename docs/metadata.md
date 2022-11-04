@@ -12,7 +12,7 @@ The metadata for an item can usually be fetched from a [remote music service](./
 
 ## Known metadata
 
-Some metadata can be guessed based on common urls.
+Some metadata can be guessed based on common URLs.
 
 {% assign metadatas = site.data.metadata.metadata | sort: 'name' %}
 {% for meta in metadatas %}
