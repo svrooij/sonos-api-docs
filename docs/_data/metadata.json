@@ -1,0 +1,82 @@
+{
+  "$schema": "https://svrooij.io/sonos-api-docs/schema/metadata.json",
+  "metadata": [
+    {
+      "service": 9,
+      "name": "Spotify Album",
+      "identifier": "spotify:album:{id}",
+      "uri": "x-rincon-cpcontainer:1004206cspotify:album:{id}?sid=9&flags=8300&sn=7",
+      "metadata": {
+        "id": "0004206cspotify:album:{id}",
+        "class": "object.container.album.musicAlbum",
+        "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+      }
+    },
+    {
+      "service": 9,
+      "name": "Spotify Artist Radio",
+      "identifier": "spotify:artistRadio:{id}",
+      "uri": "x-sonosapi-radio:spotify:artistRadio:{id}?sid=9&flags=8300&sn=7",
+      "metadata": {
+        "id": "100c206cspotify:artistRadio:{id}",
+        "title": "Artist Radio",
+        "parentId": "10052064spotify:artist:{id}",
+        "class": "object.item.audioItem.audioBroadcast.#artistRadio",
+        "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+      },
+      "sampleId": "72qVrKXRp9GeFQOesj0Pmv"
+    },
+    {
+      "service": 9,
+      "name": "Spotify Artist Top Tracks",
+      "identifier": "spotify:artistTopTracks:{id}",
+      "uri": "x-rincon-cpcontainer:100e206cspotify:artistTopTracks:{id}?sid=9&flags=8300&sn=7",
+      "metadata": {
+        "id": "100c206cspotify:artistTopTracks:{id}",
+        "parentId": "10052064spotify:artist:{id}",
+        "class": "object.container.playlistContainer",
+        "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+      }
+    },
+    {
+      "service": 9,
+      "name": "Spotify Playlist",
+      "identifier": "spotify:playlist:{id}",
+      "uri": "x-rincon-cpcontainer:1006206cspotify:playlist:{id}?sid=9&flags=8300&sn=7",
+      "metadata": {
+        "id": "1006206cspotify:playlist:{id}",
+        "parentId": "10fe2664playlists",
+        "class": "object.container.playlistContainer",
+        "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+      },
+      "sampleId": "5HllTKEvYoHAwODZdwKw9W"
+    },
+    {
+      "service": 9,
+      "name": "Spotify Track",
+      "identifier": "spotify:track:{id}",
+      "uri": "x-sonos-spotify:spotify:track:{id}?sid=9&flags=8224&sn=7",
+      "metadata": {
+        "id": "spotify:track:{id}",
+        "title": "",
+        "class": "object.item.audioItem.musicTrack",
+        "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+      },
+      "sampleId": "3nDZHJ43uRF3fZGEMIjZ0b"
+    },
+    {
+      "service": 9,
+      "name": "Spotify User Playlist",
+      "identifier": "spotify:user:{id}",
+      "uri": "x-rincon-cpcontainer:1004206cspotify:user:{id}?sid=9&flags=8300&sn=7",
+      "metadata": {
+        "id": "10062a6cspotify:user:{id}",
+        "parentId": "10082664playlists",
+        "title": "User's playlist",
+        "class": "object.container.playlistContainer",
+        "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+      }
+    }
+
+  ]
+}

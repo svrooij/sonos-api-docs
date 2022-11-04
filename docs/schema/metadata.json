@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://svrooij.io/sonos-api-docs/schema/metadata.json",
+  "definitions": {
+    "MetadataObject": {
+      "default": {
+        "service": -1,
+        "name": "{ServiceName} {Kind}",
+        "identifier": "service:track:{id}",
+        "uri": "...{id}...",
+        "metadata": {
+          "id": "service:track:{id}",
+          "class": "object.item.audioItem.musicTrack",
+          "didlDescription": "SA_RINCON2311_X_#Svc2311-0-Token"
+        }
+      },
+      "properties": {
+        "service": {
+          "title": "Service Identifier",
+          "type": "integer",
+          "default": -1
+        },
+        "name": {
+          "type":"string",
+          "title": "Metadata name",
+          "description": "Name is used in documentation and logging",
+          "default": "{ServiceName} {Kind}"
+        },
+        "identifier": {
+          "title": "Item Identifier (lookup value)",
+          "type": "string",
+          "description": "Should include '{id}', which will be extracted",
+          "default": "service:kind:{id}"
+        },
+        "uri": {
+          "title": "Item URI",
+          "description": "Full Item URI",
+          "type":"string"
+        },
+        "sampleId": {
+          "title": "Sample ID",
+          "type":"string",
+          "description": "Can be used to test this metadata"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "type": "object",
+      "required": [
+        "service",
+        "identifier",
+        "uri",
+        "name",
+        "metadata"
+      ]
+    },
+    "Metadata": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Item ID"
+        },
+        "class": {
+          "type": "string",
+          "title": "UpnpClass"
+        },
+        "didlDescription": {
+          "type":"string",
+          "title": "DidlDescription",
+          "description": "Service specific CdUdn, like 'SA_RINCON2311_X_#Svc2311-0-Token' for Spotify"
+        },
+        "title": {
+          "type": "string",
+          "title": "Item Title (not required)"
+        },
+        "parentId": {
+          "type":"string",
+          "title": "Parent ID (not required)"
+        }
+      },
+      "type":"object",
+      "required": [
+        "id",
+        "class",
+        "didlDescription"
+      ]
+    }
+  },
+  "title": "Collection of lookup values for Sonos Speakers",
+  "properties": {
+    "metadata": {
+      "items": {
+        "$ref": "#/definitions/MetadataObject"
+      },
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "type": "object"
+}
