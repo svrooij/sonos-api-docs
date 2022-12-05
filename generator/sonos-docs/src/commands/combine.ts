@@ -237,6 +237,32 @@ export default class Combine extends Command {
           }
         })
       }
+
+      if (docs?.variables) {
+        if (!s.stateVariables) {
+          s.stateVariables = [];
+        }
+        docs.variables.forEach(p => {
+          p.sendEvents = true;
+          // @ts-ignore
+          const index = s.stateVariables.findIndex(v => v.name === p.name);
+          if (index > -1) {
+            // @ts-ignore
+            s.stateVariables[index].description = p.description;
+            // @ts-ignore
+            s.stateVariables[index].dataType = p.dataType;
+            if (p.allowedValues) {
+              // @ts-ignore
+              s.stateVariables[index].allowedValues = p.allowedValues;
+            }
+            
+          } else {
+            s.stateVariables?.push(p);
+          }
+        });
+        
+        
+      }
     })
     combinedServices.services = combinedServices.services.sort((a: SonosService, b: SonosService) => a.name.localeCompare(b.name))
     cli.action.stop()

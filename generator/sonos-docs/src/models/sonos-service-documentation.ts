@@ -1,4 +1,5 @@
 import SonosServiceError from './sonos-service-error';
+import SonosStateVariable from './sonos-state-variable';
 
 export interface SonosServicesDocumentation {
   services: { [key: string]: SonosServiceDocumentation };
@@ -11,6 +12,7 @@ export interface SonosServiceDocumentation {
   actions?: { [key: string]: SonosServiceDocumentationAction };
   customTypes?: { [key: string]: { [key: string]: string } };
   errors?: SonosServiceError[];
+  variables?: SonosStateVariable[];
 }
 
 export interface SonosServiceDocumentationAction {

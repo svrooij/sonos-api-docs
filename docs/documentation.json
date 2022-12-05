@@ -400,7 +400,13 @@
             "DesiredTreble": "between -10 and 10"
           }
         }
-      }
+      },
+      "variables": [
+        {
+          "name": "HeightChannelLevel",
+          "dataType": "ui4"
+        }
+      ]
     },
     "SystemPropertiesService": {
       "description": "Manage system-wide settings, mainly account stuff",

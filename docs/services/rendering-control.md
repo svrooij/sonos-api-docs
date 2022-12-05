@@ -704,6 +704,7 @@ Timeout: Second-3600
 | DialogLevel |  | `string` |  |
 | EQValue |  | `i2` |  |
 | HeadphoneConnected |  | `boolean` |  `1` for true and `0` for false  |
+| HeightChannelLevel | ✔ | `ui4` |  |
 | LastChange | ✔ | `string` |  |
 | Loudness |  | `boolean` |  `1` for true and `0` for false  |
 | MusicSurroundLevel |  | `string` |  |

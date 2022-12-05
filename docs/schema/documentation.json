@@ -22,6 +22,13 @@
           "items": {
             "$ref": "#/definitions/SonosCustomError"
           }
+        },
+        "variables": {
+          "title": "Service variables",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SonosServiceVariable"
+          }
         }
       },
       "type": "object",
@@ -72,6 +79,26 @@
       },
       "type": "object",
       "required": ["code", "description"]
+    },
+    "SonosServiceVariable": {
+      "title": "Service variable",
+      "description": "Used for variable description and additional event properties",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name of the event",
+          "type": "string"
+        },
+        "dataType": {
+          "type": "string",
+          "enum": ["string", "boolean", "ui2", "i4", "ui4"]
+        },
+        "description": {
+          "type":"string",
+          "title": "Optional description"
+        }
+      },
+      "required": ["name", "dataType"]
     }
   },
   "properties": {
