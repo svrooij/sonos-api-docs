@@ -22,7 +22,7 @@ The QPlay service is available on these models: `Sonos Play:1 (S1) S2` / `Sonos 
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/QPlay/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/QPlay/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/QPlay1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/QPlay1.xml` |
 | **Service ID** | `urn:tencent-com:serviceId:QPlay` |
 | **Service type** | `urn:schemas-tencent-com:service:QPlay:1` |
 

@@ -22,7 +22,7 @@ The GroupManagement service is available on these models: `Sonos Play:1 (S1) S2`
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/GroupManagement/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/GroupManagement/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/GroupManagement1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/GroupManagement1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:GroupManagement` |
 | **Service type** | `urn:schemas-upnp-org:service:GroupManagement:1` |
 

@@ -22,7 +22,7 @@ The AudioIn service is available on these models: `Sonos Play:5 (S6) S2`.
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/AudioIn/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/AudioIn/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/AudioIn1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/AudioIn1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:AudioIn` |
 | **Service type** | `urn:schemas-upnp-org:service:AudioIn:1` |
 

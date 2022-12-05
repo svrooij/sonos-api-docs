@@ -22,7 +22,7 @@ The HTControl service is available on these models: `Sonos Beam (S14) S2` / `Son
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/HTControl/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/HTControl/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/HTControl1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/HTControl1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:HTControl` |
 | **Service type** | `urn:schemas-upnp-org:service:HTControl:1` |
 

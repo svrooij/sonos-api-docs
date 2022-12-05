@@ -20,7 +20,7 @@ The VirtualLineIn service is available on these models: `Sonos Play:1 (S1) S2` /
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/MediaRenderer/VirtualLineIn/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/MediaRenderer/VirtualLineIn/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/VirtualLineIn1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/VirtualLineIn1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:VirtualLineIn` |
 | **Service type** | `urn:schemas-upnp-org:service:VirtualLineIn:1` |
 

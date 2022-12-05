@@ -22,7 +22,7 @@ The Queue service is available on these models: `Sonos Play:1 (S1) S2` / `Sonos 
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/MediaRenderer/Queue/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/MediaRenderer/Queue/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/Queue1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/Queue1.xml` |
 | **Service ID** | `urn:sonos-com:serviceId:Queue` |
 | **Service type** | `urn:schemas-sonos-com:service:Queue:1` |
 

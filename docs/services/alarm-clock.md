@@ -22,7 +22,7 @@ The AlarmClock service is available on these models: `Sonos Play:1 (S1) S2` / `S
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/AlarmClock/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/AlarmClock/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/AlarmClock1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/AlarmClock1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:AlarmClock` |
 | **Service type** | `urn:schemas-upnp-org:service:AlarmClock:1` |
 
