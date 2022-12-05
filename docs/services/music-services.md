@@ -22,7 +22,7 @@ The MusicServices service is available on these models: `Sonos Play:1 (S1) S2` /
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/MusicServices/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/MusicServices/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/MusicServices1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/MusicServices1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:MusicServices` |
 | **Service type** | `urn:schemas-upnp-org:service:MusicServices:1` |
 

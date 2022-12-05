@@ -22,7 +22,7 @@ The GroupRenderingControl service is available on these models: `Sonos Play:1 (S
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/MediaRenderer/GroupRenderingControl/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/MediaRenderer/GroupRenderingControl/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/GroupRenderingControl1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/GroupRenderingControl1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:GroupRenderingControl` |
 | **Service type** | `urn:schemas-upnp-org:service:GroupRenderingControl:1` |
 

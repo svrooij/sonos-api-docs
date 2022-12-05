@@ -22,7 +22,7 @@ The ZoneGroupTopology service is available on these models: `Sonos Play:1 (S1) S
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/ZoneGroupTopology/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/ZoneGroupTopology/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/ZoneGroupTopology1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/ZoneGroupTopology1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:ZoneGroupTopology` |
 | **Service type** | `urn:schemas-upnp-org:service:ZoneGroupTopology:1` |
 

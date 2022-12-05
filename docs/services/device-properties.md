@@ -22,7 +22,7 @@ The DeviceProperties service is available on these models: `Sonos Play:1 (S1) S2
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/DeviceProperties/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/DeviceProperties/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/DeviceProperties1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/DeviceProperties1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:DeviceProperties` |
 | **Service type** | `urn:schemas-upnp-org:service:DeviceProperties:1` |
 

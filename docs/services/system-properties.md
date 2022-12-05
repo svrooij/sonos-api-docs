@@ -22,7 +22,7 @@ The SystemProperties service is available on these models: `Sonos Play:1 (S1) S2
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/SystemProperties/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/SystemProperties/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/SystemProperties1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/SystemProperties1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:SystemProperties` |
 | **Service type** | `urn:schemas-upnp-org:service:SystemProperties:1` |
 

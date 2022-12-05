@@ -22,7 +22,7 @@ The ContentDirectory service is available on these models: `Sonos Play:1 (S1) S2
 |:-----|:------|
 | **Control URL** | `http://192.168.x.x:1400/MediaServer/ContentDirectory/Control` |
 | **Event subscription URL** | `http://192.168.x.x:1400/MediaServer/ContentDirectory/Event` |
-| **Discovery url** | `http://192.168.x.x:1400/xml/ContentDirectory1.xml` |
+| **Discovery URL** | `http://192.168.x.x:1400/xml/ContentDirectory1.xml` |
 | **Service ID** | `urn:upnp-org:serviceId:ContentDirectory` |
 | **Service type** | `urn:schemas-upnp-org:service:ContentDirectory:1` |
 
