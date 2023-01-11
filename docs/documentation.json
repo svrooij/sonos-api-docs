@@ -220,17 +220,26 @@
       "description": "Browse for local content",
       "actions": {
         "Browse": {
-          "description": "Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1). Recommendation: Send one request, check the `TotalMatches` and - if necessary - do additional requests with higher `StartingIndex`. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
+          "description": "Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1), queue(Q:)). Recommendation: Send one request, check the `TotalMatches` and - if necessary - do additional requests with higher `StartingIndex`. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different",
           "params": {
-            "ObjectID": "The search query, (`A:ARTIST` / `A:ALBUMARTIST` / `A:ALBUM` / `A:GENRE` / `A:COMPOSER` / `A:TRACKS` / `A:PLAYLISTS` / `S:` / `SQ:` / `FV:2` / `R:0/0` / `R:0/1`) with optionally `:search+query` behind it.",
+            "ObjectID": "The search query, (`A:ARTIST` / `A:ALBUMARTIST` / `A:ALBUM` / `A:GENRE` / `A:COMPOSER` / `A:TRACKS` / `A:PLAYLISTS` / `FV:2` / `Q:`/ `R:0/0` / `R:0/1` / `S:` / `SQ:`) with optionally `:search+query` behind it.",
             "BrowseFlag": "How to browse",
             "Filter": "Which fields should be returned `*` for all.",
             "StartingIndex": "Paging, where to start, usually 0",
-            "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does NOT restrict the number of items being searched (filter) but only the number being returned. ",
+            "RequestedCount": "Paging, number of items, maximum is 1,000. This parameter does NOT restrict the number of items being searched (filter) but only the number being returned. Using 0 is equivalent to 1,000",
             "SortCriteria": "Sort the results based on metadata fields. `+upnp:artist,+dc:title` for sorting on artist then on title.",
             "Result": "Encoded DIDL-Lite XML. See remark (2)"
           },
           "remarks": "(1) If the title contains an apostrophe the returned uri will contain a `&apos;`. (2) Some libraries support a BrowseAndParse, so you don't have to parse the xml."
+        },
+        "GetAlbumArtistDisplayOption": {
+          "description": "Get the current album art display option such as `WMP`, `ITUNES` or `NONE`"
+        },
+        "RefreshShareIndex": {
+          "description": "Updates the music library (share) index",
+          "params": {
+            "AlbumArtistDisplayOption": "`WMP`, `ITUNES` or `NONE`"
+          }
         }
       },
       "errors": [
@@ -258,6 +267,13 @@
     "DevicePropertiesService": {
       "description": "Modify device properties, like LED status and stereo pairs",
       "actions": {
+        "AddHTSatellite": {
+          "description": "Adds satellites and/or a sub woofer to a (main) player. The satellites become hidden. The main player RINCON_* is mandatory. RR: right - rear, LF: left - front, SW: subwoofer",
+          "params": {
+            "HTSatChanMapSet": "example: `RINCON_000PPP1400:LF,RF;RINCON_000RRR1400:RR;RINCON_000SSS1400:LR;RINCON_000QQQ1400:SW`"
+          },
+          "remarks": "Not all speakers support satellites or sub woofer. Satellites should be of same type (e.g. Play:1)"
+        },
         "GetButtonLockState": {
           "description": "Get the current button lock state"
         },
@@ -275,14 +291,21 @@
           "params": {
             "ChannelMapSet": "example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF`"
           },
-          "remarks": "No all speakers support StereoPairs"
+          "remarks": "Not all speakers support StereoPairs"
+        },
+        "RemoveHTSatellite": {
+          "description": "Removes a satellite or a sub woofer from (main) player. The satellite becomes visible.",
+          "params": {
+            "SatRoomUUID": "example: `RINCON_000RRR1400`"
+          },
+          "remarks": "Not all speakers support satellites or sub woofer. Multiples RINCON_* are not allowed."
         },
         "SeparateStereoPair": {
           "description": "Separate a stereo pair",
           "params": {
             "ChannelMapSet": "example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF`"
           },
-          "remarks": "No all speakers support StereoPairs"
+          "remarks": "Not all speakers support StereoPairs"
         },
         "SetButtonLockState": {
           "description": "Set the button lock state"
