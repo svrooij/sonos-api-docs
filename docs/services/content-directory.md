@@ -49,7 +49,7 @@ Content-Type: text/xml; charset="utf-8"
 
 ### Browse
 
-Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1). Recommendation: Send one request, check the `TotalMatches` and - if necessary - do additional requests with higher `StartingIndex`. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different
+Browse for content: Music library (A), share(S:), Sonos playlists(SQ:), Sonos favorites(FV:2), radio stations(R:0/0), radio shows(R:0/1), queue(Q:)). Recommendation: Send one request, check the `TotalMatches` and - if necessary - do additional requests with higher `StartingIndex`. In case of duplicates only the first is returned! Example: albums with same title, even if artists are different
 
 Action body:
 
@@ -68,11 +68,11 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **ObjectID** | `string` | The search query, (`A:ARTIST` / `A:ALBUMARTIST` / `A:ALBUM` / `A:GENRE` / `A:COMPOSER` / `A:TRACKS` / `A:PLAYLISTS` / `S:` / `SQ:` / `FV:2` / `R:0/0` / `R:0/1`) with optionally `:search+query` behind it. |
+| **ObjectID** | `string` | The search query, (`A:ARTIST` / `A:ALBUMARTIST` / `A:ALBUM` / `A:GENRE` / `A:COMPOSER` / `A:TRACKS` / `A:PLAYLISTS` / `FV:2` / `Q:`/ `R:0/0` / `R:0/1` / `S:` / `SQ:`) with optionally `:search+query` behind it. |
 | **BrowseFlag** | `string` | How to browse Allowed values: `BrowseMetadata` / `BrowseDirectChildren` |
 | **Filter** | `string` | Which fields should be returned `*` for all. |
 | **StartingIndex** | `ui4` | Paging, where to start, usually 0 |
-| **RequestedCount** | `ui4` | Paging, number of items, maximum is 1,000. This parameter does NOT restrict the number of items being searched (filter) but only the number being returned.  |
+| **RequestedCount** | `ui4` | Paging, number of items, maximum is 1,000. This parameter does NOT restrict the number of items being searched (filter) but only the number being returned. Using 0 is equivalent to 1,000 |
 | **SortCriteria** | `string` | Sort the results based on metadata fields. `+upnp:artist,+dc:title` for sorting on artist then on title. |
 
 Outputs:
@@ -153,6 +153,8 @@ Outputs:
 | **UpdateID** | `ui4` |  |
 
 ### GetAlbumArtistDisplayOption
+
+Get the current album art display option such as `WMP`, `ITUNES` or `NONE`
 
 Action body:
 
@@ -297,6 +299,8 @@ Outputs:
 
 ### RefreshShareIndex
 
+Updates the music library (share) index
+
 Action body:
 
 ```xml
@@ -309,7 +313,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **AlbumArtistDisplayOption** | `string` |  |
+| **AlbumArtistDisplayOption** | `string` | `WMP`, `ITUNES` or `NONE` |
 
 ### RequestResort
 

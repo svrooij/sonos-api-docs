@@ -65,6 +65,8 @@ Inputs:
 
 ### AddHTSatellite
 
+Adds satellites and/or a sub woofer to a (main) player. The satellites become hidden. The main player RINCON_* is mandatory. RR: right - rear, LF: left - front, SW: subwoofer
+
 Action body:
 
 ```xml
@@ -77,7 +79,9 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **HTSatChanMapSet** | `string` |  |
+| **HTSatChanMapSet** | `string` | example: `RINCON_000PPP1400:LF,RF;RINCON_000RRR1400:RR;RINCON_000SSS1400:LR;RINCON_000QQQ1400:SW` |
+
+**Remarks** Not all speakers support satellites or sub woofer. Satellites should be of same type (e.g. Play:1)
 
 ### CreateStereoPair
 
@@ -97,7 +101,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **ChannelMapSet** | `string` | example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF` |
 
-**Remarks** No all speakers support StereoPairs
+**Remarks** Not all speakers support StereoPairs
 
 ### EnterConfigMode
 
@@ -384,6 +388,8 @@ Inputs:
 
 ### RemoveHTSatellite
 
+Removes a satellite or a sub woofer from (main) player. The satellite becomes visible.
+
 Action body:
 
 ```xml
@@ -396,7 +402,9 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **SatRoomUUID** | `string` |  |
+| **SatRoomUUID** | `string` | example: `RINCON_000RRR1400` |
+
+**Remarks** Not all speakers support satellites or sub woofer. Multiples RINCON_* are not allowed.
 
 ### RoomDetectionStartChirping
 
@@ -458,7 +466,7 @@ Inputs:
 |:----------|:-----|:------------|
 | **ChannelMapSet** | `string` | example: `RINCON_B8E9375831C001400:LF,LF;RINCON_000E58FE3AEA01400:RF,RF` |
 
-**Remarks** No all speakers support StereoPairs
+**Remarks** Not all speakers support StereoPairs
 
 ### SetAutoplayLinkedZones
 
