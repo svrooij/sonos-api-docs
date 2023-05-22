@@ -2,8 +2,8 @@
   "model": "S5",
   "modelDescription": "Sonos Play:5",
   "softwareGeneration": 1,
-  "softwareVersion": "57.13-34140",
-  "discoveryDate": "2022-11-03T11:44:59.534Z",
+  "softwareVersion": "57.15-39070",
+  "discoveryDate": "2023-05-22T16:39:34.654Z",
   "services": [
     {
       "name": "AlarmClock",

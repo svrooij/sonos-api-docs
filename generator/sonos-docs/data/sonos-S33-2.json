@@ -1,9 +1,9 @@
 {
-  "model": "S18",
-  "modelDescription": "Sonos One",
+  "model": "S33",
+  "modelDescription": "SYMFONISK Bookshelf",
   "softwareGeneration": 2,
   "softwareVersion": "72.2-40060",
-  "discoveryDate": "2023-05-22T16:38:38.243Z",
+  "discoveryDate": "2023-05-22T16:39:16.679Z",
   "services": [
     {
       "name": "AlarmClock",
