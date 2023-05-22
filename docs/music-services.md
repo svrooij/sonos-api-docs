@@ -40,7 +40,7 @@ At the moment the following music services are supported.
 | 283 | Calm                      | AppLink    | `https://sonos.calm.com/server.php` |
 | 144 | Calm Radio                | UserId     | `https://api.calmradio.com/sonos/` |
 | 256 | CBC Radio &amp; Music     | Anonymous  | `https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc` |
-| 191 | Classical Archives        | DeviceLink | `https://api.classicalarchives.com/smapi/endpoint` |
+| 191 | Classical Archives        | DeviceLink | `https://smapi.classicalarchives.com/endpoint` |
 | 330 | Community Radio Plus      | Anonymous  | `https://sonoslb.radioapi.io/cbaa` |
 | 315 | Convoy Network            | Anonymous  | `https://sonos.convoynetwork.com/musicservice` |
 | 213 | Custom Channels           | UserId     | `https://ensemble.customchannels.net/sonos` |
@@ -61,7 +61,7 @@ At the moment the following music services are supported.
 | 305 | Libby by OverDrive        | AppLink    | `https://libbysonos.overdrive.com/soap` |
 | 221 | LivePhish+                | UserId     | `https://sonos.nugs.net/soap/livephish` |
 | 260 | Minidisco                 | UserId     | `https://sonos.minidisco.nl/server.php` |
-| 181 | Mixcloud                  | DeviceLink | `https://www.mixcloud.com/sonos-app/` |
+| 181 | Mixcloud                  | DeviceLink | `https://app.mixcloud.com/sonos-app/` |
 | 171 | Mood Mix                  | UserId     | `https://sonos.mix.moodmedia.com/api` |
 |  33 | Murfie                    | DeviceLink | `https://murfie.com/sonos/xmlapi` |
 | 329 | Music Your Brand          | AppLink    | `https://api.musicyourbrand.com/sonos/soap` |
@@ -97,13 +97,15 @@ At the moment the following music services are supported.
 | 237 | storePlay                 | UserId     | `https://api.storeplay.com.au/sonos/SonosService.asmx` |
 | 226 | Storytel                  | UserId     | `https://sonosapi.storytel.com/sonos/1.0` |
 | 235 | Sveriges Radio            | Anonymous  | `https://sonos.playsr.com/ws` |
+| 335 | The Lot Radio             | Anonymous  | `https://wy8hgbmpdj.us-east-1.awsapprunner.com/wsdl?wsdl` |
 | 211 | The Music Manager         | UserId     | `https://themusicmanager.eu/sonos/SonosAPI.php` |
 | 174 | TIDAL                     | DeviceLink | `https://smapi.tidal.com/sonos` |
 | 287 | toníque                   | AppLink    | `https://sonos.tonique.com/ws` |
 | 169 | Tribe of Noise            | DeviceLink | `https://sonos.tribeofnoise.com/server-v2.1.php` |
 | 254 | TuneIn                    | Anonymous  | `https://legato.radiotime.com/Radio.asmx` |
-| 193 | Tunify for Business       | AppLink    | `https://api.tunify.com/Sonos2/services/Sonos` |
-| 231 | Wolfgang&apos;s Music     | UserId     | `https://moapi.wolfgangs.com/ws/wolfgangs.asmx` |
+| 333 | TuneIn (New)              | AppLink    | `https://sonos.tunein.com/SMRadio.asmx` |
+| 193 | Tunify for Business       | AppLink    | `https://apis.tunify.com/t4-sonos-music-api/services/Sonos.wsdl` |
+| 231 | Wolfgang's Music          | UserId     | `https://moapi.wolfgangs.com/ws/wolfgangs.asmx` |
 | 272 | Worldwide FM              | Anonymous  | `https://wwfm-sonos.nextempire.net/sonos` |
 | 317 | Yogi Tunes                | AppLink    | `https://yogi-tunes.ca/server.php` |
 | 284 | YouTube Music             | AppLink    | `https://music.googleapis.com/v1:sendRequest` |
@@ -221,9 +223,31 @@ And the following body the following body:
 ```
 {% endraw %}
 
-You should get a response that looks like this:
+You should get a response that looks like this (Spofity result):
 
-(needs example response body)
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header />
+    <soapenv:Body>
+        <getAppLinkResponse xmlns="http://www.sonos.com/Services/1.1">
+            <getAppLinkResult>
+                <authorizeAccount>
+                    <appUrlStringId>SIGN_IN</appUrlStringId>
+                    <deviceLink>
+                        <regUrl>https://spotify-v5.ws.sonos.com/deviceLink/home?linkCode=xxx</regUrl>
+                        <linkCode>xxx</linkCode>
+                        <showLinkCode>false</showLinkCode>
+                    </deviceLink>
+                </authorizeAccount>
+                <createAccount>
+                    <appUrlStringId>CREATE_NEW</appUrlStringId>
+                </createAccount>
+            </getAppLinkResult>
+        </getAppLinkResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
+```
 
 This results in:
 
