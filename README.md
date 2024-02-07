@@ -5,7 +5,6 @@
 [![Sonos2mqtt][badge_sonos-mqtt]][link_sonos-mqtt]
 [![Sonos cli][badge_sonos-cli]][link_sonos-cli]
 [![Sonos typescript this library][badge_sonos-typescript]][link_sonos-typescript]
-[![Join us on Discord][badge_discord]][link_discord]
 
 [![Support me on Github][badge_sponsor]][link_sponsor]
 [![Follow on Twitter][badge_twitter]][link_twitter]
@@ -16,11 +15,11 @@ This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). I
 
 ## Documentation
 
-Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api-docs/services/](https://svrooij.io/sonos-api-docs/services/)
+Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api-docs/services/](https://sonos.svrooij.io/services/)
 
 [![Sonos api documentation][badge_sonos-docs]][link_sonos-docs]
 
-[Read documentation](https://svrooij.io/sonos-api-docs)
+[Read documentation](https://sonos.svrooij.io/)
 
 ### Manually documented
 
@@ -45,12 +44,6 @@ You can use the generator to generate your own discovery files, but we also have
 | Sonos Play:5 (old) | [S1](https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/sonos-S5-1.json) |
 
 These files together with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
-
-## Community
-
-[![Join us on Discord][badge_discord]][link_discord]
-
-If you need help building an app that talks to your sonos speakers, or you want to share some of your findings. [Join us on Discord][link_discord].
 
 ## Contributors ✨
 
@@ -80,7 +73,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
 specification. Contributions of any kind welcome!
 
-[badge_discord]: https://img.shields.io/discord/782374564054564875?style=for-the-badge
 [badge_issues]: https://img.shields.io/github/issues/svrooij/sonos-api-docs?style=for-the-badge
 [badge_sonos-cli]: https://img.shields.io/badge/sonos-cli-blue?style=for-the-badge
 [badge_sonos-docs]: https://img.shields.io/badge/sonos-api-blue?style=for-the-badge
@@ -89,11 +81,11 @@ specification. Contributions of any kind welcome!
 [badge_sponsor]: https://img.shields.io/github/sponsors/svrooij?logo=github&style=for-the-badge
 [badge_twitter]: https://img.shields.io/twitter/follow/svrooij?logo=twitter&style=for-the-badge
 
-[link_discord]: https://discord.gg/ZUdEuhh5RF
+
 [link_sponsor]: https://github.com/sponsors/svrooij
 [link_issues]: https://github.com/svrooij/sonos-api-docs/issues
 [link_sonos-cli]: https://github.com/svrooij/sonos-cli
-[link_sonos-docs]: https://svrooij.io/sonos-api-docs
-[link_sonos-mqtt]: https://svrooij.io/sonos2mqtt
-[link_sonos-typescript]: https://svrooij.io/node-sonos-ts
+[link_sonos-docs]: https://sonos.svrooij.io/
+[link_sonos-mqtt]: https://sonos2mqtt.svrooij.io/
+[link_sonos-typescript]: https://sonos-ts.svrooij.io/
 [link_twitter]: https://twitter.com/svrooij

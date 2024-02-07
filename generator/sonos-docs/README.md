@@ -53,7 +53,7 @@ OPTIONS
 
   --docsFile=docsFile          File location of documenation, instead of url.
 
-  --docsUrl=docsUrl            [default: https://svrooij.io/sonos-api-docs/documentation.json] The url of the
+  --docsUrl=docsUrl            [default: https://raw.githubusercontent.com/svrooij/sonos-api-docs/main/docs/documentation.json] The url of the
                                documentation, this is just to override the documentation url
 
   --folder=folder              Load discovered services from this folder. Loaded from repository if empty

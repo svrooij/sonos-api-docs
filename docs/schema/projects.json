@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://svrooij.io/sonos-api-docs/schema/projects.json",
+  "$id": "https://sonos.svrooij.io/schema/projects.json",
   "definitions": {
     "Project": {
       "default": {

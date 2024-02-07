@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://svrooij.io/sonos-api-docs/schema/documentation.json",
+  "$id": "https://sonos.svrooij.io/schema/documentation.json",
   "definitions": {
     "SonosServiceDocumentation": {
       "title": "Service name",

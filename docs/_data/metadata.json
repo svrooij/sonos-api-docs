@@ -1,5 +1,5 @@
 {
-  "$schema": "https://svrooij.io/sonos-api-docs/schema/metadata.json",
+  "$schema": "https://sonos.svrooij.io/schema/metadata.json",
   "metadata": [
     {
       "service": 9,

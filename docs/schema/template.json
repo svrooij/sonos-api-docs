@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://svrooij.io/sonos-api-docs/schema/template.json",
+  "$id": "https://sonos.svrooij.io/schema/template.json",
   "definitions": {
     "TemplateFile": {
       "properties": {

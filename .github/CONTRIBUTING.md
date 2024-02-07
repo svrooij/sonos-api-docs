@@ -38,8 +38,8 @@ If you find an Issue that addresses the problem you're having, please add your o
 PRs to our libraries are always welcome and can be a quick way to get your fix or improvement slated for the next release. In general, PRs should:
 
 - Only fix/add the functionality in question **OR** address wide-spread whitespace/style issues, not both.
-- If you changed the [documentation.json](https://svrooij.io/sonos-api-docs/developers.html#documentationjson) or any device discovery files, be sure to also [regenerate](https://svrooij.io/sonos-api-docs/developers.html#regenerate-documentation) the services.
-- Be sure to [preview](https://svrooij.io/sonos-api-docs/developers.html#live-preview-on-local-machine) your changes in the resulting webpage.
+- If you changed the [documentation.json](https://sonos.svrooij.io/developers.html#documentationjson) or any device discovery files, be sure to also [regenerate](https://sonos.svrooij.io/developers.html#regenerate-documentation) the services.
+- Be sure to [preview](https://sonos.svrooij.io/developers.html#live-preview-on-local-machine) your changes in the resulting webpage.
 - Be accompanied by a complete Pull Request template (loaded automatically when a PR is created).
 
 For changes that address core functionality or would require breaking changes (e.g. a major release), it's best to open an Issue to discuss your proposal first. This is not required but can save time creating and reviewing changes.
@@ -54,22 +54,14 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
 6. Push changes to your fork
 7. Open a PR in our repository and follow the PR template so that we can efficiently review the changes.
 
-## Getting Help
-
-[![Join us on Discord][badge_discord]][link_discord]
-
-If you need help building an app that talks to your sonos speakers, or you want to share some of your findings. [Join us on Discord][link_discord].
-
 ## Sponsoring
 
 [![Support me on Github][badge_sponsor]][link_sponsor]
 
 You cannot only contribute by spending some time to document stuff or the help users with his/her issues, you can also sponsor me, so I can spend time on my open-source projects like these.
 
-[badge_discord]: https://img.shields.io/discord/782374564054564875
 [badge_issues]: https://img.shields.io/github/issues/svrooij/sonos-api-docs
 [badge_sponsor]: https://img.shields.io/badge/Sponsor-on%20Github-red
 
-[link_discord]: https://discord.gg/ZUdEuhh5RF
 [link_sponsor]: https://github.com/sponsors/svrooij
 [link_issues]: https://github.com/svrooij/sonos-api-docs/issues

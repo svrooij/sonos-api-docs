@@ -25,7 +25,7 @@ export default class Combine extends Command {
   static flags = {
     docsUrl: flags.string({
       description: 'The url of the documentation, this is just to override the documentation url',
-      default: 'https://svrooij.io/sonos-api-docs/documentation.json',
+      default: 'https://raw.githubusercontent.com/svrooij/sonos-api-docs/main/docs/documentation.json',
     }),
     docsFile: flags.string({
       exclusive: ['docsUrl'],

@@ -1,10 +1,10 @@
 {
-  "$schema": "https://svrooij.io/sonos-api-docs/schema/projects.json",
+  "$schema": "https://sonos.svrooij.io/schema/projects.json",
   "apps": [
     {
       "name": "sonos2mqtt",
       "description": "Control sonos speakers from your mqtt server",
-      "link": "https://svrooij.io/sonos2mqtt/",
+      "link": "https://sonos2mqtt.svrooij.io/",
       "language": "TypeScript",
       "repository": "https://github.com/svrooij/sonos2mqtt",
       "tags": ["mqtt", "home-automation"],
@@ -95,10 +95,22 @@
     {
       "name": "@svrooij/sonos",
       "description": "The most feature complete sonos library for node and TypeScript, since it uses a generator to create all the service classes",
-      "link": "http://svrooij.io/node-sonos-ts/",
+      "link": "http://sonos-ts.svrooij.io/",
       "repository": "https://github.com/svrooij/node-sonos-ts",
       "language": "TypeScript",
       "tags": ["typescript", "node"],
+      "author": {
+        "name": "Stephan van Rooij",
+        "link": "https://svrooij.io/"
+      },
+      "usesGenerator": true
+    },
+    {
+      "name": "Sonos-net",
+      "description": "Sonos library for dotnet core, it uses the generator to create all the service classes",
+      "repository": "https://github.com/svrooij/sonos-net",
+      "language": "C#",
+      "tags": ["dotnet", "csharp"],
       "author": {
         "name": "Stephan van Rooij",
         "link": "https://svrooij.io/"

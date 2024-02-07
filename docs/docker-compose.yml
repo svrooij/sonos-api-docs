@@ -3,7 +3,7 @@
 version: "3.8"
 services:
   docs:
-    image: jekyll/jekyll
+    image: jekyll/jekyll:3.8.5
     volumes:
       - "./:/srv/jekyll"
     ports: 
