@@ -27,8 +27,8 @@ jobs:
       run:
         working-directory: generator/sonos-docs
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Install depencencies
@@ -45,14 +45,14 @@ jobs:
       run:
         working-directory: generator/sonos-docs
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 16
       - name: Install depencencies
         run: npm ci
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v4
         id: semantic
         with:
           working_directory: generator/sonos-docs
@@ -61,7 +61,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Setup node for Github Registry
         if: steps.semantic.outputs.new_release_published == 'true'
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 16
           registry-url: 'https://npm.pkg.github.com'
