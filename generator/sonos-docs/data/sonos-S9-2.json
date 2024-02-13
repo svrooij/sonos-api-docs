@@ -2,8 +2,8 @@
   "model": "S9",
   "modelDescription": "Sonos Playbar",
   "softwareGeneration": 2,
-  "softwareVersion": "72.2-40060",
-  "discoveryDate": "2023-05-22T16:38:57.120Z",
+  "softwareVersion": "77.4-49290",
+  "discoveryDate": "2024-02-13T15:55:46.307Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2396,11 +2396,6 @@
           "name": "FavoritesUpdateID",
           "dataType": "string",
           "sendEvents": true
-        },
-        {
-          "name": "FavoritePresetsUpdateID",
-          "dataType": "string",
-          "sendEvents": true
         }
       ],
       "actions": [
@@ -2759,11 +2754,6 @@
           "sendEvents": true
         },
         {
-          "name": "HTFreq",
-          "dataType": "ui4",
-          "sendEvents": true
-        },
-        {
           "name": "HTBondedZoneCommitState",
           "dataType": "ui4",
           "sendEvents": true
@@ -2968,11 +2958,6 @@
         },
         {
           "name": "KeepGrouped",
-          "dataType": "boolean",
-          "sendEvents": false
-        },
-        {
-          "name": "HTForwardEnabled",
           "dataType": "boolean",
           "sendEvents": false
         },
@@ -3365,16 +3350,6 @@
               "name": "State",
               "direction": "out",
               "relatedStateVariableName": "A_ARG_TYPE_ButtonState"
-            }
-          ]
-        },
-        {
-          "name": "GetHTForwardState",
-          "outputs": [
-            {
-              "name": "IsHTForwardEnabled",
-              "direction": "out",
-              "relatedStateVariableName": "HTForwardEnabled"
             }
           ]
         },

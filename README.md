@@ -23,7 +23,7 @@ Check-out the (generated) documentation about all the SONOS UPNP services [svroo
 
 ### Manually documented
 
-The [sonos services](https://svrooij.io/sonos-api-docs/services/) have no documentation, that is why we manually created a [documentation.json](http://svrooij.io/sonos-api-docs/documentation.json) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
+The [sonos services](https://sonos.svrooij.io/services/) have no documentation, that is why we manually created a [documentation.json](https://github.com/svrooij/sonos-api-docs/blob/main/docs/documentation.json) file. To easily add documentation to all services (that are generated with the generator). And it's json so you can easily use it yourself.
 
 ### Device discovery files
 
@@ -80,7 +80,6 @@ specification. Contributions of any kind welcome!
 [badge_sonos-typescript]: https://img.shields.io/badge/sonos-typescript-blue?style=for-the-badge
 [badge_sponsor]: https://img.shields.io/github/sponsors/svrooij?logo=github&style=for-the-badge
 [badge_twitter]: https://img.shields.io/twitter/follow/svrooij?logo=twitter&style=for-the-badge
-
 
 [link_sponsor]: https://github.com/sponsors/svrooij
 [link_issues]: https://github.com/svrooij/sonos-api-docs/issues
