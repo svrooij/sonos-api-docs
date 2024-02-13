@@ -55,16 +55,16 @@ Action body:
 
 ```xml
 <u:CreateAlarm xmlns:u="urn:schemas-upnp-org:service:AlarmClock:1">
-  <StartLocalTime>string</StartLocalTime>
-  <Duration>string</Duration>
-  <Recurrence>string</Recurrence>
-  <Enabled>boolean</Enabled>
-  <RoomUUID>string</RoomUUID>
-  <ProgramURI>string</ProgramURI>
+  <StartLocalTime>07:00:00</StartLocalTime>
+  <Duration>00:30:00</Duration>
+  <Recurrence>DAILY</Recurrence>
+  <Enabled>1</Enabled>
+  <RoomUUID>RINCON_000E58FE3AEA01400</RoomUUID>
+  <ProgramURI>x-rincon-buzzer:0</ProgramURI>
   <ProgramMetaData>string</ProgramMetaData>
-  <PlayMode>string</PlayMode>
-  <Volume>ui2</Volume>
-  <IncludeLinkedZones>boolean</IncludeLinkedZones>
+  <PlayMode>NORMAL</PlayMode>
+  <Volume>20</Volume>
+  <IncludeLinkedZones>1</IncludeLinkedZones>
 </u:CreateAlarm>
 ```
 

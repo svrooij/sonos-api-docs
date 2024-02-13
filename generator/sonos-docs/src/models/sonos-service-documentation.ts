@@ -19,4 +19,5 @@ export interface SonosServiceDocumentationAction {
   description?: string;
   remarks?: string;
   params?: { [key: string]: string };
+  sample?: { [key: string]: string };
 }

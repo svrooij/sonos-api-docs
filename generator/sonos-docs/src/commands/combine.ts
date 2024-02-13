@@ -29,7 +29,7 @@ export default class Combine extends Command {
     }),
     docsFile: flags.string({
       exclusive: ['docsUrl'],
-      description: 'File location of documenation, instead of url.',
+      description: 'File location of documentation, instead of url.',
     }),
     models: flags.string({
       default: 'S1-2,S3-2,S6-2,S9-2,S13-2,S14-2,S18-2,S21-2,S27-2,S33-2,S38-2,Sub-2',
@@ -216,12 +216,15 @@ export default class Combine extends Command {
               a.description = action?.description
               a.remarks = action?.remarks
               const actionArguments = action?.params ?? {}
+              const sampleData = action?.sample ?? {}
               if (actionArguments) {
                 a.inputs?.forEach(i => {
                   i.description = actionArguments[i.name] ?? (i.name === 'InstanceID' ? 'InstanceID should always be `0`' : undefined)
+                  i.sample = sampleData[i.name]
                 })
                 a.outputs?.forEach(o => {
                   o.description = actionArguments[o.name]
+                  o.sample = sampleData[o.name]
                 })
               }
             }

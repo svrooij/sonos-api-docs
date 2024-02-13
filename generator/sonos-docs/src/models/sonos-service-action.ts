@@ -15,4 +15,5 @@ export interface SonosServiceActionArgument {
   relatedStateVariableName: string;
   relatedStateVariable?: SonosStateVariable; 
   description?: string;
+  sample?: unknown;
 }

@@ -63,7 +63,7 @@ Action body:
 ```xml
 <u:{{name}} xmlns:u="{{../serviceType}}">
 {{#each inputs}}
-  <{{name}}>{{relatedStateVariable.dataType}}</{{name}}>
+  <{{name}}>{{#if sample}}{{sample}}{{else}}{{relatedStateVariable.dataType}}{{/if}}</{{name}}>
 {{/each}}
 </u:{{name}}>
 ```
