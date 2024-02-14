@@ -1,6 +1,6 @@
 # Unofficial Sonos docs
 
-[![Sonos api documentation][badge_sonos-docs]][link_sonos-docs]
+[![Sonos API documentation][badge_sonos-docs]][link_sonos-docs]
 [![Github Issues][badge_issues]][link_issues]
 [![Sonos2mqtt][badge_sonos-mqtt]][link_sonos-mqtt]
 [![Sonos cli][badge_sonos-cli]][link_sonos-cli]
@@ -9,15 +9,15 @@
 [![Support me on Github][badge_sponsor]][link_sponsor]
 [![Follow on Twitter][badge_twitter]][link_twitter]
 
-Sonos api documentation for the local UPNP api and a [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) to generate clients and documentation based on service discovery
+Sonos API documentation for the local UPNP API and a [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) to generate clients and documentation based on service discovery
 
-This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). It's just a set of text files to document a hidden and **unsupported** api.
+This library is in no way connected to [Sonos](//en.wikipedia.org/wiki/Sonos). It's just a set of text files to document a hidden and **unsupported** API.
 
 ## Documentation
 
 Check-out the (generated) documentation about all the SONOS UPNP services [svrooij.io/sonos-api-docs/services/](https://sonos.svrooij.io/services/)
 
-[![Sonos api documentation][badge_sonos-docs]][link_sonos-docs]
+[![Sonos API documentation][badge_sonos-docs]][link_sonos-docs]
 
 [Read documentation](https://sonos.svrooij.io/)
 

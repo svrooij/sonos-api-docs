@@ -23,7 +23,7 @@ These documents can provide you with some extra guidelines. More details can be 
 |:--------|:------------|
 | [**AlarmClock**](alarm-clock.html) | Control the sonos alarms and times |
 | [**AudioIn**](audio-in.html) | Control line in |
-| [**AVTransport**](av-transport.html) | Service that controls stuff related to transport (play/pause/next/special urls) |
+| [**AVTransport**](av-transport.html) | Service that controls stuff related to transport (play/pause/next/special URLs) |
 | [**ConnectionManager**](connection-manager.html) | Services related to connections and protocols |
 | [**ContentDirectory**](content-directory.html) | Browse for local content |
 | [**DeviceProperties**](device-properties.html) | Modify device properties, like LED status and stereo pairs |

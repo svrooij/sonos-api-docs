@@ -72,7 +72,7 @@
       "description": "Control line in"
     },
     "AVTransportService": {
-      "description": "Service that controls stuff related to transport (play/pause/next/special urls)",
+      "description": "Service that controls stuff related to transport (play/pause/next/special URLs)",
       "actions": {
         "AddURIToQueue": {
           "description": "Adds songs to the SONOS queue",

@@ -6,7 +6,7 @@ parent: Sonos Services
 # AVTransport service
 {: .no_toc }
 
-Service that controls stuff related to transport (play/pause/next/special urls)
+Service that controls stuff related to transport (play/pause/next/special URLs)
 
 The AVTransport service is available on these models: `Sonos Play:1 (S1) S2` / `Sonos One (S13) S2` / `Sonos Beam (S14) S2` / `Sonos One (S18) S2` / `SYMFONISK Bookshelf (S21) S2` / `Sonos Roam (S27) S2` / `Sonos Play:3 (S3) S2` / `SYMFONISK Bookshelf (S33) S2` / `Sonos One SL (S38) S2` / `Sonos Play:5 (S6) S2` / `Sonos Playbar (S9) S2` / `Sonos Sub (Sub) S2`.
 
