@@ -45,6 +45,10 @@ You can use the generator to generate your own discovery files, but we also have
 
 These files together with the documentation file, are combined to a extensive JSON file, that is used as an input for the generator.
 
+## Community
+
+If you have any [questions](https://github.com/svrooij/sonos-api-docs/discussions/categories/q-a) or you want to [show](https://github.com/svrooij/sonos-api-docs/discussions/categories/show-and-tell) your Sonos integration. Please join us in the [discussions](https://github.com/svrooij/sonos-api-docs/discussions) tab on this repository.
+
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->

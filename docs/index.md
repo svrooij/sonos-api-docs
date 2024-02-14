@@ -38,7 +38,7 @@ This file has a [documentation json schema](https://sonos.svrooij.io/schema/docu
 
 ### Update documentation
 
-If you change the [documentation](#manual-documentation-file) file or if you did service discovery for a new device. You can update the documentation files with the following commands:
+If you change the [documentation](#manually-documented) file or if you did service discovery for a new device. You can update the documentation files with the following commands:
 
 ```shell
 # Go to generation folder
@@ -55,7 +55,7 @@ npm run docs
 
 ## Generator
 
-You can find the generator [here](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) and use it to generate your own sonos client in your preferred language.
+You can find the generator [here](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) and use it to generate your own Sonos client in your preferred language.
 
 ### Device discovery files
 
@@ -84,9 +84,7 @@ The template.json also has a [json schema](https://svrooij.io/sonos-api-docs/sch
 
 ## Community
 
-[![Join us on Discord][badge_discord]][link_discord]
-
-If you need help building an app that talks to your sonos speakers, or you want to share some of your findings. [Join us on Discord][link_discord].
+If you have any [questions](https://github.com/svrooij/sonos-api-docs/discussions/categories/q-a) or you want to [show](https://github.com/svrooij/sonos-api-docs/discussions/categories/show-and-tell) your Sonos integration. Please join us in the [discussions](https://github.com/svrooij/sonos-api-docs/discussions) tab on this repository.
 
 ## Contributors ✨
 
