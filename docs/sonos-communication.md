@@ -21,7 +21,7 @@ Each sonos speaker has [several soap services]({{'services/' | relative_url }}) 
 ## Sonos SOAP remarks
 
 - Sonos communicates booleans as `1` for true and `0` for false. This is something to keep in mind if you see **boolean** somewhere.
-- Some actions (like [ListAlarms]({{'services/alarm-clock.html#listalarms' | relative_url }})) return encoded xml as string. Before you can read these, you'll have to decode them and then parse them as XML. Libraries like [node-sonos-ts](https://svrooij.io/node-sonos-ts/sonos-device/services/alarm-clock-service.html#listalarms) provide a way that already parses the the output so you don't have to.
+- Some actions (like [ListAlarms]({{'services/alarm-clock.html#listalarms' | relative_url }})) return encoded xml as string. Before you can read these, you'll have to decode them and then parse them as XML. Libraries like [node-sonos-ts](https://sonos-ts.svrooij.io/sonos-device/services/alarm-clock-service.html#listalarms) provide a way that already parses the the output so you don't have to.
 
 ## SOAP call
 
@@ -33,7 +33,7 @@ In this sample we described the [SetMute]({{ '/services/rendering-control.html#s
 | ---- | ------ |
 | IP of speaker | `192.168.0.31` |
 | [Control endpoint]({{'/services/rendering-control.html#service-data' | relative_url }}) | `/MediaRenderer/RenderingControl/Control` |
-| Service type | `urn:schemas-upnp-org:service:RenderingControl:1`
+| Service type | `urn:schemas-upnp-org:service:RenderingControl:1` |
 
 You can find this information on the page describing one of [many sonos services]({{'/services/' | relative_url }}).
 
@@ -50,7 +50,7 @@ soapaction: "urn:schemas-upnp-org:service:RenderingControl:1#SetMute"
 Content-Type: text/xml; charset="utf-8"
 ```
 
-The body of the request has to be specified as XML. We also added the correct action body for the `SetMute` action. As you see below, booleans are converted to `1` for true and `0` for false. This is just how sonos works.
+The body of the request has to be specified as XML. We also added the correct action body for the `SetMute` action. As you see below, booleans are converted to `1` for true and `0` for false. This is just how Sonos works.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -82,15 +82,13 @@ Success message (without output parameters) to above command:
 Generic error (when deleting an alarm that doesn't exists) body (HTTP status code 500):
 
 ```xml
-<s:Envelope
-  xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <s:Body>
     <s:Fault>
       <faultcode>s:Client</faultcode>
       <faultstring>UPnPError</faultstring>
       <detail>
-        <UPnPError
-          xmlns="urn:schemas-upnp-org:control-1-0">
+        <UPnPError xmlns="urn:schemas-upnp-org:control-1-0">
           <errorCode>800</errorCode>
         </UPnPError>
       </detail>
@@ -117,7 +115,7 @@ Apart from the soap services, sonos also has some http endpoints available where
 ## Auto discovery
 
 Each sonos speaker can be discovered by the [SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) or **Simple Service Discovery Protocol**.
-In short each speaker listens for a `ssdp:discovery` command. 
+In short each speaker listens for a `ssdp:discovery` command.
 
 Which is actually just a simple UDP packet send to port `1900` on multicast address `239.255.255.250` and `255.255.255.255` with the following body:
 

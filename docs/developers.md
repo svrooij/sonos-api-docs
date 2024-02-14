@@ -55,7 +55,7 @@ For example [this part](https://github.com/svrooij/sonos-api-docs/blob/25aad3a3a
 
 We build a custom [generator](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs) to do several things.
 
-### Discover services from sonos speaker
+### Discover services from Sonos speaker
 
 You can use the generator to generate [device discovery files]({{ '/#device-discovery-files' | relative_url }}). For each model we generated a discovery json, as available on main page. We generate this file by parsing the device discovery document available at `http://{sonos_ip}:1400/xml/device_description.xml`. Not every model has the same services, but it seems that if a service is available it's the same as all other models that have that service.
 
@@ -74,9 +74,11 @@ npm install
 ./bin/run services {sonos-ip}
 ```
 
+Please help us out occasionally by running this command on your own Sonos speaker and send us the resulting file. This way we can keep the discovery files up to date. This command will automatically update the discovery files in the `data` folder. These files are used as an input for the generator. Having up to date discovery files will help us to keep the documentation up to date. All personal identifiable information is removed from the discovery files.
+
 ### Combine discovery files and documentation
 
-If you changed the [documentation.json](#documentation.json) file or if you added/updated discovery files, you need to combine the two into one file, the **.cache/combined.json** file.
+If you changed the [documentation.json](./documentation.json) file or if you added/updated discovery files, you need to combine the two into one file, the **.cache/combined.json** file.
 
 This file is the result of the the manual documentation and the device discovery files. This file is almost 8000 lines of json at the moment, which is why it is ignored in git.
 Being able to inspect this json file should really help in debugging the generator.
@@ -101,7 +103,7 @@ npx @svrooij/sonos-docs combine --docsFile=./docs/documentation.json --folder=./
 
 ### Regenerate documentation
 
-Once you generated the **combined.json** file, you can use the generator to (re)generate the [service documentation]({{ '/services' | relative_url }}). This step is mandatory if you changed either the **documentation.json** or if you added/updated one of the discovery files. 
+Once you generated the **combined.json** file, you can use the generator to (re)generate the [service documentation]({{ '/services' | relative_url }}). This step is mandatory if you changed either the **documentation.json** or if you added/updated one of the discovery files.
 
 The resulting files, are **not to be changed manually**, since changes will get lost upon the next generation.
 
@@ -135,7 +137,7 @@ The template.json file gives some basic information about the template, the auth
 1. File usage `index`, will use the data from intermediate.json as input to produce **one file**.
 2. File usage `service`, will use the data from each service to produce **one file per service**, be sure to use `{snService}` or `{service}` in the **outputFile**.
 
-Be sure to check out the [docs template](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs) to get started. Or the [ts template](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/ts), which is used to generate [sonos-ts](https://svrooij.io/node-sonos-ts/).
+Be sure to check out the [docs template](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs) to get started. Or the [ts template](https://github.com/svrooij/node-sonos-ts/tree/master/.generator/ts), which is used to generate [Sonos typescript](https://sonos-ts.svrooij.io/).
 
 
 ```bash

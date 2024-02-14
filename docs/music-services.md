@@ -245,7 +245,7 @@ You should get a response that looks like this (Spofity result):
 
 This results in:
 
-- `regUrl` this is the url you should visit in the browser, it will ask you to login.
+- `regUrl` this is the URL you should visit in the browser, it will ask you to login.
 - `linkCode` this is sometimes needed to fill in on the page. And you'll need it for the next step.
 
 #### AppLink - Step 2
@@ -338,7 +338,7 @@ With the following body:
 
 This will results in a response with at least the following data:
 
-- `regUrl` this is the url you should visit in the browser, it will ask you to login.
+- `regUrl` this is the URL you should visit in the browser, it will ask you to login.
 - `linkCode` this is sometimes needed to fill in on the page. And you'll need it for the next step.
 
 Continue with [applink - step 2](#applink---step-2) after visiting the **regUrl** in the browser.

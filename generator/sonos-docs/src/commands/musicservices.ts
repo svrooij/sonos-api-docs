@@ -5,7 +5,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 
 export default class Musicservices extends Command {
-  static description = 'describe the command here'
+  static description = 'List music services available on a Sonos speaker'
 
   static flags = {
     ...cli.table.flags(),

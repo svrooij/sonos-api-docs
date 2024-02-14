@@ -51,6 +51,16 @@
           },
           "type": "object"
         },
+        "sample": {
+          "title": "Sample values",
+          "description": "Sample values for the parameters",
+          "additionalProperties": {
+            "title": "Value",
+            "description": "Working value, by it name as key",
+            "type": "string"
+          },
+          "type": "object"
+        },
         "remarks": {
           "title": "Action remarks",
           "description": "Remarks about this action",
