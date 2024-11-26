@@ -59,7 +59,14 @@ export default class Generate extends Command {
     // {{kebab var}} for kebab case
     handlebars.registerHelper('kebab', (input: any) => {
       if (typeof input === 'string') {
-        return StringHelper.camelToKebab(input)
+        return StringHelper.initCapsToKebab(input)
+      }
+      return input
+    })
+    // {{snake var}} for snake case
+    handlebars.registerHelper('snake', (input: any) => {
+      if (typeof input === 'string') {
+        return StringHelper.initCapsToSnake(input)
       }
       return input
     })
@@ -106,7 +113,10 @@ export default class Generate extends Command {
         cli.action.start(`Creating services '${t.outputFile}' from template '${t.file}'`)
         const template = this.getHandlebarTemplate<SonosService>(outputTemplate.folder, t.file)
         deviceDescription.services.forEach(s => {
-          const outputfile = path.join(outputBase, t.outputFile.replace('{snService}', s.kebabName ?? '').replace('{service}', s.name))
+          const outputfile = path.join(outputBase, t.outputFile
+            .replace('{snService}', s.kebabName ?? '')
+            .replace('{snakeService}', StringHelper.initCapsToSnake(s.name) ?? '')
+            .replace('{service}', s.name))
           const folder = path.dirname(outputfile)
           if (!fs.existsSync(folder)) {
             fs.mkdirSync(folder, {recursive: true})
@@ -167,7 +177,7 @@ export default class Generate extends Command {
     // Set relatedStateVariables to correct value.
     const intermediate = JSON.parse(fs.readFileSync(intermediateFile).toString()) as ExtendedSonosDescription
     intermediate.services.forEach(service => {
-      service.kebabName = StringHelper.camelToKebab(service.name.replace('AV', 'Av').replace('HT', 'Ht'))
+      service.kebabName = StringHelper.initCapsToKebab(service.name.replace('AV', 'Av').replace('HT', 'Ht'))
       if (typeof (service.stateVariables) !== undefined) {
         // Replace datatypes as specified in the template
         if (dataTypes !== undefined) {
