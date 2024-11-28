@@ -10,7 +10,7 @@
   "files": [
     {
       "file": "service.hbs",
-      "outputFile": "lib/services/{snService}.service.js",
+      "outputFile": "lib/services/{kebabService}.service.js",
       "usage":"service"
     }
   ],

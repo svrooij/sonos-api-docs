@@ -135,7 +135,7 @@ The generator uses [Handlebars](https://handlebarsjs.com/) templates. A template
 The template.json file gives some basic information about the template, the author of that template and which files to use.
 
 1. File usage `index`, will use the data from intermediate.json as input to produce **one file**.
-2. File usage `service`, will use the data from each service to produce **one file per service**, be sure to use `{snService}` or `{service}` in the **outputFile**.
+2. File usage `service`, will use the data from each service to produce **one file per service**, be sure to use `{kebabService}`, `{snakeService}`, or `{service}` in the **outputFile**.
 
 Be sure to check out the [docs template](https://github.com/svrooij/sonos-api-docs/tree/main/generator/sonos-docs/templates/docs) to get started. Or the [ts template](https://github.com/svrooij/node-sonos-ts/tree/master/.generator/ts), which is used to generate [Sonos typescript](https://sonos-ts.svrooij.io/).
 

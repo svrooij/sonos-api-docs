@@ -9,7 +9,7 @@
   "files": [
     {
       "file": "service.hbs",
-      "outputFile": "services/{snService}.md",
+      "outputFile": "services/{kebabService}.md",
       "usage":"service"
     },
     {

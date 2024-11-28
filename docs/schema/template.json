@@ -10,7 +10,7 @@
         },
         "outputFile": {
           "title": "Output filename",
-          "description": "How to output the file(s), '{service}' is replaced by the serviceName, '{snService}' is replaced by snakecase service name",
+          "description": "How to output the file(s), '{service}' is replaced by the serviceName, '{kebabService}' is replaced by kebabcase service name, '{snakeService}' is replaced by snakecase service name",
           "type": "string"
         },
         "usage": {

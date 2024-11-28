@@ -114,7 +114,8 @@ export default class Generate extends Command {
         const template = this.getHandlebarTemplate<SonosService>(outputTemplate.folder, t.file)
         deviceDescription.services.forEach(s => {
           const outputfile = path.join(outputBase, t.outputFile
-            .replace('{snService}', s.kebabName ?? '')
+            .replace('{snService}', s.kebabName ?? '') // duplicates `kebabService` for backwards compatibility
+            .replace('{kebabService}', s.kebabName ?? '')
             .replace('{snakeService}', StringHelper.initCapsToSnake(s.name) ?? '')
             .replace('{service}', s.name))
           const folder = path.dirname(outputfile)
