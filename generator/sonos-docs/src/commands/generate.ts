@@ -98,7 +98,7 @@ export default class Generate extends Command {
         throw new handlebars.Exception('2nd parameter has to be a string')
       }
 
-      return input?.endsWith(endsWith) == true;
+      return input?.endsWith(endsWith)
     })
 
     outputTemplate?.files.forEach(t => {
@@ -114,10 +114,10 @@ export default class Generate extends Command {
         const template = this.getHandlebarTemplate<SonosService>(outputTemplate.folder, t.file)
         deviceDescription.services.forEach(s => {
           const outputfile = path.join(outputBase, t.outputFile
-            .replace('{snService}', s.kebabName ?? '') // duplicates `kebabService` for backwards compatibility
-            .replace('{kebabService}', s.kebabName ?? '')
-            .replace('{snakeService}', StringHelper.initCapsToSnake(s.name) ?? '')
-            .replace('{service}', s.name))
+          .replace('{snService}', s.kebabName ?? '') // duplicates `kebabService` for backwards compatibility
+          .replace('{kebabService}', s.kebabName ?? '')
+          .replace('{snakeService}', StringHelper.initCapsToSnake(s.name) ?? '')
+          .replace('{service}', s.name))
           const folder = path.dirname(outputfile)
           if (!fs.existsSync(folder)) {
             fs.mkdirSync(folder, {recursive: true})
