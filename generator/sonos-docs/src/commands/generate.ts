@@ -178,7 +178,7 @@ export default class Generate extends Command {
     // Set relatedStateVariables to correct value.
     const intermediate = JSON.parse(fs.readFileSync(intermediateFile).toString()) as ExtendedSonosDescription
     intermediate.services.forEach(service => {
-      service.kebabName = StringHelper.initCapsToKebab(service.name.replace('AV', 'Av').replace('HT', 'Ht'))
+      service.kebabName = StringHelper.initCapsToKebab(service.name)
       if (typeof (service.stateVariables) !== undefined) {
         // Replace datatypes as specified in the template
         if (dataTypes !== undefined) {
