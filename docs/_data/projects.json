@@ -217,7 +217,17 @@
         "link": "https://github.com/vmichalak"
       },
       "usesGenerator": false
-    }            
-
+    },
+    {
+      "name": "Gonos",
+      "description": "A Go module for controlling Sonos devices",
+      "repository": "https://github.com/HandyGold75/Gonos",
+      "language":"Go",
+      "author": {
+        "name": "HandyGold75",
+        "link": "https://github.com/HandyGold75"
+      },
+      "usesGenerator": false
+    }
   ]
 }
