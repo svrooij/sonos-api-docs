@@ -66,7 +66,12 @@
           "remarks": "Some libraries support PatchAlarm where you can update a single parameter"
         }
       },
-      "errors": [{ "code": 801, "description": "Duplicate alarm time" }]
+      "errors": [
+        {
+          "code": 801,
+          "description": "Duplicate alarm time"
+        }
+      ]
     },
     "AudioInService": {
       "description": "Control line in"
@@ -86,14 +91,14 @@
         },
         "ConfigureSleepTimer": {
           "description": "Stop playing after set sleep timer or cancel",
-          "remarks":"Send to non-coordinator returns error code 800",
+          "remarks": "Send to non-coordinator returns error code 800",
           "params": {
             "NewSleepTimerDuration": "Time to stop after, as `hh:mm:ss` or empty string to cancel"
           }
         },
         "DelegateGroupCoordinationTo": {
           "description": "Delegates the coordinator role to another player in the same group",
-          "remarks":"Send to non-coordinator has no results - should be avoided.",
+          "remarks": "Send to non-coordinator has no results - should be avoided.",
           "params": {
             "NewCoordinator": "uuid of the new coordinator - must be in same group",
             "RejoinGroup": "Should former coordinator rejoin the group?"
@@ -101,11 +106,11 @@
         },
         "GetCrossfadeMode": {
           "description": "Get crossfade mode",
-          "remarks":"Send to non-coordinator may return wrong value as only the coordinator value in a group"
+          "remarks": "Send to non-coordinator may return wrong value as only the coordinator value in a group"
         },
         "GetCurrentTransportActions": {
           "description": "Get current transport actions such as Set, Stop, Pause, Play, X_DLNA_SeekTime, Next, X_DLNA_SeekTrackNr",
-          "remarks":"Send to non-coordinator returns only `Start` and `Stop` since it cannot control the stream."
+          "remarks": "Send to non-coordinator returns only `Start` and `Stop` since it cannot control the stream."
         },
         "GetMediaInfo": {
           "description": "Get information about the current playing media (queue)"
@@ -115,18 +120,18 @@
         },
         "GetRemainingSleepTimerDuration": {
           "description": "Get time left on sleeptimer.",
-          "remarks":"Send to non-coordinator returns error code 800",
+          "remarks": "Send to non-coordinator returns error code 800",
           "params": {
             "RemainingSleepTimerDuration": "Format hh:mm:ss or empty string if not set"
           }
         },
         "GetTransportInfo": {
           "description": "Get current transport status, speed and state such as PLAYING, STOPPED, PLAYING, PAUSED_PLAYBACK, TRANSITIONING, NO_MEDIA_PRESENT",
-          "remarks":"Send to non-coordinator always returns PLAYING"
+          "remarks": "Send to non-coordinator always returns PLAYING"
         },
         "GetTransportSettings": {
           "description": "Get transport settings",
-          "remarks":"Send to non-coordinator returns the settings of it's queue"
+          "remarks": "Send to non-coordinator returns the settings of it's queue"
         },
         "Next": {
           "description": "Go to next song",
@@ -147,7 +152,7 @@
         },
         "RemoveAllTracksFromQueue": {
           "description": "Flushes the SONOS queue.",
-          "remarks":"If queue is already empty it throw error 804. Send to non-coordinator returns error code 800."
+          "remarks": "If queue is already empty it throw error 804. Send to non-coordinator returns error code 800."
         },
         "RemoveTrackRangeFromQueue": {
           "description": "Removes the specified range of songs from the SONOS queue.",
@@ -158,15 +163,15 @@
         },
         "SaveQueue": {
           "description": "Saves the current SONOS queue as a SONOS playlist and outputs objectID",
-          "remarks":"Send to non-coordinator returns error code 800",
+          "remarks": "Send to non-coordinator returns error code 800",
           "params": {
-            "Title": "SONOS playlist title", 
+            "Title": "SONOS playlist title",
             "ObjectID": "Leave blank"
           }
         },
         "Seek": {
           "description": "Seek track in queue, time delta or absolute time in song",
-          "remarks":"Returns error code 701 in case that content does not support Seek or send to non-coordinator",
+          "remarks": "Returns error code 701 in case that content does not support Seek or send to non-coordinator",
           "params": {
             "Unit": "What to seek",
             "Target": "Position of track in queue (start at 1) or `hh:mm:ss` for `REL_TIME` or `+/-hh:mm:ss` for `TIME_DELTA`"
@@ -174,7 +179,7 @@
         },
         "SetAVTransportURI": {
           "description": "Set the transport URI to a song, a stream, the queue, another player-rincon and a lot more",
-          "remarks":"If set to another player RINCON, the player is grouped with that one.",
+          "remarks": "If set to another player RINCON, the player is grouped with that one.",
           "params": {
             "CurrentURI": "The new TransportURI - its a special SONOS format",
             "CurrentURIMetaData": "Track Metadata, see MetadataHelper.GuessTrack to guess based on track uri"
@@ -182,11 +187,11 @@
         },
         "SetCrossfadeMode": {
           "description": "Set crossfade mode",
-          "remarks":"Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode."
+          "remarks": "Send to non-coordinator returns error code 800. Same for content, which does not support crossfade mode."
         },
         "SetPlayMode": {
           "description": "Set the PlayMode",
-          "remarks":"Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.",
+          "remarks": "Send to non-coordinator returns error code 712. If SONOS queue is not activated returns error code 712.",
           "params": {
             "NewPlayMode": "New playmode"
           }
@@ -202,28 +207,94 @@
         }
       },
       "errors": [
-        { "code": 701, "description": "Transition not available" },
-        { "code": 702, "description": "No content" },
-        { "code": 703, "description": "Read error" },
-        { "code": 704, "description": "Format not supported for playback" },
-        { "code": 705, "description": "Transport is locked" },
-        { "code": 706, "description": "Write error" },
-        { "code": 707, "description": "Media protected or not writeable" },
-        { "code": 708, "description": "Format not supported for recording" },
-        { "code": 709, "description": "Media is full" },
-        { "code": 710, "description": "Seek mode not supported" },
-        { "code": 711, "description": "Illegal seek target" },
-        { "code": 712, "description": "Play mode not supported" },
-        { "code": 713, "description": "Record quality not supported" },
-        { "code": 714, "description": "Illegal MIME-Type" },
-        { "code": 715, "description": "Content busy" },
-        { "code": 716, "description": "Resource not found" },
-        { "code": 717, "description": "Play speed not supported" },
-        { "code": 718, "description": "Invalid InstanceID" },
-        { "code": 737, "description": "No dns configured" },
-        { "code": 738, "description": "Bad domain" },
-        { "code": 739, "description": "Server error" },
-        { "code": 800, "description": "Command not supported or not a coordinator" }
+        {
+          "code": 701,
+          "description": "Transition not available"
+        },
+        {
+          "code": 702,
+          "description": "No content"
+        },
+        {
+          "code": 703,
+          "description": "Read error"
+        },
+        {
+          "code": 704,
+          "description": "Format not supported for playback"
+        },
+        {
+          "code": 705,
+          "description": "Transport is locked"
+        },
+        {
+          "code": 706,
+          "description": "Write error"
+        },
+        {
+          "code": 707,
+          "description": "Media protected or not writeable"
+        },
+        {
+          "code": 708,
+          "description": "Format not supported for recording"
+        },
+        {
+          "code": 709,
+          "description": "Media is full"
+        },
+        {
+          "code": 710,
+          "description": "Seek mode not supported"
+        },
+        {
+          "code": 711,
+          "description": "Illegal seek target"
+        },
+        {
+          "code": 712,
+          "description": "Play mode not supported"
+        },
+        {
+          "code": 713,
+          "description": "Record quality not supported"
+        },
+        {
+          "code": 714,
+          "description": "Illegal MIME-Type"
+        },
+        {
+          "code": 715,
+          "description": "Content busy"
+        },
+        {
+          "code": 716,
+          "description": "Resource not found"
+        },
+        {
+          "code": 717,
+          "description": "Play speed not supported"
+        },
+        {
+          "code": 718,
+          "description": "Invalid InstanceID"
+        },
+        {
+          "code": 737,
+          "description": "No dns configured"
+        },
+        {
+          "code": 738,
+          "description": "Bad domain"
+        },
+        {
+          "code": 739,
+          "description": "Server error"
+        },
+        {
+          "code": 800,
+          "description": "Command not supported or not a coordinator"
+        }
       ]
     },
     "ConnectionManagerService": {
@@ -256,25 +327,82 @@
         }
       },
       "errors": [
-        { "code": 701, "description": "No such object" },
-        { "code": 702, "description": "Invalid CurrentTagValue" },
-        { "code": 703, "description": "Invalid NewTagValue" },
-        { "code": 704, "description": "Required tag" },
-        { "code": 705, "description": "Read-only tag" },
-        { "code": 706, "description": "Parameter mismatch" },
-        { "code": 708, "description": "Invalid search criteria" },
-        { "code": 709, "description": "Invalid sort criteria" },
-        { "code": 710, "description": "No such container" },
-        { "code": 711, "description": "Restricted object" },
-        { "code": 712, "description": "Bad metadata" },
-        { "code": 713, "description": "Restricted parent object" },
-        { "code": 714, "description": "No such source resource" },
-        { "code": 715, "description": "Resource access denied" },
-        { "code": 716, "description": "Transfer busy" },
-        { "code": 717, "description": "No such file transfer" },
-        { "code": 718, "description": "No such destination resource" },
-        { "code": 719, "description": "Destination resource access denied" },
-        { "code": 720, "description": "Cannot process the request" }
+        {
+          "code": 701,
+          "description": "No such object"
+        },
+        {
+          "code": 702,
+          "description": "Invalid CurrentTagValue"
+        },
+        {
+          "code": 703,
+          "description": "Invalid NewTagValue"
+        },
+        {
+          "code": 704,
+          "description": "Required tag"
+        },
+        {
+          "code": 705,
+          "description": "Read-only tag"
+        },
+        {
+          "code": 706,
+          "description": "Parameter mismatch"
+        },
+        {
+          "code": 708,
+          "description": "Invalid search criteria"
+        },
+        {
+          "code": 709,
+          "description": "Invalid sort criteria"
+        },
+        {
+          "code": 710,
+          "description": "No such container"
+        },
+        {
+          "code": 711,
+          "description": "Restricted object"
+        },
+        {
+          "code": 712,
+          "description": "Bad metadata"
+        },
+        {
+          "code": 713,
+          "description": "Restricted parent object"
+        },
+        {
+          "code": 714,
+          "description": "No such source resource"
+        },
+        {
+          "code": 715,
+          "description": "Resource access denied"
+        },
+        {
+          "code": 716,
+          "description": "Transfer busy"
+        },
+        {
+          "code": 717,
+          "description": "No such file transfer"
+        },
+        {
+          "code": 718,
+          "description": "No such destination resource"
+        },
+        {
+          "code": 719,
+          "description": "Destination resource access denied"
+        },
+        {
+          "code": 720,
+          "description": "Cannot process the request"
+        }
       ]
     },
     "DevicePropertiesService": {
@@ -359,14 +487,17 @@
           "params": {
             "Adjustment": "Number between -100 and +100"
           }
-        }, 
+        },
         "SnapshotGroupVolume": {
           "description": "Creates a new group volume snapshot,  the volume ratio between all players. It is used by SetGroupVolume and SetRelativeGroupVolume",
           "remarks": "Should be send to coordinator only"
         }
       },
       "errors": [
-        { "code": 701, "description": "Player isn't the coordinator" }
+        {
+          "code": 701,
+          "description": "Player isn't the coordinator"
+        }
       ]
     },
     "HTControlService": {
@@ -396,10 +527,10 @@
         "GetEQ": {
           "description": "Get equalizer value",
           "params": {
-            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10)",
-            "CurrentValue": "Booleans return `1` / `0`, rest number as specified"
+            "EQType": "Allowed values `DialogLevel` (string, 1–4 on supported devices: 1 = low, 2 = medium, 3 = high, 4 = max) / `SpeechEnhanceEnabled` (bool) / `MusicSurroundLevel` (-15/+15) / `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10)",
+            "CurrentValue": "Booleans return `1` / `0`; `DialogLevel` returns a string value representing the dialog intensity level"
           },
-          "remarks": "Not all EQ types are available on every speaker"
+          "remarks": "On newer devices (e.g. Arc Ultra), dialog enhancement on/off is controlled via `SpeechEnhanceEnabled`, while `DialogLevel` represents the intensity level (1 = low, 2 = medium, 3 = high, 4 = max) and does not return 0 when disabled. Not all EQ types are available on every speaker."
         },
         "GetLoudness": {
           "description": "Whether or not Loudness is on"
@@ -420,12 +551,12 @@
           "description": "Set bass level, between -10 and 10"
         },
         "SetEQ": {
-          "description": "Set equalizer value for different types",
+          "description": "Set equalizer value",
           "params": {
-            "EQType": "Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10)",
-            "DesiredValue": "Booleans required `1` for true or `0` for false, rest number as specified"
+            "EQType": "Allowed values `DialogLevel` (string, 1–4 on supported devices: 1 = low, 2 = medium, 3 = high, 4 = max) / `SpeechEnhanceEnabled` (bool) / `MusicSurroundLevel` (-15/+15) / `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10)",
+            "DesiredValue": "Value to set. Booleans use `1` / `0`. `DialogLevel` expects a string value in the range 1–4 on supported devices"
           },
-          "remarks": "Not supported by all speakers, TV related"
+          "remarks": "On newer devices (e.g. Arc Ultra), dialog enhancement on/off is controlled via `SpeechEnhanceEnabled`. Setting `DialogLevel` adjusts the dialog intensity level (1 = low, 2 = medium, 3 = high, 4 = max) but does not enable or disable the feature by itself. Not all EQ types are available on every speaker."
         },
         "SetLoudness": {
           "description": "Set loudness on / off"
@@ -487,24 +618,81 @@
     }
   },
   "errors": [
-    { "code": 400, "description": "Bad request" },
-    { "code": 401, "description": "Invalid action" },
-    { "code": 402, "description": "Invalid args" },
-    { "code": 404, "description": "Invalid var" },
-    { "code": 412, "description": "Precondition failed" },
-    { "code": 501, "description": "Action failed" },
-    { "code": 600, "description": "Argument value invalid" },
-    { "code": 601, "description": "Argument value out of range" },
-    { "code": 602, "description": "Optional action not implemented" },
-    { "code": 603, "description": "Out of memory" },
-    { "code": 604, "description": "Human intervention required" },
-    { "code": 605, "description": "String argument too long" },
-    { "code": 606, "description": "Action not authorized" },
-    { "code": 607, "description": "Signature failure" },
-    { "code": 608, "description": "Signature missing" },
-    { "code": 609, "description": "Not encrypted" },
-    { "code": 610, "description": "Invalid sequence" },
-    { "code": 611, "description": "Invalid control URL" },
-    { "code": 612, "description": "No such session" }
+    {
+      "code": 400,
+      "description": "Bad request"
+    },
+    {
+      "code": 401,
+      "description": "Invalid action"
+    },
+    {
+      "code": 402,
+      "description": "Invalid args"
+    },
+    {
+      "code": 404,
+      "description": "Invalid var"
+    },
+    {
+      "code": 412,
+      "description": "Precondition failed"
+    },
+    {
+      "code": 501,
+      "description": "Action failed"
+    },
+    {
+      "code": 600,
+      "description": "Argument value invalid"
+    },
+    {
+      "code": 601,
+      "description": "Argument value out of range"
+    },
+    {
+      "code": 602,
+      "description": "Optional action not implemented"
+    },
+    {
+      "code": 603,
+      "description": "Out of memory"
+    },
+    {
+      "code": 604,
+      "description": "Human intervention required"
+    },
+    {
+      "code": 605,
+      "description": "String argument too long"
+    },
+    {
+      "code": 606,
+      "description": "Action not authorized"
+    },
+    {
+      "code": 607,
+      "description": "Signature failure"
+    },
+    {
+      "code": 608,
+      "description": "Signature missing"
+    },
+    {
+      "code": 609,
+      "description": "Not encrypted"
+    },
+    {
+      "code": 610,
+      "description": "Invalid sequence"
+    },
+    {
+      "code": 611,
+      "description": "Invalid control URL"
+    },
+    {
+      "code": 612,
+      "description": "No such session"
+    }
   ]
 }
