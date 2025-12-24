@@ -95,9 +95,9 @@ Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentValue** | `i2` | Booleans return `1` / `0`; `DialogLevel` returns a string value representing the dialog intensity level |
+| **CurrentValue** | `i2` | Booleans return `1` / `0`; `DialogLevel` returns a string value representing the dialog intensity level, rest return number as specified |
 
-**Remarks** On newer devices (e.g. Arc Ultra), dialog enhancement on/off is controlled via `SpeechEnhanceEnabled`, while `DialogLevel` represents the intensity level (1 = low, 2 = medium, 3 = high, 4 = max) and does not return 0 when disabled. Not all EQ types are available on every speaker.
+**Remarks** Not all EQ types are available on every speaker
 
 ### GetHeadphoneConnected
 
@@ -471,7 +471,7 @@ Inputs:
 
 ### SetEQ
 
-Set equalizer value
+Set equalizer value for different types
 
 Action body:
 
@@ -489,9 +489,9 @@ Inputs:
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
 | **EQType** | `string` | Allowed values `DialogLevel` (string, 1–4 on supported devices: 1 = low, 2 = medium, 3 = high, 4 = max) / `SpeechEnhanceEnabled` (bool) / `MusicSurroundLevel` (-15/+15) / `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10) |
-| **DesiredValue** | `i2` | Value to set. Booleans use `1` / `0`. `DialogLevel` expects a string value in the range 1–4 on supported devices |
+| **DesiredValue** | `i2` | Booleans return `1` / `0`; `DialogLevel` returns a string value representing the dialog intensity levels, rest number as specified |
 
-**Remarks** On newer devices (e.g. Arc Ultra), dialog enhancement on/off is controlled via `SpeechEnhanceEnabled`. Setting `DialogLevel` adjusts the dialog intensity level (1 = low, 2 = medium, 3 = high, 4 = max) but does not enable or disable the feature by itself. Not all EQ types are available on every speaker.
+**Remarks** On newer devices (e.g. Arc Ultra), dialog enhancement on/off is controlled via `SpeechEnhanceEnabled`, while `DialogLevel` represents the intensity level (1 = low, 2 = medium, 3 = high, 4 = max) and does not return 0 when disabled. Not all EQ types are available on every speaker. Not supported by all speakers, TV related
 
 ### SetLoudness
 
