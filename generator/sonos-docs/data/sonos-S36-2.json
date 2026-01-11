@@ -1,9 +1,9 @@
 {
-  "model": "S18",
-  "modelDescription": "Sonos One",
+  "model": "S36",
+  "modelDescription": "Sonos Ray",
   "softwareGeneration": 2,
-  "softwareVersion": "85.0-64200",
-  "discoveryDate": "2026-01-11T22:43:37.357Z",
+  "softwareVersion": "90.0-67171",
+  "discoveryDate": "2026-01-11T22:44:07.800Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -3696,6 +3696,148 @@
               "name": "InstanceID",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_InstanceID"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HTControl",
+      "serviceName": "HTControlService",
+      "discoveryUri": "/xml/HTControl1.xml",
+      "serviceId": "urn:upnp-org:serviceId:HTControl",
+      "serviceType": "urn:schemas-upnp-org:service:HTControl:1",
+      "controlURL": "/HTControl/Control",
+      "eventSubURL": "/HTControl/Event",
+      "stateVariables": [
+        {
+          "name": "TOSLinkConnected",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "IRRepeaterState",
+          "dataType": "string",
+          "sendEvents": true,
+          "allowedValues": [
+            "On",
+            "Off",
+            "Disabled"
+          ]
+        },
+        {
+          "name": "A_ARG_TYPE_Timeout",
+          "dataType": "ui4",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_IRRemoteName",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_IRCode",
+          "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "RemoteConfigured",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "LEDFeedbackState",
+          "dataType": "string",
+          "sendEvents": false,
+          "allowedValues": [
+            "On",
+            "Off"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetIRRepeaterState",
+          "inputs": [
+            {
+              "name": "DesiredIRRepeaterState",
+              "direction": "in",
+              "relatedStateVariableName": "IRRepeaterState"
+            }
+          ]
+        },
+        {
+          "name": "GetIRRepeaterState",
+          "outputs": [
+            {
+              "name": "CurrentIRRepeaterState",
+              "direction": "out",
+              "relatedStateVariableName": "IRRepeaterState"
+            }
+          ]
+        },
+        {
+          "name": "IdentifyIRRemote",
+          "inputs": [
+            {
+              "name": "Timeout",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Timeout"
+            }
+          ]
+        },
+        {
+          "name": "LearnIRCode",
+          "inputs": [
+            {
+              "name": "IRCode",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_IRCode"
+            },
+            {
+              "name": "Timeout",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_Timeout"
+            }
+          ]
+        },
+        {
+          "name": "CommitLearnedIRCodes",
+          "inputs": [
+            {
+              "name": "Name",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_IRRemoteName"
+            }
+          ]
+        },
+        {
+          "name": "IsRemoteConfigured",
+          "outputs": [
+            {
+              "name": "RemoteConfigured",
+              "direction": "out",
+              "relatedStateVariableName": "RemoteConfigured"
+            }
+          ]
+        },
+        {
+          "name": "SetLEDFeedbackState",
+          "inputs": [
+            {
+              "name": "LEDFeedbackState",
+              "direction": "in",
+              "relatedStateVariableName": "LEDFeedbackState"
+            }
+          ]
+        },
+        {
+          "name": "GetLEDFeedbackState",
+          "outputs": [
+            {
+              "name": "LEDFeedbackState",
+              "direction": "out",
+              "relatedStateVariableName": "LEDFeedbackState"
             }
           ]
         }

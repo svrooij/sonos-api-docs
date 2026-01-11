@@ -2,8 +2,8 @@
   "model": "S9",
   "modelDescription": "Sonos Playbar",
   "softwareGeneration": 2,
-  "softwareVersion": "77.4-49290",
-  "discoveryDate": "2024-02-13T15:55:46.307Z",
+  "softwareVersion": "86.1-68260",
+  "discoveryDate": "2026-01-11T22:44:00.776Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -918,6 +918,11 @@
         {
           "name": "A_ARG_TYPE_TrackList",
           "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RestartSink",
+          "dataType": "boolean",
           "sendEvents": false
         }
       ],
@@ -1899,6 +1904,11 @@
               "name": "CurrentAVTransportURI",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_CurrentAVTransportURI"
+            },
+            {
+              "name": "RestartSink",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RestartSink"
             }
           ]
         },
@@ -4654,6 +4664,16 @@
         {
           "name": "DialogLevel",
           "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SupportsMaxDialogLevel",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "SpeechEnhanceEnabled",
+          "dataType": "boolean",
           "sendEvents": false
         },
         {
