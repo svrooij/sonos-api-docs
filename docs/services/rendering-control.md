@@ -89,13 +89,13 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10) |
+| **EQType** | `string` | Allowed values `DialogLevel` (string, 1–4 on supported devices: 1 = low, 2 = medium, 3 = high, 4 = max) / `SpeechEnhanceEnabled` (bool) / `MusicSurroundLevel` (-15/+15) / `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10) |
 
 Outputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **CurrentValue** | `i2` | Booleans return `1` / `0`, rest number as specified |
+| **CurrentValue** | `i2` | Booleans return `1` / `0`; `DialogLevel` returns a string value representing the dialog intensity level, rest return number as specified |
 
 **Remarks** Not all EQ types are available on every speaker
 
@@ -488,10 +488,10 @@ Inputs:
 | parameter | type | description |
 |:----------|:-----|:------------|
 | **InstanceID** | `ui4` | InstanceID should always be `0` |
-| **EQType** | `string` | Allowed values `DialogLevel` (bool) / `MusicSurroundLevel` (-15/+15) /  `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10) |
-| **DesiredValue** | `i2` | Booleans required `1` for true or `0` for false, rest number as specified |
+| **EQType** | `string` | Allowed values `DialogLevel` (string, 1–4 on supported devices: 1 = low, 2 = medium, 3 = high, 4 = max) / `SpeechEnhanceEnabled` (bool) / `MusicSurroundLevel` (-15/+15) / `NightMode` (bool) / `SubGain` (-10/+10) / `SurroundEnable` (bool) / `SurroundLevel` (-15/+15) / `SurroundMode` (0 = ambient, 1 = full) / `HeightChannelLevel` (-10/+10) |
+| **DesiredValue** | `i2` | Booleans return `1` / `0`; `DialogLevel` returns a string value representing the dialog intensity levels, rest number as specified |
 
-**Remarks** Not supported by all speakers, TV related
+**Remarks** On newer devices (e.g. Arc Ultra), dialog enhancement on/off is controlled via `SpeechEnhanceEnabled`, while `DialogLevel` represents the intensity level (1 = low, 2 = medium, 3 = high, 4 = max) and does not return 0 when disabled. Not all EQ types are available on every speaker. Not supported by all speakers, TV related
 
 ### SetLoudness
 
