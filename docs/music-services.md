@@ -27,16 +27,18 @@ At the moment the following music services are supported.
 
 | Id  | Name                      | Auth       | Url |
 |:----|:--------------------------|:-----------|:----|
+| 894 | 80er-Radio harmony        | Anonymous  | `https://resource.harmonyfm.de/digital/sonos/soap.php?station=harmonyfm` |
 | 321 | 80s80s - REAL 80s Radio   | Anonymous  | `https://sonos80s.regiocast.customers.nuuk.de/wsdl` |
 | 511 | 90s90s Radio              | Anonymous  | `https://sonos90s.regiocast.customers.nuuk.de/wsdl` |
-| 198 | Anghami                   | DeviceLink | `https://api.anghami.com/anghmob/SonosAPI.php` |
+| 322 | Activaire                 | AppLink    | `https://smapi.sonos.activaire.com/musicservice` |
+| 799 | amidAudio                 | AppLink    | `https://amidaudio.com/api/integration/sonos/smapi` |
 | 204 | Apple Music               | AppLink    | `https://sonos-music.apple.com/ws/SonosSoap` |
 | 275 | Art Radio - RadioArt.com  | AppLink    | `https://sonos.radioart.com/server/` |
+| 861 | Astiga                    | AppLink    | `https://sonos.asti.ga/ws/sonos` |
 | 306 | Atmosphere by Kollekt.fm  | AppLink    | `https://sonos-smapi.service.kollekt.fm/wsdl` |
 | 239 | Audible                   | AppLink    | `https://sonos.audible.com/smapi` |
 | 157 | Bandcamp                  | DeviceLink | `https://sns.bandcamp.com/api/sonos/2/sonos_api` |
 | 307 | Bookmate                  | AppLink    | `https://sonos.bookmate.com/wsdl` |
-| 283 | Calm                      | AppLink    | `https://sonos.calm.com/server.php` |
 | 144 | Calm Radio                | AppLink    | `https://sonos.calmradio.com/app` |
 | 256 | CBC Radio &amp; Music     | Anonymous  | `https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc` |
 | 191 | Classical Archives        | DeviceLink | `https://smapi.classicalarchives.com/endpoint` |
@@ -44,55 +46,66 @@ At the moment the following music services are supported.
 | 315 | Convoy Network            | Anonymous  | `https://sonos.convoynetwork.com/musicservice` |
 | 213 | Custom Channels           | AppLink    | `https://sonos.customchannels.net/sonos` |
 |   2 | Deezer                    | DeviceLink | `https://api.deezer.com/sonos` |
-| 234 | deliver.media             | DeviceLink | `https://sonos.deliver.media/musicservice` |
+| 234 | deliver.media             | AppLink    | `https://sonos-api.deliver.media/SonosService/delivermedia` |
 |  45 | DMD2 Music                | AppLink    | `https://services.dmd2.com/sonos-api/smapi` |
+| 846 | Download Player           | AppLink    | `https://sonos.musicstylingonline.com/ws` |
+| 290 | DR LYD                    | Anonymous  | `https://api.dr.dk/sonos/v1/api` |
 | 518 | Familystream              | AppLink    | `https://web.familystream.com/api/sonos/v2.1/endpoint.php` |
 | 217 | FIT Radio Workout Music   | DeviceLink | `https://www.fitradio.com/apisonos/ws` |
-| 192 | focus@will                | UserId     | `https://www.focusatwill.com/sonos/action` |
+| 192 | focus@will                | AppLink    | `https://www.focusatwill.com/sonos/action` |
 | 167 | Gaana                     | DeviceLink | `https://sonosapi.gaana.com/SonosAPI.php` |
 | 279 | Global Player             | Anonymous  | `https://sonoslb.radioapi.io/global` |
+| 635 | Harmony                   | AppLink    | `https://harmony-sonos-prod.moodmedia.com/api/Sonos` |
 |  36 | HEARTS of SPACE           | AppLink    | `https://sonos-api.hos.com/ws` |
+| 895 | HIT RADIO FFH             | Anonymous  | `https://resource.ffh.de/digital/sonos/soap.php?station=ffh` |
+|  44 | Hype Machine              | Anonymous  | `https://api.hypem.com/api/sonos` |
 | 310 | iBroadcast                | AppLink    | `https://sonos.ibroadcast.com/` |
 | 327 | iChill Music Service      | AppLink    | `https://upgrade.ichillmusic.com/sonoscallback-production.php` |
 | 271 | IDAGIO                    | AppLink    | `https://idg-prod-sonos.herokuapp.com/smapi/action` |
-| 300 | JUKE                      | Anonymous  | `https://api-v3.talparad.io/sonos/SMAPI` |
 | 313 | Juuqo                     | AppLink    | `https://eazis-sonos.herokuapp.com/mp3` |
+| 273 | Klassik Radio Plus        | AppLink    | `https://klassikradioplus.de/sonos` |
 | 305 | Libby by OverDrive        | AppLink    | `https://libbysonos.overdrive.com/soap` |
-| 221 | LivePhish+                | UserId     | `https://sonos.nugs.net/soap/livephish` |
+| 711 | LITT Live                 | Anonymous  | `https://dash-api.com/sonos/MusicBrainzPHP/SonosAPI.php` |
+| 221 | LivePhish+                | AppLink    | `https://sonos.nugs.net/soap/livephishoauth` |
 | 181 | Mixcloud                  | DeviceLink | `https://app.mixcloud.com/sonos-app/` |
-| 171 | Mood Mix                  | UserId     | `https://sonos.mix.moodmedia.com/api` |
 |  33 | Murfie                    | DeviceLink | `https://murfie.com/sonos/xmlapi` |
+| 976 | Music Source              | AppLink    | `https://europe-west1-music-source-68a2d.cloudfunctions.net/app/` |
 | 329 | Music Your Brand          | AppLink    | `https://api.musicyourbrand.com/sonos/soap` |
 | 268 | myTuner Radio             | Anonymous  | `https://sonos.mytuner.mobi/api/v2/sonos/soap` |
-| 203 | Napster                   | UserId     | `https://sonos-resurrections-prod.napster.com/` |
 | 277 | NRK Radio                 | Anonymous  | `https://psapi.nrk.no/sonos/sonos.svc` |
 | 230 | NTS Radio                 | Anonymous  | `https://www.nts.live/smapi` |
-| 222 | nugs.net                  | UserId     | `https://sonos.nugs.net/soap/nugs` |
+| 222 | nugs                      | AppLink    | `https://sonos.nugs.net/soap/nugsoauth` |
 | 324 | Piraten.FM                | Anonymous  | `https://piraten.fm/sonos` |
+| 896 | planet radio              | Anonymous  | `https://resource.planetradio.de/digital/sonos/soap.php?station=planet` |
 | 212 | Plex                      | AppLink    | `https://sonos.plex.tv/v2.2/soap` |
 | 233 | Pocket Casts              | AppLink    | `https://integrations.pocketcasts.com/service/smapi` |
+| 299 | POSmusic                  | AppLink    | `https://api.posmusic.com/sonos/v1/action` |
 | 265 | PowerApp                  | Anonymous  | `https://api.powergroup.com.tr/Sonos/` |
 |  31 | Qobuz                     | AppLink    | `https://www.qobuz.com/api.xml/0.3/sonos` |
+| 827 | Radio Energy              | Anonymous  | `https://sonos.nrj.customers.nuuk.de/wsdl` |
+| 585 | Radio France              | Anonymous  | `https://api.radiofrance.fr/voiceapi/sonos/smapi` |
 | 294 | Radio Javan               | AppLink    | `https://rjsonos.app/musicservice` |
+| 962 | Radio Paloma              | Anonymous  | `https://sonos.konsole-labs.com/radiopaloma.php` |
 | 308 | Radio Paradise            | AppLink    | `https://api.radioparadise.com/sonos/soap/server.php` |
-| 264 | radio.net                 | Anonymous  | `https://prod.radio-api.net/sonos/v1/ws` |
+| 232 | Radioplayer               | Anonymous  | `https://rp-sonos.konsole-labs.com/` |
 | 162 | radioPup                  | Anonymous  | `https://sonos.townsquaremedia.com/index.php` |
 | 312 | Radioshop                 | AppLink    | `https://smapi.radioshop.net/SonosService.svc` |
+| 666 | RadioSparx Royalty-Free Music | AppLink    | `https://www.radiosparx.com/module/radiosparx/sonos/default.cfm` |
 | 223 | RauteMusik.FM             | Anonymous  | `https://sonos-smapi.rautemusik.fm/smapi` |
 | 270 | Relisten                  | Anonymous  | `https://sonos.relisten.net/mp3` |
 | 164 | Saavn                     | DeviceLink | `https://www.saavn.com/apps/sonos/SonosAPI.php` |
 | 326 | Schlager Radio            | Anonymous  | `https://sonos.schlagerradio.de/wsdl/schlagerradio` |
 | 516 | SomaFM Radio              | Anonymous  | `https://sonos.somafm.com/` |
-| 303 | Sonos Radio               | DeviceLink | `https://sali.sonos.radio/smapi` |
-| 160 | SoundCloud                | AppLink    | `https://sonos.integrate.soundcloud.com/server.php` |
-| 189 | SOUNDMACHINE              | UserId     | `https://provider.sound-machine.com/sonosapi` |
-| 218 | Soundsuit.fm              | UserId     | `https://soundsuit.fm/smapi` |
-| 295 | Soundtrack Player         | AppLink    | `https://sms.soundtrackyourbrand.com/soap` |
+| 303 | Sonos Radio               | DeviceLink | `https://sali.sonos.superhi.fi/smapi` |
+| 160 | SoundCloud                | AppLink    | `https://api.sonos.integrate.soundcloud.com/` |
+| 189 | SoundMachine              | AppLink    | `https://provider.sound-machine.com/sonosapi` |
+| 218 | Soundsuit.fm              | AppLink    | `https://api.soundsuit.fm/smapi` |
+| 295 | Soundtrack                | AppLink    | `https://sms.soundtrackyourbrand.com/soap` |
+| 633 | Spectre                   | AppLink    | `https://vauxhall.spectre-music.com/smapi` |
 |   9 | Spotify                   | AppLink    | `https://spotify-v5.ws.sonos.com/smapi` |
-| 184 | Stingray Music            | DeviceLink | `https://sonos.stingray.com/ws/Sonos` |
 | 237 | storePlay                 | AppLink    | `https://v2.api.storeplay.com.au/sonos/service` |
-| 226 | Storytel                  | UserId     | `https://sonosapi.storytel.com/sonos/1.0` |
-| 235 | Sveriges Radio            | Anonymous  | `https://sonos.playsr.com/ws` |
+| 226 | Storytel                  | AppLink    | `https://sonosapi.storytel.com/sonos/1.0` |
+| 235 | Sveriges Radio            | Anonymous  | `https://sonos.sr.se/ws` |
 | 335 | The Lot Radio             | Anonymous  | `https://wy8hgbmpdj.us-east-1.awsapprunner.com/wsdl?wsdl` |
 | 174 | TIDAL                     | DeviceLink | `https://smapi.tidal.com/sonos` |
 | 287 | toníque                   | AppLink    | `https://sonos.tonique.com/ws` |
@@ -100,7 +113,8 @@ At the moment the following music services are supported.
 | 254 | TuneIn                    | Anonymous  | `https://legato.radiotime.com/Radio.asmx` |
 | 333 | TuneIn (New)              | AppLink    | `https://sonos.tunein.com/SMRadio.asmx` |
 | 193 | Tunify for Business       | AppLink    | `https://apis.tunify.com/t4-sonos-music-api/services/Sonos.wsdl` |
-| 272 | Worldwide FM              | Anonymous  | `https://wwfm-sonos.nextempire.net/sonos` |
+| 606 | Viaplay Radio             | Anonymous  | `https://sonos.viaplayradio.se/mp3` |
+| 336 | Virgin Radio UK           | Anonymous  | `https://api.news.co.uk/audio/v1/smapi/virginradio/wsdl` |
 | 317 | Yogi Tunes                | AppLink    | `https://yogi-tunes.ca/server.php` |
 | 284 | YouTube Music             | AppLink    | `https://music.googleapis.com/v1:sendRequest` |
 

@@ -2,8 +2,8 @@
   "model": "S38",
   "modelDescription": "Sonos One SL",
   "softwareGeneration": 2,
-  "softwareVersion": "72.2-40060",
-  "discoveryDate": "2023-05-22T16:39:25.503Z",
+  "softwareVersion": "85.0-64200",
+  "discoveryDate": "2026-01-11T22:45:23.160Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -918,6 +918,11 @@
         {
           "name": "A_ARG_TYPE_TrackList",
           "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "A_ARG_TYPE_RestartSink",
+          "dataType": "boolean",
           "sendEvents": false
         }
       ],
@@ -1899,6 +1904,11 @@
               "name": "CurrentAVTransportURI",
               "direction": "in",
               "relatedStateVariableName": "A_ARG_TYPE_CurrentAVTransportURI"
+            },
+            {
+              "name": "RestartSink",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_RestartSink"
             }
           ]
         },
@@ -2396,11 +2406,6 @@
           "name": "FavoritesUpdateID",
           "dataType": "string",
           "sendEvents": true
-        },
-        {
-          "name": "FavoritePresetsUpdateID",
-          "dataType": "string",
-          "sendEvents": true
         }
       ],
       "actions": [
@@ -2759,11 +2764,6 @@
           "sendEvents": true
         },
         {
-          "name": "HTFreq",
-          "dataType": "ui4",
-          "sendEvents": true
-        },
-        {
           "name": "HTBondedZoneCommitState",
           "dataType": "ui4",
           "sendEvents": true
@@ -2968,11 +2968,6 @@
         },
         {
           "name": "KeepGrouped",
-          "dataType": "boolean",
-          "sendEvents": false
-        },
-        {
-          "name": "HTForwardEnabled",
           "dataType": "boolean",
           "sendEvents": false
         },
@@ -3365,16 +3360,6 @@
               "name": "State",
               "direction": "out",
               "relatedStateVariableName": "A_ARG_TYPE_ButtonState"
-            }
-          ]
-        },
-        {
-          "name": "GetHTForwardState",
-          "outputs": [
-            {
-              "name": "IsHTForwardEnabled",
-              "direction": "out",
-              "relatedStateVariableName": "HTForwardEnabled"
             }
           ]
         },
@@ -4537,6 +4522,16 @@
         {
           "name": "DialogLevel",
           "dataType": "string",
+          "sendEvents": false
+        },
+        {
+          "name": "SupportsMaxDialogLevel",
+          "dataType": "boolean",
+          "sendEvents": false
+        },
+        {
+          "name": "SpeechEnhanceEnabled",
+          "dataType": "boolean",
           "sendEvents": false
         },
         {
