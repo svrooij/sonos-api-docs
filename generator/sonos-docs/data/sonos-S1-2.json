@@ -2,8 +2,8 @@
   "model": "S1",
   "modelDescription": "Sonos Play:1",
   "softwareGeneration": 2,
-  "softwareVersion": "85.0-64200",
-  "discoveryDate": "2026-01-11T22:44:30.991Z",
+  "softwareVersion": "86.4-73290",
+  "discoveryDate": "2026-02-09T06:10:23.572Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2893,8 +2893,8 @@
           "sendEvents": true
         },
         {
-          "name": "WirelessLeafOnly",
-          "dataType": "boolean",
+          "name": "ConnectionType",
+          "dataType": "ui4",
           "sendEvents": true
         },
         {

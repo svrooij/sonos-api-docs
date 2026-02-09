@@ -2,8 +2,8 @@
   "model": "S9",
   "modelDescription": "Sonos Playbar",
   "softwareGeneration": 2,
-  "softwareVersion": "86.1-68260",
-  "discoveryDate": "2026-01-11T22:44:00.776Z",
+  "softwareVersion": "86.4-73290",
+  "discoveryDate": "2026-02-09T06:09:44.116Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2893,8 +2893,8 @@
           "sendEvents": true
         },
         {
-          "name": "WirelessLeafOnly",
-          "dataType": "boolean",
+          "name": "ConnectionType",
+          "dataType": "ui4",
           "sendEvents": true
         },
         {
