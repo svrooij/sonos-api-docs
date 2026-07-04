@@ -1,6 +1,5 @@
-import {Command, flags} from '@oclif/command'
-import {cli} from 'cli-ux'
-import { SonosDevice } from '@svrooij/sonos'
+import {Args, Command, Flags} from '@oclif/core'
+import {SonosDevice} from '@svrooij/sonos'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -8,54 +7,47 @@ export default class Musicservices extends Command {
   static description = 'List music services available on a Sonos speaker'
 
   static flags = {
-    ...cli.table.flags(),
-    show: flags.boolean({ description: 'Show the music services' }),
-    docs: flags.boolean({ description: 'Show a markdown table' }),
-    saveJson: flags.string({ description: 'If set, save music services as json' })
+    show: Flags.boolean({description: 'Show the music services in a table'}),
+    docs: Flags.boolean({description: 'Show a markdown table'}),
+    saveJson: Flags.string({description: 'If set, save music services as json'}),
   }
 
-  static args = [{name: 'ip', description: 'The IP of the sonos speaker to load the music services', required: true }]
+  static args = {
+    ip: Args.string({description: 'The IP of the sonos speaker to load the music services', required: true}),
+  }
 
   async run() {
-    const {args, flags} = this.parse(Musicservices)
-    cli.action.start(`Loading music services from ${args.ip}`)
-    const device = new SonosDevice(args.ip);
+    const {args, flags} = await this.parse(Musicservices)
+    this.log(`Loading music services from ${args.ip}`)
+    const device = new SonosDevice(args.ip)
 
     const musicServices = await device.MusicServicesService.ListAndParseAvailableServices()
-    cli.action.stop();
+    this.log('Loaded %d music services', musicServices.length)
 
-    if(flags.saveJson !== undefined) {
-      cli.action.start(`Saving music services to ${flags.saveJson}`)
-      const filename = this.getFullPathAndCreateDirectory(flags.saveJson);
+    if (flags.saveJson !== undefined) {
+      const filename = this.getFullPath(flags.saveJson)
       fs.writeFileSync(filename, JSON.stringify(musicServices, null, 2))
-      cli.action.stop();
+      this.log('Saved music services to %s', filename)
     }
 
-    if(flags.docs) {
-      console.log('| Id  | Name                      | Auth       | Url |\r\n|:----|:--------------------------|:-----------|:----|');
+    if (flags.docs) {
+      this.log('| Id  | Name                      | Auth       | Url |')
+      this.log('|:----|:--------------------------|:-----------|:----|')
       musicServices.forEach(m => {
-        console.log(`| ${m.Id.toString().padStart(3, ' ')} | ${m.Name.padEnd(25, ' ')} | ${m.Policy.Auth.padEnd(10, ' ')} | \`${m.SecureUri}\` |`);
-      })
-    }
-    
-    if(flags.show){
-      cli.table(musicServices, {
-        Id: {},
-        Name: {},
-        Authentication: {
-          get: row => row.Policy.Auth
-        },
-        Capabilities: {},
-        Uri: { extended: true, get: row => row.SecureUri }
-      }, {
-        ...flags
+        this.log(`| ${m.Id.toString().padStart(3, ' ')} | ${m.Name.padEnd(25, ' ')} | ${m.Policy.Auth.padEnd(10, ' ')} | \`${m.SecureUri}\` |`)
       })
     }
 
-
+    if (flags.show) {
+      this.log('Id  | Name                      | Auth')
+      this.log('----|---------------------------|----------')
+      musicServices.forEach(m => {
+        this.log(`${m.Id.toString().padStart(3, ' ')} | ${m.Name.padEnd(25, ' ')} | ${m.Policy.Auth}`)
+      })
+    }
   }
 
-  private getFullPathAndCreateDirectory(location: string, createFolder = false) {
+  private getFullPath(location: string, createFolder = false) {
     const filename = path.isAbsolute(location) ? location : path.join(process.cwd(), location)
     const folder = path.dirname(filename)
     if (createFolder && !fs.existsSync(folder)) {
@@ -65,3 +57,4 @@ export default class Musicservices extends Command {
     return filename
   }
 }
+

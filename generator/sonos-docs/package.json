@@ -8,28 +8,18 @@
   },
   "bugs": "https://github.com/svrooij/sonos-api-docs/issues",
   "dependencies": {
-    "@oclif/command": "^1.8.0",
-    "@oclif/config": "^1.17.0",
-    "@oclif/plugin-help": "^3.2.3",
+    "@oclif/core": "^4.11.14",
     "@svrooij/sonos": "2.7.0-beta.1",
-    "cli-ux": "^5.6.3",
-    "fast-xml-parser": "^3.17.4",
-    "handlebars": "^4.7.7",
-    "node-fetch": "^2.6.2",
-    "tslib": "^1.14.1"
+    "fast-xml-parser": "^5.0.0",
+    "handlebars": "^4.7.7"
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1.26.0",
-    "@types/debug": "^4.1.7",
-    "@types/node": "^16.9.6",
-    "@types/node-fetch": "^2.5.7",
-    "eslint": "^5.16.0",
-    "eslint-config-oclif": "^3.1.0",
-    "eslint-config-oclif-typescript": "^0.1.0",
-    "globby": "^10.0.2",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.2.1",
-    "typescript": "^3.9.7"
+    "@types/node": "^20.19.0",
+    "oclif": "^4.23.24",
+    "rimraf": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.0.0"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -49,18 +39,15 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "sonos-docs",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
+    "bin": "sonos-docs"
   },
   "repository": "https://github.com/svrooij/sonos-api-docs",
   "scripts": {
+    "build": "rimraf lib && tsc -b",
     "postpack": "rimraf oclif.manifest.json",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md",
+    "prepack": "npm run build && oclif manifest && oclif readme",
+    "test": "vitest run",
+    "version": "oclif readme && git add README.md",
     "intermediate": "./bin/run combine --docsFile=../../docs/documentation.json --folder=data",
     "intermediate-win": ".\\bin\\run combine --docsFile=../../docs/documentation.json --folder=data",
     "combine-win": ".\\bin\\run combine --docsFile=../../docs/documentation.json --folder=data",
