@@ -1,7 +1,7 @@
 {
   "name": "@svrooij/sonos-docs",
   "description": "CLI tool to generate documentation for the undocumented sonos api",
-  "version": "0.0.0-development",
+  "version": "1.4.0",
   "author": "Stephan van Rooij <sonos@svrooij.io> (https://svrooij.io)",
   "bin": {
     "sonos-docs": "./bin/run"
@@ -11,7 +11,7 @@
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.3",
-    "@svrooij/sonos": "2.4.1",
+    "@svrooij/sonos": "2.7.0-beta.1",
     "cli-ux": "^5.6.3",
     "fast-xml-parser": "^3.17.4",
     "handlebars": "^4.7.7",
@@ -28,12 +28,11 @@
     "eslint-config-oclif-typescript": "^0.1.0",
     "globby": "^10.0.2",
     "rimraf": "^3.0.2",
-    "semantic-release": "^18.0.0",
     "ts-node": "^10.2.1",
     "typescript": "^3.9.7"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=20.0.0"
   },
   "files": [
     "/bin",
@@ -68,20 +67,5 @@
     "docs": "./bin/run generate docs ../../docs",
     "docs-win": ".\\bin\\run generate docs ../../docs"
   },
-  "types": "lib/index.d.ts",
-  "release": {
-    "branches": [
-      "+([0-9])?(.{+([0-9]),x}).x",
-      "main",
-      "next",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "ci-build",
-        "prerelease": true
-      }
-    ]
-  }
+  "types": "lib/index.d.ts"
 }
