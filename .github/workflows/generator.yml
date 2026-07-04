@@ -48,22 +48,42 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'release'
     permissions:
-      id-token: write
       contents: read
+      id-token: write
+      packages: write
     defaults:
       run:
         working-directory: generator/sonos-docs
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup node for npm registry
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: 24
           registry-url: 'https://registry.npmjs.org'
+
       - name: Install dependencies
         run: npm ci
+
       - name: Set version from release tag
         run: npm version --no-git-tag-version "${{ github.event.release.tag_name }}"
+
       - name: Build library
         run: npm run prepack
+
       - name: Publish to npm
         run: npm publish --access public --provenance --tag ${{ github.event.release.prerelease && 'beta' || 'latest' }}
+
+      - name: Setup node for GitHub Package Registry
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@svrooij'
+
+      - name: Publish to GitHub Package Registry
+        run: npm publish --tag ${{ github.event.release.prerelease && 'beta' || 'latest' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
