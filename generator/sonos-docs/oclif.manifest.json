@@ -1,0 +1,204 @@
+{
+  "commands": {
+    "combine": {
+      "aliases": [],
+      "args": {},
+      "description": "Generate combined.json file by combining the documentation file and the discovered services.",
+      "flags": {
+        "docsUrl": {
+          "description": "The url of the documentation, this is just to override the documentation url",
+          "name": "docsUrl",
+          "default": "https://raw.githubusercontent.com/svrooij/sonos-api-docs/main/docs/documentation.json",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "docsFile": {
+          "description": "File location of documentation, instead of url.",
+          "exclusive": [
+            "docsUrl"
+          ],
+          "name": "docsFile",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "models": {
+          "description": "Models to use, separated by comma. as {model}-{softwareGen}",
+          "name": "models",
+          "default": "S1-2,S3-2,S6-2,S9-2,S13-2,S14-2,S16-2,S17-2,S18-2,S21-2,S27-2,S33-2,S36-2,S38-2,S39-2,Sub-2",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "folder": {
+          "description": "Load discovered services from this folder. Loaded from repository if empty",
+          "name": "folder",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "discoveryUrl": {
+          "description": "Base url to load the discovery files from",
+          "name": "discoveryUrl",
+          "default": "https://github.com/svrooij/sonos-api-docs/raw/main/generator/sonos-docs/data/",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out": {
+          "description": "Output filename",
+          "name": "out",
+          "default": ".cache/combined.json",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "combine",
+      "pluginAlias": "@svrooij/sonos-docs",
+      "pluginName": "@svrooij/sonos-docs",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "combine.js"
+      ]
+    },
+    "generate": {
+      "aliases": [],
+      "args": {
+        "template": {
+          "description": "The template to use, either a folder relative to the current or a folder included in the generator",
+          "name": "template",
+          "required": true
+        },
+        "output": {
+          "description": "The root directory where the files should be generated",
+          "name": "output",
+          "required": true
+        }
+      },
+      "description": "Generate files based on the intermediate file and a template.",
+      "flags": {
+        "combined": {
+          "char": "i",
+          "description": "combined documentation file to use. generate with 'combine'",
+          "name": "combined",
+          "default": ".cache/combined.json",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "generate",
+      "pluginAlias": "@svrooij/sonos-docs",
+      "pluginName": "@svrooij/sonos-docs",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "generate.js"
+      ]
+    },
+    "musicservices": {
+      "aliases": [],
+      "args": {
+        "ip": {
+          "description": "The IP of the sonos speaker to load the music services",
+          "name": "ip",
+          "required": true
+        }
+      },
+      "description": "List music services available on a Sonos speaker",
+      "flags": {
+        "show": {
+          "description": "Show the music services in a table",
+          "name": "show",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "docs": {
+          "description": "Show a markdown table",
+          "name": "docs",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "saveJson": {
+          "description": "If set, save music services as json",
+          "name": "saveJson",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "musicservices",
+      "pluginAlias": "@svrooij/sonos-docs",
+      "pluginName": "@svrooij/sonos-docs",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "musicservices.js"
+      ]
+    },
+    "services": {
+      "aliases": [],
+      "args": {
+        "ip": {
+          "description": "The IP of the sonos to do service discovery for.",
+          "name": "ip",
+          "required": true
+        }
+      },
+      "description": "Fetch device discovery document and generate json file",
+      "flags": {
+        "folder": {
+          "char": "f",
+          "description": "Folder to write discovered services.",
+          "name": "folder",
+          "default": "data",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "dryRun": {
+          "char": "d",
+          "name": "dryRun",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "services",
+      "pluginAlias": "@svrooij/sonos-docs",
+      "pluginName": "@svrooij/sonos-docs",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "services.js"
+      ]
+    }
+  },
+  "version": "1.4.0"
+}
