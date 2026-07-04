@@ -2,8 +2,8 @@
   "model": "S33",
   "modelDescription": "SYMFONISK Bookshelf",
   "softwareGeneration": 2,
-  "softwareVersion": "85.0-64200",
-  "discoveryDate": "2026-01-11T22:44:22.882Z",
+  "softwareVersion": "95.0-77060",
+  "discoveryDate": "2026-07-04T21:14:02.212Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2893,8 +2893,8 @@
           "sendEvents": true
         },
         {
-          "name": "WirelessLeafOnly",
-          "dataType": "boolean",
+          "name": "ConnectionType",
+          "dataType": "ui4",
           "sendEvents": true
         },
         {
@@ -2963,6 +2963,21 @@
         },
         {
           "name": "MicEnabled",
+          "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "SvcActive",
+          "dataType": "boolean",
+          "sendEvents": true
+        },
+        {
+          "name": "HeadphoneId",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "AvailableHeadphoneSessions",
           "dataType": "ui4",
           "sendEvents": true
         },
