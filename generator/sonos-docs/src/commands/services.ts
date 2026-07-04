@@ -1,6 +1,5 @@
-import {Command, flags} from '@oclif/command'
-import fetch from 'node-fetch'
-import {parse} from 'fast-xml-parser'
+import {Args, Command, Flags} from '@oclif/core'
+import {XMLParser} from 'fast-xml-parser'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -14,17 +13,16 @@ export default class Services extends Command {
   static description = 'Fetch device discovery document and generate json file'
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    folder: flags.string({char: 'f', description: 'Folder to write discovered services.', default: 'data'}),
-    dryRun: flags.boolean({char: 'd'}),
+    folder: Flags.string({char: 'f', description: 'Folder to write discovered services.', default: 'data'}),
+    dryRun: Flags.boolean({char: 'd'}),
   }
 
-  static args = [
-    { name: 'ip', required: true, description: 'The IP of the sonos to do service discovery for.' },
-  ]
+  static args = {
+    ip: Args.string({required: true, description: 'The IP of the sonos to do service discovery for.'}),
+  }
 
   async run() {
-    const {args, flags} = this.parse(Services)
+    const {args, flags} = await this.parse(Services)
 
     this.log(`Discovering UPNP services from ${args.ip}`)
     const description = await this.loadDescription(args.ip)
@@ -40,8 +38,8 @@ export default class Services extends Command {
     fs.writeFileSync(file, JSON.stringify(description, undefined, 2))
   }
 
-  private createUrl(ip: string, path: string): string {
-    return `http://${ip}:1400${path}`
+  private createUrl(ip: string, urlPath: string): string {
+    return `http://${ip}:1400${urlPath}`
   }
 
   private async loadDescription(ip: string): Promise<SonosDevice> {
@@ -50,7 +48,6 @@ export default class Services extends Command {
     const desc = resp.root.device
     this.log(`Discovering services from ${desc.modelDescription}`)
 
-    // this.log(desc.deviceList.device)
     const serviceDescriptions: Array<any> = desc.serviceList.service
     desc.deviceList.device.forEach((d: any) => {
       d.serviceList.service.forEach((s: any) => {
@@ -79,8 +76,6 @@ export default class Services extends Command {
     const name = service.serviceId.substring(service.serviceId.lastIndexOf(':') + 1)
     const resp = await this.fetchAndParse(this.createUrl(ip, service.SCPDURL))
     const desc = resp.scpd
-    // this.log('Parsing service');
-    // this.log(desc.actionList.action);
     return {
       name: name,
       serviceName: `${name}Service`,
@@ -89,11 +84,11 @@ export default class Services extends Command {
       serviceType: service.serviceType,
       controlURL: service.controlURL,
       eventSubURL: service.eventSubURL,
-      stateVariables: ArrayHelper.forceArray(desc.serviceStateTable.stateVariable).map((v: any): SonosStateVariable  => {
+      stateVariables: ArrayHelper.forceArray(desc.serviceStateTable.stateVariable).map((v: any): SonosStateVariable => {
         return {
           name: v.name,
           dataType: v.dataType,
-          sendEvents: v._sendEvents === 'yes', // This probably is incorrect, sonos doesnt specify if it sends events for all properties.
+          sendEvents: v._sendEvents === 'yes',
           allowedValues: v.allowedValueList?.allowedValue,
         }
       }),
@@ -117,14 +112,14 @@ export default class Services extends Command {
   }
 
   private async fetchAndParse(url: string): Promise<any> {
-    return fetch(url)
-    .then(resp => {
-      if (resp.ok) {
-        return resp.text()
-      }
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(`Error loading ${url} ${response.status} ${response.statusText}`)
+    }
 
-      throw new Error(`Error loading ${url} ${resp.status} ${resp.statusText}`)
-    })
-    .then(resp => parse(resp, {ignoreAttributes: false, attributeNamePrefix: '_'}))
+    const text = await response.text()
+    const parser = new XMLParser({ignoreAttributes: false, attributeNamePrefix: '_'})
+    return parser.parse(text)
   }
 }
+
