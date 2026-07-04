@@ -66,4 +66,4 @@ jobs:
       - name: Build library
         run: npm run prepack
       - name: Publish to npm
-        run: npm publish --provenance --tag ${{ github.event.release.prerelease && 'beta' || 'latest' }}
+        run: npm publish --access public --provenance --tag ${{ github.event.release.prerelease && 'beta' || 'latest' }}
