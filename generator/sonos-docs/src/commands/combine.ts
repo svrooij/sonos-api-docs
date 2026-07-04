@@ -36,8 +36,6 @@ export default class Combine extends Command {
     }),
   }
 
-  static args = {}
-
   async run() {
     const {flags} = await this.parse(Combine)
     this.log('Got flags', flags)

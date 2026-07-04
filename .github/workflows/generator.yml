@@ -26,6 +26,8 @@ jobs:
   test:
     name: 'Build and test on Node ${{ matrix.node }}'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       matrix:
         node: [22, 24]

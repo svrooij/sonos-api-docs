@@ -145,7 +145,7 @@ export function combineDevices(
       })
     }
 
-    if (docs?.variables) {
+    if (docs !== undefined && docs.variables) {
       if (!s.stateVariables) {
         s.stateVariables = []
       }
