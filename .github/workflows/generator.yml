@@ -67,9 +67,5 @@ jobs:
         run: npm ci
       - name: Build library
         run: npm run prepack
-      - name: Publish pre-release to npm
-        if: inputs.prerelease
-        run: npm publish --provenance --tag beta
       - name: Publish to npm
-        if: ${{ !inputs.prerelease }}
-        run: npm publish --provenance
+        run: npm publish --provenance --tag ${{ inputs.prerelease && 'beta' || 'latest' }}
