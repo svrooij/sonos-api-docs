@@ -113,7 +113,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 
 Outputs:
 
@@ -162,7 +162,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -185,7 +185,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 
 Outputs:
 
@@ -207,7 +207,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 
 Outputs:
 
@@ -230,7 +230,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 
 Outputs:
 
@@ -303,7 +303,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -327,7 +327,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 Outputs:
@@ -356,7 +356,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **RampType** | `string` |  Allowed values: `SLEEP_TIMER_RAMP_TYPE` / `ALARM_RAMP_TYPE` / `AUTOPLAY_RAMP_TYPE` |
 | **DesiredVolume** | `ui2` |  |
@@ -383,7 +383,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 
 Outputs:
 
@@ -410,7 +410,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **EQType** | `string` |  |
 
 ### RestoreVolumePriorToRamp
@@ -428,7 +428,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 
 ### SetBass
@@ -466,7 +466,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **ChannelMap** | `string` |  |
 
 ### SetEQ
@@ -531,7 +531,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredMute** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
@@ -550,7 +550,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **DesiredFixed** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetRelativeVolume
@@ -569,7 +569,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **Adjustment** | `i4` |  |
 
@@ -594,7 +594,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **RoomCalibrationEnabled** | `boolean` |  Allowed values: `1` (= true) / `0` (= false)  |
 
 ### SetRoomCalibrationX
@@ -614,7 +614,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **CalibrationID** | `string` |  |
 | **Coefficients** | `string` |  |
 | **CalibrationMode** | `string` |  |
@@ -655,7 +655,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredVolume** | `ui2` |  |
 
@@ -675,7 +675,7 @@ Inputs:
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| **InstanceID** | `ui4` | InstanceID should always be `0` |
+| **InstanceID** | `ui4` |  |
 | **Channel** | `string` |  Allowed values: `Master` / `LF` / `RF` |
 | **DesiredVolume** | `i2` |  |
 
@@ -740,19 +740,19 @@ This file is automatically generated with [@svrooij/sonos-docs](https://github.c
 
 | Device | Software generation | Software version | Discovery date |
 |:-------|:--------------------|:-----------------|:---------------|
-| `Sonos Play:1 (S1)` | S2 | 86.4-73290 | 2026-02-09T06:10:23.572Z |
+| `Sonos Play:1 (S1)` | S2 | 86.7-77050 | 2026-07-04T21:14:08.816Z |
 | `Sonos One (S13)` | S2 | 63.2-90210 | 2021-07-21T23:31:19.273Z |
 | `Sonos Beam (S14)` | S2 | 64.3-19080 | 2021-08-18T06:04:08.308Z |
 | `Sonos Amp (S16)` | S2 | 79.1-53290 | 2024-11-09T18:45:16.539Z |
 | `Sonos Move (S17)` | S2 | 93.1-73290 | 2026-02-09T06:10:26.755Z |
-| `Sonos One (S18)` | S2 | 85.0-64200 | 2026-01-11T22:43:37.357Z |
+| `Sonos One (S18)` | S2 | 95.0-77060 | 2026-07-04T21:13:16.939Z |
 | `SYMFONISK Bookshelf (S21)` | S2 | 66.4-23300 | 2022-01-01T11:41:01.361Z |
 | `Sonos Roam (S27)` | S2 | 63.2-90210 | 2021-07-21T23:31:31.207Z |
 | `Sonos Play:3 (S3)` | S2 | 64.3-19080 | 2021-08-18T06:09:36.692Z |
-| `SYMFONISK Bookshelf (S33)` | S2 | 85.0-64200 | 2026-01-11T22:44:22.882Z |
-| `Sonos Ray (S36)` | S2 | 90.0-67171 | 2026-01-11T22:44:07.800Z |
-| `Sonos One SL (S38)` | S2 | 85.0-64200 | 2026-01-11T22:45:23.160Z |
+| `SYMFONISK Bookshelf (S33)` | S2 | 95.0-77060 | 2026-07-04T21:14:02.212Z |
+| `Sonos Ray (S36)` | S2 | 95.0-77060 | 2026-07-04T21:13:47.351Z |
+| `Sonos One SL (S38)` | S2 | 95.0-77060 | 2026-07-04T21:16:52.734Z |
 | `Sonos Era 100 (S39)` | S2 | 79.1-53290 | 2024-11-09T18:45:10.792Z |
 | `Sonos Play:5 (S6)` | S2 | 86.4-73290 | 2026-02-09T06:10:32.747Z |
-| `Sonos Playbar (S9)` | S2 | 86.4-73290 | 2026-02-09T06:09:44.116Z |
+| `Sonos Playbar (S9)` | S2 | 86.7-77050 | 2026-07-04T21:13:40.356Z |
 | `Sonos Sub (Sub)` | S2 | 63.2-90210 | 2021-07-21T23:31:40.304Z |

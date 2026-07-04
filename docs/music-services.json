@@ -1,13 +1,13 @@
 [
   {
     "Name": "80er-Radio harmony",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://resource.harmonyfm.de/digital/sonos/soap.php?station=harmonyfm",
     "SecureUri": "https://resource.harmonyfm.de/digital/sonos/soap.php?station=harmonyfm",
     "ContainerType": "MService",
-    "Capabilities": "4235777",
+    "Capabilities": 4235777,
     "Manifest": {
-      "Version": "252",
+      "Version": 252,
       "Uri": "https://cf.ws.sonos.com/p/m/6fbd29f1-c96f-431f-b604-e990e064b2fa"
     },
     "Id": 894,
@@ -18,13 +18,13 @@
   },
   {
     "Name": "80s80s - REAL 80s Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos80s.regiocast.customers.nuuk.de/wsdl",
     "SecureUri": "https://sonos80s.regiocast.customers.nuuk.de/wsdl",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/6ba01baa-35a9-4463-921c-0d24765446cf"
     },
     "Id": 321,
@@ -35,13 +35,13 @@
   },
   {
     "Name": "90s90s Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos90s.regiocast.customers.nuuk.de/wsdl",
     "SecureUri": "https://sonos90s.regiocast.customers.nuuk.de/wsdl",
     "ContainerType": "MService",
-    "Capabilities": "23437833",
+    "Capabilities": 23437833,
     "Manifest": {
-      "Version": "261",
+      "Version": 261,
       "Uri": "https://cf.ws.sonos.com/p/m/7fd1bf22-2dd5-403a-91e4-8bf5e458e8e0"
     },
     "Id": 511,
@@ -52,13 +52,13 @@
   },
   {
     "Name": "Activaire",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://smapi.sonos.activaire.com/musicservice",
     "SecureUri": "https://smapi.sonos.activaire.com/musicservice",
     "ContainerType": "MService",
-    "Capabilities": "30736897",
+    "Capabilities": 30736897,
     "Manifest": {
-      "Version": "272",
+      "Version": 273,
       "Uri": "https://cf.ws.sonos.com/p/m/c33367f1-b4cf-4546-87ec-3a9012c488c3"
     },
     "Id": 322,
@@ -69,13 +69,13 @@
   },
   {
     "Name": "amidAudio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://amidaudio.com/api/integration/sonos/smapi",
     "SecureUri": "https://amidaudio.com/api/integration/sonos/smapi",
     "ContainerType": "MService",
-    "Capabilities": "32875016",
+    "Capabilities": 32875016,
     "Manifest": {
-      "Version": "253",
+      "Version": 253,
       "Uri": "https://cf.ws.sonos.com/p/m/a7bdc762-b8e5-4a06-bbcd-6880918b366e"
     },
     "Id": 799,
@@ -86,13 +86,13 @@
   },
   {
     "Name": "Apple Music",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos-music.apple.com/ws/SonosSoap",
     "SecureUri": "https://sonos-music.apple.com/ws/SonosSoap",
     "ContainerType": "MService",
-    "Capabilities": "32477761",
+    "Capabilities": 32477761,
     "Manifest": {
-      "Version": "430",
+      "Version": 430,
       "Uri": "https://cf.ws.sonos.com/p/m/898f9431-e65a-4b1b-a78b-b3a2c218bfcd"
     },
     "Id": 204,
@@ -103,13 +103,13 @@
   },
   {
     "Name": "Art Radio - RadioArt.com",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.radioart.com/server/",
     "SecureUri": "https://sonos.radioart.com/server/",
     "ContainerType": "MService",
-    "Capabilities": "29360649",
+    "Capabilities": 29360649,
     "Manifest": {
-      "Version": "287",
+      "Version": 287,
       "Uri": "https://cf.ws.sonos.com/p/m/e8283f66-567b-43ff-9d63-fd0a633d81c0"
     },
     "Id": 275,
@@ -120,14 +120,14 @@
   },
   {
     "Name": "Astiga",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.asti.ga/ws/sonos",
     "SecureUri": "https://sonos.asti.ga/ws/sonos",
     "ContainerType": "MService",
-    "Capabilities": "6332928",
+    "Capabilities": 6332929,
     "Manifest": {
-      "Version": "251",
-      "Uri": "https://cf.ws.sonos.com/p/m/55898662-21dd-4f73-b0a4-e4745ca58df3"
+      "Version": 255,
+      "Uri": "https://cf.ws.sonos.com/p/m/e96a27bf-cbe6-47c2-8ca3-350b2e7bee6a"
     },
     "Id": 861,
     "Policy": {
@@ -137,13 +137,13 @@
   },
   {
     "Name": "Atmosphere by Kollekt.fm",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos-smapi.service.kollekt.fm/wsdl",
     "SecureUri": "https://sonos-smapi.service.kollekt.fm/wsdl",
     "ContainerType": "MService",
-    "Capabilities": "29426176",
+    "Capabilities": 29426176,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/6a5ca363-2c29-45d5-987b-c8dff3ebeca0"
     },
     "Id": 306,
@@ -154,13 +154,13 @@
   },
   {
     "Name": "Audible",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.audible.com/smapi",
     "SecureUri": "https://sonos.audible.com/smapi",
     "ContainerType": "MService",
-    "Capabilities": "30520913",
+    "Capabilities": 30520913,
     "Manifest": {
-      "Version": "274",
+      "Version": 274,
       "Uri": "https://cf.ws.sonos.com/p/m/802fae7f-dae7-4259-9db2-d1c7fd4d302d"
     },
     "Id": 239,
@@ -171,13 +171,13 @@
   },
   {
     "Name": "Bandcamp",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sns.bandcamp.com/api/sonos/2/sonos_api",
     "SecureUri": "https://sns.bandcamp.com/api/sonos/2/sonos_api",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/6a8bc58e-6283-45ba-adef-6d0e59a15853"
     },
     "Id": 157,
@@ -188,13 +188,13 @@
   },
   {
     "Name": "Bookmate",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.bookmate.com/wsdl",
     "SecureUri": "https://sonos.bookmate.com/wsdl",
     "ContainerType": "MService",
-    "Capabilities": "4391488",
+    "Capabilities": 4391488,
     "Manifest": {
-      "Version": "258",
+      "Version": 258,
       "Uri": "https://cf.ws.sonos.com/p/m/5580bd26-523b-4e6a-b121-5c74932be596"
     },
     "Id": 307,
@@ -205,13 +205,13 @@
   },
   {
     "Name": "Calm Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.calmradio.com/app",
     "SecureUri": "https://sonos.calmradio.com/app",
     "ContainerType": "MService",
-    "Capabilities": "29729288",
+    "Capabilities": 29729288,
     "Manifest": {
-      "Version": "297",
+      "Version": 298,
       "Uri": "https://cf.ws.sonos.com/p/m/3d4f3f44-b2d6-4780-99f7-2f22ed96bcfd"
     },
     "Id": 144,
@@ -221,14 +221,14 @@
     }
   },
   {
-    "Name": "CBC Radio &amp; Music",
-    "Version": "1.1",
+    "Name": "CBC Radio & Music",
+    "Version": 1.1,
     "Uri": "https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc",
     "SecureUri": "https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc",
     "ContainerType": "MService",
-    "Capabilities": "4788800",
+    "Capabilities": 4788800,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/ee001c8b-3b3c-4105-908f-a19a2f2a770e"
     },
     "Id": 256,
@@ -239,13 +239,13 @@
   },
   {
     "Name": "Classical Archives",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://smapi.classicalarchives.com/endpoint",
     "SecureUri": "https://smapi.classicalarchives.com/endpoint",
     "ContainerType": "MService",
-    "Capabilities": "22002259",
+    "Capabilities": 22002259,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/9831c8ae-a49e-454c-b37f-5bac0fb59fd7"
     },
     "Id": 191,
@@ -256,13 +256,13 @@
   },
   {
     "Name": "Community Radio Plus",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonoslb.radioapi.io/cbaa",
     "SecureUri": "https://sonoslb.radioapi.io/cbaa",
     "ContainerType": "MService",
-    "Capabilities": "29360705",
+    "Capabilities": 29360705,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/a2484e94-58ce-40cb-b563-54bee1a86816"
     },
     "Id": 330,
@@ -273,13 +273,13 @@
   },
   {
     "Name": "Convoy Network",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.convoynetwork.com/musicservice",
     "SecureUri": "https://sonos.convoynetwork.com/musicservice",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "254",
+      "Version": 254,
       "Uri": "https://cf.ws.sonos.com/p/m/79cd3015-6ec2-4582-a21a-8ed47d484f67"
     },
     "Id": 315,
@@ -290,13 +290,13 @@
   },
   {
     "Name": "Custom Channels",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.customchannels.net/sonos",
     "SecureUri": "https://sonos.customchannels.net/sonos",
     "ContainerType": "MService",
-    "Capabilities": "29368832",
+    "Capabilities": 29368832,
     "Manifest": {
-      "Version": "278",
+      "Version": 278,
       "Uri": "https://cf.ws.sonos.com/p/m/7eb757d9-afde-4d12-84bb-25325b70770d"
     },
     "Id": 213,
@@ -307,13 +307,13 @@
   },
   {
     "Name": "Deezer",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.deezer.com/sonos",
     "SecureUri": "https://api.deezer.com/sonos",
     "ContainerType": "MService",
-    "Capabilities": "30423643",
+    "Capabilities": 30421595,
     "Manifest": {
-      "Version": "299",
+      "Version": 301,
       "Uri": "https://cf.ws.sonos.com/p/m/cdf0d448-de23-44a3-852a-b2e0c9c889c1"
     },
     "Id": 2,
@@ -324,13 +324,13 @@
   },
   {
     "Name": "deliver.media",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos-api.deliver.media/SonosService/delivermedia",
     "SecureUri": "https://sonos-api.deliver.media/SonosService/delivermedia",
     "ContainerType": "MService",
-    "Capabilities": "32875016",
+    "Capabilities": 32875016,
     "Manifest": {
-      "Version": "288",
+      "Version": 288,
       "Uri": "https://cf.ws.sonos.com/p/m/5d7b8f2f-9556-49e5-8535-9ba00c19c359"
     },
     "Id": 234,
@@ -341,13 +341,13 @@
   },
   {
     "Name": "DMD2 Music",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://services.dmd2.com/sonos-api/smapi",
     "SecureUri": "https://services.dmd2.com/sonos-api/smapi",
     "ContainerType": "MService",
-    "Capabilities": "29360648",
+    "Capabilities": 29360648,
     "Manifest": {
-      "Version": "293",
+      "Version": 293,
       "Uri": "https://cf.ws.sonos.com/p/m/3543cfd0-c2ed-4d79-abcf-b4fee2d5c3e5"
     },
     "Id": 45,
@@ -358,13 +358,13 @@
   },
   {
     "Name": "Download Player",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.musicstylingonline.com/ws",
     "SecureUri": "https://sonos.musicstylingonline.com/ws",
     "ContainerType": "MService",
-    "Capabilities": "29729280",
+    "Capabilities": 29729280,
     "Manifest": {
-      "Version": "252",
+      "Version": 252,
       "Uri": "https://cf.ws.sonos.com/p/m/d17793a3-d8b1-4d86-9dee-64ffd55ea932"
     },
     "Id": 846,
@@ -375,13 +375,13 @@
   },
   {
     "Name": "DR LYD",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.dr.dk/sonos/v1/api",
     "SecureUri": "https://api.dr.dk/sonos/v1/api",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "265",
+      "Version": 265,
       "Uri": "https://cf.ws.sonos.com/p/m/fbae210d-cb48-40f7-8b8c-e75e43119aee"
     },
     "Id": 290,
@@ -392,13 +392,13 @@
   },
   {
     "Name": "Familystream",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://web.familystream.com/api/sonos/v2.1/endpoint.php",
     "SecureUri": "https://web.familystream.com/api/sonos/v2.1/endpoint.php",
     "ContainerType": "MService",
-    "Capabilities": "31826441",
+    "Capabilities": 31826441,
     "Manifest": {
-      "Version": "281",
+      "Version": 281,
       "Uri": "https://cf.ws.sonos.com/p/m/38535979-cd6f-4c11-b0c6-73406956cfe8"
     },
     "Id": 518,
@@ -409,13 +409,13 @@
   },
   {
     "Name": "FIT Radio Workout Music",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://www.fitradio.com/apisonos/ws",
     "SecureUri": "https://www.fitradio.com/apisonos/ws",
     "ContainerType": "MService",
-    "Capabilities": "29364738",
+    "Capabilities": 29364738,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/4dfbd7de-f34f-49ba-9645-4a69f71645af"
     },
     "Id": 217,
@@ -426,13 +426,13 @@
   },
   {
     "Name": "focus@will",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://www.focusatwill.com/sonos/action",
     "SecureUri": "https://www.focusatwill.com/sonos/action",
     "ContainerType": "MService",
-    "Capabilities": "29364736",
+    "Capabilities": 29364736,
     "Manifest": {
-      "Version": "297",
+      "Version": 297,
       "Uri": "https://cf.ws.sonos.com/p/m/775cc271-b99a-415b-b4ad-4f37876384a7"
     },
     "Id": 192,
@@ -442,31 +442,14 @@
     }
   },
   {
-    "Name": "Gaana",
-    "Version": "1.1",
-    "Uri": "https://sonosapi.gaana.com/SonosAPI.php",
-    "SecureUri": "https://sonosapi.gaana.com/SonosAPI.php",
-    "ContainerType": "MService",
-    "Capabilities": "29360705",
-    "Manifest": {
-      "Version": "256",
-      "Uri": "https://cf.ws.sonos.com/p/m/ec85ae04-5e7d-42d3-9918-23bef3b6bd1c"
-    },
-    "Id": 167,
-    "Policy": {
-      "Auth": "DeviceLink",
-      "PollInterval": 200
-    }
-  },
-  {
     "Name": "Global Player",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonoslb.radioapi.io/global",
     "SecureUri": "https://sonoslb.radioapi.io/global",
     "ContainerType": "MService",
-    "Capabilities": "29360705",
+    "Capabilities": 29360705,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/acc8fadb-b750-4738-aea3-50fd255fd715"
     },
     "Id": 279,
@@ -477,13 +460,13 @@
   },
   {
     "Name": "Harmony",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://harmony-sonos-prod.moodmedia.com/api/Sonos",
     "SecureUri": "https://harmony-sonos-prod.moodmedia.com/api/Sonos",
     "ContainerType": "MService",
-    "Capabilities": "32875017",
+    "Capabilities": 32875017,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/83426153-8a9e-4645-9289-fc6c84670228"
     },
     "Id": 635,
@@ -494,13 +477,13 @@
   },
   {
     "Name": "HEARTS of SPACE",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos-api.hos.com/ws",
     "SecureUri": "https://sonos-api.hos.com/ws",
     "ContainerType": "MService",
-    "Capabilities": "5247048",
+    "Capabilities": 4198472,
     "Manifest": {
-      "Version": "266",
+      "Version": 268,
       "Uri": "https://cf.ws.sonos.com/p/m/300e8951-f4d9-43a6-9a8f-cc16942c5c4e"
     },
     "Id": 36,
@@ -511,13 +494,13 @@
   },
   {
     "Name": "HIT RADIO FFH",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://resource.ffh.de/digital/sonos/soap.php?station=ffh",
     "SecureUri": "https://resource.ffh.de/digital/sonos/soap.php?station=ffh",
     "ContainerType": "MService",
-    "Capabilities": "4235777",
+    "Capabilities": 4235777,
     "Manifest": {
-      "Version": "251",
+      "Version": 251,
       "Uri": "https://cf.ws.sonos.com/p/m/a6b5693a-222e-494c-8221-6126b6708259"
     },
     "Id": 895,
@@ -528,13 +511,13 @@
   },
   {
     "Name": "Hype Machine",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.hypem.com/api/sonos",
     "SecureUri": "https://api.hypem.com/api/sonos",
     "ContainerType": "MService",
-    "Capabilities": "29360705",
+    "Capabilities": 29360705,
     "Manifest": {
-      "Version": "270",
+      "Version": 270,
       "Uri": "https://cf.ws.sonos.com/p/m/952c1fcd-af45-43ed-86f3-899f196b7b79"
     },
     "Id": 44,
@@ -545,13 +528,13 @@
   },
   {
     "Name": "iBroadcast",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.ibroadcast.com/",
     "SecureUri": "https://sonos.ibroadcast.com/",
     "ContainerType": "MService",
-    "Capabilities": "29364801",
+    "Capabilities": 29364801,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/4deceea2-72d0-45fa-b49e-3f0f4b96249e"
     },
     "Id": 310,
@@ -562,13 +545,13 @@
   },
   {
     "Name": "iChill Music Service",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://upgrade.ichillmusic.com/sonoscallback-production.php",
     "SecureUri": "https://upgrade.ichillmusic.com/sonoscallback-production.php",
     "ContainerType": "MService",
-    "Capabilities": "4570707",
+    "Capabilities": 4570707,
     "Manifest": {
-      "Version": "293",
+      "Version": 293,
       "Uri": "https://cf.ws.sonos.com/p/m/514284cd-c296-4bbd-bca3-579bdf29e69b"
     },
     "Id": 327,
@@ -579,13 +562,13 @@
   },
   {
     "Name": "IDAGIO",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://idg-prod-sonos.herokuapp.com/smapi/action",
     "SecureUri": "https://idg-prod-sonos.herokuapp.com/smapi/action",
     "ContainerType": "MService",
-    "Capabilities": "29962816",
+    "Capabilities": 29962816,
     "Manifest": {
-      "Version": "259",
+      "Version": 259,
       "Uri": "https://cf.ws.sonos.com/p/m/d8fa143f-2d3b-4982-a7f6-170cd46a54f3"
     },
     "Id": 271,
@@ -596,13 +579,13 @@
   },
   {
     "Name": "Juuqo",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://eazis-sonos.herokuapp.com/mp3",
     "SecureUri": "https://eazis-sonos.herokuapp.com/mp3",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "254",
+      "Version": 254,
       "Uri": "https://cf.ws.sonos.com/p/m/25565139-43c0-48aa-978e-faab26208dd8"
     },
     "Id": 313,
@@ -613,13 +596,13 @@
   },
   {
     "Name": "Klassik Radio Plus",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://klassikradioplus.de/sonos",
     "SecureUri": "https://klassikradioplus.de/sonos",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "273",
+      "Version": 273,
       "Uri": "https://cf.ws.sonos.com/p/m/b511d674-f885-4194-b104-651a5c78df55"
     },
     "Id": 273,
@@ -630,13 +613,13 @@
   },
   {
     "Name": "Libby by OverDrive",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://libbysonos.overdrive.com/soap",
     "SecureUri": "https://libbysonos.overdrive.com/soap",
     "ContainerType": "MService",
-    "Capabilities": "29987392",
+    "Capabilities": 29987392,
     "Manifest": {
-      "Version": "254",
+      "Version": 254,
       "Uri": "https://cf.ws.sonos.com/p/m/6eb3e2f7-a548-4b24-b493-6a31d24cb46b"
     },
     "Id": 305,
@@ -647,13 +630,13 @@
   },
   {
     "Name": "LITT Live",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://dash-api.com/sonos/MusicBrainzPHP/SonosAPI.php",
     "SecureUri": "https://dash-api.com/sonos/MusicBrainzPHP/SonosAPI.php",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "263",
+      "Version": 263,
       "Uri": "https://cf.ws.sonos.com/p/m/a9a89360-603a-46ba-b1b2-bf81f292b16f"
     },
     "Id": 711,
@@ -664,13 +647,13 @@
   },
   {
     "Name": "LivePhish+",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.nugs.net/soap/livephishoauth",
     "SecureUri": "https://sonos.nugs.net/soap/livephishoauth",
     "ContainerType": "MService",
-    "Capabilities": "29891155",
+    "Capabilities": 29891155,
     "Manifest": {
-      "Version": "262",
+      "Version": 262,
       "Uri": "https://cf.ws.sonos.com/p/m/bd72f8d3-a648-45d8-b3d2-8466cf6bf186"
     },
     "Id": 221,
@@ -681,13 +664,13 @@
   },
   {
     "Name": "Mixcloud",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://app.mixcloud.com/sonos-app/",
     "SecureUri": "https://app.mixcloud.com/sonos-app/",
     "ContainerType": "MService",
-    "Capabilities": "29362755",
+    "Capabilities": 29360707,
     "Manifest": {
-      "Version": "256",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/e539b98e-b73e-4522-b346-6dc6822f4b86"
     },
     "Id": 181,
@@ -698,13 +681,13 @@
   },
   {
     "Name": "Murfie",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://murfie.com/sonos/xmlapi",
     "SecureUri": "https://murfie.com/sonos/xmlapi",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "254",
+      "Version": 254,
       "Uri": "https://cf.ws.sonos.com/p/m/2ab205de-b0f2-4c98-8e3a-842bb9bc00e4"
     },
     "Id": 33,
@@ -715,13 +698,13 @@
   },
   {
     "Name": "Music Source",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://europe-west1-music-source-68a2d.cloudfunctions.net/app/",
     "SecureUri": "https://europe-west1-music-source-68a2d.cloudfunctions.net/app/",
     "ContainerType": "MService",
-    "Capabilities": "5547529",
+    "Capabilities": 5547529,
     "Manifest": {
-      "Version": "252",
+      "Version": 252,
       "Uri": "https://cf.ws.sonos.com/p/m/c26a3f5e-f7ad-48e1-afdd-ebcd2f848336"
     },
     "Id": 976,
@@ -732,13 +715,13 @@
   },
   {
     "Name": "Music Your Brand",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.musicyourbrand.com/sonos/soap",
     "SecureUri": "https://api.musicyourbrand.com/sonos/soap",
     "ContainerType": "MService",
-    "Capabilities": "29458952",
+    "Capabilities": 29458952,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/c433d0c6-ba16-4f3d-890f-c224416fc857"
     },
     "Id": 329,
@@ -749,13 +732,13 @@
   },
   {
     "Name": "myTuner Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.mytuner.mobi/api/v2/sonos/soap",
     "SecureUri": "https://sonos.mytuner.mobi/api/v2/sonos/soap",
     "ContainerType": "MService",
-    "Capabilities": "20972033",
+    "Capabilities": 20972033,
     "Manifest": {
-      "Version": "258",
+      "Version": 258,
       "Uri": "https://cf.ws.sonos.com/p/m/a45c7efd-5c55-41e2-a9a8-fa8a049f25b7"
     },
     "Id": 268,
@@ -766,13 +749,13 @@
   },
   {
     "Name": "NRK Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://psapi.nrk.no/sonos/sonos.svc",
     "SecureUri": "https://psapi.nrk.no/sonos/sonos.svc",
     "ContainerType": "MService",
-    "Capabilities": "29401601",
+    "Capabilities": 29401601,
     "Manifest": {
-      "Version": "266",
+      "Version": 266,
       "Uri": "https://cf.ws.sonos.com/p/m/1bc3dc60-0a04-442e-9d6d-fb528e401c22"
     },
     "Id": 277,
@@ -783,13 +766,13 @@
   },
   {
     "Name": "NTS Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://www.nts.live/smapi",
     "SecureUri": "https://www.nts.live/smapi",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "262",
+      "Version": 262,
       "Uri": "https://cf.ws.sonos.com/p/m/844481e6-69c7-431a-91be-c574bf94a3bc"
     },
     "Id": 230,
@@ -800,13 +783,13 @@
   },
   {
     "Name": "nugs",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.nugs.net/soap/nugsoauth",
     "SecureUri": "https://sonos.nugs.net/soap/nugsoauth",
     "ContainerType": "MService",
-    "Capabilities": "29891155",
+    "Capabilities": 29891155,
     "Manifest": {
-      "Version": "274",
+      "Version": 274,
       "Uri": "https://cf.ws.sonos.com/p/m/a6fd3574-7679-4a91-bf4e-61ba200356e4"
     },
     "Id": 222,
@@ -817,13 +800,13 @@
   },
   {
     "Name": "Piraten.FM",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://piraten.fm/sonos",
     "SecureUri": "https://piraten.fm/sonos",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/99e9fd50-2c50-4704-a79c-9cdc15893d1c"
     },
     "Id": 324,
@@ -834,13 +817,13 @@
   },
   {
     "Name": "planet radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://resource.planetradio.de/digital/sonos/soap.php?station=planet",
     "SecureUri": "https://resource.planetradio.de/digital/sonos/soap.php?station=planet",
     "ContainerType": "MService",
-    "Capabilities": "4235777",
+    "Capabilities": 4235777,
     "Manifest": {
-      "Version": "251",
+      "Version": 251,
       "Uri": "https://cf.ws.sonos.com/p/m/35bf36c7-6093-4aee-aee5-24fc4bac7122"
     },
     "Id": 896,
@@ -851,13 +834,13 @@
   },
   {
     "Name": "Plex",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.plex.tv/v2.2/soap",
     "SecureUri": "https://sonos.plex.tv/v2.2/soap",
     "ContainerType": "MService",
-    "Capabilities": "31298113",
+    "Capabilities": 31298113,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/0f441759-7c83-4b2a-868b-addae6afb836"
     },
     "Id": 212,
@@ -868,13 +851,13 @@
   },
   {
     "Name": "Pocket Casts",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://integrations.pocketcasts.com/service/smapi",
     "SecureUri": "https://integrations.pocketcasts.com/service/smapi",
     "ContainerType": "MService",
-    "Capabilities": "30388800",
+    "Capabilities": 30388800,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/6bbc094d-1020-448e-a603-ecb0bb0283a8"
     },
     "Id": 233,
@@ -885,13 +868,13 @@
   },
   {
     "Name": "POSmusic",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.posmusic.com/sonos/v1/action",
     "SecureUri": "https://api.posmusic.com/sonos/v1/action",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "262",
+      "Version": 262,
       "Uri": "https://cf.ws.sonos.com/p/m/120829e9-c757-4f48-9df0-257ac31bce33"
     },
     "Id": 299,
@@ -902,13 +885,13 @@
   },
   {
     "Name": "PowerApp",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.powergroup.com.tr/Sonos/",
     "SecureUri": "https://api.powergroup.com.tr/Sonos/",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/449f2e9a-2644-4dbf-925c-6e862b1afc5e"
     },
     "Id": 265,
@@ -919,13 +902,13 @@
   },
   {
     "Name": "Qobuz",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://www.qobuz.com/api.xml/0.3/sonos",
     "SecureUri": "https://www.qobuz.com/api.xml/0.3/sonos",
     "ContainerType": "MService",
-    "Capabilities": "29370963",
+    "Capabilities": 29370963,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/8af7bdf3-62ae-42c7-b491-6d92e1208eda"
     },
     "Id": 31,
@@ -936,13 +919,13 @@
   },
   {
     "Name": "Radio Energy",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.nrj.customers.nuuk.de/wsdl",
     "SecureUri": "https://sonos.nrj.customers.nuuk.de/wsdl",
     "ContainerType": "MService",
-    "Capabilities": "7381504",
+    "Capabilities": 7381504,
     "Manifest": {
-      "Version": "253",
+      "Version": 253,
       "Uri": "https://cf.ws.sonos.com/p/m/a101579b-9bd8-4fbc-bfb5-03c34b069801"
     },
     "Id": 827,
@@ -953,13 +936,13 @@
   },
   {
     "Name": "Radio France",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.radiofrance.fr/voiceapi/sonos/smapi",
     "SecureUri": "https://api.radiofrance.fr/voiceapi/sonos/smapi",
     "ContainerType": "MService",
-    "Capabilities": "31826441",
+    "Capabilities": 31826441,
     "Manifest": {
-      "Version": "273",
+      "Version": 273,
       "Uri": "https://cf.ws.sonos.com/p/m/6565b288-ceb2-48ce-bd81-64a0af12d82c"
     },
     "Id": 585,
@@ -970,13 +953,13 @@
   },
   {
     "Name": "Radio Javan",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://rjsonos.app/musicservice",
     "SecureUri": "https://rjsonos.app/musicservice",
     "ContainerType": "MService",
-    "Capabilities": "29889025",
+    "Capabilities": 29889025,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/36f7f1a7-d101-4968-8135-12ca14a13105"
     },
     "Id": 294,
@@ -987,13 +970,13 @@
   },
   {
     "Name": "Radio Paloma",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.konsole-labs.com/radiopaloma.php",
     "SecureUri": "https://sonos.konsole-labs.com/radiopaloma.php",
     "ContainerType": "MService",
-    "Capabilities": "6726144",
+    "Capabilities": 6726144,
     "Manifest": {
-      "Version": "252",
+      "Version": 252,
       "Uri": "https://cf.ws.sonos.com/p/m/493945ca-ec81-4a4f-8c87-975098c56af7"
     },
     "Id": 962,
@@ -1004,13 +987,13 @@
   },
   {
     "Name": "Radio Paradise",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.radioparadise.com/sonos/soap/server.php",
     "SecureUri": "https://api.radioparadise.com/sonos/soap/server.php",
     "ContainerType": "MService",
-    "Capabilities": "12587520",
+    "Capabilities": 12587520,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/2ae6d441-32b9-4852-9d5c-1f174dcf8106"
     },
     "Id": 308,
@@ -1021,13 +1004,13 @@
   },
   {
     "Name": "Radioplayer",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://rp-sonos.konsole-labs.com/",
     "SecureUri": "https://rp-sonos.konsole-labs.com/",
     "ContainerType": "MService",
-    "Capabilities": "29893121",
+    "Capabilities": 29893121,
     "Manifest": {
-      "Version": "278",
+      "Version": 278,
       "Uri": "https://cf.ws.sonos.com/p/m/59f6e601-d7ab-44d3-acc9-2e093025dfdf"
     },
     "Id": 232,
@@ -1038,13 +1021,13 @@
   },
   {
     "Name": "radioPup",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.townsquaremedia.com/index.php",
     "SecureUri": "https://sonos.townsquaremedia.com/index.php",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/9c9dc494-609e-475c-a53f-d8940a699507"
     },
     "Id": 162,
@@ -1055,13 +1038,13 @@
   },
   {
     "Name": "Radioshop",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://smapi.radioshop.net/SonosService.svc",
     "SecureUri": "https://smapi.radioshop.net/SonosService.svc",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/1ad42980-2858-4b1d-818d-8f6253afbd19"
     },
     "Id": 312,
@@ -1072,13 +1055,13 @@
   },
   {
     "Name": "RadioSparx Royalty-Free Music",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://www.radiosparx.com/module/radiosparx/sonos/default.cfm",
     "SecureUri": "https://www.radiosparx.com/module/radiosparx/sonos/default.cfm",
     "ContainerType": "MService",
-    "Capabilities": "32875016",
+    "Capabilities": 32875016,
     "Manifest": {
-      "Version": "262",
+      "Version": 262,
       "Uri": "https://cf.ws.sonos.com/p/m/9775b7ca-3eff-424b-b547-94649f8ca385"
     },
     "Id": 666,
@@ -1089,13 +1072,13 @@
   },
   {
     "Name": "RauteMusik.FM",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos-smapi.rautemusik.fm/smapi",
     "SecureUri": "https://sonos-smapi.rautemusik.fm/smapi",
     "ContainerType": "MService",
-    "Capabilities": "29360641",
+    "Capabilities": 29360641,
     "Manifest": {
-      "Version": "256",
+      "Version": 256,
       "Uri": "https://cf.ws.sonos.com/p/m/d26ca01a-2161-477d-ad89-d45df82a24e7"
     },
     "Id": 223,
@@ -1106,13 +1089,13 @@
   },
   {
     "Name": "Relisten",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.relisten.net/mp3",
     "SecureUri": "https://sonos.relisten.net/mp3",
     "ContainerType": "MService",
-    "Capabilities": "29364800",
+    "Capabilities": 29364800,
     "Manifest": {
-      "Version": "258",
+      "Version": 258,
       "Uri": "https://cf.ws.sonos.com/p/m/1cc8f066-67c5-493e-a78a-0215e46c12d0"
     },
     "Id": 270,
@@ -1122,14 +1105,31 @@
     }
   },
   {
+    "Name": "Reservatet.fm",
+    "Version": 1.1,
+    "Uri": "https://reservatet.fm/api/sonos",
+    "SecureUri": "https://reservatet.fm/api/sonos",
+    "ContainerType": "MService",
+    "Capabilities": 12624384,
+    "Manifest": {
+      "Version": 251,
+      "Uri": "https://cf.ws.sonos.com/p/m/7d725c25-b0c0-4d5d-8e7d-567bc9ca85b1"
+    },
+    "Id": 1412,
+    "Policy": {
+      "Auth": "Anonymous",
+      "PollInterval": 60
+    }
+  },
+  {
     "Name": "Saavn",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://www.saavn.com/apps/sonos/SonosAPI.php",
     "SecureUri": "https://www.saavn.com/apps/sonos/SonosAPI.php",
     "ContainerType": "MService",
-    "Capabilities": "29372993",
+    "Capabilities": 29372993,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/395ae83a-eb8e-4fe2-b832-d9fce1059a1a"
     },
     "Id": 164,
@@ -1140,13 +1140,13 @@
   },
   {
     "Name": "Schlager Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.schlagerradio.de/wsdl/schlagerradio",
     "SecureUri": "https://sonos.schlagerradio.de/wsdl/schlagerradio",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "262",
+      "Version": 262,
       "Uri": "https://cf.ws.sonos.com/p/m/78b7718a-f34a-49de-8d3c-402b81d8f3dc"
     },
     "Id": 326,
@@ -1157,13 +1157,13 @@
   },
   {
     "Name": "SomaFM Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.somafm.com/",
     "SecureUri": "https://sonos.somafm.com/",
     "ContainerType": "MService",
-    "Capabilities": "31826441",
+    "Capabilities": 31826441,
     "Manifest": {
-      "Version": "270",
+      "Version": 270,
       "Uri": "https://cf.ws.sonos.com/p/m/3ad90830-f86b-4cfd-a796-7a479cfbc3b3"
     },
     "Id": 516,
@@ -1174,13 +1174,13 @@
   },
   {
     "Name": "Sonos Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sali.sonos.superhi.fi/smapi",
     "SecureUri": "https://sali.sonos.superhi.fi/smapi",
     "ContainerType": "MService",
-    "Capabilities": "13648393",
+    "Capabilities": 13648393,
     "Manifest": {
-      "Version": "307",
+      "Version": 307,
       "Uri": "https://cf.ws.sonos.com/p/m/53495571-a428-4ea8-b8c6-b4ad443270a4"
     },
     "Id": 303,
@@ -1191,14 +1191,14 @@
   },
   {
     "Name": "SoundCloud",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.sonos.integrate.soundcloud.com/",
     "SecureUri": "https://api.sonos.integrate.soundcloud.com/",
     "ContainerType": "MService",
-    "Capabilities": "29401601",
+    "Capabilities": 29823491,
     "Manifest": {
-      "Version": "298",
-      "Uri": "https://cf.ws.sonos.com/p/m/06154e89-3cc6-4724-9519-df802b90772b"
+      "Version": 307,
+      "Uri": "https://cf.ws.sonos.com/p/m/3656e114-f6ca-4072-a1b3-4eaf8e5d01dd"
     },
     "Id": 160,
     "Policy": {
@@ -1208,13 +1208,13 @@
   },
   {
     "Name": "SoundMachine",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://provider.sound-machine.com/sonosapi",
     "SecureUri": "https://provider.sound-machine.com/sonosapi",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "299",
+      "Version": 299,
       "Uri": "https://cf.ws.sonos.com/p/m/f11bb340-55bc-42a7-b8bb-a5b59728371d"
     },
     "Id": 189,
@@ -1225,13 +1225,13 @@
   },
   {
     "Name": "Soundsuit.fm",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.soundsuit.fm/smapi",
     "SecureUri": "https://api.soundsuit.fm/smapi",
     "ContainerType": "MService",
-    "Capabilities": "29360640",
+    "Capabilities": 29360640,
     "Manifest": {
-      "Version": "289",
+      "Version": 289,
       "Uri": "https://cf.ws.sonos.com/p/m/22ecb80d-cc3a-4365-83b5-0a1ee04c1822"
     },
     "Id": 218,
@@ -1242,13 +1242,13 @@
   },
   {
     "Name": "Soundtrack",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sms.soundtrackyourbrand.com/soap",
     "SecureUri": "https://sms.soundtrackyourbrand.com/soap",
     "ContainerType": "MService",
-    "Capabilities": "33391105",
+    "Capabilities": 33391105,
     "Manifest": {
-      "Version": "280",
+      "Version": 282,
       "Uri": "https://cf.ws.sonos.com/p/m/653e9c08-ae6d-42c7-8ec5-44033621d123"
     },
     "Id": 295,
@@ -1259,13 +1259,13 @@
   },
   {
     "Name": "Spectre",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://vauxhall.spectre-music.com/smapi",
     "SecureUri": "https://vauxhall.spectre-music.com/smapi",
     "ContainerType": "MService",
-    "Capabilities": "4302344",
+    "Capabilities": 4302344,
     "Manifest": {
-      "Version": "264",
+      "Version": 264,
       "Uri": "https://cf.ws.sonos.com/p/m/cc248cbf-9be1-4743-bced-f2098d8f6f46"
     },
     "Id": 633,
@@ -1276,13 +1276,13 @@
   },
   {
     "Name": "Spotify",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://spotify-v5.ws.sonos.com/smapi",
     "SecureUri": "https://spotify-v5.ws.sonos.com/smapi",
     "ContainerType": "MService",
-    "Capabilities": "30476819",
+    "Capabilities": 30476819,
     "Manifest": {
-      "Version": "376",
+      "Version": 376,
       "Uri": "https://cf.ws.sonos.com/p/m/e80dda2e-dec1-42e8-bad4-0b9ccaadb134"
     },
     "Id": 9,
@@ -1293,13 +1293,13 @@
   },
   {
     "Name": "storePlay",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://v2.api.storeplay.com.au/sonos/service",
     "SecureUri": "https://v2.api.storeplay.com.au/sonos/service",
     "ContainerType": "MService",
-    "Capabilities": "31826441",
+    "Capabilities": 31826441,
     "Manifest": {
-      "Version": "284",
+      "Version": 284,
       "Uri": "https://cf.ws.sonos.com/p/m/7d769b7e-9df6-4843-9b34-39ba5f85920f"
     },
     "Id": 237,
@@ -1310,13 +1310,13 @@
   },
   {
     "Name": "Storytel",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonosapi.storytel.com/sonos/1.0",
     "SecureUri": "https://sonosapi.storytel.com/sonos/1.0",
     "ContainerType": "MService",
-    "Capabilities": "29996609",
+    "Capabilities": 29996609,
     "Manifest": {
-      "Version": "271",
+      "Version": 271,
       "Uri": "https://cf.ws.sonos.com/p/m/b88e791f-8441-4404-8a1a-f85c327097a0"
     },
     "Id": 226,
@@ -1327,13 +1327,13 @@
   },
   {
     "Name": "Sveriges Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.sr.se/ws",
     "SecureUri": "https://sonos.sr.se/ws",
     "ContainerType": "MService",
-    "Capabilities": "29430273",
+    "Capabilities": 29430273,
     "Manifest": {
-      "Version": "259",
+      "Version": 259,
       "Uri": "https://cf.ws.sonos.com/p/m/08de05ac-f8d0-45c1-9ae0-5d9a9c1bacf4"
     },
     "Id": 235,
@@ -1343,14 +1343,31 @@
     }
   },
   {
+    "Name": "Synerplay",
+    "Version": 1.1,
+    "Uri": "https://play.synerplay.com/api/sonos/wsdl",
+    "SecureUri": "https://play.synerplay.com/api/sonos/wsdl",
+    "ContainerType": "MService",
+    "Capabilities": 33006089,
+    "Manifest": {
+      "Version": 285,
+      "Uri": "https://cf.ws.sonos.com/p/m/ef05f9e4-b0bc-42e4-80c9-250cdc74cba2"
+    },
+    "Id": 1031,
+    "Policy": {
+      "Auth": "AppLink",
+      "PollInterval": 60
+    }
+  },
+  {
     "Name": "The Lot Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://wy8hgbmpdj.us-east-1.awsapprunner.com/wsdl?wsdl",
     "SecureUri": "https://wy8hgbmpdj.us-east-1.awsapprunner.com/wsdl?wsdl",
     "ContainerType": "MService",
-    "Capabilities": "4194816",
+    "Capabilities": 4194816,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/ea2ce3b7-f01f-4fe1-9a4b-e88f5671209f"
     },
     "Id": 335,
@@ -1361,13 +1378,13 @@
   },
   {
     "Name": "TIDAL",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://smapi.tidal.com/sonos",
     "SecureUri": "https://smapi.tidal.com/sonos",
     "ContainerType": "MService",
-    "Capabilities": "4242003",
+    "Capabilities": 4239955,
     "Manifest": {
-      "Version": "259",
+      "Version": 264,
       "Uri": "https://cf.ws.sonos.com/p/m/878717d1-9c79-41c0-8ea9-a345187fc7f2"
     },
     "Id": 174,
@@ -1378,13 +1395,13 @@
   },
   {
     "Name": "toníque",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.tonique.com/ws",
     "SecureUri": "https://sonos.tonique.com/ws",
     "ContainerType": "MService",
-    "Capabilities": "30736896",
+    "Capabilities": 30736896,
     "Manifest": {
-      "Version": "282",
+      "Version": 282,
       "Uri": "https://cf.ws.sonos.com/p/m/99eee46d-59d7-4b26-8fc9-928bce4069f1"
     },
     "Id": 287,
@@ -1395,13 +1412,13 @@
   },
   {
     "Name": "Tribe of Noise",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.tribeofnoise.com/server-v2.1.php",
     "SecureUri": "https://sonos.tribeofnoise.com/server-v2.1.php",
     "ContainerType": "MService",
-    "Capabilities": "29364800",
+    "Capabilities": 29364800,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/693a9686-3ce0-40d6-b43f-8b0444f693ae"
     },
     "Id": 169,
@@ -1412,30 +1429,30 @@
   },
   {
     "Name": "TuneIn",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://legato.radiotime.com/Radio.asmx",
     "SecureUri": "https://legato.radiotime.com/Radio.asmx",
     "ContainerType": "MService",
-    "Capabilities": "29364801",
+    "Capabilities": 29364801,
     "Manifest": {
-      "Version": "259",
+      "Version": 259,
       "Uri": "https://cf.ws.sonos.com/p/m/5d3c06e5-9901-4724-afa1-80e825adec0c"
     },
     "Id": 254,
     "Policy": {
       "Auth": "Anonymous",
-      "PollInterval": 0
+      "PollInterval": -1
     }
   },
   {
     "Name": "TuneIn (New)",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.tunein.com/SMRadio.asmx",
     "SecureUri": "https://sonos.tunein.com/SMRadio.asmx",
     "ContainerType": "MService",
-    "Capabilities": "29364817",
+    "Capabilities": 29364817,
     "Manifest": {
-      "Version": "264",
+      "Version": 264,
       "Uri": "https://cf.ws.sonos.com/p/m/3d6f1e93-0756-4ac3-84c3-500c989429b9"
     },
     "Id": 333,
@@ -1446,13 +1463,13 @@
   },
   {
     "Name": "Tunify for Business",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://apis.tunify.com/t4-sonos-music-api/services/Sonos.wsdl",
     "SecureUri": "https://apis.tunify.com/t4-sonos-music-api/services/Sonos.wsdl",
     "ContainerType": "MService",
-    "Capabilities": "29696577",
+    "Capabilities": 29696577,
     "Manifest": {
-      "Version": "257",
+      "Version": 257,
       "Uri": "https://cf.ws.sonos.com/p/m/4bb1b7cb-0006-4686-ad31-cd4708d53289"
     },
     "Id": 193,
@@ -1463,13 +1480,13 @@
   },
   {
     "Name": "Viaplay Radio",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://sonos.viaplayradio.se/mp3",
     "SecureUri": "https://sonos.viaplayradio.se/mp3",
     "ContainerType": "MService",
-    "Capabilities": "6333952",
+    "Capabilities": 6333952,
     "Manifest": {
-      "Version": "289",
+      "Version": 289,
       "Uri": "https://cf.ws.sonos.com/p/m/dd3955f6-aede-473d-89f3-4d0fae5a90e2"
     },
     "Id": 606,
@@ -1480,13 +1497,13 @@
   },
   {
     "Name": "Virgin Radio UK",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://api.news.co.uk/audio/v1/smapi/virginradio/wsdl",
     "SecureUri": "https://api.news.co.uk/audio/v1/smapi/virginradio/wsdl",
     "ContainerType": "MService",
-    "Capabilities": "4194816",
+    "Capabilities": 4194816,
     "Manifest": {
-      "Version": "274",
+      "Version": 274,
       "Uri": "https://cf.ws.sonos.com/p/m/7b4365eb-cefe-40ec-b6b5-db01d61964ee"
     },
     "Id": 336,
@@ -1497,13 +1514,13 @@
   },
   {
     "Name": "Yogi Tunes",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://yogi-tunes.ca/server.php",
     "SecureUri": "https://yogi-tunes.ca/server.php",
     "ContainerType": "MService",
-    "Capabilities": "29362689",
+    "Capabilities": 29362689,
     "Manifest": {
-      "Version": "255",
+      "Version": 255,
       "Uri": "https://cf.ws.sonos.com/p/m/61d32784-727b-4ab8-9566-61025ee6a74d"
     },
     "Id": 317,
@@ -1514,13 +1531,13 @@
   },
   {
     "Name": "YouTube Music",
-    "Version": "1.1",
+    "Version": 1.1,
     "Uri": "https://music.googleapis.com/v1:sendRequest",
     "SecureUri": "https://music.googleapis.com/v1:sendRequest",
     "ContainerType": "MService",
-    "Capabilities": "32473609",
+    "Capabilities": 32473609,
     "Manifest": {
-      "Version": "278",
+      "Version": 278,
       "Uri": "https://cf.ws.sonos.com/p/m/a3fd2ecc-6039-47fe-8ced-1939e070c432"
     },
     "Id": 284,

@@ -2,8 +2,8 @@
   "model": "S1",
   "modelDescription": "Sonos Play:1",
   "softwareGeneration": 2,
-  "softwareVersion": "86.4-73290",
-  "discoveryDate": "2026-02-09T06:10:23.572Z",
+  "softwareVersion": "86.7-77050",
+  "discoveryDate": "2026-07-04T21:14:08.816Z",
   "services": [
     {
       "name": "AlarmClock",
@@ -2964,6 +2964,11 @@
         {
           "name": "MicEnabled",
           "dataType": "ui4",
+          "sendEvents": true
+        },
+        {
+          "name": "SvcActive",
+          "dataType": "boolean",
           "sendEvents": true
         },
         {
