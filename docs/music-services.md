@@ -40,7 +40,7 @@ At the moment the following music services are supported.
 | 157 | Bandcamp                  | DeviceLink | `https://sns.bandcamp.com/api/sonos/2/sonos_api` |
 | 307 | Bookmate                  | AppLink    | `https://sonos.bookmate.com/wsdl` |
 | 144 | Calm Radio                | AppLink    | `https://sonos.calmradio.com/app` |
-| 256 | CBC Radio &amp; Music     | Anonymous  | `https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc` |
+| 256 | CBC Radio & Music         | Anonymous  | `https://cbcmusic-sonos-beta.azurewebsites.net/SonosService.svc` |
 | 191 | Classical Archives        | DeviceLink | `https://smapi.classicalarchives.com/endpoint` |
 | 330 | Community Radio Plus      | Anonymous  | `https://sonoslb.radioapi.io/cbaa` |
 | 315 | Convoy Network            | Anonymous  | `https://sonos.convoynetwork.com/musicservice` |
@@ -53,7 +53,6 @@ At the moment the following music services are supported.
 | 518 | Familystream              | AppLink    | `https://web.familystream.com/api/sonos/v2.1/endpoint.php` |
 | 217 | FIT Radio Workout Music   | DeviceLink | `https://www.fitradio.com/apisonos/ws` |
 | 192 | focus@will                | AppLink    | `https://www.focusatwill.com/sonos/action` |
-| 167 | Gaana                     | DeviceLink | `https://sonosapi.gaana.com/SonosAPI.php` |
 | 279 | Global Player             | Anonymous  | `https://sonoslb.radioapi.io/global` |
 | 635 | Harmony                   | AppLink    | `https://harmony-sonos-prod.moodmedia.com/api/Sonos` |
 |  36 | HEARTS of SPACE           | AppLink    | `https://sonos-api.hos.com/ws` |
@@ -93,6 +92,7 @@ At the moment the following music services are supported.
 | 666 | RadioSparx Royalty-Free Music | AppLink    | `https://www.radiosparx.com/module/radiosparx/sonos/default.cfm` |
 | 223 | RauteMusik.FM             | Anonymous  | `https://sonos-smapi.rautemusik.fm/smapi` |
 | 270 | Relisten                  | Anonymous  | `https://sonos.relisten.net/mp3` |
+| 1412 | Reservatet.fm             | Anonymous  | `https://reservatet.fm/api/sonos` |
 | 164 | Saavn                     | DeviceLink | `https://www.saavn.com/apps/sonos/SonosAPI.php` |
 | 326 | Schlager Radio            | Anonymous  | `https://sonos.schlagerradio.de/wsdl/schlagerradio` |
 | 516 | SomaFM Radio              | Anonymous  | `https://sonos.somafm.com/` |
@@ -106,6 +106,7 @@ At the moment the following music services are supported.
 | 237 | storePlay                 | AppLink    | `https://v2.api.storeplay.com.au/sonos/service` |
 | 226 | Storytel                  | AppLink    | `https://sonosapi.storytel.com/sonos/1.0` |
 | 235 | Sveriges Radio            | Anonymous  | `https://sonos.sr.se/ws` |
+| 1031 | Synerplay                 | AppLink    | `https://play.synerplay.com/api/sonos/wsdl` |
 | 335 | The Lot Radio             | Anonymous  | `https://wy8hgbmpdj.us-east-1.awsapprunner.com/wsdl?wsdl` |
 | 174 | TIDAL                     | DeviceLink | `https://smapi.tidal.com/sonos` |
 | 287 | toníque                   | AppLink    | `https://sonos.tonique.com/ws` |
