@@ -5,13 +5,12 @@ email: 1292510+svrooij@users.noreply.github.com
 
 baseurl: "/sonos-api-docs"
 url: "https://svrooij.io"
-twitter_username: svrooij
 github_username: svrooij
 repository: svrooij/sonos-api-docs
 
 # Build settings
 markdown: kramdown
-remote_theme: svrooij/just-the-docs@plausible
+remote_theme: svrooij/just-the-docs@plausible-2026
 plugins:
   - jekyll-feed
   - jekyll-octicons
