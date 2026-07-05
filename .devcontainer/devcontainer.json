@@ -1,0 +1,23 @@
+{
+  "name": "Sonos API Docs (Jekyll)",
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/sonos-api-docs,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/sonos-api-docs",
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "cd docs && bundle install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sissel.shopify-liquid",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint"
+      ]
+    }
+  }
+}
